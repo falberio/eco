@@ -1,0 +1,209 @@
+// prisma/schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum ItemKind {
+  PRODUCT   // ingredientes, bebidas, productos sueltos
+  RECIPE    // preparaciones / recetas / viandas
+}
+
+enum UnitKind {
+  GRAM
+  ML
+  UNIT
+}
+
+enum ReserveStatus {
+  ACTIVE        // existe y cuenta en inventario
+  TRANSFORMED   // fue porcionada/transformada (madre)
+  CONSUMED      // (futuro) consumida
+  DISCARDED     // (futuro) descartada
+}
+
+enum LocationKind {
+  AREA      // gran lugar: "Freezer Vertical", "Heladera"
+  SECTION   // sub: "Cajón 3", "Estante 2", "Comp 3"
+  SLOT      // sub-sub: "Posición 4", "Hueco 1"
+}
+
+model Location {
+  id          String       @id @default(cuid())
+  code        String?      @unique // opcional: "FV", "EF", "ALC3"
+  name        String       // nombre amigable: "Estantería de Frascos"
+  kind        LocationKind @default(AREA)
+
+  parentId    String?
+  parent      Location?    @relation("LocationTree", fields: [parentId], references: [id])
+  children    Location[]   @relation("LocationTree")
+
+  // orden visual dentro del parent (ej: estante 1..5, pos 1..6)
+  sortIndex   Int          @default(0)
+
+  notes       String?
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+
+  reserves    Reserve[]
+}
+
+model ContainerType {
+  id            String   @id @default(cuid())
+  code          String?  @unique // ej: "FR750B", "FR750A", "BOL-M"
+  name          String   // "Frasco 750 bajo", "Bolsa mediana"
+
+  nominalVolume_ml Int?
+  tareWeight_g     Int?   // tara típica si aplica
+
+  notes         String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  containers    Container[]
+}
+
+model Container {
+  id            String   @id @default(cuid())
+  code          String   @unique // ej: "F-001", "B-014"
+  typeId        String
+  type          ContainerType @relation(fields: [typeId], references: [id])
+
+  // por si el contenedor tiene tara distinta a la típica
+  tareWeight_g  Int?
+
+  notes         String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  reserves      Reserve[]
+}
+
+model Item {
+  id          String   @id @default(cuid())
+  code        String?  @unique // opcional: "LENTEJA-CH", "GIN-BOSQUE"
+  name        String   // "Lentejas chicas", "Guiso de lentejas"
+  kind        ItemKind
+
+  // para UI/carta (no rígido):
+  category    String?  // "Pastas", "Bebidas", "Legumbres", etc.
+  notes       String?
+
+  // unidad “base” sugerida para este item (no obliga)
+  defaultUnit UnitKind?
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // receta → ingredientes
+  recipeIngredientsAsRecipe     RecipeIngredient[] @relation("Recipe")
+  recipeIngredientsAsIngredient RecipeIngredient[] @relation("Ingredient")
+
+  menuItems   MenuItem[]
+  batches     Batch[]
+  reserves    Reserve[]
+}
+
+model RecipeIngredient {
+  id              String   @id @default(cuid())
+
+  recipeItemId     String
+  recipeItem       Item     @relation("Recipe", fields: [recipeItemId], references: [id])
+
+  ingredientItemId String
+  ingredientItem   Item     @relation("Ingredient", fields: [ingredientItemId], references: [id])
+
+  // cantidad por "porción base" (o por receta base, lo definimos luego)
+  qty              Int?
+  unit             UnitKind?
+  optional         Boolean  @default(false)
+
+  notes            String?
+
+  @@unique([recipeItemId, ingredientItemId])
+}
+
+model MenuItem {
+  id          String   @id @default(cuid())
+  name        String   // nombre visible: "Gin Tonic", "Lasagna"
+  itemId      String
+  item        Item     @relation(fields: [itemId], references: [id])
+
+  section     String?  // "Tragos", "Pastas", "Desayunos"
+  isActive    Boolean  @default(true)
+  notes       String?
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Batch {
+  id          String   @id @default(cuid())
+  code        String?  @unique // opcional: "L-2026-01-09-01"
+  itemId      String
+  item        Item     @relation(fields: [itemId], references: [id])
+
+  // origen del lote (compra / elaboración)
+  createdOn   DateTime @default(now())
+  bestBefore  DateTime? // vencimiento sugerido (si aplica)
+
+  notes       String?
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  reserves    Reserve[]
+}
+
+model Reserve {
+  id            String   @id @default(cuid())
+  code          String?  @unique // opcional: "R-000123"
+
+  itemId        String
+  item          Item     @relation(fields: [itemId], references: [id])
+
+  batchId       String?
+  batch         Batch?   @relation(fields: [batchId], references: [id])
+
+  status        ReserveStatus @default(ACTIVE)
+
+  // ubicación física (idealmente siempre)
+  locationId    String?
+  location      Location? @relation(fields: [locationId], references: [id])
+
+  // contenedor físico (si existe)
+  containerId   String?
+  container     Container? @relation(fields: [containerId], references: [id])
+
+  // medidas: usás una u otra según el caso
+  netWeight_g   Int?
+  netVolume_ml  Int?
+  unitCount     Int?
+
+  // si querés registrar balanza (opcional)
+  grossWeight_g Int?
+  tareWeight_g  Int?
+
+  // para porcionado / trazabilidad
+  parentReserveId String?
+  parentReserve   Reserve? @relation("ReserveSplit", fields: [parentReserveId], references: [id])
+  childReserves   Reserve[] @relation("ReserveSplit")
+
+  // fechas útiles
+  createdOn     DateTime @default(now())
+  bestBefore    DateTime?
+
+  notes         String?
+
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@index([itemId])
+  @@index([locationId])
+  @@index([containerId])
+  @@index([status])
+}
