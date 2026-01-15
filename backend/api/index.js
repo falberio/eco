@@ -1,10 +1,7 @@
-import 'dotenv/config'
-import app from '../src/app.js'
+require('dotenv/config')
+const app = require('../src/app.js')
 
 // Handler para Vercel Serverless Function
-export default (req, res) => {
-  console.log('Handler llamado:', req.url, req.method)
-  
-  // Delegar a Express
-  app(req, res)
+module.exports = (req, res) => {
+  return app(req, res)
 }
