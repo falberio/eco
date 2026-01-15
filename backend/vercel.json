@@ -1,20 +1,3 @@
 {
-    "version": 2,
-    "buildCommand": "npm run prisma:generate",
-    "builds": [
-        {
-            "src": "api/*.js",
-            "use": "@vercel/node",
-            "config": {
-                "includeFiles": "src/**",
-                "excludeFiles": "node_modules/**"
-            }
-        }
-    ],
-    "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "api/index.js"
-        }
-    ]
+    "version": 2
 }
