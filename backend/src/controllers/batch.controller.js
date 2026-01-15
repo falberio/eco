@@ -1,7 +1,7 @@
 // src/controllers/batch.controller.js
 
-import prisma from '../prisma/client.js'
-import { CreateBatchSchema, UpdateBatchSchema, FilterBatchSchema } from '../schemas/batch.schema.js'
+const prisma = require('../prisma/client.js')
+const { CreateBatchSchema, UpdateBatchSchema, FilterBatchSchema } = require('../schemas/batch.schema.js')
 
 async function createBatch(req, res) {
   try {
@@ -96,7 +96,7 @@ async function deleteBatch(req, res) {
   }
 }
 
-export {
+module.exports = {
   createBatch,
   listBatches,
   getBatch,

@@ -1,6 +1,6 @@
 // src/schemas/batch.schema.js
 
-import { z } from 'zod'
+const { z } = require('zod')
 
 const CreateBatchSchema = z.object({
   code: z.string().min(1).max(50).optional(),
@@ -20,7 +20,7 @@ const FilterBatchSchema = z.object({
   offset: z.coerce.number().int().nonnegative().default(0),
 })
 
-export {
+module.exports = {
   CreateBatchSchema,
   UpdateBatchSchema,
   FilterBatchSchema,

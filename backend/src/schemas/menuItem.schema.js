@@ -1,6 +1,6 @@
 // src/schemas/menuItem.schema.js
 
-import { z } from 'zod'
+const { z } = require('zod')
 
 const CreateMenuItemSchema = z.object({
   name: z.string().min(1).max(200),
@@ -23,7 +23,7 @@ const FilterMenuItemSchema = z.object({
   offset: z.coerce.number().int().nonnegative().default(0),
 })
 
-export {
+module.exports = {
   CreateMenuItemSchema,
   UpdateMenuItemSchema,
   FilterMenuItemSchema,

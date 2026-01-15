@@ -1,6 +1,6 @@
 // src/schemas/container.schema.js
 
-import { z } from 'zod'
+const { z } = require('zod')
 
 const CreateContainerSchema = z.object({
   code: z.string().min(1).max(50),
@@ -21,7 +21,7 @@ const FilterContainerSchema = z.object({
   offset: z.coerce.number().int().nonnegative().default(0),
 })
 
-export {
+module.exports = {
   CreateContainerSchema,
   UpdateContainerSchema,
   FilterContainerSchema,

@@ -1,7 +1,7 @@
 // src/controllers/menuItem.controller.js
 
-import prisma from '../prisma/client.js'
-import { CreateMenuItemSchema, UpdateMenuItemSchema, FilterMenuItemSchema } from '../schemas/menuItem.schema.js'
+const prisma = require('../prisma/client.js')
+const { CreateMenuItemSchema, UpdateMenuItemSchema, FilterMenuItemSchema } = require('../schemas/menuItem.schema.js')
 
 async function createMenuItem(req, res) {
   try {
@@ -97,7 +97,7 @@ async function deleteMenuItem(req, res) {
   }
 }
 
-export {
+module.exports = {
   createMenuItem,
   listMenuItems,
   getMenuItem,

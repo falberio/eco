@@ -1,7 +1,7 @@
 // src/controllers/location.controller.js
 
-import prisma from '../prisma/client.js'
-import { CreateLocationSchema, UpdateLocationSchema, FilterLocationSchema } from '../schemas/location.schema.js'
+const prisma = require('../prisma/client.js')
+const { CreateLocationSchema, UpdateLocationSchema, FilterLocationSchema } = require('../schemas/location.schema.js')
 
 async function createLocation(req, res) {
   try {
@@ -119,7 +119,7 @@ async function deleteLocation(req, res) {
   }
 }
 
-export {
+module.exports = {
   createLocation,
   listLocations,
   getLocation,

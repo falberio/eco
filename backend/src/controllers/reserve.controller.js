@@ -1,8 +1,8 @@
 // src/controllers/reserve.controller.js
 // Lógica de negocio para Reserves (CRUD + validaciones)
 
-import prisma from '../prisma/client.js'
-import { CreateReserveSchema, UpdateReserveSchema, FilterReserveSchema } from '../schemas/reserve.schema.js'
+const prisma = require('../prisma/client.js')
+const { CreateReserveSchema, UpdateReserveSchema, FilterReserveSchema } = require('../schemas/reserve.schema.js')
 
 /**
  * Crear una nueva reserva
@@ -244,7 +244,7 @@ async function consumeReserve(req, res) {
   }
 }
 
-export {
+module.exports = {
   createReserve,
   listReserves,
   getReserve,

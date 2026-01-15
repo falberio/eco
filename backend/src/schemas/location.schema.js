@@ -1,6 +1,6 @@
 // src/schemas/location.schema.js
 
-import { z } from 'zod'
+const { z } = require('zod')
 
 const LocationKindEnum = z.enum(['AREA', 'SECTION', 'POSITION'])
 
@@ -27,7 +27,7 @@ const FilterLocationSchema = z.object({
   offset: z.coerce.number().int().nonnegative().default(0),
 })
 
-export {
+module.exports = {
   CreateLocationSchema,
   UpdateLocationSchema,
   FilterLocationSchema,
