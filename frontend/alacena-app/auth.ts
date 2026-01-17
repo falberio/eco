@@ -17,20 +17,29 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
                 }
 
                 try {
-                    // Aquí se llama al endpoint de login del backend
-                    // Por ahora, simularemos un login simple
-                    // En producción, esto debería validar contra tu backend
-
-                    // Para este ejemplo, aceptamos cualquier email con password "admin"
-                    if (credentials.password === 'admin123') {
-                        return {
-                            id: credentials.email,
+                    // Llamar al endpoint de login del backend
+                    const res = await fetch(`${API_URL}/api/auth/login`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
                             email: credentials.email,
-                            name: credentials.email.split('@')[0],
-                        }
+                            password: credentials.password,
+                        }),
+                    })
+
+                    if (!res.ok) {
+                        return null
                     }
 
-                    return null
+                    const data = await res.json()
+
+                    // Retornar usuario con el token JWT del backend
+                    return {
+                        id: data.user.id,
+                        email: data.user.email,
+                        name: data.user.name,
+                        token: data.token,
+                    }
                 } catch (error) {
                     console.error('Auth error:', error)
                     return null
@@ -46,6 +55,8 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
             if (user) {
                 token.id = user.id
                 token.email = user.email
+                token.name = user.name
+                token.backendToken = (user as any).token
             }
             return token
         },
@@ -53,13 +64,5 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
             if (session.user) {
                 session.user.id = token.id as string
                 session.user.email = token.email as string
-            }
-            return session
-        },
-    },
-    session: {
-        strategy: 'jwt',
-        maxAge: 30 * 24 * 60 * 60, // 30 días
-    },
-    secret: process.env.NEXTAUTH_SECRET,
-})
+                session.user.name = token.name as string
+                ;(session as any).backendToken = token.backendToken

@@ -33,6 +33,17 @@ enum LocationKind {
   SLOT      // sub-sub: "Posición 4", "Hueco 1"
 }
 
+model User {
+  id            String    @id @default(cuid())
+  email         String    @unique
+  name          String?
+  passwordHash  String
+  role          String    @default("user") // "admin" or "user"
+  isActive      Boolean   @default(true)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+}
+
 model Location {
   id          String       @id @default(cuid())
   code        String?      @unique // opcional: "FV", "EF", "ALC3"

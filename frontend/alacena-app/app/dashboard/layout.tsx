@@ -44,8 +44,8 @@ export default function DashboardLayout({
                 key={item.href}
                 href={item.href}
                 className={`block px-6 py-3 border-l-4 transition-colors ${isActive
-                    ? 'border-blue-500 bg-blue-50 text-blue-600 font-semibold'
-                    : 'border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300'
+                  ? 'border-blue-500 bg-blue-50 text-blue-600 font-semibold'
+                  : 'border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300'
                   }`}
               >
                 <span className="mr-2">{item.icon}</span>

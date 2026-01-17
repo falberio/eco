@@ -1,6 +1,8 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { ItemSchema } from '@/lib/validations'
+import { ZodError } from 'zod'
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://alacena-backend.fly.dev'
 
@@ -20,6 +22,7 @@ export default function ItemsPage() {
     const [loading, setLoading] = useState(true)
     const [showForm, setShowForm] = useState(false)
     const [editingId, setEditingId] = useState<string | null>(null)
+    const [errors, setErrors] = useState<Record<string, string>>({})
     const [formData, setFormData] = useState<Partial<Item>>({
         name: '',
         kind: 'PRODUCT',
@@ -48,14 +51,19 @@ export default function ItemsPage() {
 
     async function handleSubmit(e: React.FormEvent) {
         e.preventDefault()
+        setErrors({})
+
         try {
+            // Validar con Zod
+            const validatedData = ItemSchema.parse(formData)
+
             const url = editingId ? `${API_URL}/api/items/${editingId}` : `${API_URL}/api/items`
             const method = editingId ? 'PUT' : 'POST'
 
             const res = await fetch(url, {
                 method,
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(formData),
+                body: JSON.stringify(validatedData),
             })
 
             if (!res.ok) throw new Error('Error al guardar')
@@ -65,8 +73,17 @@ export default function ItemsPage() {
             setShowForm(false)
             setEditingId(null)
         } catch (error) {
-            console.error('Error:', error)
-            alert('Error al guardar item')
+            if (error instanceof ZodError) {
+                const fieldErrors: Record<string, string> = {}
+                error.errors.forEach((err) => {
+                    const path = err.path[0] as string
+                    fieldErrors[path] = err.message
+                })
+                setErrors(fieldErrors)
+            } else {
+                console.error('Error:', error)
+                alert('Error al guardar item')
+            }
         }
     }
 
@@ -108,14 +125,18 @@ export default function ItemsPage() {
             {showForm && (
                 <form onSubmit={handleSubmit} className="bg-white p-6 rounded-lg shadow-lg space-y-4">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <input
-                            type="text"
-                            placeholder="Nombre *"
-                            value={formData.name || ''}
-                            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                            required
-                            className="border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        />
+                        <div>
+                            <input
+                                type="text"
+                                placeholder="Nombre *"
+                                value={formData.name || ''}
+                                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                                className={`w-full border p-2 rounded focus:outline-none focus:ring-2 ${
+                                    errors.name ? 'border-red-500 focus:ring-red-500' : 'border-gray-300 focus:ring-blue-500'
+                                }`}
+                            />
+                            {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
+                        </div>
                         <input
                             type="text"
                             placeholder="Código"

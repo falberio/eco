@@ -1,5 +1,6 @@
 const express = require('express')
 const cors = require('cors')
+const authRoutes = require('./routes/auth.routes.js')
 const reservesRoutes = require('./routes/reserves.routes.js')
 const itemsRoutes = require('./routes/items.routes.js')
 const locationsRoutes = require('./routes/locations.routes.js')
@@ -16,6 +17,9 @@ app.use(express.json());
 app.get('/health', (req, res) => {
     res.json({ status: 'ok', app: 'alacena', timestamp: new Date().toISOString() });
 });
+
+// Rutas de autenticación (públicas)
+app.use('/api/auth', authRoutes);
 
 // Rutas de API
 app.use('/api/reserves', reservesRoutes);
