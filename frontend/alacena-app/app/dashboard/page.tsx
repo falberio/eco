@@ -16,7 +16,7 @@ export default function Dashboard() {
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const apiUrl = process.env.NEXT_PUBLIC_API_URL
+        const apiUrl = typeof window !== 'undefined' ? window.location.origin.includes('localhost') ? 'http://localhost:3001' : 'https://alacena-backend.fly.dev' : 'https://alacena-backend.fly.dev'
         const [reserves, items, locations, menuItems] = await Promise.all([
           fetch(`${apiUrl}/api/reserves?limit=1`).then(r => r.json()),
           fetch(`${apiUrl}/api/items?limit=1`).then(r => r.json()),
