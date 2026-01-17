@@ -6,10 +6,10 @@ const ItemKindEnum = z.enum(['PRODUCT', 'RECIPE'])
 const UnitKindEnum = z.enum(['GRAM', 'ML', 'UNIT'])
 
 const CreateItemSchema = z.object({
-  code: z.string().min(2).max(50),
+  code: z.string().min(2).max(50).optional(),
   name: z.string().min(1).max(200),
   kind: ItemKindEnum,
-  defaultUnit: UnitKindEnum,
+  defaultUnit: UnitKindEnum.optional(),
   category: z.string().max(100).optional(),
   notes: z.string().max(500).optional(),
 })

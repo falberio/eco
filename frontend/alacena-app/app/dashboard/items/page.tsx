@@ -23,6 +23,8 @@ export default function ItemsPage() {
     const [showForm, setShowForm] = useState(false)
     const [editingId, setEditingId] = useState<string | null>(null)
     const [errors, setErrors] = useState<Record<string, string>>({})
+    const [generalError, setGeneralError] = useState<string>('')
+    const [submitLoading, setSubmitLoading] = useState(false)
     const [formData, setFormData] = useState<Partial<Item>>({
         name: '',
         kind: 'PRODUCT',
@@ -52,8 +54,10 @@ export default function ItemsPage() {
     async function handleSubmit(e: React.FormEvent) {
         e.preventDefault()
         setErrors({})
+        setGeneralError('')
 
         try {
+            setSubmitLoading(true)
             // Validar con Zod
             const validatedData = ItemSchema.parse(formData)
 
@@ -66,7 +70,11 @@ export default function ItemsPage() {
                 body: JSON.stringify(validatedData),
             })
 
-            if (!res.ok) throw new Error('Error al guardar')
+            const responseData = await res.json()
+
+            if (!res.ok) {
+                throw new Error(responseData.error || responseData.message || 'Error al guardar')
+            }
 
             await fetchItems()
             setFormData({ name: '', kind: 'PRODUCT', code: '', category: '', notes: '' })
@@ -80,10 +88,14 @@ export default function ItemsPage() {
                     fieldErrors[path] = err.message
                 })
                 setErrors(fieldErrors)
+                setGeneralError('Por favor completa todos los campos requeridos')
             } else {
+                const errorMsg = error instanceof Error ? error.message : 'Error desconocido'
                 console.error('Error:', error)
-                alert('Error al guardar item')
+                setGeneralError(`❌ ${errorMsg}`)
             }
+        } finally {
+            setSubmitLoading(false)
         }
     }
 
@@ -96,12 +108,16 @@ export default function ItemsPage() {
     async function handleDelete(id: string) {
         if (confirm('¿Estás seguro?')) {
             try {
+                setGeneralError('')
                 const res = await fetch(`${API_URL}/api/items/${id}`, { method: 'DELETE' })
-                if (!res.ok) throw new Error('Error al eliminar')
+                const responseData = await res.json()
+                
+                if (!res.ok) throw new Error(responseData.error || 'Error al eliminar')
                 await fetchItems()
             } catch (error) {
+                const errorMsg = error instanceof Error ? error.message : 'Error desconocido'
                 console.error('Error:', error)
-                alert('Error al eliminar')
+                setGeneralError(`❌ ${errorMsg}`)
             }
         }
     }
@@ -115,12 +131,19 @@ export default function ItemsPage() {
                         setShowForm(!showForm)
                         setEditingId(null)
                         setFormData({ name: '', kind: 'PRODUCT', code: '', category: '', notes: '' })
+                        setGeneralError('')
                     }}
                     className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
                 >
                     {showForm ? 'Cancelar' : '+ Nuevo Item'}
                 </button>
             </div>
+
+            {generalError && (
+                <div className="bg-red-50 border border-red-200 p-4 rounded text-red-800">
+                    {generalError}
+                </div>
+            )}
 
             {showForm && (
                 <form onSubmit={handleSubmit} className="bg-white p-6 rounded-lg shadow-lg space-y-4">
@@ -171,12 +194,27 @@ export default function ItemsPage() {
                         rows={3}
                     />
 
-                    <button
-                        type="submit"
-                        className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition"
-                    >
-                        {editingId ? 'Actualizar' : 'Crear'} Item
-                    </button>
+                    <div className="flex gap-2">
+                        <button
+                            type="submit"
+                            disabled={submitLoading}
+                            className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition disabled:opacity-50 disabled:cursor-not-allowed"
+                        >
+                            {submitLoading ? 'Guardando...' : (editingId ? 'Actualizar' : 'Crear')} Item
+                        </button>
+                        <button
+                            type="button"
+                            onClick={() => {
+                                setShowForm(false)
+                                setEditingId(null)
+                                setFormData({ name: '', kind: 'PRODUCT', code: '', category: '', notes: '' })
+                                setGeneralError('')
+                            }}
+                            className="px-4 py-2 bg-gray-400 text-white rounded hover:bg-gray-500 transition"
+                        >
+                            Cancelar
+                        </button>
+                    </div>
                 </form>
             )}
 
