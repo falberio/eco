@@ -1,19 +1,7 @@
-import 'dotenv/config'
-import pkg from '@prisma/client'
-const { PrismaClient } = pkg
-import * as adapterPkg from '@prisma/adapter-pg'
-const { PrismaPg } = adapterPkg
-import pgPkg from 'pg'
-const { Pool } = pgPkg
+require('dotenv').config()
+const { PrismaClient } = require('@prisma/client')
 
-const connectionString = process.env.DATABASE_URL
-const pool = new Pool({ 
-  connectionString,
-  ssl: { rejectUnauthorized: false }
-})
-const adapter = new PrismaPg(pool)
-
-const prisma = new PrismaClient({ adapter })
+const prisma = new PrismaClient()
 
 async function main() {
     // Location
@@ -39,7 +27,7 @@ async function main() {
 
     // MenuItem - check if exists by name + itemId
     const existingMenuItem = await prisma.menuItem.findFirst({
-        where: { 
+        where: {
             name: 'Guiso del día',
             itemId: item.id
         }
@@ -47,10 +35,10 @@ async function main() {
 
     if (!existingMenuItem) {
         await prisma.menuItem.create({
-            data: { 
-                name: 'Guiso del día', 
-                itemId: item.id, 
-                section: 'Platos' 
+            data: {
+                name: 'Guiso del día',
+                itemId: item.id,
+                section: 'Platos'
             }
         })
     }
