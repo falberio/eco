@@ -8,6 +8,8 @@ primary_region = "gru"
 [env]
   NODE_ENV = "production"
   PORT = "3001"
+  DATABASE_URL = "postgresql://postgres:DjDK6YNUopieqRGW@[2600:1f18:2e13:9d1c:faba:208:6f00:de21]:5432/postgres?schema=public&sslmode=disable"
+  JWT_SECRET = "your-super-secret-jwt-key-change-in-production"
 
 [[services]]
   internal_port = 3001
