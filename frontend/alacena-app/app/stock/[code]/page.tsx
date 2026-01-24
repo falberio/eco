@@ -12,11 +12,20 @@ export default function StockUpdatePage() {
     const [loading, setLoading] = useState(true)
     const [item, setItem] = useState<string>('')
     const [currentWeight, setCurrentWeight] = useState<number>(0)
+    const [tare, setTare] = useState<number>(0)
     const [reserveId, setReserveId] = useState<string>('')
-    const [newWeight, setNewWeight] = useState('')
+    const [totalWeight, setTotalWeight] = useState('')
     const [saving, setSaving] = useState(false)
     const [message, setMessage] = useState('')
     const [error, setError] = useState('')
+
+    // Calcular peso neto a partir del peso total
+    const calculateNetWeight = (total: number): number => {
+        return Math.max(0, total - tare)
+    }
+
+    // Peso neto actual mostrado
+    const currentNetWeight = totalWeight ? calculateNetWeight(parseInt(totalWeight)) : currentWeight
 
     useEffect(() => {
         if (!containerCode) return
@@ -40,6 +49,10 @@ export default function StockUpdatePage() {
                     return
                 }
 
+                // Obtener la tara del tipo de frasco
+                const containerTare = container.type?.tareWeight_g || 0
+                setTare(containerTare)
+
                 const reserve = reservesData.data?.find(
                     (r: any) => r.container?.code === containerCode && r.netWeight_g !== null
                 )
@@ -52,7 +65,8 @@ export default function StockUpdatePage() {
                 setReserveId(reserve.id)
                 setItem(reserve.item?.name || '')
                 setCurrentWeight(reserve.netWeight_g || 0)
-                setNewWeight(String(reserve.netWeight_g || 0))
+                // Inicializar con el peso total (neto + tara)
+                setTotalWeight(String((reserve.netWeight_g || 0) + containerTare))
             } catch (err) {
                 console.error('Error:', err)
                 setError('Error al cargar datos')
@@ -73,22 +87,25 @@ export default function StockUpdatePage() {
             setMessage('')
             setError('')
 
-            const weight = parseInt(newWeight)
-            if (isNaN(weight) || weight < 0) {
+            const total = parseInt(totalWeight)
+            if (isNaN(total) || total < 0) {
                 setError('Peso inválido')
                 setSaving(false)
                 return
             }
 
+            // Calcular peso neto restando la tara
+            const netWeight = calculateNetWeight(total)
+
             const res = await fetch(`${API_URL}/api/reserves/${reserveId}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ netWeight_g: weight })
+                body: JSON.stringify({ netWeight_g: netWeight })
             })
 
             if (!res.ok) throw new Error('Error al actualizar')
 
-            setCurrentWeight(weight)
+            setCurrentWeight(netWeight)
             setMessage('✅ Stock actualizado correctamente')
         } catch (err) {
             console.error('Error:', err)
@@ -138,7 +155,11 @@ export default function StockUpdatePage() {
                     <h2 className="font-semibold text-gray-700 mb-3">Contenido Actual</h2>
                     <div className="space-y-2">
                         <p className="text-2xl font-bold text-orange-600">{item}</p>
-                        <p className="text-3xl font-bold text-gray-800">{currentWeight}g</p>
+                        <div className="flex items-baseline gap-3">
+                            <p className="text-3xl font-bold text-gray-800">{currentWeight}g</p>
+                            <p className="text-sm text-gray-500">neto</p>
+                        </div>
+                        <p className="text-xs text-gray-400">+ Tara: {tare}g = {currentWeight + tare}g total</p>
                     </div>
                 </div>
 
@@ -146,24 +167,34 @@ export default function StockUpdatePage() {
                 <form onSubmit={handleUpdate} className="space-y-6">
                     <div>
                         <label className="block text-sm font-medium text-gray-700 mb-2">
-                            Nuevo Peso (gramos)
+                            Peso Total del Frasco (gramos)
                         </label>
                         <input
                             type="number"
-                            value={newWeight}
-                            onChange={(e) => setNewWeight(e.target.value)}
+                            value={totalWeight}
+                            onChange={(e) => setTotalWeight(e.target.value)}
                             className="w-full px-4 py-3 text-2xl text-center border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                             placeholder="0"
                             disabled={saving}
                             autoFocus
                         />
+                        {totalWeight && (
+                            <div className="mt-2 text-center">
+                                <p className="text-sm text-gray-600">
+                                    Peso neto: <span className="font-bold text-orange-600">{currentNetWeight}g</span>
+                                </p>
+                                <p className="text-xs text-gray-400">
+                                    ({totalWeight}g total - {tare}g tara)
+                                </p>
+                            </div>
+                        )}
                     </div>
 
                     {/* Quick Buttons */}
                     <div className="grid grid-cols-3 gap-2">
                         <button
                             type="button"
-                            onClick={() => setNewWeight('0')}
+                            onClick={() => setTotalWeight(tare.toString())}
                             className="px-4 py-2 bg-red-100 text-red-700 rounded-lg hover:bg-red-200 transition text-sm font-medium"
                             disabled={saving}
                         >
@@ -171,7 +202,7 @@ export default function StockUpdatePage() {
                         </button>
                         <button
                             type="button"
-                            onClick={() => setNewWeight(Math.round(currentWeight / 2).toString())}
+                            onClick={() => setTotalWeight((Math.round(currentWeight / 2) + tare).toString())}
                             className="px-4 py-2 bg-yellow-100 text-yellow-700 rounded-lg hover:bg-yellow-200 transition text-sm font-medium"
                             disabled={saving}
                         >
@@ -179,7 +210,7 @@ export default function StockUpdatePage() {
                         </button>
                         <button
                             type="button"
-                            onClick={() => setNewWeight(currentWeight.toString())}
+                            onClick={() => setTotalWeight((currentWeight + tare).toString())}
                             className="px-4 py-2 bg-green-100 text-green-700 rounded-lg hover:bg-green-200 transition text-sm font-medium"
                             disabled={saving}
                         >
@@ -201,7 +232,7 @@ export default function StockUpdatePage() {
 
                     <button
                         type="submit"
-                        disabled={saving || newWeight === '' || parseInt(newWeight) === currentWeight}
+                        disabled={saving || totalWeight === '' || calculateNetWeight(parseInt(totalWeight || '0')) === currentWeight}
                         className="w-full py-4 bg-orange-600 text-white rounded-lg font-semibold text-lg hover:bg-orange-700 transition disabled:opacity-50 disabled:cursor-not-allowed shadow-lg"
                     >
                         {saving ? 'Guardando...' : 'Actualizar Stock'}
