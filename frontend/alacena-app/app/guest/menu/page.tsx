@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://alacena-backend.fly.dev'
 
@@ -121,37 +122,37 @@ export default function GuestMenu() {
   // Mapeo de nombres de platos a rutas de imágenes
   function getImagePath(itemName: string, section: string): string | null {
     const name = itemName.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-    
+
     const imageMap: Record<string, string> = {
       // Desayunos
       'tostadas con manteca y mermelada': '/images/menu/desayunos/tostadas-mermelada.jpg',
       'huevos revueltos': '/images/menu/desayunos/huevos-revueltos.jpg',
       'bowl de yogurt, avena y nueces': '/images/menu/desayunos/bowl-yogurt-avena.webp',
-      
+
       // Carnes
       'albondigas con arroz': '/images/menu/carnes/albondigas-arroz.jpeg',
       'albondigas con pure': '/images/menu/carnes/albondigas-pure.webp',
       'pollo con arroz': '/images/menu/carnes/pollo-arroz.jpeg',
       'pollo con pure': '/images/menu/carnes/pollo-pure.jpeg',
-      
+
       // Pastas
       'fetuccini': '/images/menu/pastas/fetuccini.jpeg',
       'spaguetti': '/images/menu/pastas/spaguetti.jpg',
       'lasagna': '/images/menu/pastas/lasagna.jpeg',
       'ñoquis': '/images/menu/pastas/noquis.jpg',
       'noquis': '/images/menu/pastas/noquis.jpg',
-      
+
       // Salsas
       'bolognesa': '/images/menu/salsas/bolognesa.jpeg',
       'salsa blanca': '/images/menu/salsas/salsa-blanca.jpg',
       'pesto de albahaca': '/images/menu/salsas/pesto-albahaca.jpg',
       'pesto de tomates secos': '/images/menu/salsas/pesto-tomates-secos.jpg',
-      
+
       // Bar
       'gin tonic': '/images/menu/bar/gin-tonic.jpeg',
       'campari': '/images/menu/bar/campari.avif'
     };
-    
+
     return imageMap[name] || null;
   }
 
@@ -365,6 +366,30 @@ export default function GuestMenu() {
             </p>
           </div>
         </div>
+      </div>
+
+      {/* Botones flotantes de acceso rápido */}
+      <div className="fixed bottom-6 right-6 flex flex-col gap-3 z-50">
+        <Link href="/stock-control">
+          <button className="group bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white rounded-full p-4 shadow-2xl hover:shadow-amber-500/50 transition-all duration-300 hover:scale-110">
+            <div className="flex items-center gap-2">
+              <span className="text-2xl">📋</span>
+              <span className="hidden group-hover:inline-block font-semibold text-sm whitespace-nowrap">
+                Control de Stock
+              </span>
+            </div>
+          </button>
+        </Link>
+        <Link href="/qr-codes">
+          <button className="group bg-gradient-to-r from-slate-600 to-slate-700 hover:from-slate-700 hover:to-slate-800 text-white rounded-full p-4 shadow-2xl hover:shadow-slate-500/50 transition-all duration-300 hover:scale-110">
+            <div className="flex items-center gap-2">
+              <span className="text-2xl">📱</span>
+              <span className="hidden group-hover:inline-block font-semibold text-sm whitespace-nowrap">
+                Códigos QR
+              </span>
+            </div>
+          </button>
+        </Link>
       </div>
 
       <style jsx global>{`
