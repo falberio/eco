@@ -89,6 +89,8 @@
    - Sistema de impresión con ventana formateada
    - Grid responsivo para múltiples QR
    - Instrucciones de uso paso a paso
+   - **FIX SSR:** Movido `window.location.origin` a `useEffect` para evitar error en build
+   - Loading state mientras se generan los QR codes
 
 ---
 
@@ -151,6 +153,14 @@
 
 **Estado:** ✅ Exitoso
 
+### Deploy 4: Fix SSR
+**Commit:**
+- `fix: resuelve error SSR en página QR - mueve window.location a useEffect`
+
+**Problema:** `ReferenceError: window is not defined` durante build de Vercel
+**Solución:** Mover acceso a `window.location.origin` dentro de `useEffect` para ejecutar solo en cliente
+**Estado:** ✅ Exitoso
+
 ---
 
 ## 🗄️ Cambios en Base de Datos
@@ -202,7 +212,14 @@ node prisma/update-jar-types.js
 
 ### Bugs Resueltos
 - ✅ Error de tipos TypeScript en módulo qrcode
+- ✅ Error SSR con window.location.origin en build de Vercel
 - ✅ Navegación manual tediosa para actualizar stock
+
+### Deploys Realizados
+- ✅ Deploy 1: Sistema de taras (backend + frontend)
+- ✅ Deploy 2: Control masivo + QR codes
+- ✅ Deploy 3: Fix tipos TypeScript (@types/qrcode)
+- ✅ Deploy 4: Fix SSR (window.location en useEffect)
 
 ---
 
@@ -295,10 +312,16 @@ node prisma/update-jar-types.js
 ## 🔗 URLs de Acceso
 
 ### Producción
-- **Control de Stock**: https://alacena-blush.vercel.app/stock-control
-- **Códigos QR**: https://alacena-blush.vercel.app/qr-codes
-- **Menú (con botones)**: https://alacena-blush.vercel.app/guest/menu
-- **Stock Individual**: https://alacena-blush.vercel.app/stock/JAR-XXX
+- **Control de Stock Masivo**: https://alacena-blush.vercel.app/stock-control
+- **Códigos QR (Imprimir)**: https://alacena-blush.vercel.app/qr-codes
+- **Menú (con botones flotantes)**: https://alacena-blush.vercel.app/guest/menu
+- **Stock Individual (QR)**: https://alacena-blush.vercel.app/stock/JAR-XXX
+
+### Acceso Rápido
+**3 formas de acceder al control masivo:**
+1. **Botón flotante 📋** en esquina inferior derecha del menú
+2. **URL directa**: /stock-control
+3. **QR Code**: Ir a /qr-codes → Imprimir → Escanear
 
 ### Local (Desarrollo)
 - Frontend: http://localhost:3001
