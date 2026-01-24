@@ -43,6 +43,7 @@ export default function GuestMenu() {
   const [activeFilter, setActiveFilter] = useState<DietFilter>('Todos')
   const [activeSection, setActiveSection] = useState<string>('')
   const sectionRefs = useRef<{ [key: string]: HTMLDivElement | null }>({})
+  const navContainerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     fetchMenu()
@@ -51,13 +52,39 @@ export default function GuestMenu() {
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
+        // Buscar la sección más visible
+        let maxRatio = 0
+        let mostVisibleSection = ''
+
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id)
+          if (entry.intersectionRatio > maxRatio) {
+            maxRatio = entry.intersectionRatio
+            mostVisibleSection = entry.target.id
           }
         })
+
+        if (mostVisibleSection && maxRatio > 0.1) {
+          setActiveSection(mostVisibleSection)
+          
+          // Auto-scroll de la barra de navegación
+          if (navContainerRef.current) {
+            const activeButton = navContainerRef.current.querySelector(
+              `button[data-section="${mostVisibleSection}"]`
+            )
+            if (activeButton) {
+              activeButton.scrollIntoView({
+                behavior: 'smooth',
+                block: 'nearest',
+                inline: 'center'
+              })
+            }
+          }
+        }
       },
-      { threshold: 0.5, rootMargin: '-100px 0px -50% 0px' }
+      { 
+        threshold: [0, 0.1, 0.25, 0.5, 0.75, 1],
+        rootMargin: '-20% 0px -60% 0px'
+      }
     )
 
     Object.values(sectionRefs.current).forEach((ref) => {
@@ -101,9 +128,10 @@ export default function GuestMenu() {
   const scrollToSection = (sectionId: string) => {
     const element = sectionRefs.current[sectionId]
     if (element) {
-      const offset = 180
+      // Altura de la barra de navegación (más espacio en móvil)
+      const navHeight = window.innerWidth < 768 ? 150 : 180
       const elementPosition = element.getBoundingClientRect().top
-      const offsetPosition = elementPosition + window.pageYOffset - offset
+      const offsetPosition = elementPosition + window.pageYOffset - navHeight
 
       window.scrollTo({
         top: offsetPosition,
@@ -160,11 +188,12 @@ export default function GuestMenu() {
       {/* Navegación Horizontal Sticky */}
       <div className="sticky top-0 z-50 bg-slate-900/95 backdrop-blur-lg border-b border-amber-500/30 shadow-xl">
         <div className="max-w-7xl mx-auto">
-          <div className="overflow-x-auto scrollbar-hide">
+          <div className="overflow-x-auto scrollbar-hide" ref={navContainerRef}>
             <div className="flex gap-2 px-4 py-3 min-w-max">
               {orderedSections.map((section) => (
                 <button
                   key={section}
+                  data-section={section}
                   onClick={() => scrollToSection(section)}
                   className={`px-4 py-2 rounded-lg font-medium whitespace-nowrap transition-all duration-200 ${
                     activeSection === section
