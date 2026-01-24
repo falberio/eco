@@ -7,6 +7,7 @@ const locationsRoutes = require('./routes/locations.routes.js')
 const menuItemsRoutes = require('./routes/menuItems.routes.js')
 const containersRoutes = require('./routes/containers.routes.js')
 const batchesRoutes = require('./routes/batches.routes.js')
+const qrRoutes = require('./routes/qr.routes.js')
 
 const app = express();
 
@@ -25,6 +26,9 @@ app.get('/health', (req, res) => {
 
 // Rutas de autenticación (públicas)
 app.use('/api/auth', authRoutes);
+
+// Rutas públicas (QR codes)
+app.use('/api/qr', qrRoutes);
 
 // Rutas de API
 app.use('/api/reserves', reservesRoutes);

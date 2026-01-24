@@ -11,6 +11,7 @@ const menuItems = [
   { href: '/dashboard/locations', label: '📍 Ubicaciones', icon: '📍' },
   { href: '/dashboard/reserves', label: '📋 Reservas', icon: '📋' },
   { href: '/dashboard/menu', label: '🍽️ Menú', icon: '🍽️' },
+  { href: '/dashboard/qr', label: '📱 Códigos QR', icon: '📱' },
 ]
 
 export default function DashboardLayout({
