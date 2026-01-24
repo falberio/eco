@@ -17,6 +17,28 @@ interface MenuItem {
   }
 }
 
+// Orden de secciones para el menú
+const SECTION_ORDER = [
+  'Desayuno',
+  'Cafetería',
+  'Tés',
+  'Platos Principales',
+  'Tartas',
+  'Pastas',
+  'Salsas y Acompañamientos',
+  'De la Alacena',
+  'Tragos Clásicos',
+  'Vodka',
+  'Aperitivos',
+  'Clásicos Argentinos',
+  'Whiskies',
+  'Destilados',
+  'Tropicales',
+  'Cafés Especiales',
+  'Vinos',
+  'Bebidas'
+];
+
 export default function GuestMenu() {
   const [menuItems, setMenuItems] = useState<MenuItem[]>([])
   const [loading, setLoading] = useState(true)
@@ -41,7 +63,7 @@ export default function GuestMenu() {
     }
   }
 
-  // Agrupar por sección
+  // Agrupar por sección y ordenar según SECTION_ORDER
   const groupedMenu = menuItems.reduce((acc, item) => {
     const section = item.section || 'Otros'
     if (!acc[section]) acc[section] = []
@@ -49,77 +71,105 @@ export default function GuestMenu() {
     return acc
   }, {} as Record<string, MenuItem[]>)
 
+  const orderedSections = SECTION_ORDER.filter(section => groupedMenu[section])
+
+  // Emojis por sección
+  const sectionEmojis: Record<string, string> = {
+    'Desayuno': '🥐',
+    'Cafetería': '☕',
+    'Tés': '🍵',
+    'Platos Principales': '🍽️',
+    'Tartas': '🥧',
+    'Pastas': '🍝',
+    'Salsas y Acompañamientos': '🥣',
+    'De la Alacena': '🏺',
+    'Tragos Clásicos': '🍸',
+    'Vodka': '🧊',
+    'Aperitivos': '🥃',
+    'Clásicos Argentinos': '🇦🇷',
+    'Whiskies': '🥃',
+    'Destilados': '🍾',
+    'Tropicales': '🥥',
+    'Cafés Especiales': '☕',
+    'Vinos': '🍷',
+    'Bebidas': '🥤'
+  }
+
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-teal-100 flex items-center justify-center">
+      <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-16 w-16 border-b-4 border-emerald-600 mx-auto mb-4"></div>
-          <p className="text-gray-600 text-lg">Cargando menú...</p>
+          <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-amber-400 mx-auto mb-4"></div>
+          <p className="text-amber-100 text-lg">Cargando menú...</p>
         </div>
       </div>
     )
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-100">
-      {/* Header */}
-      <div className="bg-gradient-to-r from-emerald-600 to-teal-600 text-white py-12 px-4 shadow-xl">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="text-6xl mb-4">🍽️</div>
-          <h1 className="text-5xl font-bold mb-2">Menú Alacena</h1>
-          <p className="text-emerald-100 text-lg">Disponible para preparar ahora</p>
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+      {/* Header Elegante */}
+      <div className="bg-gradient-to-r from-amber-600 via-amber-500 to-amber-600 text-white py-16 px-4">
+        <div className="max-w-5xl mx-auto text-center">
+          <div className="text-7xl mb-6">🍽️</div>
+          <h1 className="text-5xl md:text-6xl font-serif font-bold mb-4 tracking-wide">
+            La Alacena
+          </h1>
+          <div className="w-24 h-1 bg-white mx-auto mb-4"></div>
+          <p className="text-xl md:text-2xl text-amber-50 font-light">
+            Menú del Día
+          </p>
         </div>
       </div>
 
-      {/* Menu Content */}
-      <div className="max-w-4xl mx-auto px-4 py-8">
-        {Object.keys(groupedMenu).length === 0 ? (
-          <div className="bg-white rounded-2xl shadow-xl p-12 text-center">
+      {/* Contenido del Menú */}
+      <div className="max-w-5xl mx-auto px-4 py-12">
+        {orderedSections.length === 0 ? (
+          <div className="bg-white/95 backdrop-blur rounded-2xl shadow-2xl p-12 text-center">
             <div className="text-6xl mb-4">📋</div>
-            <h2 className="text-2xl font-bold text-gray-800 mb-2">Menú en preparación</h2>
-            <p className="text-gray-600">
+            <h2 className="text-2xl font-bold text-slate-800 mb-2">Menú en preparación</h2>
+            <p className="text-slate-600">
               Estamos actualizando nuestra carta. Vuelve pronto.
             </p>
           </div>
         ) : (
-          <div className="space-y-8">
-            {Object.entries(groupedMenu).map(([section, items]) => (
-              <div key={section} className="bg-white rounded-2xl shadow-xl overflow-hidden">
-                {/* Section Header */}
-                <div className="bg-gradient-to-r from-emerald-500 to-teal-500 px-6 py-4">
-                  <h2 className="text-2xl font-bold text-white">{section}</h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            {orderedSections.map((section) => (
+              <div 
+                key={section} 
+                className="bg-white/95 backdrop-blur rounded-2xl shadow-2xl overflow-hidden hover:shadow-amber-500/20 transition-all duration-300"
+              >
+                {/* Header de Sección */}
+                <div className="bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-4">
+                  <div className="flex items-center gap-3">
+                    <span className="text-3xl">{sectionEmojis[section] || '📋'}</span>
+                    <h2 className="text-2xl font-serif font-bold">
+                      {section}
+                    </h2>
+                  </div>
                 </div>
 
-                {/* Items */}
-                <div className="divide-y divide-gray-100">
-                  {items.map((menuItem) => (
-                    <div
-                      key={menuItem.id}
-                      className="px-6 py-5 hover:bg-emerald-50 transition-colors"
+                {/* Items de la Sección */}
+                <div className="p-6 space-y-3">
+                  {groupedMenu[section].map((item, idx) => (
+                    <div 
+                      key={item.id}
+                      className="group relative"
                     >
-                      <div className="flex items-center justify-between">
+                      <div className="flex items-start gap-3">
+                        <span className="text-amber-600 font-bold mt-1 text-sm">
+                          {(idx + 1).toString().padStart(2, '0')}
+                        </span>
                         <div className="flex-1">
-                          <h3 className="text-xl font-semibold text-gray-800 mb-1">
-                            {menuItem.name}
+                          <h3 className="text-lg font-medium text-slate-800 group-hover:text-amber-600 transition-colors">
+                            {item.name}
                           </h3>
-                          <div className="flex items-center gap-3">
-                            <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${menuItem.item.kind === 'RECIPE'
-                                ? 'bg-purple-100 text-purple-700'
-                                : 'bg-blue-100 text-blue-700'
-                              }`}>
-                              {menuItem.item.kind === 'RECIPE' ? '🍲 Receta' : '🥗 Producto'}
-                            </span>
-                            {menuItem.item.category && (
-                              <span className="text-sm text-gray-500">
-                                {menuItem.item.category}
-                              </span>
-                            )}
-                          </div>
-                        </div>
-                        <div className="text-4xl ml-4">
-                          {getEmojiForCategory(menuItem.item.category || menuItem.section || '')}
                         </div>
                       </div>
+                      {/* Línea decorativa */}
+                      {idx < groupedMenu[section].length - 1 && (
+                        <div className="mt-3 border-b border-slate-200"></div>
+                      )}
                     </div>
                   ))}
                 </div>
@@ -129,50 +179,14 @@ export default function GuestMenu() {
         )}
 
         {/* Footer */}
-        <div className="mt-12 text-center">
-          <div className="bg-white rounded-2xl shadow-lg px-8 py-6 inline-block">
-            <p className="text-gray-600 mb-2">¿Tienes alguna preferencia o alergia?</p>
-            <p className="text-sm text-gray-500">Háznoslo saber antes de preparar</p>
+        <div className="text-center mt-16 pb-8">
+          <div className="inline-block bg-white/90 backdrop-blur rounded-full px-8 py-3 shadow-lg">
+            <p className="text-slate-600 font-medium">
+              ✨ Todos los platos preparados con amor ✨
+            </p>
           </div>
         </div>
       </div>
-
-      {/* Decorative Footer */}
-      <div className="mt-16 py-8 bg-gradient-to-r from-emerald-600 to-teal-600">
-        <div className="max-w-4xl mx-auto px-4 text-center text-white">
-          <p className="text-lg font-medium">Alacena - Sistema de Gestión de Cocina</p>
-          <p className="text-emerald-100 text-sm mt-2">Preparado con ❤️</p>
-        </div>
-      </div>
     </div>
-  )
-}
-
-function getEmojiForCategory(category: string): string {
-  const lower = category.toLowerCase()
-  if (lower.includes('pasta')) return '🍝'
-  if (lower.includes('postre') || lower.includes('dulce')) return '🍰'
-  if (lower.includes('bebida') || lower.includes('trago')) return '🍹'
-  if (lower.includes('ensalada')) return '🥗'
-  if (lower.includes('sopa')) return '🍲'
-  if (lower.includes('carne')) return '🥩'
-  if (lower.includes('pescado')) return '🐟'
-  if (lower.includes('veggie') || lower.includes('verdura')) return '🥦'
-  if (lower.includes('desayuno')) return '🥐'
-  return '🍽️'
-}
-                  </p >
-                )}
-              </div >
-            ))}
-          </div >
-        )}
-      </main >
-
-  {/* Footer */ }
-  < footer className = "bg-alacena-900 text-white text-center p-6 mt-12" >
-    <p className="text-alacena-200">🫙 ALACENA - Tu cocina inteligente</p>
-      </footer >
-    </div >
   )
 }
