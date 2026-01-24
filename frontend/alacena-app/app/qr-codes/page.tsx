@@ -120,10 +120,10 @@ export default function QRCodesPage() {
                                 <div className="text-6xl mb-2">{qr.icon}</div>
                                 <h2 className="text-2xl font-bold text-white">{qr.label}</h2>
                             </div>
-                            
+
                             <div className="p-6">
                                 <p className="text-gray-600 text-center mb-6">{qr.description}</p>
-                                
+
                                 <div className="flex justify-center mb-6">
                                     <canvas id={qr.id} className="border-4 border-gray-100 rounded-lg"></canvas>
                                 </div>
