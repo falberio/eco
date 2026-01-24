@@ -47,10 +47,31 @@ git push
 
 | Componente | Status | Última actualización |
 |------------|--------|---------------------|
-| Frontend | ✅ Online | Hoy 22:00 |
-| Backend | ✅ Online | Hoy 22:00 |
-| Base de datos | ✅ Conectada | Hoy 22:00 |
-| Autenticación | ✅ Funcional | Hoy 22:00 |
+| Frontend | ✅ Online | 24-01-2026 |
+| Backend | ✅ Online | 24-01-2026 |
+| Base de datos | ✅ Conectada | 24-01-2026 |
+| Autenticación | ✅ Funcional | 24-01-2026 |
+| Sistema de Taras | ✅ Implementado | 24-01-2026 |
+| Control Stock Masivo | ✅ Funcional | 24-01-2026 |
+| Códigos QR | ✅ Disponible | 24-01-2026 |
+
+### 🎯 Nuevas Funcionalidades (24 Enero 2026)
+
+**🏺 Sistema de Taras Automáticas**
+- Usuario pesa frasco completo → App calcula peso neto automáticamente
+- 4 tipos de frascos con taras: 637g, 692g, 746g, 929g
+- Cálculo en tiempo real visible al usuario
+
+**📋 Control de Stock Masivo**
+- Recorre 33 frascos en secuencia automática
+- Tecla Enter para avance rápido
+- Botón "OK sin cambios" para frascos sin modificación
+- Barra de progreso visual
+
+**📱 Códigos QR**
+- Genera QR imprimible para control masivo
+- Función de copiar URL e imprimir
+- Acceso desde botones flotantes en menú
 
 ### 🆘 Algo no funciona?
 
@@ -114,5 +135,6 @@ alacena/
 
 ---
 
-**Última actualización:** 17-01-2026  
+**Última actualización:** 24-01-2026  
+**Versión:** v1.1 - Sistema de Taras y Control Masivo  
 **Próxima acción:** Abre [GETTING_STARTED.md](./GETTING_STARTED.md)

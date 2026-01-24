@@ -6,6 +6,8 @@
 |-------|------|--------|-----------|--------|
 | [2026-01-16](./2026-01-16--deploy-completo.md) | 10:15-17:45 | Deploy Completo a Producción - Fly.io | Frontend + Backend en la nube (Vercel + Fly.io), accesible desde celular | ✅ Completado |
 | [2026-01-17](./2026-01-17--dashboard-y-auth.md) | 18:30-22:00 | Dashboard Completo + Autenticación JWT | 4 páginas CRUD, login/register con backend, validaciones Zod | ✅ Completado |
+| [2026-01-24](./2026-01-24--deploy-completo-v1.md) | Mañana | Deploy v1.0 Completo | Primera versión 100% online, migración a PostgreSQL, fixes críticos | ✅ Completado |
+| [2026-01-24](./2026-01-24--sistema-taras-control-stock.md) | Tarde | Sistema de Taras y Control Masivo | Cálculo automático de tara, control secuencial de stock, códigos QR | ✅ Completado |
 
 ---
 

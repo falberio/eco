@@ -1,14 +1,17 @@
-# 🧺 ALACENA - v1.0 EN PRODUCCIÓN ✅
+# 🧺 ALACENA - v1.1 EN PRODUCCIÓN ✅
 
-**Última Actualización**: 24 Enero 2026  
-**Estado**: 🚀 COMPLETAMENTE DESPLEGADO EN LA NUBE  
+**Última Actualización**: 24 Enero 2026 (Tarde)  
+**Estado**: 🚀 SISTEMA DE TARAS Y CONTROL MASIVO IMPLEMENTADO  
 **Arquitectura**: Fly.io + Supabase + Vercel
 
 ---
 
-## 🎉 HITO: Primera Versión Totalmente Online
+## 🎉 NUEVO: Sistema de Taras y Control de Stock Masivo
 
-### URLs de Producción
+### URLs de Acceso Rápido
+- **Control de Stock Masivo:** https://alacena-blush.vercel.app/stock-control
+- **Códigos QR:** https://alacena-blush.vercel.app/qr-codes
+- **Menú con botones flotantes:** https://alacena-blush.vercel.app/guest/menu
 - **Frontend (Público):** https://alacena-blush.vercel.app
 - **Backend (API):** https://alacena-backend.fly.dev
 - **Database:** Supabase PostgreSQL (db.orqnbchxoqalghcaaajw.supabase.co)
@@ -19,7 +22,47 @@
 
 ---
 
-## ✅ Completado en esta sesión (24 Enero)
+## ✅ Completado en esta sesión (24 Enero - Tarde)
+
+### 🏺 Sistema de Taras Automáticas
+- ✅ **4 tipos de frascos configurados** con pesos de tara específicos:
+  - JAR-750-LOW: 637g (frasco 750ml bajo)
+  - JAR-750-HIGH: 692g (frasco 750ml alto)
+  - JAR-1000: 746g (frasco 1000ml)
+  - JAR-1500: 929g (frasco 1500ml)
+- ✅ **Cálculo automático de peso neto**: Usuario ingresa peso total → App resta tara
+- ✅ **33 frascos actualizados** a tipo JAR-750-LOW por defecto
+- ✅ **Feedback visual en tiempo real**: "(694g total - 637g tara) = 57g neto"
+
+### 📋 Control de Stock Masivo
+- ✅ **Recorrido secuencial automático** de todos los frascos (JAR-001 → JAR-033)
+- ✅ **Navegación automática** al siguiente frasco tras actualizar
+- ✅ **Barra de progreso visual** + contador de completados
+- ✅ **Tecla Enter** para avance rápido
+- ✅ **Botón "OK sin cambios"** para frascos sin modificación
+- ✅ **Botón "Volver"** para corregir errores
+- ✅ **Pantalla de finalización** al completar todos los frascos
+
+### 📱 Sistema de Códigos QR
+- ✅ **Generación de QR** para control de stock masivo
+- ✅ **Función de impresión** con diseño optimizado
+- ✅ **Botón copiar URL** al portapapeles
+- ✅ **Instrucciones de uso** incluidas
+
+### 🎨 Mejoras de UX
+- ✅ **Botones flotantes** en menú (📋 Control Stock + 📱 QR Codes)
+- ✅ **Diseño consistente** con gradientes amber/slate
+- ✅ **Responsive** para mobile y desktop
+- ✅ **Autoenfoque** en campos de peso
+
+### 🔧 Fixes Técnicos
+- ✅ **Error TypeScript**: Instalado @types/qrcode
+- ✅ **Script de migración**: update-jar-types.js ejecutado en producción
+- ✅ **3 deploys exitosos**: Taras + Control Masivo + Fix tipos
+
+---
+
+## ✅ Completado en sesión anterior (24 Enero - Mañana)
 
 ### 🚀 Deploy Completo a Producción
 - ✅ **Backend deployado a Fly.io** (alacena-backend.fly.dev)
