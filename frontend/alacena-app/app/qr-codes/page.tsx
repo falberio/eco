@@ -6,32 +6,38 @@ import QRCode from 'qrcode'
 export default function QRCodesPage() {
     const stockControlRef = useRef<HTMLCanvasElement>(null)
     const [copied, setCopied] = useState<string | null>(null)
-
-    const qrCodes = [
-        {
-            id: 'stock-control',
-            label: 'Control de Stock Masivo',
-            url: `${window.location.origin}/stock-control`,
-            description: 'Actualizar todos los frascos en secuencia',
-            icon: '📋',
-            color: 'from-amber-600 to-orange-600'
-        }
-    ]
+    const [qrCodes, setQrCodes] = useState<any[]>([])
 
     useEffect(() => {
-        qrCodes.forEach(qr => {
-            const canvas = document.getElementById(qr.id) as HTMLCanvasElement
-            if (canvas) {
-                QRCode.toCanvas(canvas, qr.url, {
-                    width: 280,
-                    margin: 2,
-                    color: {
-                        dark: '#1f2937',
-                        light: '#ffffff'
-                    }
-                })
+        // Configurar URLs una vez que estamos en el cliente
+        const codes = [
+            {
+                id: 'stock-control',
+                label: 'Control de Stock Masivo',
+                url: `${window.location.origin}/stock-control`,
+                description: 'Actualizar todos los frascos en secuencia',
+                icon: '📋',
+                color: 'from-amber-600 to-orange-600'
             }
-        })
+        ]
+        setQrCodes(codes)
+
+        // Generar QR codes después de un pequeño delay para asegurar que el DOM está listo
+        setTimeout(() => {
+            codes.forEach(qr => {
+                const canvas = document.getElementById(qr.id) as HTMLCanvasElement
+                if (canvas) {
+                    QRCode.toCanvas(canvas, qr.url, {
+                        width: 280,
+                        margin: 2,
+                        color: {
+                            dark: '#1f2937',
+                            light: '#ffffff'
+                        }
+                    })
+                }
+            })
+        }, 100)
     }, [])
 
     const copyUrl = (url: string, id: string) => {
@@ -101,6 +107,17 @@ export default function QRCodesPage() {
             </html>
         `)
         printWindow.document.close()
+    }
+
+    if (qrCodes.length === 0) {
+        return (
+            <div className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800 flex items-center justify-center">
+                <div className="text-center">
+                    <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-amber-400 mx-auto mb-4"></div>
+                    <p className="text-white text-lg">Generando códigos QR...</p>
+                </div>
+            </div>
+        )
     }
 
     return (
