@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect } from 'react'
 import { useParams, useRouter } from 'next/navigation'
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://alacena-backend.fly.dev'
@@ -37,47 +37,50 @@ export default function StockUpdatePage() {
     const [saving, setSaving] = useState(false)
     const [message, setMessage] = useState('')
     const [error, setError] = useState('')
-
-    const fetchContainerData = useCallback(async () => {
-        try {
-            setLoading(true)
-            setError('')
-
-            // Buscar el contenedor por código
-            const containerRes = await fetch(`${API_URL}/api/containers?limit=1000`)
-            const containersData = await containerRes.json()
-            const container = containersData.data?.find((c: Container) => c.code === containerCode)
-
-            if (!container) {
-                setError('Contenedor no encontrado')
-                return
-            }
-
-            // Buscar la reserva activa en ese contenedor
-            const reservesRes = await fetch(`${API_URL}/api/reserves?limit=1000`)
-            const reservesData = await reservesRes.json()
-            const activeReserve = reservesData.data?.find(
-                (r: Reserve) => r.container?.code === containerCode && r.netWeight_g !== null
-            )
-
-            if (!activeReserve) {
-                setError('No hay stock activo en este contenedor')
-                return
-            }
-
-            setReserve(activeReserve)
-            setNewWeight(activeReserve.netWeight_g?.toString() || '')
-        } catch (err) {
-            console.error('Error fetching data:', err)
-            setError('Error al cargar datos')
-        } finally {
-            setLoading(false)
-        }
-    }, [containerCode])
+    const [refreshTrigger, setRefreshTrigger] = useState(0)
 
     useEffect(() => {
+        async function fetchContainerData() {
+            try {
+                setLoading(true)
+                setError('')
+
+                // Buscar el contenedor por código
+                const containerRes = await fetch(`${API_URL}/api/containers?limit=1000`)
+                const containersData = await containerRes.json()
+                const container = containersData.data?.find((c: Container) => c.code === containerCode)
+
+                if (!container) {
+                    setError('Contenedor no encontrado')
+                    setLoading(false)
+                    return
+                }
+
+                // Buscar la reserva activa en ese contenedor
+                const reservesRes = await fetch(`${API_URL}/api/reserves?limit=1000`)
+                const reservesData = await reservesRes.json()
+                const activeReserve = reservesData.data?.find(
+                    (r: Reserve) => r.container?.code === containerCode && r.netWeight_g !== null
+                )
+
+                if (!activeReserve) {
+                    setError('No hay stock activo en este contenedor')
+                    setLoading(false)
+                    return
+                }
+
+                setReserve(activeReserve)
+                setNewWeight(activeReserve.netWeight_g?.toString() || '')
+            } catch (err) {
+                console.error('Error fetching data:', err)
+                setError('Error al cargar datos')
+            } finally {
+                setLoading(false)
+            }
+        }
+
         fetchContainerData()
-    }, [fetchContainerData])
+    }, [containerCode, refreshTrigger])
 
     async function handleUpdate(e: React.FormEvent) {
         e.preventDefault()
@@ -104,7 +107,7 @@ export default function StockUpdatePage() {
 
             setMessage('✅ Stock actualizado correctamente')
             setTimeout(() => {
-                fetchContainerData()
+                setRefreshTrigger(prev => prev + 1)
             }, 1500)
 
         } catch (err) {
