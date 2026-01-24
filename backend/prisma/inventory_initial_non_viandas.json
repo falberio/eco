@@ -1,0 +1,47 @@
+[
+  {
+    "id": "inv_yogurt_units",
+    "product_id": "yogurt",
+    "name": "Yogur",
+    "category": "Desayuno",
+    "quantity": 7,
+    "unit": "unidad",
+    "notes": "Stock inicial informado por Fran."
+  },
+  {
+    "id": "inv_banana_units",
+    "product_id": "banana",
+    "name": "Banana",
+    "category": "Desayuno",
+    "quantity": 7,
+    "unit": "unidad",
+    "notes": "Stock inicial informado por Fran."
+  },
+  {
+    "id": "inv_water",
+    "product_id": "water",
+    "name": "Agua",
+    "category": "Bebidas",
+    "quantity": null,
+    "unit": "unidad",
+    "notes": "Cantidad pendiente de confirmar."
+  },
+  {
+    "id": "inv_iced_tea",
+    "product_id": "iced_tea",
+    "name": "Té helado",
+    "category": "Bebidas",
+    "quantity": null,
+    "unit": "unidad",
+    "notes": "Cantidad pendiente de confirmar."
+  },
+  {
+    "id": "inv_wine",
+    "product_id": "wine",
+    "name": "Vino (botellas)",
+    "category": "Bebidas",
+    "quantity": null,
+    "unit": "botella",
+    "notes": "Pendiente: cargar variedades y cantidades."
+  }
+]

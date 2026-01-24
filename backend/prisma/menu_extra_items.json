@@ -1,0 +1,54 @@
+{
+  "sections": [
+    {
+      "id": "cafeteria",
+      "title": "Cafetería",
+      "items": [
+        { "id": "coffee_espresso", "name": "Café espresso" },
+        { "id": "coffee_double", "name": "Café doble" },
+        { "id": "coffee_milk", "name": "Café con leche" },
+        { "id": "coffee_lagrima", "name": "Lágrima" },
+        { "id": "coffee_cortado_espresso", "name": "Cortado (espresso)" },
+        { "id": "coffee_cortado_double", "name": "Cortado (doble)" }
+      ]
+    },
+    {
+      "id": "teas",
+      "title": "Tés",
+      "items": [
+        { "id": "tea_green", "name": "Té verde" },
+        { "id": "tea_black", "name": "Té negro" },
+        { "id": "tea_herbal", "name": "Té de hierbas" }
+      ]
+    },
+    {
+      "id": "breakfast",
+      "title": "Desayuno",
+      "items": [
+        { "id": "toast_plain", "name": "Tostadas" },
+        { "id": "toast_butter", "name": "Tostadas con manteca" },
+        {
+          "id": "toast_jam_choice",
+          "name": "Tostadas con mermelada (a elección)",
+          "options": [
+            { "id": "jam_peach_plum", "name": "Mermelada de durazno y ciruela" },
+            { "id": "jam_cherry", "name": "Mermelada de cereza" },
+            { "id": "jam_orange", "name": "Mermelada de naranja" },
+            { "id": "jam_berries", "name": "Mermelada de frutos rojos" }
+          ]
+        },
+        { "id": "yogurt", "name": "Yogur" },
+        { "id": "banana", "name": "Banana" }
+      ]
+    },
+    {
+      "id": "drinks",
+      "title": "Bebidas",
+      "items": [
+        { "id": "water", "name": "Agua" },
+        { "id": "iced_tea", "name": "Té helado" },
+        { "id": "wine", "name": "Vino (consultar variedades)" }
+      ]
+    }
+  ]
+}
