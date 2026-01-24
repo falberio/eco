@@ -25,8 +25,8 @@ const SECTION_ORDER = [
   'Carnes',
   'Hamburguesas',
   'Pastas',
+  'Salsas',
   'Tartas',
-  'Platos Vegetarianos',
   'Cafetería',
   'Bar - Tragos Clásicos',
   'Bar - Vodka',
@@ -34,6 +34,7 @@ const SECTION_ORDER = [
   'Bar - Destilados',
   'Bar - Tropicales',
   'Bar - Cafés Especiales',
+  'Bebidas (medidas)',
   'Vinos'
 ];
 
@@ -145,8 +146,8 @@ export default function GuestMenu() {
     'Carnes': '🥩',
     'Hamburguesas': '🍔',
     'Pastas': '🍝',
+    'Salsas': '🍅',
     'Tartas': '🥧',
-    'Platos Vegetarianos': '🥗',
     'Cafetería': '☕',
     'Bar - Tragos Clásicos': '🍸',
     'Bar - Vodka': '🧊',
@@ -154,6 +155,7 @@ export default function GuestMenu() {
     'Bar - Destilados': '🍾',
     'Bar - Tropicales': '🥥',
     'Bar - Cafés Especiales': '☕',
+    'Bebidas (medidas)': '🥃',
     'Vinos': '🍷'
   }
 
@@ -196,8 +198,8 @@ export default function GuestMenu() {
                   data-section={section}
                   onClick={() => scrollToSection(section)}
                   className={`px-4 py-2 rounded-lg font-medium whitespace-nowrap transition-all duration-200 ${activeSection === section
-                      ? 'bg-gradient-to-r from-amber-500 to-amber-600 text-white shadow-lg scale-105'
-                      : 'bg-slate-800/50 text-slate-300 hover:bg-slate-700/70 hover:text-white'
+                    ? 'bg-gradient-to-r from-amber-500 to-amber-600 text-white shadow-lg scale-105'
+                    : 'bg-slate-800/50 text-slate-300 hover:bg-slate-700/70 hover:text-white'
                     }`}
                 >
                   <span className="mr-2">{sectionEmojis[section] || '📋'}</span>
@@ -216,8 +218,8 @@ export default function GuestMenu() {
                   key={filter}
                   onClick={() => setActiveFilter(filter)}
                   className={`px-3 py-1 rounded-full text-xs font-medium whitespace-nowrap transition-all ${activeFilter === filter
-                      ? 'bg-amber-500 text-white'
-                      : 'bg-slate-800 text-slate-400 hover:bg-slate-700'
+                    ? 'bg-amber-500 text-white'
+                    : 'bg-slate-800 text-slate-400 hover:bg-slate-700'
                     }`}
                 >
                   {filter === 'Todos' && '🍽️'}
