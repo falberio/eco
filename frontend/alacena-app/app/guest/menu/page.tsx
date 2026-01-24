@@ -9,6 +9,7 @@ interface MenuItem {
   name: string
   section: string | null
   isActive: boolean
+  notes: string | null
   item: {
     id: string
     name: string
@@ -17,31 +18,30 @@ interface MenuItem {
   }
 }
 
+type DietFilter = 'Todos' | 'Vegano' | 'Vegetariano' | 'Omnívoro' | 'Apto Celíaco'
+
 // Orden de secciones para el menú
 const SECTION_ORDER = [
-  'Desayuno',
-  'Cafetería',
-  'Tés',
-  'Platos Principales',
-  'Tartas',
+  'Desayunos',
+  'Carnes',
+  'Hamburguesas',
   'Pastas',
-  'Salsas y Acompañamientos',
-  'De la Alacena',
-  'Tragos Clásicos',
-  'Vodka',
-  'Aperitivos',
-  'Clásicos Argentinos',
-  'Whiskies',
-  'Destilados',
-  'Tropicales',
-  'Cafés Especiales',
-  'Vinos',
-  'Bebidas'
+  'Tartas',
+  'Platos Vegetarianos',
+  'Cafetería',
+  'Bar - Tragos Clásicos',
+  'Bar - Vodka',
+  'Bar - Aperitivos',
+  'Bar - Destilados',
+  'Bar - Tropicales',
+  'Bar - Cafés Especiales',
+  'Vinos'
 ];
 
 export default function GuestMenu() {
   const [menuItems, setMenuItems] = useState<MenuItem[]>([])
   const [loading, setLoading] = useState(true)
+  const [activeFilter, setActiveFilter] = useState<DietFilter>('Todos')
 
   useEffect(() => {
     fetchMenu()
@@ -63,8 +63,18 @@ export default function GuestMenu() {
     }
   }
 
-  // Agrupar por sección y ordenar según SECTION_ORDER
-  const groupedMenu = menuItems.reduce((acc, item) => {
+  // Función para filtrar por dieta
+  function filterByDiet(item: MenuItem): boolean {
+    if (activeFilter === 'Todos') return true
+    const notes = item.notes?.toLowerCase() || ''
+    return notes.includes(activeFilter.toLowerCase())
+  }
+
+  // Aplicar filtro
+  const filteredItems = menuItems.filter(filterByDiet)
+
+  // Agrupar por sección
+  const groupedMenu = filteredItems.reduce((acc, item) => {
     const section = item.section || 'Otros'
     if (!acc[section]) acc[section] = []
     acc[section].push(item)
@@ -75,25 +85,23 @@ export default function GuestMenu() {
 
   // Emojis por sección
   const sectionEmojis: Record<string, string> = {
-    'Desayuno': '🥐',
-    'Cafetería': '☕',
-    'Tés': '🍵',
-    'Platos Principales': '🍽️',
-    'Tartas': '🥧',
+    'Desayunos': '🥐',
+    'Carnes': '🥩',
+    'Hamburguesas': '🍔',
     'Pastas': '🍝',
-    'Salsas y Acompañamientos': '🥣',
-    'De la Alacena': '🏺',
-    'Tragos Clásicos': '🍸',
-    'Vodka': '🧊',
-    'Aperitivos': '🥃',
-    'Clásicos Argentinos': '🇦🇷',
-    'Whiskies': '🥃',
-    'Destilados': '🍾',
-    'Tropicales': '🥥',
-    'Cafés Especiales': '☕',
-    'Vinos': '🍷',
-    'Bebidas': '🥤'
+    'Tartas': '🥧',
+    'Platos Vegetarianos': '🥗',
+    'Cafetería': '☕',
+    'Bar - Tragos Clásicos': '🍸',
+    'Bar - Vodka': '🧊',
+    'Bar - Aperitivos': '🥃',
+    'Bar - Destilados': '🍾',
+    'Bar - Tropicales': '🥥',
+    'Bar - Cafés Especiales': '☕',
+    'Vinos': '🍷'
   }
+
+  const dietFilters: DietFilter[] = ['Todos', 'Vegano', 'Vegetariano', 'Omnívoro', 'Apto Celíaco']
 
   if (loading) {
     return (
@@ -122,14 +130,51 @@ export default function GuestMenu() {
         </div>
       </div>
 
+      {/* Filtros de Dieta */}
+      <div className="max-w-5xl mx-auto px-4 pt-8">
+        <div className="bg-white/90 backdrop-blur rounded-2xl shadow-lg p-6 mb-8">
+          <h3 className="text-center text-slate-700 font-semibold mb-4">Filtrar por:</h3>
+          <div className="flex flex-wrap justify-center gap-3">
+            {dietFilters.map((filter) => (
+              <button
+                key={filter}
+                onClick={() => setActiveFilter(filter)}
+                className={`px-6 py-2.5 rounded-full font-medium transition-all duration-200 ${
+                  activeFilter === filter
+                    ? 'bg-gradient-to-r from-amber-500 to-amber-600 text-white shadow-lg scale-105'
+                    : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+                }`}
+              >
+                {filter === 'Todos' && '🍽️'}
+                {filter === 'Vegano' && '🌱'}
+                {filter === 'Vegetariano' && '🥬'}
+                {filter === 'Omnívoro' && '🥩'}
+                {filter === 'Apto Celíaco' && '🌾'}
+                {' '}
+                {filter}
+              </button>
+            ))}
+          </div>
+          {activeFilter !== 'Todos' && (
+            <p className="text-center text-sm text-slate-500 mt-4">
+              Mostrando {filteredItems.length} plato{filteredItems.length !== 1 ? 's' : ''}
+            </p>
+          )}
+        </div>
+      </div>
+
       {/* Contenido del Menú */}
-      <div className="max-w-5xl mx-auto px-4 py-12">
+      <div className="max-w-5xl mx-auto px-4 pb-12">
         {orderedSections.length === 0 ? (
           <div className="bg-white/95 backdrop-blur rounded-2xl shadow-2xl p-12 text-center">
             <div className="text-6xl mb-4">📋</div>
-            <h2 className="text-2xl font-bold text-slate-800 mb-2">Menú en preparación</h2>
+            <h2 className="text-2xl font-bold text-slate-800 mb-2">
+              {activeFilter === 'Todos' ? 'Menú en preparación' : `No hay opciones ${activeFilter.toLowerCase()}`}
+            </h2>
             <p className="text-slate-600">
-              Estamos actualizando nuestra carta. Vuelve pronto.
+              {activeFilter === 'Todos' 
+                ? 'Estamos actualizando nuestra carta. Vuelve pronto.'
+                : 'Intenta con otro filtro.'}
             </p>
           </div>
         ) : (
