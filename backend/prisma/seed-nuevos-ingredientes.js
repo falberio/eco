@@ -6,7 +6,7 @@ async function main() {
 
     // 1. Crear frascos para los nuevos ingredientes
     const jarType = await prisma.containerType.findFirst({ where: { code: 'FRASCO-STD' } });
-    
+
     const newJars = [
         { code: 'JAR-029', product: 'Morrones en conserva', net_g: 250 },
         { code: 'JAR-030', product: 'Ajos confitados', net_g: 180 },

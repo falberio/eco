@@ -11,7 +11,7 @@ async function main() {
 
     // 2. CREAR NUEVOS INGREDIENTES
     console.log('📦 Creando nuevos ingredientes...');
-    
+
     const morrones = await prisma.item.upsert({
         where: { code: 'MORRONES-CONSERVA' },
         update: {},
@@ -306,7 +306,7 @@ async function main() {
         { section: 'Bar - Tragos Clásicos', name: 'Gin Tonic', itemId: (await prisma.item.findFirst({ where: { name: { equals: 'Gin Tonic' } } }))?.id },
         { section: 'Bar - Tragos Clásicos', name: 'Negroni', itemId: (await prisma.item.findFirst({ where: { name: 'Negroni' } }))?.id },
         { section: 'Bar - Tragos Clásicos', name: 'Gin Tonic (Heráclito)', itemId: (await prisma.item.findFirst({ where: { name: { contains: 'Heráclito' } } }))?.id },
-        
+
         { section: 'Bar - Vodka', name: 'Vodka Peppar Tonic', itemId: (await prisma.item.findFirst({ where: { name: 'Vodka Peppar Tonic' } }))?.id },
         { section: 'Bar - Vodka', name: 'Vodka Raspberri con Soda', itemId: (await prisma.item.findFirst({ where: { name: 'Vodka Raspberri con Soda' } }))?.id },
         { section: 'Bar - Vodka', name: 'Vodka Vanilia con Pomelo', itemId: (await prisma.item.findFirst({ where: { name: 'Vodka Vanilia con Pomelo' } }))?.id },

@@ -10,7 +10,7 @@ async function main() {
     });
 
     console.log('\n📋 ANÁLISIS DEL MENÚ ACTUAL:\n');
-    
+
     // Agrupar por sección
     const sections = {};
     menuItems.forEach(mi => {

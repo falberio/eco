@@ -139,11 +139,10 @@ export default function GuestMenu() {
               <button
                 key={filter}
                 onClick={() => setActiveFilter(filter)}
-                className={`px-6 py-2.5 rounded-full font-medium transition-all duration-200 ${
-                  activeFilter === filter
+                className={`px-6 py-2.5 rounded-full font-medium transition-all duration-200 ${activeFilter === filter
                     ? 'bg-gradient-to-r from-amber-500 to-amber-600 text-white shadow-lg scale-105'
                     : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
-                }`}
+                  }`}
               >
                 {filter === 'Todos' && '🍽️'}
                 {filter === 'Vegano' && '🌱'}
@@ -172,7 +171,7 @@ export default function GuestMenu() {
               {activeFilter === 'Todos' ? 'Menú en preparación' : `No hay opciones ${activeFilter.toLowerCase()}`}
             </h2>
             <p className="text-slate-600">
-              {activeFilter === 'Todos' 
+              {activeFilter === 'Todos'
                 ? 'Estamos actualizando nuestra carta. Vuelve pronto.'
                 : 'Intenta con otro filtro.'}
             </p>
@@ -180,8 +179,8 @@ export default function GuestMenu() {
         ) : (
           <div className="grid md:grid-cols-2 gap-8">
             {orderedSections.map((section) => (
-              <div 
-                key={section} 
+              <div
+                key={section}
                 className="bg-white/95 backdrop-blur rounded-2xl shadow-2xl overflow-hidden hover:shadow-amber-500/20 transition-all duration-300"
               >
                 {/* Header de Sección */}
@@ -197,7 +196,7 @@ export default function GuestMenu() {
                 {/* Items de la Sección */}
                 <div className="p-6 space-y-3">
                   {groupedMenu[section].map((item, idx) => (
-                    <div 
+                    <div
                       key={item.id}
                       className="group relative"
                     >

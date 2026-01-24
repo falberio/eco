@@ -12,7 +12,7 @@ async function main() {
     });
 
     console.log('\n📦 FRASCOS CARGADOS:\n');
-    
+
     containers.forEach(container => {
         const activeReserve = container.reserves.find(r => r.netWeight_g !== null);
         const item = activeReserve?.item?.name || 'Vacío';
