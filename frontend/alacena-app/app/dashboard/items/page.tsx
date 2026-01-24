@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { useSession } from 'next-auth/react'
 import { ItemSchema } from '@/lib/validations'
 import { ZodError } from 'zod'
 
@@ -18,6 +19,7 @@ interface Item {
 }
 
 export default function ItemsPage() {
+    const { data: session } = useSession()
     const [items, setItems] = useState<Item[]>([])
     const [loading, setLoading] = useState(true)
     const [showForm, setShowForm] = useState(false)
@@ -41,7 +43,11 @@ export default function ItemsPage() {
     async function fetchItems() {
         try {
             setLoading(true)
-            const res = await fetch(`${API_URL}/api/items?limit=50&skip=0`)
+            const token = (session as any)?.backendToken
+            const headers: HeadersInit = { 'Content-Type': 'application/json' }
+            if (token) headers['Authorization'] = `Bearer ${token}`
+            
+            const res = await fetch(`${API_URL}/api/items?limit=50&skip=0`, { headers })
             const data = await res.json()
             setItems(data.data || [])
         } catch (error) {
@@ -60,7 +66,7 @@ export default function ItemsPage() {
             setSubmitLoading(true)
             // Validar con Zod
             const validatedData = ItemSchema.parse(formData)
-            
+
             // Limpiar campos vacíos (convertir "" a undefined)
             const cleanData = Object.fromEntries(
                 Object.entries(validatedData).filter(([_, value]) => value !== '')
@@ -69,9 +75,13 @@ export default function ItemsPage() {
             const url = editingId ? `${API_URL}/api/items/${editingId}` : `${API_URL}/api/items`
             const method = editingId ? 'PUT' : 'POST'
 
+            const token = (session as any)?.backendToken
+            const headers: HeadersInit = { 'Content-Type': 'application/json' }
+            if (token) headers['Authorization'] = `Bearer ${token}`
+
             const res = await fetch(url, {
                 method,
-                headers: { 'Content-Type': 'application/json' },
+                headers,
                 body: JSON.stringify(cleanData),
             })
 
@@ -114,7 +124,14 @@ export default function ItemsPage() {
         if (confirm('¿Estás seguro?')) {
             try {
                 setGeneralError('')
-                const res = await fetch(`${API_URL}/api/items/${id}`, { method: 'DELETE' })
+                const token = (session as any)?.backendToken
+                const headers: HeadersInit = { 'Content-Type': 'application/json' }
+                if (token) headers['Authorization'] = `Bearer ${token}`
+                
+                const res = await fetch(`${API_URL}/api/items/${id}`, { 
+                    method: 'DELETE',
+                    headers 
+                })
                 const responseData = await res.json()
 
                 if (!res.ok) throw new Error(responseData.error || 'Error al eliminar')
