@@ -89,7 +89,7 @@ async function main() {
             section: 'Bar - Tragos Clásicos',
             isActive: true
         }
-    }).catch(() => {});
+    }).catch(() => { });
     console.log('✅ Caipiroska agregado');
 
     // Fernet con Coca
@@ -156,7 +156,7 @@ async function main() {
                     section: 'Vinos',
                     isActive: true
                 }
-            }).catch(() => {});
+            }).catch(() => { });
             console.log(`✅ ${vino.name} agregado a Vinos`);
         }
     }

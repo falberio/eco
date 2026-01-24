@@ -8,7 +8,7 @@ async function createContainer(req, res) {
     const data = CreateContainerSchema.parse(req.body)
     const container = await prisma.container.create({
       data,
-      include: { type: true, location: true }
+      include: { type: true }
     })
     res.status(201).json(container)
   } catch (error) {
@@ -22,22 +22,21 @@ async function createContainer(req, res) {
 async function listContainers(req, res) {
   try {
     const filters = FilterContainerSchema.parse(req.query)
-    
+
     const where = {}
     if (filters.typeId) where.typeId = filters.typeId
-    if (filters.locationId) where.locationId = filters.locationId
-    
+
     const [containers, total] = await Promise.all([
       prisma.container.findMany({
         where,
-        include: { type: true, location: true },
+        include: { type: true },
         take: filters.limit,
         skip: filters.offset,
         orderBy: { code: 'asc' }
       }),
       prisma.container.count({ where })
     ])
-    
+
     res.json({ data: containers, pagination: { total, limit: filters.limit, offset: filters.offset, hasMore: filters.offset + filters.limit < total } })
   } catch (error) {
     if (error.name === 'ZodError') {
@@ -52,7 +51,7 @@ async function getContainer(req, res) {
     const { id } = req.params
     const container = await prisma.container.findUnique({
       where: { id },
-      include: { type: true, location: true, reserves: true }
+      include: { type: true, reserves: true }
     })
     if (!container) {
       return res.status(404).json({ error: 'Container no encontrado' })
@@ -70,7 +69,7 @@ async function updateContainer(req, res) {
     const container = await prisma.container.update({
       where: { id },
       data,
-      include: { type: true, location: true }
+      include: { type: true }
     })
     res.json(container)
   } catch (error) {

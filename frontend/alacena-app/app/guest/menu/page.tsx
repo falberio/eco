@@ -65,7 +65,7 @@ export default function GuestMenu() {
 
         if (mostVisibleSection && maxRatio > 0.1) {
           setActiveSection(mostVisibleSection)
-          
+
           // Auto-scroll de la barra de navegación
           if (navContainerRef.current) {
             const activeButton = navContainerRef.current.querySelector(
@@ -81,7 +81,7 @@ export default function GuestMenu() {
           }
         }
       },
-      { 
+      {
         threshold: [0, 0.1, 0.25, 0.5, 0.75, 1],
         rootMargin: '-20% 0px -60% 0px'
       }
@@ -195,11 +195,10 @@ export default function GuestMenu() {
                   key={section}
                   data-section={section}
                   onClick={() => scrollToSection(section)}
-                  className={`px-4 py-2 rounded-lg font-medium whitespace-nowrap transition-all duration-200 ${
-                    activeSection === section
+                  className={`px-4 py-2 rounded-lg font-medium whitespace-nowrap transition-all duration-200 ${activeSection === section
                       ? 'bg-gradient-to-r from-amber-500 to-amber-600 text-white shadow-lg scale-105'
                       : 'bg-slate-800/50 text-slate-300 hover:bg-slate-700/70 hover:text-white'
-                  }`}
+                    }`}
                 >
                   <span className="mr-2">{sectionEmojis[section] || '📋'}</span>
                   {section.replace('Bar - ', '')}
@@ -216,11 +215,10 @@ export default function GuestMenu() {
                 <button
                   key={filter}
                   onClick={() => setActiveFilter(filter)}
-                  className={`px-3 py-1 rounded-full text-xs font-medium whitespace-nowrap transition-all ${
-                    activeFilter === filter
+                  className={`px-3 py-1 rounded-full text-xs font-medium whitespace-nowrap transition-all ${activeFilter === filter
                       ? 'bg-amber-500 text-white'
                       : 'bg-slate-800 text-slate-400 hover:bg-slate-700'
-                  }`}
+                    }`}
                 >
                   {filter === 'Todos' && '🍽️'}
                   {filter === 'Vegano' && '🌱'}
@@ -249,7 +247,7 @@ export default function GuestMenu() {
               {activeFilter === 'Todos' ? 'Menú en preparación' : `No hay opciones ${activeFilter.toLowerCase()}`}
             </h2>
             <p className="text-slate-600">
-              {activeFilter === 'Todos' 
+              {activeFilter === 'Todos'
                 ? 'Estamos actualizando nuestra carta.'
                 : 'Intenta con otro filtro.'}
             </p>

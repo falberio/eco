@@ -13,7 +13,7 @@ async function main() {
     // Crear directorio si no existe
     try {
         await fs.mkdir(outputDir, { recursive: true });
-    } catch (e) {}
+    } catch (e) { }
 
     // Obtener todos los frascos
     const containers = await prisma.container.findMany({
