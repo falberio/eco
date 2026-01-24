@@ -1,90 +1,72 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { useParams, useRouter } from 'next/navigation'
+import { useParams } from 'next/navigation'
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://alacena-backend.fly.dev'
 
-interface Container {
-    id: string
-    code: string
-    type: {
-        name: string
-    }
-}
-
-interface Item {
-    id: string
-    name: string
-}
-
-interface Reserve {
-    id: string
-    code: string
-    netWeight_g: number | null
-    item: Item
-    container: Container
-}
-
 export default function StockUpdatePage() {
     const params = useParams()
-    const router = useRouter()
-    const containerCode = params.code as string
+    const containerCode = params?.code as string
 
     const [loading, setLoading] = useState(true)
-    const [reserve, setReserve] = useState<Reserve | null>(null)
+    const [item, setItem] = useState<string>('')
+    const [currentWeight, setCurrentWeight] = useState<number>(0)
+    const [reserveId, setReserveId] = useState<string>('')
     const [newWeight, setNewWeight] = useState('')
     const [saving, setSaving] = useState(false)
     const [message, setMessage] = useState('')
     const [error, setError] = useState('')
-    const [refreshTrigger, setRefreshTrigger] = useState(0)
 
     useEffect(() => {
-        async function fetchContainerData() {
+        if (!containerCode) return
+
+        const loadData = async () => {
             try {
                 setLoading(true)
                 setError('')
 
-                // Buscar el contenedor por código
-                const containerRes = await fetch(`${API_URL}/api/containers?limit=1000`)
-                const containersData = await containerRes.json()
-                const container = containersData.data?.find((c: Container) => c.code === containerCode)
+                const [containersRes, reservesRes] = await Promise.all([
+                    fetch(`${API_URL}/api/containers?limit=1000`),
+                    fetch(`${API_URL}/api/reserves?limit=1000`)
+                ])
 
+                const containersData = await containersRes.json()
+                const reservesData = await reservesRes.json()
+
+                const container = containersData.data?.find((c: any) => c.code === containerCode)
                 if (!container) {
                     setError('Contenedor no encontrado')
-                    setLoading(false)
                     return
                 }
 
-                // Buscar la reserva activa en ese contenedor
-                const reservesRes = await fetch(`${API_URL}/api/reserves?limit=1000`)
-                const reservesData = await reservesRes.json()
-                const activeReserve = reservesData.data?.find(
-                    (r: Reserve) => r.container?.code === containerCode && r.netWeight_g !== null
+                const reserve = reservesData.data?.find(
+                    (r: any) => r.container?.code === containerCode && r.netWeight_g !== null
                 )
 
-                if (!activeReserve) {
+                if (!reserve) {
                     setError('No hay stock activo en este contenedor')
-                    setLoading(false)
                     return
                 }
 
-                setReserve(activeReserve)
-                setNewWeight(activeReserve.netWeight_g?.toString() || '')
+                setReserveId(reserve.id)
+                setItem(reserve.item?.name || '')
+                setCurrentWeight(reserve.netWeight_g || 0)
+                setNewWeight(String(reserve.netWeight_g || 0))
             } catch (err) {
-                console.error('Error fetching data:', err)
+                console.error('Error:', err)
                 setError('Error al cargar datos')
             } finally {
                 setLoading(false)
             }
         }
 
-        fetchContainerData()
-    }, [containerCode, refreshTrigger])
+        loadData()
+    }, [containerCode])
 
-    async function handleUpdate(e: React.FormEvent) {
+    const handleUpdate = async (e: React.FormEvent) => {
         e.preventDefault()
-        if (!reserve) return
+        if (!reserveId) return
 
         try {
             setSaving(true)
@@ -94,10 +76,11 @@ export default function StockUpdatePage() {
             const weight = parseInt(newWeight)
             if (isNaN(weight) || weight < 0) {
                 setError('Peso inválido')
+                setSaving(false)
                 return
             }
 
-            const res = await fetch(`${API_URL}/api/reserves/${reserve.id}`, {
+            const res = await fetch(`${API_URL}/api/reserves/${reserveId}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ netWeight_g: weight })
@@ -105,13 +88,10 @@ export default function StockUpdatePage() {
 
             if (!res.ok) throw new Error('Error al actualizar')
 
+            setCurrentWeight(weight)
             setMessage('✅ Stock actualizado correctamente')
-            setTimeout(() => {
-                setRefreshTrigger(prev => prev + 1)
-            }, 1500)
-
         } catch (err) {
-            console.error('Error updating:', err)
+            console.error('Error:', err)
             setError('Error al actualizar stock')
         } finally {
             setSaving(false)
@@ -129,7 +109,7 @@ export default function StockUpdatePage() {
         )
     }
 
-    if (error && !reserve) {
+    if (error && !item) {
         return (
             <div className="min-h-screen bg-gradient-to-br from-red-50 to-red-100 flex items-center justify-center p-4">
                 <div className="bg-white rounded-2xl shadow-xl p-8 max-w-md w-full">
@@ -137,19 +117,11 @@ export default function StockUpdatePage() {
                         <div className="text-6xl mb-4">❌</div>
                         <h1 className="text-2xl font-bold text-gray-800 mb-2">Error</h1>
                         <p className="text-gray-600">{error}</p>
-                        <button
-                            onClick={() => router.push('/')}
-                            className="mt-6 px-6 py-3 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition"
-                        >
-                            Volver al inicio
-                        </button>
                     </div>
                 </div>
             </div>
         )
     }
-
-    if (!reserve) return null
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-orange-50 to-orange-100 flex items-center justify-center p-4">
@@ -165,9 +137,8 @@ export default function StockUpdatePage() {
                 <div className="bg-orange-50 rounded-xl p-6 mb-6">
                     <h2 className="font-semibold text-gray-700 mb-3">Contenido Actual</h2>
                     <div className="space-y-2">
-                        <p className="text-2xl font-bold text-orange-600">{reserve.item.name}</p>
-                        <p className="text-3xl font-bold text-gray-800">{reserve.netWeight_g}g</p>
-                        <p className="text-sm text-gray-500">{reserve.container.type.name}</p>
+                        <p className="text-2xl font-bold text-orange-600">{item}</p>
+                        <p className="text-3xl font-bold text-gray-800">{currentWeight}g</p>
                     </div>
                 </div>
 
@@ -200,7 +171,7 @@ export default function StockUpdatePage() {
                         </button>
                         <button
                             type="button"
-                            onClick={() => setNewWeight(Math.round((reserve.netWeight_g || 0) / 2).toString())}
+                            onClick={() => setNewWeight(Math.round(currentWeight / 2).toString())}
                             className="px-4 py-2 bg-yellow-100 text-yellow-700 rounded-lg hover:bg-yellow-200 transition text-sm font-medium"
                             disabled={saving}
                         >
@@ -208,7 +179,7 @@ export default function StockUpdatePage() {
                         </button>
                         <button
                             type="button"
-                            onClick={() => setNewWeight((reserve.netWeight_g || 0).toString())}
+                            onClick={() => setNewWeight(currentWeight.toString())}
                             className="px-4 py-2 bg-green-100 text-green-700 rounded-lg hover:bg-green-200 transition text-sm font-medium"
                             disabled={saving}
                         >
@@ -230,7 +201,7 @@ export default function StockUpdatePage() {
 
                     <button
                         type="submit"
-                        disabled={saving || newWeight === '' || parseInt(newWeight) === reserve.netWeight_g}
+                        disabled={saving || newWeight === '' || parseInt(newWeight) === currentWeight}
                         className="w-full py-4 bg-orange-600 text-white rounded-lg font-semibold text-lg hover:bg-orange-700 transition disabled:opacity-50 disabled:cursor-not-allowed shadow-lg"
                     >
                         {saving ? 'Guardando...' : 'Actualizar Stock'}
