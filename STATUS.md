@@ -1,12 +1,48 @@
-# 🧺 ALACENA - Sistema en Desarrollo Local + Producción
+# 🧺 ALACENA - v1.0 EN PRODUCCIÓN ✅
 
-**Última Actualización**: 23 Enero 2026 - 14:30 UTC  
-**Estado**: ✅ Desarrollo Local Funcionando + Producción Activa  
-**Enfoque**: Testing local y mejoras de seguridad
+**Última Actualización**: 24 Enero 2026  
+**Estado**: 🚀 COMPLETAMENTE DESPLEGADO EN LA NUBE  
+**Arquitectura**: Fly.io + Supabase + Vercel
 
 ---
 
-## ✅ Completado en esta sesión (23 Enero)
+## 🎉 HITO: Primera Versión Totalmente Online
+
+### URLs de Producción
+- **Frontend (Público):** https://alacena-blush.vercel.app
+- **Backend (API):** https://alacena-backend.fly.dev
+- **Database:** Supabase PostgreSQL (db.orqnbchxoqalghcaaajw.supabase.co)
+
+### Credenciales de Prueba
+- **Admin:** admin@alacena.com / admin123
+- **User:** user@alacena.com / user123
+
+---
+
+## ✅ Completado en esta sesión (24 Enero)
+
+### 🚀 Deploy Completo a Producción
+- ✅ **Backend deployado a Fly.io** (alacena-backend.fly.dev)
+- ✅ **Frontend deployado a Vercel** (alacena-blush.vercel.app)
+- ✅ **Database migrada a Supabase PostgreSQL**
+- ✅ **Autenticación JWT funcionando end-to-end**
+- ✅ **CRUD de Items completamente funcional**
+
+### 🔧 Fixes Críticos Aplicados
+- ✅ Cambio de Docker base image: Alpine → Debian Slim (OpenSSL compatibility)
+- ✅ Conexión PostgreSQL: IPv6 → Hostname (Fly.io limitation)
+- ✅ JWT tokens agregados en headers de todas las peticiones API
+- ✅ Variables de entorno configuradas en Vercel
+- ✅ Secrets configurados en Fly.io (DATABASE_URL, JWT_SECRET)
+
+### 📦 Items de Prueba Creados
+- ✅ Arroz (código 12)
+- ✅ Guiso de lentejas (código GIU-LENT)
+- ✅ Prueba (código 33)
+
+---
+
+## ✅ Completado en sesión anterior (23 Enero)
 
 ### Autenticación & Middleware (CRÍTICO)
 - ✅ **FIX: MissingSecret en NextAuth v5 Edge Runtime** - Variables de entorno renombradas con prefijo `NEXT_PUBLIC_`

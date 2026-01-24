@@ -46,7 +46,7 @@ export default function ItemsPage() {
             const token = (session as any)?.backendToken
             const headers: HeadersInit = { 'Content-Type': 'application/json' }
             if (token) headers['Authorization'] = `Bearer ${token}`
-            
+
             const res = await fetch(`${API_URL}/api/items?limit=50&skip=0`, { headers })
             const data = await res.json()
             setItems(data.data || [])
@@ -127,10 +127,10 @@ export default function ItemsPage() {
                 const token = (session as any)?.backendToken
                 const headers: HeadersInit = { 'Content-Type': 'application/json' }
                 if (token) headers['Authorization'] = `Bearer ${token}`
-                
-                const res = await fetch(`${API_URL}/api/items/${id}`, { 
+
+                const res = await fetch(`${API_URL}/api/items/${id}`, {
                     method: 'DELETE',
-                    headers 
+                    headers
                 })
                 const responseData = await res.json()
 
