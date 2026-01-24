@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { useParams, useRouter } from 'next/navigation'
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://alacena-backend.fly.dev'
@@ -38,11 +38,7 @@ export default function StockUpdatePage() {
     const [message, setMessage] = useState('')
     const [error, setError] = useState('')
 
-    useEffect(() => {
-        fetchContainerData()
-    }, [containerCode])
-
-    async function fetchContainerData() {
+    const fetchContainerData = useCallback(async () => {
         try {
             setLoading(true)
             setError('')
@@ -77,7 +73,11 @@ export default function StockUpdatePage() {
         } finally {
             setLoading(false)
         }
-    }
+    }, [containerCode])
+
+    useEffect(() => {
+        fetchContainerData()
+    }, [fetchContainerData])
 
     async function handleUpdate(e: React.FormEvent) {
         e.preventDefault()
