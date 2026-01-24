@@ -244,6 +244,82 @@ async function consumeReserve(req, res) {
   }
 }
 
+/**
+ * Mover una reserva a una nueva ubicación (para drag & drop de frascos)
+ */
+async function moveReserve(req, res) {
+  try {
+    const { id } = req.params
+    const { locationId } = req.body
+
+    if (!locationId) {
+      return res.status(400).json({ error: 'locationId es requerido' })
+    }
+
+    // Verificar que la reserva existe y está activa
+    const existing = await prisma.reserve.findUnique({
+      where: { id },
+      include: { container: true, item: true }
+    })
+
+    if (!existing) {
+      return res.status(404).json({ error: 'Reserva no encontrada' })
+    }
+
+    if (existing.status !== 'ACTIVE') {
+      return res.status(400).json({ error: 'Solo se pueden mover reservas activas' })
+    }
+
+    // Verificar que la ubicación destino existe
+    const targetLocation = await prisma.location.findUnique({
+      where: { id: locationId }
+    })
+
+    if (!targetLocation) {
+      return res.status(404).json({ error: 'Ubicación destino no encontrada' })
+    }
+
+    // Verificar que no esté bloqueada
+    if (targetLocation.notes?.includes('BLOQUEADO')) {
+      return res.status(400).json({ error: 'La ubicación destino está bloqueada' })
+    }
+
+    // Si hay otra reserva en la ubicación destino, intercambiar posiciones
+    const targetReserve = await prisma.reserve.findFirst({
+      where: {
+        locationId: targetLocation.id,
+        status: 'ACTIVE'
+      }
+    })
+
+    if (targetReserve) {
+      // Intercambio: mover la reserva destino a la ubicación origen
+      await prisma.reserve.update({
+        where: { id: targetReserve.id },
+        data: { locationId: existing.locationId }
+      })
+    }
+
+    // Mover la reserva a la nueva ubicación
+    const movedReserve = await prisma.reserve.update({
+      where: { id },
+      data: { locationId },
+      include: {
+        item: true,
+        location: true,
+        container: true
+      }
+    })
+
+    res.json(movedReserve)
+  } catch (error) {
+    res.status(500).json({ 
+      error: 'Error al mover reserva',
+      message: error.message 
+    })
+  }
+}
+
 module.exports = {
   createReserve,
   listReserves,
@@ -251,4 +327,5 @@ module.exports = {
   updateReserve,
   deleteReserve,
   consumeReserve,
+  moveReserve,
 }

@@ -9,6 +9,7 @@ const {
   updateReserve,
   deleteReserve,
   consumeReserve,
+  moveReserve,
 } = require('../controllers/reserve.controller.js')
 
 const router = express.Router()
@@ -49,5 +50,11 @@ router.delete('/:id', deleteReserve)
  * Marcar una reserva como consumida (shortcut útil)
  */
 router.patch('/:id/consume', consumeReserve)
+
+/**
+ * PATCH /api/reserves/:id/move
+ * Mover una reserva a una nueva ubicación (drag & drop)
+ */
+router.patch('/:id/move', moveReserve)
 
 module.exports = router

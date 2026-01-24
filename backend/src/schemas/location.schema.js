@@ -23,6 +23,9 @@ const UpdateLocationSchema = z.object({
 const FilterLocationSchema = z.object({
   kind: LocationKindEnum.optional(),
   parentId: z.string().uuid().optional(),
+  parentCode: z.string().optional(),
+  includeChildren: z.coerce.boolean().default(false),
+  includeReserves: z.coerce.boolean().default(false),
   limit: z.coerce.number().int().positive().default(50),
   offset: z.coerce.number().int().nonnegative().default(0),
 })

@@ -370,6 +370,16 @@ export default function GuestMenu() {
 
       {/* Botones flotantes de acceso rápido */}
       <div className="fixed bottom-6 right-6 flex flex-col gap-3 z-50">
+        <Link href="/shelf-view">
+          <button className="group bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white rounded-full p-4 shadow-2xl hover:shadow-purple-500/50 transition-all duration-300 hover:scale-110">
+            <div className="flex items-center gap-2">
+              <span className="text-2xl">🏺</span>
+              <span className="hidden group-hover:inline-block font-semibold text-sm whitespace-nowrap">
+                Vista Estantería
+              </span>
+            </div>
+          </button>
+        </Link>
         <Link href="/stock-control">
           <button className="group bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white rounded-full p-4 shadow-2xl hover:shadow-amber-500/50 transition-all duration-300 hover:scale-110">
             <div className="flex items-center gap-2">

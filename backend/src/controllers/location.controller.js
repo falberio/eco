@@ -29,10 +29,39 @@ async function listLocations(req, res) {
     if (filters.kind) where.kind = filters.kind
     if (filters.parentId) where.parentId = filters.parentId
     
+    // Si se proporciona parentCode, buscar el parent primero
+    if (filters.parentCode) {
+      const parentLocation = await prisma.location.findUnique({
+        where: { code: filters.parentCode }
+      })
+      if (parentLocation) {
+        where.parentId = parentLocation.id
+      } else {
+        return res.json({ data: [], pagination: { total: 0, limit: filters.limit, offset: 0, hasMore: false } })
+      }
+    }
+    
+    // Construir includes dinámicamente
+    const include = {}
+    if (filters.includeChildren) include.children = true
+    if (filters.includeReserves) {
+      include.reserves = {
+        where: { status: 'ACTIVE' },
+        include: {
+          item: true,
+          container: {
+            include: {
+              type: true
+            }
+          }
+        }
+      }
+    }
+    
     const [locations, total] = await Promise.all([
       prisma.location.findMany({
         where,
-        include: { children: true },
+        include,
         take: filters.limit,
         skip: filters.offset,
         orderBy: { sortIndex: 'asc' }
