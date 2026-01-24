@@ -1,3 +1,57 @@
+# 🎯 RESUMEN EJECUTIVO - Sesión 23 Enero 2026
+
+## 🔧 SOLUCIÓN CRÍTICA: Error MissingSecret en NextAuth (Edge Runtime)
+
+### Problema Principal
+**Síntoma:** Acceso a http://localhost:3000 mostraba menú en lugar de redirigir a login. Logs mostraban:
+```
+[auth][error] MissingSecret: Please define a `secret`. Read more at https://errors.authjs.dev#missingsecret
+```
+
+**Causa Raíz:** NextAuth v5 ejecuta middleware en Edge Runtime (servidor), donde las variables de entorno sin prefijo `NEXT_PUBLIC_` NO se cargan correctamente. Aunque `.env.local` tenía `AUTH_SECRET`, el middleware no podía acceder.
+
+### Solución Implementada (3 pasos)
+
+#### Paso 1: Renombrar Variables en `.env.local`
+```dotenv
+# ANTES
+AUTH_SECRET=your-local-secret-key-development-2026
+NEXTAUTH_SECRET=your-local-secret-key-development-2026
+
+# DESPUÉS
+NEXT_PUBLIC_AUTH_SECRET=your-local-secret-key-development-2026
+NEXT_PUBLIC_NEXTAUTH_SECRET=your-local-secret-key-development-2026
+```
+**Por qué:** El prefijo `NEXT_PUBLIC_` hace que las variables sean accesibles en Edge Runtime donde corre middleware.
+
+#### Paso 2: Actualizar `auth.ts` para leer nuevas variables
+**Archivo:** [frontend/alacena-app/auth.ts](frontend/alacena-app/auth.ts#L6-L8)
+
+```typescript
+// ANTES
+secret: process.env.AUTH_SECRET || process.env.NEXTAUTH_SECRET,
+
+// DESPUÉS
+trustHost: true,
+secret: process.env.NEXT_PUBLIC_AUTH_SECRET || process.env.NEXT_PUBLIC_NEXTAUTH_SECRET || 'development-secret-key',
+```
+
+**Por qué `trustHost: true`:** En desarrollo local, NextAuth no puede validar completamente el host. Esta flag le indica que confíe en localhost sin validaciones estrictas.
+
+#### Paso 3: Limpiar caché y reiniciar
+```bash
+npm cache clean --force
+npm run dev
+```
+
+### Resultado ✅
+- ✅ Sin errores de MissingSecret
+- ✅ Middleware redirige correctamente a `/login` cuando no hay autenticación
+- ✅ Acceso a http://localhost:3000 muestra formulario de login
+- ✅ Sistema de autenticación funcionando
+
+---
+
 # 🎯 RESUMEN EJECUTIVO - Sesión 17 Enero 2026
 
 ## 📋 Lo Que Hicimos

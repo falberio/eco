@@ -1,7 +1,10 @@
 # Build stage
-FROM node:20-alpine AS builder
+FROM node:20-slim AS builder
 
 WORKDIR /app
+
+# Install OpenSSL (requerido por Prisma)
+RUN apt-get update -y && apt-get install -y openssl libssl-dev
 
 # Copy package files
 COPY backend/package*.json ./
@@ -14,12 +17,12 @@ RUN npm ci
 RUN npm run prisma:generate
 
 # Runtime stage
-FROM node:20-alpine
+FROM node:20-slim
 
 WORKDIR /app
 
-# Install dumb-init (para manejar señales correctamente)
-RUN apk add --no-cache dumb-init
+# Install dumb-init y OpenSSL (requerido por Prisma)
+RUN apt-get update -y && apt-get install -y dumb-init openssl && rm -rf /var/lib/apt/lists/*
 
 # Copy from builder
 COPY --from=builder /app/node_modules ./node_modules

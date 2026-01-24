@@ -4,21 +4,29 @@ primary_region = "gru"
 
 [build]
   dockerfile = "Dockerfile"
+
+# ⚠️ LÍMITES DE FREE TIER - NO MODIFICAR PARA EVITAR CARGOS
+[vm]
+  memory = '256mb'  # Máximo gratis
+  cpus = 1          # CPU compartida gratis
   
 [env]
   NODE_ENV = "production"
   PORT = "3001"
-  DATABASE_URL = "postgresql://postgres:DjDK6YNUopieqRGW@[2600:1f18:2e13:9d1c:faba:208:6f00:de21]:5432/postgres?schema=public&sslmode=disable"
-  JWT_SECRET = "your-super-secret-jwt-key-change-in-production"
+  # DATABASE_URL y JWT_SECRET están en Fly.io Secrets (más seguro)
 
 [[services]]
   internal_port = 3001
   processes = ["app"]
   protocol = "tcp"
+  auto_stop_machines = true    # ⚠️ Apagar automáticamente cuando no haya tráfico (ahorra recursos)
+  auto_start_machines = true   # ⚠️ Encender automáticamente al recibir request
+  min_machines_running = 0     # ⚠️ Permitir que se apague todo cuando no hay uso
   
   [services.concurrency]
     hard_limit = 25
     soft_limit = 20
+    type = "connections"
   
   [[services.ports]]
     handlers = ["http"]

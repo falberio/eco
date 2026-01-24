@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧺 ALACENA - Guía Completa</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #2c3e50;
+            border-bottom: 4px solid #3498db;
+            padding-bottom: 20px;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.1em;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #2980b9;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-left: 5px solid #3498db;
+            padding-left: 15px;
+        }
+
+        h3 {
+            color: #34495e;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: #f9f9f9;
+        }
+
+        th {
+            background-color: #3498db;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:hover {
+            background-color: #f0f0f0;
+        }
+
+        code {
+            background-color: #ecf0f1;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            color: #c0392b;
+        }
+
+        pre {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 20px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            line-height: 1.4;
+        }
+
+        pre code {
+            background-color: transparent;
+            color: #ecf0f1;
+            padding: 0;
+        }
+
+        .box {
+            background-color: #ecf0f1;
+            border-left: 5px solid #3498db;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .box.warning {
+            background-color: #fef5e7;
+            border-left-color: #f39c12;
+        }
+
+        .box.success {
+            background-color: #eafaf1;
+            border-left-color: #27ae60;
+        }
+
+        .box.error {
+            background-color: #fadbd8;
+            border-left-color: #e74c3c;
+        }
+
+        ul,
+        ol {
+            margin: 15px 0;
+            margin-left: 30px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .flow {
+            background-color: #f9f9f9;
+            border: 2px solid #3498db;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            line-height: 1.8;
+            white-space: pre-wrap;
+        }
+
+        .toc {
+            background-color: #ecf0f1;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+
+        .toc h3 {
+            margin-top: 0;
+        }
+
+        .toc ul {
+            margin-left: 20px;
+        }
+
+        .toc a {
+            color: #2980b9;
+            text-decoration: none;
+        }
+
+        .toc a:hover {
+            text-decoration: underline;
+        }
+
+        @media print {
+            body {
+                background-color: white;
+                padding: 0;
+            }
+
+            .container {
+                box-shadow: none;
+                max-width: 100%;
+            }
+
+            .no-print {
+                display: none;
+            }
+        }
+
+        .print-only {
+            display: none;
+        }
+
+        @media print {
+            .print-only {
+                display: block;
+            }
+        }
+
+        .emoji {
+            font-size: 1.2em;
+        }
+
+        hr {
+            border: none;
+            border-top: 2px solid #ecf0f1;
+            margin: 40px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🧺 ALACENA - Guía Completa de Arquitectura y Código</h1>
+        <p class="subtitle"><strong>Última Actualización:</strong> 23 de enero de 2026 | <strong>Versión:</strong> 1.0
+        </p>
+
+        <div class="box">
+            <strong>💡 Guía educativa para entender el proyecto desde cero.</strong><br>
+            Lee este documento para comprender la arquitectura, los lenguajes y cómo funciona cada componente.
+        </div>
+
+        <h2>📋 Tabla de Contenidos</h2>
+        <div class="toc">
+            <ul>
+                <li><a href="#que-es">¿QUÉ ES ALACENA?</a></li>
+                <li><a href="#tecnologias">Tecnologías Utilizadas</a></li>
+                <li><a href="#flujo-sesion">Flujo de una Sesión Típica</a></li>
+                <li><a href="#estructura">Estructura de Carpetas</a></li>
+                <li><a href="#modelos">Modelos de Base de Datos</a></li>
+                <li><a href="#flujo-api">Flujo de una Petición API</a></li>
+                <li><a href="#jwt">Autenticación - JWT</a></li>
+                <li><a href="#lenguajes">Lenguajes Explicados</a></li>
+                <li><a href="#componentes">Componentes Clave</a></li>
+                <li><a href="#troubleshooting">Solucionar Problemas</a></li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <h2 id="que-es">¿QUÉ ES ALACENA?</h2>
+        <p>ALACENA es un <strong>sistema full-stack</strong> (frontend + backend + base de datos) para gestionar un
+            inventario de cocina. Es como un "ERP ligero" pero para tu cocina personal.</p>
+
+        <h3>Propósito:</h3>
+        <ul>
+            <li>Guardar qué ingredientes tienes y dónde están</li>
+            <li>Registrar recetas que hiciste</li>
+            <li>Gestionar reservas/porciones de comida</li>
+            <li>Ver un menú público con lo que hay disponible</li>
+        </ul>
+
+        <h3>Componentes principales:</h3>
+        <ul>
+            <li><strong>🖥️ Frontend:</strong> Interfaz visual (lo que ves en pantalla)</li>
+            <li><strong>⚙️ Backend:</strong> Lógica del negocio (procesa datos, autenticación)</li>
+            <li><strong>🗄️ Base de datos:</strong> Guarda toda la información persistentemente</li>
+        </ul>
+
+        <hr>
+
+        <h2 id="tecnologias">Tecnologías Utilizadas</h2>
+
+        <h3>Frontend (c:\Users\Usuario\alacena\frontend\alacena-app)</h3>
+        <table>
+            <tr>
+                <th>Tecnología</th>
+                <th>Tipo</th>
+                <th>¿Qué es?</th>
+                <th>¿Para qué?</th>
+            </tr>
+            <tr>
+                <td><strong>Next.js 15</strong></td>
+                <td>Framework</td>
+                <td>Basado en React</td>
+                <td>Crea aplicaciones web modernas con SSR</td>
+            </tr>
+            <tr>
+                <td><strong>React 18</strong></td>
+                <td>Librería UI</td>
+                <td>Componentes visuales</td>
+                <td>Crea componentes interactivos reutilizables</td>
+            </tr>
+            <tr>
+                <td><strong>TypeScript</strong></td>
+                <td>Lenguaje</td>
+                <td>JavaScript con tipos</td>
+                <td>Añade seguridad de tipos al código</td>
+            </tr>
+            <tr>
+                <td><strong>Tailwind CSS</strong></td>
+                <td>Framework CSS</td>
+                <td>Utilidades de estilos</td>
+                <td>Crea interfaces bonitas sin CSS manual</td>
+            </tr>
+            <tr>
+                <td><strong>NextAuth v5</strong></td>
+                <td>Librería Auth</td>
+                <td>Autenticación</td>
+                <td>Gestiona login/logout/sesiones seguro</td>
+            </tr>
+            <tr>
+                <td><strong>Zod</strong></td>
+                <td>Librería Validación</td>
+                <td>Schema validation</td>
+                <td>Valida que los datos sean del tipo correcto</td>
+            </tr>
+            <tr>
+                <td><strong>Axios</strong></td>
+                <td>Librería HTTP</td>
+                <td>Cliente HTTP</td>
+                <td>Hace peticiones al backend</td>
+            </tr>
+        </table>
+
+        <p><strong>Lenguaje:</strong> TypeScript/JavaScript (TSX - TypeScript + JSX)</p>
+
+        <h3>Backend (c:\Users\Usuario\alacena\backend)</h3>
+        <table>
+            <tr>
+                <th>Tecnología</th>
+                <th>Tipo</th>
+                <th>¿Qué es?</th>
+                <th>¿Para qué?</th>
+            </tr>
+            <tr>
+                <td><strong>Express.js</strong></td>
+                <td>Framework</td>
+                <td>Framework web</td>
+                <td>Crea un servidor HTTP con rutas</td>
+            </tr>
+            <tr>
+                <td><strong>Node.js</strong></td>
+                <td>Runtime</td>
+                <td>Entorno de ejecución</td>
+                <td>Ejecuta JavaScript en el servidor</td>
+            </tr>
+            <tr>
+                <td><strong>Prisma</strong></td>
+                <td>ORM</td>
+                <td>Object-Relational Mapping</td>
+                <td>Interactúa con la BD de forma segura</td>
+            </tr>
+            <tr>
+                <td><strong>PostgreSQL</strong></td>
+                <td>Base de datos</td>
+                <td>SQL relacional</td>
+                <td>Almacena todos los datos</td>
+            </tr>
+            <tr>
+                <td><strong>JWT</strong></td>
+                <td>Librería Tokens</td>
+                <td>JSON Web Tokens</td>
+                <td>Crea tokens para verificar autenticación</td>
+            </tr>
+            <tr>
+                <td><strong>bcryptjs</strong></td>
+                <td>Librería Hash</td>
+                <td>Password hashing</td>
+                <td>Guarda contraseñas de forma segura</td>
+            </tr>
+        </table>
+
+        <p><strong>Lenguaje:</strong> JavaScript (Node.js)</p>
+
+        <hr>
+
+        <h2 id="flujo-sesion">Flujo de una Sesión Típica</h2>
+
+        <h3>Escenario: Usuario intenta loguear</h3>
+
+        <div class="flow">┌─────────────────────────────────────────────────────────┐
+            │ PASO 1: Usuario entra a http://localhost:3000 │
+            │ ✓ Frontend carga la página │
+            │ ✓ Middleware revisa: ¿hay sesión? │
+            │ ✗ NO hay sesión → redirige a /login │
+            └─────────────────────────────────────────────────────┘
+
+            ┌─────────────────────────────────────────────────────────┐
+            │ PASO 2: Usuario ve FORMULARIO DE LOGIN │
+            │ ✓ Página renderizada con campos: │
+            │ - Email: [ ] │
+            │ - Contraseña: [ ] │
+            │ - [Ingresar] │
+            │ │
+            │ Usuario ingresa: │
+            │ - Email: admin@alacena.com │
+            │ - Contraseña: admin123 │
+            │ - Hace click en "Ingresar" │
+            └─────────────────────────────────────────────────────┘
+
+            ┌─────────────────────────────────────────────────────────┐
+            │ PASO 3: FRONTEND (NextAuth) interpreta el submit │
+            │ ✓ handleSubmit() se ejecuta │
+            │ ✓ Llama a: signIn('credentials', {...}) │
+            │ ✓ NextAuth intercepta y usa CredentialsProvider │
+            │ ✓ Llama authorize() definido en auth.ts │
+            │ ✓ authorize() hace fetch a backend: POST /api/auth/login
+            └─────────────────────────────────────────────────────┘
+
+            ┌─────────────────────────────────────────────────────────┐
+            │ PASO 4: BACKEND recibe POST /api/auth/login │
+            │ ✓ Express recibe petición │
+            │ ✓ auth.controller.login() se ejecuta: │
+            │ 1. Lee email y password del request │
+            │ 2. Busca usuario en BD │
+            │ 3. Compara password con bcrypt.compare() │
+            │ 4. Si NO coincide → error 401 │
+            │ 5. Si coincide → genera JWT │
+            │ 6. Retorna: { user: {id, email, name}, token } │
+            └─────────────────────────────────────────────────────┘
+
+            ┌─────────────────────────────────────────────────────────┐
+            │ PASO 5: FRONTEND recibe la respuesta │
+            │ ✓ authorize() retorna el usuario con el token │
+            │ ✓ NextAuth ejecuta callbacks: │
+            │ 1. jwt() → guarda datos en JWT │
+            │ 2. session() → añade datos a la sesión │
+            │ ✓ NextAuth crea COOKIE SEGURA con JWT encriptado │
+            └─────────────────────────────────────────────────────┘
+
+            ┌─────────────────────────────────────────────────────────┐
+            │ PASO 6: Usuario redirigido a /dashboard │
+            │ ✓ signIn() termina correctamente │
+            │ ✓ router.push('/dashboard') │
+            │ ✓ Middleware revisa: ¿hay sesión? │
+            │ ✓ SÍ hay sesión → permite acceso │
+            │ ✓ Dashboard se carga con datos del usuario │
+            └─────────────────────────────────────────────────────┘</div>
+
+        <hr>
+
+        <h2 id="estructura">Estructura de Carpetas</h2>
+
+        <h3>Frontend</h3>
+        <pre><code>frontend/alacena-app/
+├── app/                                    # Carpeta de rutas (Next.js)
+│   ├── page.tsx                           # Página raíz (/)
+│   ├── layout.tsx                         # HTML común para todas
+│   ├── login/page.tsx                     # Formulario de login
+│   ├── dashboard/                         # Protegida por middleware
+│   │   ├── page.tsx                       # Home del dashboard
+│   │   ├── layout.tsx                     # Sidebar
+│   │   ├── items/page.tsx                 # CRUD de items
+│   │   ├── locations/page.tsx             # CRUD de ubicaciones
+│   │   ├── reserves/page.tsx              # CRUD de reservas
+│   │   └── menu/page.tsx                  # CRUD del menú
+│   ├── guest/menu/page.tsx                # Menú público
+│   └── api/auth/[...nextauth]/route.ts    # Rutas de NextAuth
+├── auth.ts                                # Config de NextAuth
+├── middleware.ts                          # Protección de rutas
+├── lib/validations.ts                     # Schemas Zod
+└── .env.local                             # Variables de entorno
+
+Backend
+
+frontend/alacena-app/
+├── src/
+│   ├── app.js                             # Configuración de Express
+│   │                                      # - CORS habilitado
+│   │                                      # - JSON parser
+│   │                                      # - Rutas registradas
+│   │
+│   ├── server.js                          # Punto de entrada
+│   │                                      # - Inicia servidor en 3001
+│   │
+│   ├── controllers/                       # Lógica de negocio
+│   │   ├── auth.controller.js             # register/login/getProfile
+│   │   ├── item.controller.js             # Maneja Items
+│   │   ├── location.controller.js         # Maneja Locations
+│   │   └── ...
+│   │
+│   ├── routes/                            # Rutas HTTP
+│   │   ├── auth.routes.js                 # GET/POST /api/auth/*
+│   │   ├── items.routes.js                # GET/POST/PUT/DELETE
+│   │   └── ...
+│   │
+│   ├── schemas/                           # Validación (Zod)
+│   │   ├── item.schema.js
+│   │   └── ...
+│   │
+│   └── prisma/
+│       └── client.js                      # Singleton de Prisma
+│
+├── prisma/
+│   ├── schema.prisma                      # DEFINICIÓN DE MODELOS
+│   ├── seed.js                            # Datos de prueba
+│   └── migrations/                        # Histórico de cambios
+│
+├── .env                                   # Variables de entorno
+└── package.json                           # Dependencias</code></pre>
+
+        <hr>
+
+        <h2 id="modelos">Modelos de Base de Datos</h2>
+
+        <h3>Modelo: User (Usuario)</h3>
+        <pre><code>model User {
+  id            String    @id @default(cuid())
+  email         String    @unique
+  name          String?
+  passwordHash  String
+  role          String    @default("user")
+  isActive      Boolean   @default(true)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+}</code></pre>
+
+        <h3>Modelo: Item (Ingrediente/Producto)</h3>
+        <pre><code>model Item {
+  id          String   @id @default(cuid())
+  code        String?  @unique
+  name        String
+  kind        ItemKind  // PRODUCT o RECIPE
+}
+
+enum ItemKind {
+  PRODUCT   // Ingredientes, bebidas
+  RECIPE    // Preparaciones, recetas
+}</code></pre>
+
+        <h3>Modelo: Location (Ubicación)</h3>
+        <pre><code>model Location {
+  id          String       @id @default(cuid())
+  code        String?      @unique
+  name        String
+  kind        LocationKind  // AREA, SECTION, SLOT
+  parentId    String?
+  parent      Location?    @relation("LocationTree")
+  children    Location[]   @relation("LocationTree")
+  sortIndex   Int          @default(0)
+}
+
+enum LocationKind {
+  AREA      // Freezer, Heladera
+  SECTION   // Cajón, Estante
+  SLOT      // Posición
+}</code></pre>
+
+        <h3>Modelo: Reserve (Reserva/Porción)</h3>
+        <pre><code>model Reserve {
+  id            String   @id @default(cuid())
+  itemId        String
+  item          Item     @relation(fields: [itemId])
+  locationId    String
+  location      Location @relation(fields: [locationId])
+  containerId   String
+  container     Container @relation(fields: [containerId])
+  status        ReserveStatus
+  quantity      Float?
+  unit          UnitKind
+}
+
+enum ReserveStatus {
+  ACTIVE        // En inventario
+  TRANSFORMED   // Transformada
+  CONSUMED      // Consumida
+  DISCARDED     // Descartada
+}</code></pre>
+
+        <hr>
+
+        <h2 id="flujo-api">Flujo de una Petición API</h2>
+
+        <h3>Ejemplo: Crear un nuevo item</h3>
+
+        <h4>1. Frontend hace la petición (app/dashboard/items/page.tsx)</h4>
+        <pre><code>const formData = {
+  name: "Lentejas",
+  code: "LENT-CH",
+  kind: "PRODUCT"
+}
+
+const response = await fetch('http://localhost:3001/api/items', {
+  method: 'POST',
+  headers: { 
+    'Content-Type': 'application/json',
+    'Authorization': `Bearer ${session.backendToken}`
+  },
+  body: JSON.stringify(formData)
+})</code></pre>
+
+        <h4>2. Backend recibe y procesa (src/controllers/item.controller.js)</h4>
+        <pre><code>async function create(req, res) {
+  try {
+    const { name, code, kind } = req.body
+    
+    if (!name) {
+      return res.status(400).json({ error: 'Name requerido' })
+    }
+
+    const item = await prisma.item.create({
+      data: { name, code, kind }
+    })
+
+    res.status(201).json({ success: true, item })
+  } catch (error) {
+    res.status(500).json({ error: error.message })
+  }
+}</code></pre>
+
+        <h4>3. Base de datos ejecuta SQL</h4>
+        <pre><code>INSERT INTO Item (id, name, code, kind, createdAt, updatedAt)
+VALUES ('cuid-123', 'Lentejas', 'LENT-CH', 'PRODUCT', NOW(), NOW())</code></pre>
+
+        <h4>4. Frontend recibe respuesta</h4>
+        <pre><code>if (response.ok) {
+  const { item } = await response.json()
+  setItems([...items, item])
+  setMessage('Item creado ✓')
+}</code></pre>
+
+        <hr>
+
+        <h2 id="jwt">Autenticación - JWT</h2>
+
+        <h3>¿Qué es un JWT?</h3>
+        <p>Un <strong>JWT (JSON Web Token)</strong> es un "carnet de identidad digital" que el backend firma y da al
+            cliente.</p>
+
+        <h3>Estructura de un JWT</h3>
+        <pre><code>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9
+.eyJ1c2VySWQiOiIxMjMiLCJlbWFpbCI6ImFkbWluQGFsYWNlbmEuY29tIn0
+.dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXo
+
+Decodificado:
+
+HEADER: { "alg": "HS256", "typ": "JWT" }
+PAYLOAD: { "userId": "123", "email": "admin@alacena.com" }
+SIGNATURE: HMACSHA256(header + payload, JWT_SECRET)</code></pre>
+
+        <h3>Flujo de autenticación</h3>
+        <div class="flow">1. LOGIN
+            Usuario envía email/password
+            → POST /api/auth/login
+
+            2. BACKEND VERIFICA
+            Compara password con bcrypt.compare()
+            Si correcto → jwt.sign({ userId, email }, JWT_SECRET)
+
+            3. RETORNA JWT
+            { user: {...}, token: "JWT..." }
+
+            4. CLIENTE GUARDA
+            NextAuth guarda JWT en cookie encriptada
+
+            5. PETICIONES SUBSECUENTES
+            Authorization: Bearer JWT...
+            → Backend verifica JWT
+            → Si válido → procesa petición
+            → Si inválido → 401 Unauthorized
+
+            6. TOKEN EXPIRA
+            Después de 30 días → Usuario debe loguear nuevamente</div>
+
+        <h3>Contraseñas: bcrypt</h3>
+        <p>Las contraseñas NUNCA se guardan en texto plano:</p>
+        <pre><code>// Registro
+const password = "admin123"
+const passwordHash = await bcrypt.hash(password, 10)
+// passwordHash = "$2a$10$GHX8.yL9OJ1CpQs3f6J3He..."
+
+// Login
+const isValid = await bcrypt.compare(password, user.passwordHash)
+// Retorna true o false</code></pre>
+
+        <hr>
+
+        <h2 id="lenguajes">Lenguajes Explicados</h2>
+
+        <h3>JavaScript (Backend)</h3>
+        <p><strong>¿Qué es?</strong> Lenguaje de programación que corre en Node.js (servidor).</p>
+        <pre><code>// Variables
+const nombre = "Juan"
+let edad = 30
+
+// Funciones
+function saludar(nombre) {
+  return `Hola ${nombre}`
+}
+
+// Funciones flecha
+const sumar = (a, b) => a + b
+
+// Async/await
+async function obtenerDatos() {
+  try {
+    const response = await fetch('http://...')
+    const data = await response.json()
+    return data
+  } catch (error) {
+    console.error('Error:', error)
+  }
+}</code></pre>
+
+        <h3>TypeScript (Frontend)</h3>
+        <p><strong>¿Qué es?</strong> JavaScript + sistema de tipos. Detecta errores antes de ejecutar.</p>
+        <pre><code>// JavaScript: sin tipos (puede fallar)
+sumar(5, 3)        // ✓ 8
+sumar("5", "3")    // ✓ "53" (¡INCORRECTO!)
+
+// TypeScript: con tipos (seguro)
+function sumar(a: number, b: number): number {
+  return a + b
+}
+
+sumar(5, 3)        // ✓ 8
+sumar("5", "3")    // ✗ ERROR en desarrollo</code></pre>
+
+        <h3>JSX/TSX (Frontend)</h3>
+        <p><strong>¿Qué es?</strong> HTML dentro de JavaScript/TypeScript.</p>
+        <pre><code>// Componente React
+export default function Saludo({ nombre }: { nombre: string }) {
+  const [count, setCount] = useState(0)
+  
+  return (
+    &lt;div&gt;
+      &lt;h1&gt;Hola, {nombre}!&lt;/h1&gt;
+      &lt;p&gt;Contador: {count}&lt;/p&gt;
+      &lt;button onClick={() => setCount(count + 1)}&gt;
+        Incrementar
+      &lt;/button&gt;
+    &lt;/div&gt;
+  )
+}</code></pre>
+
+        <hr>
+
+        <h2 id="componentes">Componentes Clave</h2>
+
+        <h3>NextAuth (Autenticación)</h3>
+        <p><strong>Archivo:</strong> auth.ts</p>
+        <p><strong>¿Qué hace?</strong> Gestiona sesiones, protege rutas, maneja cookies JWT.</p>
+        <pre><code>export const { auth, handlers, signIn } = NextAuth({
+  secret: process.env.AUTH_SECRET,
+  
+  providers: [
+    CredentialsProvider({
+      async authorize(credentials) {
+        // Llama a backend para validar
+        const res = await fetch(`${API_URL}/api/auth/login`, {
+          method: 'POST',
+          body: JSON.stringify(credentials)
+        })
+        
+        if (!res.ok) return null
+        const user = await res.json()
+        return user
+      }
+    })
+  ],
+  
+  callbacks: {
+    async jwt({ token, user }) {
+      if (user) {
+        token.backendToken = user.token
+      }
+      return token
+    }
+  }
+})</code></pre>
+
+        <h3>Middleware (Protección de Rutas)</h3>
+        <p><strong>Archivo:</strong> middleware.ts</p>
+        <pre><code>export const middleware = auth((req) => {
+  // No hay sesión → redirige a /login
+  if (!req.auth && req.nextUrl.pathname.startsWith('/dashboard')) {
+    const loginUrl = new URL('/login', req.nextUrl.origin)
+    return Response.redirect(loginUrl)
+  }
+})</code></pre>
+
+        <h3>Express (Backend)</h3>
+        <p><strong>Archivo:</strong> src/app.js</p>
+        <pre><code>const express = require('express')
+const cors = require('cors')
+
+const app = express()
+
+app.use(cors())
+app.use(express.json())
+
+app.get('/health', (req, res) => {
+  res.json({ status: 'ok' })
+})
+
+app.use('/api/auth', authRoutes)
+app.use('/api/items', itemsRoutes)
+
+module.exports = app</code></pre>
+
+        <h3>Prisma (ORM)</h3>
+        <p><strong>¿Qué es?</strong> Intermediario entre tu código y la base de datos.</p>
+        <pre><code>// CREATE
+const user = await prisma.user.create({
+  data: { email, passwordHash, name }
+})
+
+// READ
+const user = await prisma.user.findUnique({
+  where: { id: "123" }
+})
+
+// UPDATE
+const updated = await prisma.user.update({
+  where: { id: "123" },
+  data: { name: "Juan Actualizado" }
+})
+
+// DELETE
+await prisma.user.delete({
+  where: { id: "123" }
+})</code></pre>
+
+        <hr>
+
+        <h2 id="troubleshooting">Solucionar Problemas</h2>
+
+        <h3>❌ "MissingSecret: Please define a secret"</h3>
+        <div class="box error">
+            <strong>Causa:</strong> Variable AUTH_SECRET no configurada<br>
+            <strong>Solución:</strong><br>
+            1. Abre frontend/alacena-app/.env.local<br>
+            2. Asegúrate de tener: AUTH_SECRET=tu-secret<br>
+            3. Reinicia frontend: npm run dev
+        </div>
+
+        <h3>❌ "No es posible conectar con el servidor remoto"</h3>
+        <div class="box error">
+            <strong>Causa:</strong> Frontend no puede acceder al backend<br>
+            <strong>Solución:<br>
+                1. Abre PowerShell<br>
+                2. Ejecuta: curl.exe http://localhost:3001/health<br>
+                3. Si falla → Backend no está corriendo<br>
+                4. Levanta backend: Set-Location backend; npm run dev
+        </div>
+
+        <h3>❌ "Email o contraseña incorrectos"</h3>
+        <div class="box error">
+            <strong>Causa:</strong> Usuario no existe o credenciales incorrectas<br>
+            <strong>Solución:</strong><br>
+            Ejecuta el seed para crear usuario de prueba:<br>
+            <code>cd backend && npm run prisma:seed</code><br>
+            Credenciales: admin@alacena.com / admin123
+        </div>
+
+        <h3>❌ Frontend no redirige a login</h3>
+        <div class="box error">
+            <strong>Causa:</strong> Middleware no se cargó<br>
+            <strong>Solución:</strong><br>
+            1. Detén frontend (Ctrl+C)<br>
+            2. Elimina: rm -Recurse frontend/alacena-app/.next<br>
+            3. Reinicia: npm run dev
+        </div>
+
+        <hr>
+
+        <h2>Conclusión</h2>
+        <div class="box success">
+            <strong>ALACENA está construido con:</strong><br><br>
+            ✓ <strong>Frontend moderno:</strong> Next.js + TypeScript + React<br>
+            ✓ <strong>Backend robusto:</strong> Express + Prisma + PostgreSQL<br>
+            ✓ <strong>Autenticación segura:</strong> JWT + bcrypt + NextAuth<br>
+            ✓ <strong>Código tipado:</strong> TypeScript para menos errores
+        </div>
+
+        <h3>Conceptos clave para dominar:</h3>
+        <ol>
+            <li><strong>Flujo de login:</strong> Middleware → NextAuth → Backend → JWT</li>
+            <li><strong>Peticiones API:</strong> Frontend → Express routes → Controllers → Prisma → BD</li>
+            <li><strong>Autenticación:</strong> JWT en cookies + Middleware de protección</li>
+            <li><strong>Lenguajes:</strong> JavaScript (backend), TypeScript (frontend), SQL (BD)</li>
+        </ol>
+
+        <h3>Próximos pasos para aprender:</h3>
+        <ol>
+            <li>Lee un controlador completamente (ej: auth.controller.js)</li>
+            <li>Entiende cómo se conecta con su ruta (auth.routes.js)</li>
+            <li>Revisa cómo el frontend lo usa (login/page.tsx)</li>
+            <li>Modifica algo pequeño y observa el flujo</li>
+        </ol>
+
+        <hr>
+
+        <div class="box success" style="text-align: center; font-size: 1.2em; padding: 30px;">
+            <strong>¡Mucho éxito en tu aprendizaje! 🚀</strong><br><br>
+            Ahora tienes la base para entender y debuggear el proyecto por tu cuenta.
+        </div>
+
+    </div>
+</body>
+
+</html>

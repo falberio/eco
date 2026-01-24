@@ -1,12 +1,42 @@
-# 🧺 ALACENA - Sistema en Producción Activa
+# 🧺 ALACENA - Sistema en Desarrollo Local + Producción
 
-**Última Actualización**: 17 Enero 2026 - 05:36 UTC  
-**Estado**: ✅ En Línea - Producción  
-**Performance**: 🚀 Optimizado (50% más rápido)
+**Última Actualización**: 23 Enero 2026 - 14:30 UTC  
+**Estado**: ✅ Desarrollo Local Funcionando + Producción Activa  
+**Enfoque**: Testing local y mejoras de seguridad
 
 ---
 
-## ✅ Completado en esta sesión (17 Enero)
+## ✅ Completado en esta sesión (23 Enero)
+
+### Autenticación & Middleware (CRÍTICO)
+- ✅ **FIX: MissingSecret en NextAuth v5 Edge Runtime** - Variables de entorno renombradas con prefijo `NEXT_PUBLIC_`
+- ✅ Middleware ahora redirige correctamente a `/login` para usuarios no autenticados
+- ✅ `trustHost: true` agregado en `auth.ts` para desarrollo local
+- ✅ Caché limpiado y proceso reiniciado correctamente
+- ✅ Acceso a http://localhost:3000 funciona: muestra login sin autenticación
+
+### Levantamiento Local (Desarrollo)
+- ✅ Backend corriendo en http://localhost:3001 (puerto 3001)
+- ✅ Frontend corriendo en http://localhost:3000 (puerto 3000)
+- ✅ Base de datos: conectada a Supabase PostgreSQL remota
+- ✅ Workflows en PowerShell con 2 terminales (backend + frontend simultáneos)
+- ✅ Ambiente `.env.local` correctamente configurado
+
+### Archivos Modificados Sesión 23 Enero
+```
+✅ frontend/alacena-app/.env.local
+   - AUTH_SECRET → NEXT_PUBLIC_AUTH_SECRET
+   - NEXTAUTH_SECRET → NEXT_PUBLIC_NEXTAUTH_SECRET
+
+✅ frontend/alacena-app/auth.ts
+   - Añadido: trustHost: true
+   - Actualizado: secret: process.env.NEXT_PUBLIC_AUTH_SECRET || process.env.NEXT_PUBLIC_NEXTAUTH_SECRET || 'development-secret-key'
+
+✅ frontend/alacena-app/middleware.ts
+   - Agregado logging para debugging (console.log con emojis)
+```
+
+---
 
 ### Optimizaciones Realizadas
 - ✅ Reducido límite de items de 100 a 50 (40% más rápido)

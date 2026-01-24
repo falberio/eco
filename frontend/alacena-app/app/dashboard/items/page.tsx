@@ -60,6 +60,11 @@ export default function ItemsPage() {
             setSubmitLoading(true)
             // Validar con Zod
             const validatedData = ItemSchema.parse(formData)
+            
+            // Limpiar campos vacíos (convertir "" a undefined)
+            const cleanData = Object.fromEntries(
+                Object.entries(validatedData).filter(([_, value]) => value !== '')
+            )
 
             const url = editingId ? `${API_URL}/api/items/${editingId}` : `${API_URL}/api/items`
             const method = editingId ? 'PUT' : 'POST'
@@ -67,7 +72,7 @@ export default function ItemsPage() {
             const res = await fetch(url, {
                 method,
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(validatedData),
+                body: JSON.stringify(cleanData),
             })
 
             const responseData = await res.json()

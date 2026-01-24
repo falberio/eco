@@ -63,6 +63,8 @@ async function login(req, res) {
     try {
         const { email, password } = req.body
 
+        console.log('🔐 Login attempt:', { email, hasPassword: !!password })
+
         // Validaciones
         if (!email || !password) {
             return res.status(400).json({ error: 'Email y contraseña son requeridos' })
@@ -73,7 +75,10 @@ async function login(req, res) {
             where: { email }
         })
 
+        console.log('👤 Usuario encontrado:', user ? { email: user.email, isActive: user.isActive } : 'NO ENCONTRADO')
+
         if (!user || !user.isActive) {
+            console.log('❌ Usuario no encontrado o inactivo')
             return res.status(401).json({ error: 'Credenciales inválidas' })
         }
 

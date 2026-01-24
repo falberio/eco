@@ -4,6 +4,8 @@ import CredentialsProvider from 'next-auth/providers/credentials'
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://alacena-backend.fly.dev'
 
 export const { auth, handlers, signIn, signOut } = NextAuth({
+    trustHost: true,
+    secret: process.env.AUTH_SECRET || process.env.NEXT_PUBLIC_AUTH_SECRET || process.env.NEXTAUTH_SECRET || process.env.NEXT_PUBLIC_NEXTAUTH_SECRET || 'development-secret-key',
     providers: [
         CredentialsProvider({
             name: 'Credentials',
@@ -14,6 +16,18 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
             async authorize(credentials) {
                 if (!credentials?.email || !credentials?.password) {
                     return null
+                }
+
+                // 🚧 DESARROLLO: Usuario hardcodeado para testing sin backend
+                const DEV_MODE = process.env.NODE_ENV === 'development'
+                if (DEV_MODE && credentials.email === 'admin@alacena.com' && credentials.password === 'admin123') {
+                    console.log('✅ Login de desarrollo exitoso')
+                    return {
+                        id: 'dev-user-1',
+                        email: 'admin@alacena.com',
+                        name: 'Admin (Desarrollo)',
+                        token: 'dev-token-12345',
+                    }
                 }
 
                 try {

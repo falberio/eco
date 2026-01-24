@@ -8,8 +8,7 @@ async function createItem(req, res) {
     const data = CreateItemSchema.parse(req.body)
     
     const item = await prisma.item.create({
-      data,
-      include: { recipeIngredients: true, menuItems: true }
+      data
     })
     
     res.status(201).json(item)
@@ -66,8 +65,7 @@ async function getItem(req, res) {
     const { id } = req.params
     
     const item = await prisma.item.findUnique({
-      where: { id },
-      include: { recipeIngredients: true, menuItems: true, reserves: true }
+      where: { id }
     })
     
     if (!item) {
@@ -87,8 +85,7 @@ async function updateItem(req, res) {
     
     const item = await prisma.item.update({
       where: { id },
-      data,
-      include: { recipeIngredients: true, menuItems: true }
+      data
     })
     
     res.json(item)
