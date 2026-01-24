@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
+import Image from 'next/image'
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://alacena-backend.fly.dev'
 
@@ -116,6 +117,43 @@ export default function GuestMenu() {
   }
 
   const filteredItems = menuItems.filter(filterByDiet)
+
+  // Mapeo de nombres de platos a rutas de imágenes
+  function getImagePath(itemName: string, section: string): string | null {
+    const name = itemName.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    
+    const imageMap: Record<string, string> = {
+      // Desayunos
+      'tostadas con manteca y mermelada': '/images/menu/desayunos/tostadas-mermelada.jpg',
+      'huevos revueltos': '/images/menu/desayunos/huevos-revueltos.jpg',
+      'bowl de yogurt, avena y nueces': '/images/menu/desayunos/bowl-yogurt-avena.webp',
+      
+      // Carnes
+      'albondigas con arroz': '/images/menu/carnes/albondigas-arroz.jpeg',
+      'albondigas con pure': '/images/menu/carnes/albondigas-pure.webp',
+      'pollo con arroz': '/images/menu/carnes/pollo-arroz.jpeg',
+      'pollo con pure': '/images/menu/carnes/pollo-pure.jpeg',
+      
+      // Pastas
+      'fetuccini': '/images/menu/pastas/fetuccini.jpeg',
+      'spaguetti': '/images/menu/pastas/spaguetti.jpg',
+      'lasagna': '/images/menu/pastas/lasagna.jpeg',
+      'ñoquis': '/images/menu/pastas/noquis.jpg',
+      'noquis': '/images/menu/pastas/noquis.jpg',
+      
+      // Salsas
+      'bolognesa': '/images/menu/salsas/bolognesa.jpeg',
+      'salsa blanca': '/images/menu/salsas/salsa-blanca.jpg',
+      'pesto de albahaca': '/images/menu/salsas/pesto-albahaca.jpg',
+      'pesto de tomates secos': '/images/menu/salsas/pesto-tomates-secos.jpg',
+      
+      // Bar
+      'gin tonic': '/images/menu/bar/gin-tonic.jpeg',
+      'campari': '/images/menu/bar/campari.avif'
+    };
+    
+    return imageMap[name] || null;
+  }
 
   const groupedMenu = filteredItems.reduce((acc, item) => {
     const section = item.section || 'Otros'
@@ -276,30 +314,44 @@ export default function GuestMenu() {
                 </div>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {groupedMenu[section].map((item) => (
-                    <div
-                      key={item.id}
-                      className="bg-white/95 backdrop-blur rounded-xl shadow-lg overflow-hidden hover:shadow-amber-500/20 hover:scale-105 transition-all duration-300"
-                    >
-                      <div className="p-6">
-                        <h3 className="text-lg font-semibold text-slate-800 mb-2">
-                          {item.name}
-                        </h3>
-                        {item.notes && (
-                          <div className="flex flex-wrap gap-1 mt-3">
-                            {item.notes.split(',').map((note, idx) => (
-                              <span
-                                key={idx}
-                                className="text-xs px-2 py-1 rounded-full bg-amber-100 text-amber-700"
-                              >
-                                {note.trim()}
-                              </span>
-                            ))}
+                  {groupedMenu[section].map((item) => {
+                    const imagePath = getImagePath(item.name, section);
+                    return (
+                      <div
+                        key={item.id}
+                        className="bg-white/95 backdrop-blur rounded-xl shadow-lg overflow-hidden hover:shadow-amber-500/20 hover:scale-105 transition-all duration-300"
+                      >
+                        {imagePath && (
+                          <div className="relative w-full h-48 bg-slate-200">
+                            <Image
+                              src={imagePath}
+                              alt={item.name}
+                              fill
+                              className="object-cover"
+                              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                            />
                           </div>
                         )}
+                        <div className="p-6">
+                          <h3 className="text-lg font-semibold text-slate-800 mb-2">
+                            {item.name}
+                          </h3>
+                          {item.notes && (
+                            <div className="flex flex-wrap gap-1 mt-3">
+                              {item.notes.split(',').map((note, idx) => (
+                                <span
+                                  key={idx}
+                                  className="text-xs px-2 py-1 rounded-full bg-amber-100 text-amber-700"
+                                >
+                                  {note.trim()}
+                                </span>
+                              ))}
+                            </div>
+                          )}
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
               </div>
             ))}
