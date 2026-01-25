@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://alacena-backend.fly.dev'
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000'
 
 interface Location {
     id: string
@@ -23,6 +23,9 @@ export default function LocationsPage() {
     const [editingId, setEditingId] = useState<string | null>(null)
     const [generalError, setGeneralError] = useState<string>('')
     const [submitLoading, setSubmitLoading] = useState(false)
+    const [currentPage, setCurrentPage] = useState(0)
+    const [totalItems, setTotalItems] = useState(0)
+    const ITEMS_PER_PAGE = 50
     const [formData, setFormData] = useState<Partial<Location>>({
         name: '',
         kind: 'AREA',
@@ -34,14 +37,16 @@ export default function LocationsPage() {
     // Cargar ubicaciones
     useEffect(() => {
         fetchLocations()
-    }, [])
+    }, [currentPage])
 
     async function fetchLocations() {
         try {
             setLoading(true)
-            const res = await fetch(`${API_URL}/api/locations?limit=50`)
+            const skip = currentPage * ITEMS_PER_PAGE
+            const res = await fetch(`${API_URL}/api/alacena/locations?limit=${ITEMS_PER_PAGE}&skip=${skip}`)
             const data = await res.json()
             setLocations(data.data || [])
+            setTotalItems(data.pagination?.total || 0)
         } catch (error) {
             console.error('Error fetching locations:', error)
         } finally {
@@ -55,7 +60,7 @@ export default function LocationsPage() {
 
         try {
             setSubmitLoading(true)
-            const url = editingId ? `${API_URL}/api/locations/${editingId}` : `${API_URL}/api/locations`
+            const url = editingId ? `${API_URL}/api/alacena/locations/${editingId}` : `${API_URL}/api/alacena/locations`
             const method = editingId ? 'PUT' : 'POST'
 
             const res = await fetch(url, {
@@ -93,7 +98,7 @@ export default function LocationsPage() {
         if (confirm('¿Estás seguro?')) {
             try {
                 setGeneralError('')
-                const res = await fetch(`${API_URL}/api/locations/${id}`, { method: 'DELETE' })
+                const res = await fetch(`${API_URL}/api/alacena/locations/${id}`, { method: 'DELETE' })
                 const responseData = await res.json()
 
                 if (!res.ok) throw new Error(responseData.error || 'Error al eliminar')
@@ -250,6 +255,29 @@ export default function LocationsPage() {
                         </tbody>
                     </table>
                 </div>
+                
+                {/* Paginación */}
+            <div className="mt-6 flex items-center justify-between px-6">
+                <div className="text-sm text-gray-600">
+                    Mostrando {locations.length > 0 ? (currentPage * ITEMS_PER_PAGE) + 1 : 0} - {Math.min((currentPage + 1) * ITEMS_PER_PAGE, totalItems)} de {totalItems} ubicaciones
+                </div>
+                <div className="flex gap-2">
+                    <button
+                        onClick={() => setCurrentPage(p => Math.max(0, p - 1))}
+                        disabled={currentPage === 0}
+                        className="px-4 py-2 text-sm bg-white border border-gray-300 rounded hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                        ← Anterior
+                    </button>
+                    <button
+                        onClick={() => setCurrentPage(p => p + 1)}
+                        disabled={(currentPage + 1) * ITEMS_PER_PAGE >= totalItems}
+                        className="px-4 py-2 text-sm bg-white border border-gray-300 rounded hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                        Siguiente →
+                    </button>
+                </div>
+            </div>
             )}
         </div>
     )

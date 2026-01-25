@@ -1,4 +1,4 @@
-# 📚 Índice de Sesiones - ALACENA
+# 📚 Índice de Sesiones - ECO Platform
 
 ## Sesiones documentadas
 
@@ -8,6 +8,8 @@
 | [2026-01-17](./2026-01-17--dashboard-y-auth.md) | 18:30-22:00 | Dashboard Completo + Autenticación JWT | 4 páginas CRUD, login/register con backend, validaciones Zod | ✅ Completado |
 | [2026-01-24](./2026-01-24--deploy-completo-v1.md) | Mañana | Deploy v1.0 Completo | Primera versión 100% online, migración a PostgreSQL, fixes críticos | ✅ Completado |
 | [2026-01-24](./2026-01-24--sistema-taras-control-stock.md) | Tarde | Sistema de Taras y Control Masivo | Cálculo automático de tara, control secuencial de stock, códigos QR | ✅ Completado |
+| [2026-01-24](./2026-01-24--reestructuracion-eco.md) | Tarde | Reestructuración ECO Platform | Migración modular, shared code, theme system, type generation | ✅ Completado |
+| 2026-01-25 | 10:00+ | Sistema de Documentación y Metodología Ágil | Gestión de proyecto, backlog, sprints, templates | 🏃 En progreso |
 
 ---
 
@@ -23,11 +25,18 @@
 ## 🔄 Flujo de trabajo
 
 1. **Empezar sesión:** Usuario dice qué quiere hacer
-2. **Revisar INDEX:** Yo chequeo qué quedó pendiente
-3. **Trabajar:** Voy documentando cambios mentalmente
-4. **Finalizar:** Usuario dice "Guardá la sesión" → Creo archivo con fecha/hora
-5. **Actualizar INDEX:** Agrego la nueva sesión a esta tabla
+2. **Revisar INDEX:** Copilot chequea qué quedó pendiente + sprint actual
+3. **Trabajar:** Copilot documenta cambios en memoria
+4. **Finalizar:** Usuario dice "Finalizamos la sesión" → Copilot ejecuta cierre automático:
+   - Crea `docs/sesiones/YYYY-MM-DD--HH-MM--titulo.md` con toda la info
+   - Actualiza `docs/sesiones/INDEX.md` con nueva entrada
+   - Actualiza `docs/CHANGELOG.md` si hay cambios importantes
+   - Actualiza `docs/sprints/YYYY-MM-WNN.md` con progreso
+   - Actualiza `docs/BACKLOG.md` marcando tareas completadas
+   - Muestra resumen: "✅ Sesión guardada | 📝 X archivos | ✨ Y tareas | 📌 Z pendientes"
+5. **Siguiente sesión:** Repetir desde paso 1
 
 ---
 
-*Sistema implementado el 2026-01-16*
+*Sistema implementado el 2026-01-16*  
+*Mejorado con automatización el 2026-01-25*

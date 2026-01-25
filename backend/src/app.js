@@ -1,13 +1,20 @@
 const express = require('express')
 const cors = require('cors')
-const authRoutes = require('./routes/auth.routes.js')
-const reservesRoutes = require('./routes/reserves.routes.js')
-const itemsRoutes = require('./routes/items.routes.js')
-const locationsRoutes = require('./routes/locations.routes.js')
-const menuItemsRoutes = require('./routes/menuItems.routes.js')
-const containersRoutes = require('./routes/containers.routes.js')
-const batchesRoutes = require('./routes/batches.routes.js')
-const qrRoutes = require('./routes/qr.routes.js')
+
+// Shared routes (cross-app)
+const authRoutes = require('./shared/auth/auth.routes.js')
+const qrRoutes = require('./shared/qr/qr.routes.js')
+
+// Alacena module routes
+const reservesRoutes = require('./modules/alacena/routes/reserves.routes.js')
+const itemsRoutes = require('./modules/alacena/routes/items.routes.js')
+const locationsRoutes = require('./modules/alacena/routes/locations.routes.js')
+const menuItemsRoutes = require('./modules/alacena/routes/menuItems.routes.js')
+const containersRoutes = require('./modules/alacena/routes/containers.routes.js')
+const batchesRoutes = require('./modules/alacena/routes/batches.routes.js')
+
+// Financia module routes
+const financiaRoutes = require('./routes/financiaRoutes.js')
 
 const app = express();
 
@@ -21,22 +28,23 @@ app.get('/test', (req, res) => {
 
 // Ruta de health check
 app.get('/health', (req, res) => {
-    res.json({ status: 'ok', app: 'alacena', timestamp: new Date().toISOString() });
+    res.json({ status: 'ok', app: 'eco', modules: ['alacena', 'financia'], timestamp: new Date().toISOString() });
 });
 
-// Rutas de autenticación (públicas)
-app.use('/api/auth', authRoutes);
+// ======== SHARED ROUTES (cross-app) ========
+app.use('/api/shared/auth', authRoutes);
+app.use('/api/shared/qr', qrRoutes);
 
-// Rutas públicas (QR codes)
-app.use('/api/qr', qrRoutes);
+// ======== ALACENA MODULE ========
+app.use('/api/alacena/reserves', reservesRoutes);
+app.use('/api/alacena/items', itemsRoutes);
+app.use('/api/alacena/locations', locationsRoutes);
+app.use('/api/alacena/menu-items', menuItemsRoutes);
+app.use('/api/alacena/containers', containersRoutes);
+app.use('/api/alacena/batches', batchesRoutes);
 
-// Rutas de API
-app.use('/api/reserves', reservesRoutes);
-app.use('/api/items', itemsRoutes);
-app.use('/api/locations', locationsRoutes);
-app.use('/api/menu-items', menuItemsRoutes);
-app.use('/api/containers', containersRoutes);
-app.use('/api/batches', batchesRoutes);
+// ======== FINANCIA MODULE ========
+app.use('/api/financia', financiaRoutes);
 
 // 404 handler
 app.use((req, res) => {

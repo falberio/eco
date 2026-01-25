@@ -1,6 +1,6 @@
-// src/controllers/batch.controller.js
+// src/modules/alacena/controllers/batch.controller.js
 
-const prisma = require('../prisma/client.js')
+const prisma = require('../../../prisma/client.js')
 const { CreateBatchSchema, UpdateBatchSchema, FilterBatchSchema } = require('../schemas/batch.schema.js')
 
 async function createBatch(req, res) {
@@ -22,10 +22,10 @@ async function createBatch(req, res) {
 async function listBatches(req, res) {
   try {
     const filters = FilterBatchSchema.parse(req.query)
-    
+
     const where = {}
     if (filters.itemId) where.itemId = filters.itemId
-    
+
     const [batches, total] = await Promise.all([
       prisma.batch.findMany({
         where,
@@ -36,7 +36,7 @@ async function listBatches(req, res) {
       }),
       prisma.batch.count({ where })
     ])
-    
+
     res.json({ data: batches, pagination: { total, limit: filters.limit, offset: filters.offset, hasMore: filters.offset + filters.limit < total } })
   } catch (error) {
     if (error.name === 'ZodError') {

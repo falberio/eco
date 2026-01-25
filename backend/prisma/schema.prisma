@@ -27,6 +27,33 @@ enum ReserveStatus {
   DISCARDED     // (futuro) descartada
 }
 
+// ============================================
+// MANTIA - FINANZAS / CUENTAS
+// ============================================
+
+enum AccountType {
+  CASH          // efectivo
+  BANK          // cuenta bancaria
+  CREDIT_CARD   // tarjeta de crédito
+  DEBIT_CARD    // tarjeta de débito
+  DIGITAL       // billetera digital (MercadoPago, PayPal, etc)
+  OTHER         // otros
+}
+
+enum TransactionType {
+  INCOME        // ingreso
+  EXPENSE       // gasto
+  TRANSFER      // transferencia entre cuentas
+}
+
+enum BudgetPeriod {
+  WEEKLY
+  MONTHLY
+  QUARTERLY
+  YEARLY
+  CUSTOM
+}
+
 enum LocationKind {
   AREA      // gran lugar: "Freezer Vertical", "Heladera"
   SECTION   // sub: "Cajón 3", "Estante 2", "Comp 3"
@@ -219,3 +246,133 @@ model Reserve {
   @@index([containerId])
   @@index([status])
 }
+
+// ============================================
+// FINANCIA - MODELOS
+// ============================================
+
+model Financia_Category {
+  id            String   @id @default(cuid())
+  code          String?  @unique // opcional: "ALM", "SERV", "SUEL"
+  name          String   // "Alimentación", "Servicios", "Sueldos"
+  
+  parentId      String?
+  parent        Financia_Category? @relation("CategoryTree", fields: [parentId], references: [id])
+  children      Financia_Category[] @relation("CategoryTree")
+  
+  icon          String?  // emoji o nombre de icono
+  color         String?  // hex color para UI
+  
+  notes         String?
+  isActive      Boolean  @default(true)
+  
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  
+  transactions  Financia_Transaction[]
+  budgets       Financia_Budget[]
+}
+
+model Financia_Account {
+  id            String      @id @default(cuid())
+  code          String?     @unique // opcional: "EFE-001", "BNC-MACRO"
+  name          String      // "Efectivo Principal", "Banco Macro"
+  type          AccountType
+  
+  // saldo inicial al crear la cuenta
+  initialBalance Decimal   @default(0) @db.Decimal(12, 2)
+  
+  // saldo actual (se calcula automáticamente con transactions)
+  currentBalance Decimal   @default(0) @db.Decimal(12, 2)
+  
+  currency      String     @default("ARS") // ISO 4217
+  
+  icon          String?
+  color         String?
+  
+  notes         String?
+  isActive      Boolean    @default(true)
+  
+  createdAt     DateTime   @default(now())
+  updatedAt     DateTime   @updatedAt
+  
+  transactionsFrom Financia_Transaction[] @relation("FromAccount")
+  transactionsTo   Financia_Transaction[] @relation("ToAccount")
+  
+  @@index([type])
+  @@index([isActive])
+}
+
+model Financia_Transaction {
+  id            String          @id @default(cuid())
+  code          String?         @unique // opcional: "TX-2026-001"
+  
+  type          TransactionType
+  
+  // Para INCOME/EXPENSE: solo usamos fromAccountId o toAccountId
+  // Para TRANSFER: usamos ambos
+  fromAccountId String?
+  fromAccount   Financia_Account? @relation("FromAccount", fields: [fromAccountId], references: [id])
+  
+  toAccountId   String?
+  toAccount     Financia_Account? @relation("ToAccount", fields: [toAccountId], references: [id])
+  
+  amount        Decimal         @db.Decimal(12, 2)
+  
+  categoryId    String?
+  category      Financia_Category? @relation(fields: [categoryId], references: [id])
+  
+  description   String?
+  
+  // fecha de la transacción (no necesariamente = createdAt)
+  transactionDate DateTime     @default(now())
+  
+  // para recurrencia/planificación futura
+  isRecurring   Boolean        @default(false)
+  recurringRule String?        // JSON con regla de recurrencia
+  
+  // para facturación/comprobantes
+  receiptNumber String?
+  receiptUrl    String?
+  
+  tags          String?        // JSON array de tags
+  
+  notes         String?
+  
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  
+  @@index([type])
+  @@index([transactionDate])
+  @@index([categoryId])
+  @@index([fromAccountId])
+  @@index([toAccountId])
+}
+
+model Financia_Budget {
+  id            String       @id @default(cuid())
+  name          String       // "Presupuesto Enero 2026"
+  
+  categoryId    String?
+  category      Financia_Category? @relation(fields: [categoryId], references: [id])
+  
+  amount        Decimal      @db.Decimal(12, 2)
+  
+  period        BudgetPeriod @default(MONTHLY)
+  startDate     DateTime
+  endDate       DateTime?
+  
+  // alertas
+  alertThreshold Decimal?    @db.Decimal(5, 2) // % de alerta (ej: 0.80 = 80%)
+  
+  notes         String?
+  isActive      Boolean      @default(true)
+  
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+  
+  @@index([categoryId])
+  @@index([period])
+  @@index([startDate])
+}
+

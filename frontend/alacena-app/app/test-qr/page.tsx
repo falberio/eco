@@ -14,7 +14,7 @@ export default function TestQRPage() {
         try {
             setError('')
             console.log('Step 1: Fetching containers...')
-            const res = await fetch(`${API_URL}/api/containers?limit=1000`)
+            const res = await fetch(`${API_URL}/api/alacena/containers?limit=1000`)
             const data = await res.json()
             console.log('Containers response:', data)
             setContainers(data)
@@ -29,7 +29,7 @@ export default function TestQRPage() {
         try {
             setError('')
             console.log('Step 2: Fetching reserves...')
-            const res = await fetch(`${API_URL}/api/reserves?limit=1000`)
+            const res = await fetch(`${API_URL}/api/alacena/reserves?limit=1000`)
             const data = await res.json()
             console.log('Reserves response:', data)
             setReserves(data)

@@ -1,7 +1,7 @@
-// src/routes/auth.routes.js
+// src/shared/auth/auth.routes.js
 
 const express = require('express')
-const { register, login, getProfile } = require('../controllers/auth.controller.js')
+const { register, login, getProfile } = require('./auth.controller.js')
 
 const router = express.Router()
 

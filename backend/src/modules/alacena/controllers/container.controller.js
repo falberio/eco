@@ -1,6 +1,6 @@
-// src/controllers/container.controller.js
+// src/modules/alacena/controllers/container.controller.js
 
-const prisma = require('../prisma/client.js')
+const prisma = require('../../../prisma/client.js')
 const { CreateContainerSchema, UpdateContainerSchema, FilterContainerSchema } = require('../schemas/container.schema.js')
 
 async function createContainer(req, res) {

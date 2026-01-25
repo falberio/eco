@@ -1,6 +1,6 @@
-// src/controllers/menuItem.controller.js
+// src/modules/alacena/controllers/menuItem.controller.js
 
-const prisma = require('../prisma/client.js')
+const prisma = require('../../../prisma/client.js')
 const { CreateMenuItemSchema, UpdateMenuItemSchema, FilterMenuItemSchema } = require('../schemas/menuItem.schema.js')
 
 async function createMenuItem(req, res) {
@@ -22,11 +22,11 @@ async function createMenuItem(req, res) {
 async function listMenuItems(req, res) {
   try {
     const filters = FilterMenuItemSchema.parse(req.query)
-    
+
     const where = {}
     if (filters.section) where.section = filters.section
     if (filters.isActive !== undefined) where.isActive = filters.isActive
-    
+
     const [menuItems, total] = await Promise.all([
       prisma.menuItem.findMany({
         where,
@@ -37,7 +37,7 @@ async function listMenuItems(req, res) {
       }),
       prisma.menuItem.count({ where })
     ])
-    
+
     res.json({ data: menuItems, pagination: { total, limit: filters.limit, offset: filters.offset, hasMore: filters.offset + filters.limit < total } })
   } catch (error) {
     if (error.name === 'ZodError') {

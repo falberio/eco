@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'next/navigation'
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://alacena-backend.fly.dev'
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000'
 
 export default function StockUpdatePage() {
     const params = useParams()
@@ -36,8 +36,8 @@ export default function StockUpdatePage() {
                 setError('')
 
                 const [containersRes, reservesRes] = await Promise.all([
-                    fetch(`${API_URL}/api/containers?limit=1000`),
-                    fetch(`${API_URL}/api/reserves?limit=1000`)
+                    fetch(`${API_URL}/api/alacena/containers?limit=1000`),
+                    fetch(`${API_URL}/api/alacena/reserves?limit=1000`)
                 ])
 
                 const containersData = await containersRes.json()
@@ -97,7 +97,7 @@ export default function StockUpdatePage() {
             // Calcular peso neto restando la tara
             const netWeight = calculateNetWeight(total)
 
-            const res = await fetch(`${API_URL}/api/reserves/${reserveId}`, {
+            const res = await fetch(`${API_URL}/api/alacena/reserves/${reserveId}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ netWeight_g: netWeight })

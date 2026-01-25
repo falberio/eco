@@ -21,6 +21,9 @@
     "paths": {
       "@/*": [
         "./*"
+      ],
+      "@eco/shared/*": [
+        "../shared/*"
       ]
     },
     "incremental": true,

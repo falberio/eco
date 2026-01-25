@@ -1,7 +1,7 @@
-// src/controllers/reserve.controller.js
+// src/modules/alacena/controllers/reserve.controller.js
 // Lógica de negocio para Reserves (CRUD + validaciones)
 
-const prisma = require('../prisma/client.js')
+const prisma = require('../../../prisma/client.js')
 const { CreateReserveSchema, UpdateReserveSchema, FilterReserveSchema } = require('../schemas/reserve.schema.js')
 
 /**
@@ -12,19 +12,19 @@ async function createReserve(req, res) {
   try {
     // Validar datos del request
     const data = CreateReserveSchema.parse(req.body)
-    
+
     // Verificar que el item exista
     const item = await prisma.item.findUnique({
       where: { id: data.itemId }
     })
-    
+
     if (!item) {
-      return res.status(404).json({ 
+      return res.status(404).json({
         error: 'Item no encontrado',
-        itemId: data.itemId 
+        itemId: data.itemId
       })
     }
-    
+
     // Crear la reserva
     const reserve = await prisma.reserve.create({
       data,
@@ -35,19 +35,19 @@ async function createReserve(req, res) {
         batch: true,
       }
     })
-    
+
     res.status(201).json(reserve)
   } catch (error) {
     if (error.name === 'ZodError') {
-      return res.status(400).json({ 
+      return res.status(400).json({
         error: 'Datos inválidos',
-        details: error.errors 
+        details: error.errors
       })
     }
-    
-    res.status(500).json({ 
+
+    res.status(500).json({
       error: 'Error al crear reserva',
-      message: error.message 
+      message: error.message
     })
   }
 }
@@ -58,13 +58,13 @@ async function createReserve(req, res) {
 async function listReserves(req, res) {
   try {
     const filters = FilterReserveSchema.parse(req.query)
-    
+
     // Construir where dinámicamente
     const where = {}
     if (filters.status) where.status = filters.status
     if (filters.itemId) where.itemId = filters.itemId
     if (filters.locationId) where.locationId = filters.locationId
-    
+
     const [reserves, total] = await Promise.all([
       prisma.reserve.findMany({
         where,
@@ -79,7 +79,7 @@ async function listReserves(req, res) {
       }),
       prisma.reserve.count({ where })
     ])
-    
+
     res.json({
       data: reserves,
       pagination: {
@@ -91,15 +91,15 @@ async function listReserves(req, res) {
     })
   } catch (error) {
     if (error.name === 'ZodError') {
-      return res.status(400).json({ 
+      return res.status(400).json({
         error: 'Filtros inválidos',
-        details: error.errors 
+        details: error.errors
       })
     }
-    
-    res.status(500).json({ 
+
+    res.status(500).json({
       error: 'Error al listar reservas',
-      message: error.message 
+      message: error.message
     })
   }
 }
@@ -110,7 +110,7 @@ async function listReserves(req, res) {
 async function getReserve(req, res) {
   try {
     const { id } = req.params
-    
+
     const reserve = await prisma.reserve.findUnique({
       where: { id },
       include: {
@@ -122,19 +122,19 @@ async function getReserve(req, res) {
         childReserves: true,
       }
     })
-    
+
     if (!reserve) {
-      return res.status(404).json({ 
+      return res.status(404).json({
         error: 'Reserva no encontrada',
-        id 
+        id
       })
     }
-    
+
     res.json(reserve)
   } catch (error) {
-    res.status(500).json({ 
+    res.status(500).json({
       error: 'Error al obtener reserva',
-      message: error.message 
+      message: error.message
     })
   }
 }
@@ -146,19 +146,19 @@ async function updateReserve(req, res) {
   try {
     const { id } = req.params
     const data = UpdateReserveSchema.parse(req.body)
-    
+
     // Verificar que la reserva exista
     const existing = await prisma.reserve.findUnique({
       where: { id }
     })
-    
+
     if (!existing) {
-      return res.status(404).json({ 
+      return res.status(404).json({
         error: 'Reserva no encontrada',
-        id 
+        id
       })
     }
-    
+
     const updated = await prisma.reserve.update({
       where: { id },
       data,
@@ -168,19 +168,19 @@ async function updateReserve(req, res) {
         container: true,
       }
     })
-    
+
     res.json(updated)
   } catch (error) {
     if (error.name === 'ZodError') {
-      return res.status(400).json({ 
+      return res.status(400).json({
         error: 'Datos inválidos',
-        details: error.errors 
+        details: error.errors
       })
     }
-    
-    res.status(500).json({ 
+
+    res.status(500).json({
       error: 'Error al actualizar reserva',
-      message: error.message 
+      message: error.message
     })
   }
 }
@@ -191,29 +191,29 @@ async function updateReserve(req, res) {
 async function deleteReserve(req, res) {
   try {
     const { id } = req.params
-    
+
     // Verificar que exista
     const existing = await prisma.reserve.findUnique({
       where: { id }
     })
-    
+
     if (!existing) {
-      return res.status(404).json({ 
+      return res.status(404).json({
         error: 'Reserva no encontrada',
-        id 
+        id
       })
     }
-    
+
     // Eliminar
     await prisma.reserve.delete({
       where: { id }
     })
-    
+
     res.status(204).send()
   } catch (error) {
-    res.status(500).json({ 
+    res.status(500).json({
       error: 'Error al eliminar reserva',
-      message: error.message 
+      message: error.message
     })
   }
 }
@@ -224,22 +224,22 @@ async function deleteReserve(req, res) {
 async function consumeReserve(req, res) {
   try {
     const { id } = req.params
-    
+
     const reserve = await prisma.reserve.update({
       where: { id },
       data: { status: 'CONSUMED' },
       include: { item: true }
     })
-    
+
     res.json(reserve)
   } catch (error) {
     if (error.code === 'P2025') {
       return res.status(404).json({ error: 'Reserva no encontrada' })
     }
-    
-    res.status(500).json({ 
+
+    res.status(500).json({
       error: 'Error al marcar como consumida',
-      message: error.message 
+      message: error.message
     })
   }
 }
@@ -313,9 +313,9 @@ async function moveReserve(req, res) {
 
     res.json(movedReserve)
   } catch (error) {
-    res.status(500).json({ 
+    res.status(500).json({
       error: 'Error al mover reserva',
-      message: error.message 
+      message: error.message
     })
   }
 }

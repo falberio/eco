@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const QRCode = require('qrcode');
-const { prisma } = require('../prisma/client');
+const prisma = require('../../prisma/client');
 
 // GET /api/qr/container/:containerId
 // Genera QR code para un contenedor específico

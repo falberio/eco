@@ -1,6 +1,6 @@
-// src/controllers/auth.controller.js
+// src/shared/auth/auth.controller.js
 
-const prisma = require('../prisma/client.js')
+const prisma = require('../../prisma/client.js')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 
