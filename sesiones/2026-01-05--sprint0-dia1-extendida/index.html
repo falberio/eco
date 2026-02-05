@@ -1369,6 +1369,67 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="🎯 Estado al Final de Sesión">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#backlog-e-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backlog e Issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentacion-redisenada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentación Rediseñada
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scripts-powershell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scripts PowerShell
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commits-y-deploy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commits y Deploy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metricas-finales-sesion-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Métricas Finales Sesión 6
+      
+    </span>
+  </a>
+  
 </li>
       
     </ul>
@@ -1457,8 +1518,12 @@
 <p><strong>Archivo:</strong> <code>docs/04-planificacion/historias-completas-150.md</code></p>
 <h3 id="5-creacion-masiva-de-issues-github">5. Creación Masiva de Issues GitHub ✅<a class="headerlink" href="#5-creacion-masiva-de-issues-github" title="Permanent link">&para;</a></h3>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>77 issues creados</strong> (#36-#112)</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Script PowerShell automatizado</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>Primera ronda: 77 issues</strong> (#36-#112)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>Segunda ronda: 70 issues</strong> (#113-#182)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>Total: 147 issues nuevos</strong> en esta sesión</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>Gran total en repositorio: 182 issues</strong></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Scripts PowerShell automatizados con UTF-8 encoding</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Todas las 161+ historias planificadas ahora son issues</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Labels: prioridad, estimación, módulo</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Encoding UTF-8 corregido con <code>[System.Text.Encoding]::UTF8.GetBytes()</code></li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Links bidireccionales docs ↔ GitHub</li>
@@ -1772,19 +1837,85 @@
 </blockquote>
 <hr />
 <h2 id="estado-al-final-de-sesion">🎯 Estado al Final de Sesión<a class="headerlink" href="#estado-al-final-de-sesion" title="Permanent link">&para;</a></h2>
+<h3 id="backlog-e-issues">Backlog e Issues<a class="headerlink" href="#backlog-e-issues" title="Permanent link">&para;</a></h3>
 <ul>
-<li>✅ 161 historias documentadas</li>
-<li>✅ 77 issues en GitHub con labels</li>
+<li>✅ <strong>161+ historias</strong> documentadas en detalle</li>
+<li>✅ <strong>182 issues totales</strong> en GitHub (147 creados hoy)</li>
 <li>✅ Workflow completo documentado</li>
 <li>✅ Scripts automatizados funcionando</li>
-<li>✅ Docs rediseñadas (minimal)</li>
-<li>✅ Todo commiteado y pusheado</li>
+<li>✅ Todas las historias tienen issue en GitHub</li>
 </ul>
-<p><strong>Siguiente sesión:</strong> Priorización, Milestones, Sprint 2 Planning</p>
+<h3 id="documentacion-redisenada">Documentación Rediseñada<a class="headerlink" href="#documentacion-redisenada" title="Permanent link">&para;</a></h3>
+<ul>
+<li>✅ Homepage no técnica ("Todo tiene su eco")</li>
+<li>✅ Página de gestión visual de historias con filtros</li>
+<li>✅ URLs corregidas (alacena → eco)</li>
+<li>✅ Workflow automático GitHub Actions</li>
+<li>✅ Desplegada en https://falberio.github.io/eco/</li>
+</ul>
+<h3 id="scripts-powershell">Scripts PowerShell<a class="headerlink" href="#scripts-powershell" title="Permanent link">&para;</a></h3>
+<ul>
+<li>✅ <code>create-bulk-issues-final.ps1</code> - Primera ronda (77 issues)</li>
+<li>✅ <code>create-quick.ps1</code> - Segunda ronda (70 issues)</li>
+<li>✅ <code>fix-issue-titles.ps1</code> - Fix encoding UTF-8</li>
+<li>✅ <code>update-docs-with-issues.ps1</code> - Actualizar links</li>
+</ul>
+<h3 id="commits-y-deploy">Commits y Deploy<a class="headerlink" href="#commits-y-deploy" title="Permanent link">&para;</a></h3>
+<ul>
+<li>✅ Todo commiteado y pusheado a GitHub</li>
+<li>✅ Documentación desplegada automáticamente</li>
+<li>✅ Navegación actualizada con historias</li>
+<li>✅ Remote actualizado a repo correcto</li>
+</ul>
+<p><strong>Siguiente sesión:</strong> <a href="../2026-02-06--sesion7-plan/">Sesión 7 - Priorización + Milestones + Sprint 2</a></p>
 <hr />
-<p><strong>Duración total Sprint 0:</strong> ~550 minutos (9+ horas) en 2 días<br />
-<strong>Commits totales Sprint 0:</strong> 19<br />
-<strong>Issues creados Sprint 0:</strong> 95 (18 iniciales + 77 hoy)</p>
+<h2 id="metricas-finales-sesion-6">📊 Métricas Finales Sesión 6<a class="headerlink" href="#metricas-finales-sesion-6" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Métrica</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Duración total</strong></td>
+<td>~300 minutos (5 horas)</td>
+</tr>
+<tr>
+<td><strong>Historias creadas</strong></td>
+<td>161</td>
+</tr>
+<tr>
+<td><strong>Issues GitHub creados</strong></td>
+<td>147 (#36-#182)</td>
+</tr>
+<tr>
+<td><strong>Issues totales repositorio</strong></td>
+<td>182</td>
+</tr>
+<tr>
+<td><strong>Scripts PowerShell</strong></td>
+<td>4</td>
+</tr>
+<tr>
+<td><strong>Commits</strong></td>
+<td>12+</td>
+</tr>
+<tr>
+<td><strong>Archivos docs nuevos</strong></td>
+<td>5</td>
+</tr>
+<tr>
+<td><strong>Líneas código/docs</strong></td>
+<td>~3000</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>Duración total Sprint 0:</strong> ~600 minutos (10 horas) en 2 días<br />
+<strong>Commits totales Sprint 0:</strong> 25+<br />
+<strong>Issues creados Sprint 0:</strong> 182 (18 iniciales + 8 corregidos + 147 hoy + 9 otros)</p>
 
 
 
