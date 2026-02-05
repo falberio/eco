@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 GitHub Discussions
+    url: https://github.com/falberio/eco/discussions
+    about: Para preguntas generales, ideas o feedback usa Discussions
+  - name: 📚 Documentación
+    url: https://falberio.github.io/eco/
+    about: Lee la documentación completa antes de abrir un issue
+  - name: ❓ FAQ
+    url: https://falberio.github.io/eco/faq/
+    about: Preguntas frecuentes y respuestas
