@@ -1,7 +1,7 @@
 site_name: ECO - Documentación
 site_description: Sistema de Gestión Doméstica Modular
 site_author: Fran Alberio
-site_url: https://docs.eco.local
+site_url: https://falberio.github.io/eco/
 
 # Repository
 repo_name: falberio/eco
@@ -113,8 +113,9 @@ extra:
   social:
     - icon: fontawesome/brands/github
       name: GitHub Repository
+      link: https://github.com/falberio/eco
     - icon: fontawesome/solid/globe
-      link: https://alacena-blush.vercel.app
+      link: https://eco-app.vercel.app
       name: Frontend en Producción
   
   status:
@@ -128,14 +129,20 @@ extra:
 nav:
   - Inicio: index.md
   - Sobre ECO: getting-started.md
+  - Planificación:
+    - Gestión de Historias: 04-planificacion/historias.md
+    - Backlog Completo (161): 04-planificacion/historias-completas-150.md
+    - Workflow: 04-planificacion/flujo-gestion-historias.md
+    - Sprints: 04-planificacion/sprints.md
   - Colaborar:
     - Documento Funcional: 02-documento-funcional.md
     - Backlog: 04-planificacion/backlog.md
     - Sesiones: 03-libro-sesiones.md
     - Procedimientos: procedimientos.md
   - Arquitectura:
-    - Modelo de Datos: 01-arquitectura/modelo-datos.md
-    - ADRs: 01-arquitectura/adrs/
+    - Modelo de Datos: 05-arquitectura/modelo-datos.md
+    - ADRs: 05-arquitectura/adrs.md
+    - Procedimientos: 05-arquitectura/procedimientos.md
   - Referencia:
     - Glosario: glosario.md
     - FAQ: faq.md
