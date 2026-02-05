@@ -31,3 +31,6 @@ Thumbs.db
 
 # Prisma
 prisma/migrations/**/migration.sql.backup
+
+# Archivos temporales de issues
+.temp-issues/
