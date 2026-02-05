@@ -1,0 +1,146 @@
+site_name: ECO - Documentación
+site_description: Sistema de Gestión Doméstica Modular
+site_author: Fran Alberio
+site_url: https://docs.eco.local
+
+# Repository
+repo_name: falberio/eco
+repo_url: https://github.com/falberio/eco
+edit_uri: edit/main/docs/
+
+# Copyright
+copyright: Copyright &copy; 2026 Fran Alberio
+
+# Configuration
+theme:
+  name: material
+  language: es
+  palette:
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: amber
+      accent: deep orange
+      toggle:
+        icon: material/brightness-7
+        name: Cambiar a modo oscuro
+    # Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: amber
+      accent: deep orange
+      toggle:
+        icon: material/brightness-4
+        name: Cambiar a modo claro
+  
+  features:
+    - navigation.instant      # Instant loading
+    - navigation.tracking     # URL tracking
+    - navigation.tabs         # Navigation tabs
+    - navigation.sections     # Navigation sections
+    - navigation.expand       # Expand sections by default
+    - navigation.top          # Back to top button
+    - search.suggest          # Search suggestions
+    - search.highlight        # Highlight search terms
+    - content.code.copy       # Copy code button
+    - content.action.edit     # Edit button on pages
+    
+  icon:
+    repo: fontawesome/brands/github
+    edit: material/pencil
+    
+  logo: assets/logo.png
+  favicon: assets/favicon.ico
+
+# Extensions
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - meta
+  - md_in_html
+  - toc:
+      permalink: true
+      title: En esta página
+  - tables
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+# Plugins
+plugins:
+  - search:
+      lang: es
+  - tags
+
+# Extra
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/falberio/eco
+  
+  status:
+    sprint_actual: Sprint 0
+    fecha_cierre: 09 Feb 2026
+  
+  version:
+    provider: mike
+
+# Navigation
+nav:
+  - Inicio: index.md
+  - Core:
+    - Contexto General: 01-contexto-general.md
+    - Documento Funcional: 02-documento-funcional.md
+    - Libro de Sesiones: 03-libro-sesiones.md
+  
+  - Planificación:
+    - Backlog Maestro: 04-planificacion/backlog.md
+    - Roadmap: 04-planificacion/roadmap.md
+    - Sprints: 04-planificacion/sprints.md
+  
+  - Arquitectura:
+    - ADRs: 05-arquitectura/adrs.md
+    - Inventario AS-IS: 05-arquitectura/inventario-as-is.md
+    - Modelo de Datos: 05-arquitectura/modelo-datos.md
+    - Procedimientos: 05-arquitectura/procedimientos.md
+  
+  - UX & Diseño:
+    - UX & Navegación: 06-ux-navegacion.md
+  
+  - Referencia:
+    - Cheatsheet: 07-cheatsheet.md
+
+# Custom CSS
+extra_css:
+  - stylesheets/extra.css
+
+# Custom JS
+extra_javascript:
+  - javascripts/extra.js
