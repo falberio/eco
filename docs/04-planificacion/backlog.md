@@ -53,6 +53,7 @@ Consolidación de todas las épicas, historias de usuario e issues del proyecto 
 **Historias pendientes:**
 
 #### ALA-05: Categorización y filtros
+**Issue:** [#33](https://github.com/falberio/eco/issues/33)  
 **Estado:** ⏳ En progreso  
 **Prioridad:** P2  
 **Sprint:** 1  
@@ -88,6 +89,7 @@ Para **encontrar rápidamente lo que busco**
 ---
 
 #### ALA-06: Estados de stock (bajo, normal, alto)
+**Issue:** [#34](https://github.com/falberio/eco/issues/34)  
 **Estado:** 📋 Planificado  
 **Prioridad:** P1  
 **Sprint:** 1  
@@ -130,6 +132,7 @@ Para **saber qué reponer**
 ---
 
 #### ALA-07: Búsqueda de items
+**Issue:** [#35](https://github.com/falberio/eco/issues/35)  
 **Estado:** 📋 Planificado  
 **Prioridad:** P2  
 **Sprint:** 1  
@@ -174,6 +177,7 @@ Para **encontrar rápidamente uno específico**
 **Historias:**
 
 #### MAN-01: CRUD de tareas
+**Issue:** [#18](https://github.com/falberio/eco/issues/18)  
 **Estado:** 📋 Planificado  
 **Prioridad:** P1  
 **Sprint:** 1  
@@ -209,6 +213,7 @@ Para **organizar las actividades recurrentes del hogar**
 ---
 
 #### MAN-02: Marcar tarea como hecha
+**Issue:** [#19](https://github.com/falberio/eco/issues/19)  
 **Estado:** 📋 Planificado  
 **Prioridad:** P1  
 **Sprint:** 1  
@@ -246,6 +251,7 @@ Para **registrar que la hice sin pasos adicionales**
 ---
 
 #### MAN-03: Registrar ejecución
+**Issue:** [#20](https://github.com/falberio/eco/issues/20)  
 **Estado:** 📋 Planificado  
 **Prioridad:** P1  
 **Sprint:** 1  
@@ -281,6 +287,7 @@ Para **tener historial de ejecuciones**
 ---
 
 #### MAN-04: Vista de pendientes
+**Issue:** [#21](https://github.com/falberio/eco/issues/21)  
 **Estado:** 📋 Planificado  
 **Prioridad:** P1  
 **Sprint:** 1  
@@ -317,6 +324,7 @@ Para **saber qué hacer hoy**
 ---
 
 #### MAN-05: Cálculo de próxima fecha (periodicidad)
+**Issue:** [#22](https://github.com/falberio/eco/issues/22)  
 **Estado:** 📋 Planificado  
 **Prioridad:** P1  
 **Sprint:** 1  
@@ -357,6 +365,7 @@ Para **no tener que acordarme manualmente**
 ---
 
 #### MAN-06: Filtros por estado
+**Issue:** [#23](https://github.com/falberio/eco/issues/23)  
 **Estado:** 📋 Planificado  
 **Prioridad:** P2  
 **Sprint:** 1  
@@ -396,6 +405,7 @@ Para **ver solo las que me interesan**
 ---
 
 #### MAN-07: Categorización de tareas
+**Issue:** [#24](https://github.com/falberio/eco/issues/24)  
 **Estado:** 📋 Planificado  
 **Prioridad:** P2  
 **Sprint:** 1  
@@ -440,6 +450,7 @@ Para **visualizarlas agrupadas**
 **Historias:**
 
 #### LST-01: CRUD manual de items
+**Issue:** [#25](https://github.com/falberio/eco/issues/25)  
 **Estado:** 📋 Planificado  
 **Prioridad:** P1  
 **Sprint:** 1  
@@ -475,6 +486,7 @@ Para **recordar qué comprar**
 ---
 
 #### LST-02: Agregar desde ALACENA (stock bajo)
+**Issue:** [#26](https://github.com/falberio/eco/issues/26)  
 **Estado:** 📋 Planificado  
 **Prioridad:** P2  
 **Sprint:** 1  
@@ -511,6 +523,7 @@ Para **no olvidar reponerlos**
 ---
 
 #### LST-03: Marcar como comprado
+**Issue:** [#27](https://github.com/falberio/eco/issues/27)  
 **Estado:** 📋 Planificado  
 **Prioridad:** P1  
 **Sprint:** 1  
@@ -546,6 +559,7 @@ Para **saber qué me falta**
 ---
 
 #### LST-04: Vista por categorías
+**Issue:** [#28](https://github.com/falberio/eco/issues/28)  
 **Estado:** 📋 Planificado  
 **Prioridad:** P2  
 **Sprint:** 1  
@@ -584,6 +598,7 @@ Para **optimizar mi recorrido en el super**
 ---
 
 #### LST-05: Sugerencias basadas en historial
+**Issue:** [#29](https://github.com/falberio/eco/issues/29)  
 **Estado:** 📋 Planificado  
 **Prioridad:** P3  
 **Sprint:** 1 (si hay tiempo) / Sprint 2  
@@ -628,6 +643,7 @@ Para **agregar rápido sin escribir**
 **Historias:**
 
 #### ECO-01: Registro manual de datos
+**Issue:** [#30](https://github.com/falberio/eco/issues/30)  
 **Estado:** 📋 Planificado  
 **Prioridad:** P2  
 **Sprint:** 1  
@@ -667,6 +683,7 @@ Para **hacer seguimiento de mi bienestar**
 ---
 
 #### ECO-02: Histórico cronológico
+**Issue:** [#31](https://github.com/falberio/eco/issues/31)  
 **Estado:** 📋 Planificado  
 **Prioridad:** P2  
 **Sprint:** 1  
@@ -702,6 +719,7 @@ Para **revisar mi evolución**
 ---
 
 #### ECO-03: Tipos de registro (peso, presión, notas)
+**Issue:** [#32](https://github.com/falberio/eco/issues/32)  
 **Estado:** 📋 Planificado  
 **Prioridad:** P2  
 **Sprint:** 1  
