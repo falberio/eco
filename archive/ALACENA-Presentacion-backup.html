@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALACENA - Mi Cocina Inteligente</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+        }
+
+        .slide {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            page-break-after: always;
+            padding: 60px;
+            text-align: center;
+            position: relative;
+        }
+
+        /* Colores de fondo por slide */
+        .slide-1 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .slide-2 {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+
+        .slide-3 {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+        }
+
+        .slide-4 {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            color: white;
+        }
+
+        .slide-5 {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            color: white;
+        }
+
+        .slide-6 {
+            background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+            color: white;
+        }
+
+        .slide-7 {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            color: #333;
+        }
+
+        .slide-8 {
+            background: linear-gradient(135deg, #ff9a56 0%, #ff6a88 100%);
+            color: white;
+        }
+
+        .slide-9 {
+            background: linear-gradient(135deg, #2193b0 0%, #6dd5ed 100%);
+            color: white;
+        }
+
+        .slide-10 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            font-weight: 600;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .subtitle {
+            font-size: 1.8em;
+            opacity: 0.95;
+            margin-bottom: 15px;
+        }
+
+        .description {
+            font-size: 1.2em;
+            opacity: 0.9;
+            max-width: 800px;
+            line-height: 1.6;
+        }
+
+        /* Grid para tarjetas */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        .card-title {
+            font-size: 1.3em;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .card-text {
+            font-size: 0.95em;
+            line-height: 1.5;
+            opacity: 0.95;
+        }
+
+        /* Timeline */
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1000px;
+            margin-top: 40px;
+        }
+
+        .timeline-item {
+            flex: 1;
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            margin: 0 10px;
+        }
+
+        .timeline-icon {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .timeline-title {
+            font-size: 1.1em;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .timeline-text {
+            font-size: 0.85em;
+            opacity: 0.9;
+        }
+
+        /* Beneficios */
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            width: 100%;
+            max-width: 900px;
+            margin-top: 40px;
+        }
+
+        .benefit-card {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 4px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .benefit-icon {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .benefit-title {
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .benefit-text {
+            font-size: 0.95em;
+            opacity: 0.9;
+        }
+
+        /* Arquitectura */
+        .architecture {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            margin-top: 40px;
+            font-size: 1.1em;
+        }
+
+        .arch-box {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px 30px;
+            border-radius: 10px;
+            min-width: 150px;
+        }
+
+        .arch-box-icon {
+            font-size: 2em;
+            margin-bottom: 5px;
+        }
+
+        .arrow {
+            font-size: 2em;
+            opacity: 0.8;
+        }
+
+        /* Roadmap */
+        .roadmap-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            width: 100%;
+            max-width: 1100px;
+            margin-top: 30px;
+        }
+
+        .roadmap-item {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 0.9em;
+            text-align: center;
+        }
+
+        .roadmap-status {
+            font-size: 1.2em;
+            margin-right: 5px;
+        }
+
+        .tech-stack {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+            font-size: 1.1em;
+            font-weight: 600;
+        }
+
+        .tech-badge {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 20px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .arch-description {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+
+            .slide {
+                page-break-after: always;
+                height: auto;
+                min-height: 100vh;
+                padding: 40px;
+            }
+        }
+
+        .footer-note {
+            position: absolute;
+            bottom: 20px;
+            font-size: 0.85em;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- PÁGINA 1: PORTADA -->
+    <div class="slide slide-1">
+        <h1>🫙 ALACENA</h1>
+        <p class="subtitle">Mi Cocina Inteligente</p>
+        <p class="description" style="margin-top: 40px;">Un proyecto que práctica programación<br>y mejora mi vida real
+        </p>
+        <div class="footer-note">Gestión integral de stock, recetas y menú dinámico</div>
+    </div>
+
+    <!-- PÁGINA 2: EL PROBLEMA -->
+    <div class="slide slide-2">
+        <h2>El Reto Cotidiano</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="card-icon">🤔</div>
+                <div class="card-title">¿Qué hay en el freezer?</div>
+                <div class="card-text">Caos, confusión, nunca sé qué tengo</div>
+            </div>
+            <div class="card">
+                <div class="card-icon">💰</div>
+                <div class="card-title">¿Cuánto me cuesta?</div>
+                <div class="card-text">No tengo idea del gasto diario en comida</div>
+            </div>
+            <div class="card">
+                <div class="card-icon">🧂</div>
+                <div class="card-title">¿Tengo ingredientes?</div>
+                <div class="card-text">A menudo me falta algo importante</div>
+            </div>
+            <div class="card">
+                <div class="card-icon">⏰</div>
+                <div class="card-title">¿Se vence esto?</div>
+                <div class="card-text">Desperdicio de comida constantemente</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PÁGINA 3: LA SOLUCIÓN -->
+    <div class="slide slide-3">
+        <h2>ALACENA: Solución Integral</h2>
+        <div style="margin-top: 60px; font-size: 1.2em;">
+            <div style="display: flex; justify-content: center; align-items: center; gap: 60px; margin-bottom: 40px;">
+                <div style="background: rgba(255,255,255,0.15); padding: 30px; border-radius: 15px; min-width: 150px;">
+                    <div style="font-size: 2.5em; margin-bottom: 10px;">📦</div>
+                    <strong>STOCK</strong><br>
+                    <span style="font-size: 0.9em; opacity: 0.9;">Control total de inventario</span>
+                </div>
+                <div style="font-size: 3em; opacity: 0.6;">⟷</div>
+                <div style="background: rgba(255,255,255,0.15); padding: 30px; border-radius: 15px; min-width: 150px;">
+                    <div style="font-size: 2.5em; margin-bottom: 10px;">🍳</div>
+                    <strong>RECETAS</strong><br>
+                    <span style="font-size: 0.9em; opacity: 0.9;">Qué puedo cocinar</span>
+                </div>
+                <div style="font-size: 3em; opacity: 0.6;">⟷</div>
+                <div style="background: rgba(255,255,255,0.15); padding: 30px; border-radius: 15px; min-width: 150px;">
+                    <div style="font-size: 2.5em; margin-bottom: 10px;">🍽️</div>
+                    <strong>MENÚ</strong><br>
+                    <span style="font-size: 0.9em; opacity: 0.9;">Dinámico y disponible</span>
+                </div>
+            </div>
+            <p style="opacity: 0.9; font-size: 1.1em;">Una app que unifica todo en tiempo real</p>
+        </div>
+    </div>
+
+    <!-- PÁGINA 4: LO INGENIOSO - PARTE 1 -->
+    <div class="slide slide-4">
+        <h2>Automatización Inteligente</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="card-icon">📱</div>
+                <div class="card-title">Escanear QR</div>
+                <div class="card-text">Toco el frasco con mi teléfono → se registra automáticamente que lo consumí</div>
+            </div>
+            <div class="card">
+                <div class="card-icon">⚖️</div>
+                <div class="card-title">Pesar en Balanza</div>
+                <div class="card-text">Pongo el recipiente en la balanza → app actualiza cantidad al instante</div>
+            </div>
+            <div class="card">
+                <div class="card-icon">🧾</div>
+                <div class="card-title">Ticket de Compra</div>
+                <div class="card-text">Escaneo el ticket → nuevo stock se registra automáticamente</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PÁGINA 5: LO INGENIOSO - PARTE 2 -->
+    <div class="slide slide-5">
+        <h2>Inteligencia en Tiempo Real</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="card-icon">🍽️</div>
+                <div class="card-title">Menú Dinámico</div>
+                <div class="card-text">El menú se actualiza solo según el stock que tengo en este momento</div>
+            </div>
+            <div class="card">
+                <div class="card-icon">🧊</div>
+                <div class="card-title">Regeneración Guiada</div>
+                <div class="card-text">Instrucciones paso a paso para descongelar, recalentar, lo que sea</div>
+            </div>
+            <div class="card">
+                <div class="card-icon">🚨</div>
+                <div class="card-title">Alertas Automáticas</div>
+                <div class="card-text">Vencimientos, bajo stock, sugerencias de qué cocinar primero</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PÁGINA 6: MI DÍA CON ALACENA -->
+    <div class="slide slide-6">
+        <h2>Un Día en Mi Cocina</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-icon">🌅</div>
+                <div class="timeline-title">Mañana</div>
+                <div class="timeline-text">Dashboard: ¿Qué vence? ¿Qué conviene usar?</div>
+            </div>
+            <div style="font-size: 2em; opacity: 0.5;">→</div>
+            <div class="timeline-item">
+                <div class="timeline-icon">🛒</div>
+                <div class="timeline-title">Compra</div>
+                <div class="timeline-text">Escaneo ticket → Stock actualizado al instante</div>
+            </div>
+            <div style="font-size: 2em; opacity: 0.5;">→</div>
+            <div class="timeline-item">
+                <div class="timeline-icon">🍳</div>
+                <div class="timeline-title">Noche</div>
+                <div class="timeline-text">¿Qué cocino? Veo opciones según stock real</div>
+            </div>
+            <div style="font-size: 2em; opacity: 0.5;">→</div>
+            <div class="timeline-item">
+                <div class="timeline-icon">✅</div>
+                <div class="timeline-title">Consumo</div>
+                <div class="timeline-text">Escaneo QR → Registrado en 1 segundo</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PÁGINA 7: EL IMPACTO -->
+    <div class="slide slide-7">
+        <h2 style="color: #333;">Por Qué Lo Hago</h2>
+        <div class="benefits">
+            <div class="benefit-card">
+                <div class="benefit-icon">💰</div>
+                <div class="benefit-title">Economía</div>
+                <div class="benefit-text">Ahorro real al minimizar desperdicios y controlar gastos</div>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">🥗</div>
+                <div class="benefit-title">Salud</div>
+                <div class="benefit-text">Control de calorías y mejor variedad alimentaria</div>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">⏱️</div>
+                <div class="benefit-title">Practicidad</div>
+                <div class="benefit-text">Menos tiempo pensando "¿qué cocino hoy?"</div>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">🎯</div>
+                <div class="benefit-title">Inteligencia</div>
+                <div class="benefit-text">Todo automático, sin trabajo manual aburrido</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PÁGINA 8: DETRÁS DE ESCENAS -->
+    <div class="slide slide-8">
+        <h2>Detrás de Escenas: La Técnica</h2>
+        <div class="tech-stack">
+            <span class="tech-badge">Next.js</span>
+            <span class="tech-badge">PostgreSQL</span>
+            <span class="tech-badge">Prisma</span>
+            <span class="tech-badge">Supabase</span>
+            <span class="tech-badge">Vercel</span>
+        </div>
+        <div class="architecture">
+            <div class="arch-box">
+                <div class="arch-box-icon">📱</div>
+                App Web
+            </div>
+            <div class="arrow">→</div>
+            <div class="arch-box">
+                <div class="arch-box-icon">☁️</div>
+                Nube
+            </div>
+            <div class="arrow">→</div>
+            <div class="arch-box">
+                <div class="arch-box-icon">🗄️</div>
+                Database
+            </div>
+        </div>
+        <div class="arch-description">
+            <strong>• Funciona en tu celular o computadora</strong><br>
+            <strong>• Datos seguros en la nube (Supabase)</strong><br>
+            <strong>• Base de datos relacional PostgreSQL</strong><br>
+            <strong>• Escalable, moderno, listo para crecer</strong>
+        </div>
+    </div>
+
+    <!-- PÁGINA 9: ROADMAP COMPLETO -->
+    <div class="slide slide-9">
+        <h2>24 Funcionalidades (Presente y Futuro)</h2>
+        <div class="roadmap-grid">
+            <div class="roadmap-item"><span class="roadmap-status">✅</span> QR Frascos</div>
+            <div class="roadmap-item"><span class="roadmap-status">✅</span> Porcionado</div>
+            <div class="roadmap-item"><span class="roadmap-status">✅</span> Espacios</div>
+            <div class="roadmap-item"><span class="roadmap-status">✅</span> Recipientes</div>
+            <div class="roadmap-item"><span class="roadmap-status">🔜</span> Menú Dinámico</div>
+            <div class="roadmap-item"><span class="roadmap-status">🔜</span> Balanza</div>
+            <div class="roadmap-item"><span class="roadmap-status">🔜</span> Regeneración</div>
+            <div class="roadmap-item"><span class="roadmap-status">🔜</span> Alertas</div>
+            <div class="roadmap-item"><span class="roadmap-status">🔜</span> Panel "Hoy"</div>
+            <div class="roadmap-item"><span class="roadmap-status">🔜</span> Costos</div>
+            <div class="roadmap-item"><span class="roadmap-status">🔜</span> Nutrición</div>
+            <div class="roadmap-item"><span class="roadmap-status">🔜</span> Lista Compras</div>
+            <div class="roadmap-item"><span class="roadmap-status">💡</span> OCR Tickets</div>
+            <div class="roadmap-item"><span class="roadmap-status">💡</span> Mapa Visual</div>
+            <div class="roadmap-item"><span class="roadmap-status">💡</span> Impresión QR</div>
+            <div class="roadmap-item"><span class="roadmap-status">💡</span> IA Asistente</div>
+        </div>
+        <div style="margin-top: 40px; font-size: 1.05em; opacity: 0.9;">
+            <strong>✅ Implementado/En progreso • 🔜 Próximo • 💡 Futuro</strong><br>
+            <em>Un proyecto vivo, en evolución continua</em>
+        </div>
+    </div>
+
+    <!-- PÁGINA 10: CONCLUSIÓN -->
+    <div class="slide slide-10">
+        <h1 style="margin-bottom: 40px;">🫙 ALACENA</h1>
+        <p class="subtitle">Un proyecto que práctica programación<br>y mejora mi vida real</p>
+        <p class="description" style="margin-top: 60px; font-size: 1.3em;">
+            <strong>Controla tu cocina inteligentemente</strong>
+        </p>
+        <div class="footer-note">2026 • Proyecto Personal</div>
+    </div>
+
+</body>
+
+</html>
