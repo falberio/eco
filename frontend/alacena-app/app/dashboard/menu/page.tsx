@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://alacena-backend.fly.dev'
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000'
 
 interface MenuItem {
     id: string
@@ -23,6 +23,9 @@ export default function MenuPage() {
     const [editingId, setEditingId] = useState<string | null>(null)
     const [error, setError] = useState<string>('')
     const [submitLoading, setSubmitLoading] = useState(false)
+    const [currentPage, setCurrentPage] = useState(0)
+    const [totalItems, setTotalItems] = useState(0)
+    const ITEMS_PER_PAGE = 50
     const [formData, setFormData] = useState<Partial<MenuItem>>({
         name: '',
         itemId: '',
@@ -37,9 +40,10 @@ export default function MenuPage() {
             try {
                 setLoading(true)
                 setError('')
+                const skip = currentPage * ITEMS_PER_PAGE
                 const [menuRes, itemsRes] = await Promise.all([
-                    fetch(`${API_URL}/api/menu-items?limit=50`),
-                    fetch(`${API_URL}/api/items?limit=50`),
+                    fetch(`${API_URL}/api/alacena/menu-items?limit=${ITEMS_PER_PAGE}&skip=${skip}`),
+                    fetch(`${API_URL}/api/alacena/items?limit=200`),
                 ])
 
                 if (!menuRes.ok || !itemsRes.ok) {
@@ -50,6 +54,7 @@ export default function MenuPage() {
                 const itemsData = await itemsRes.json()
 
                 setMenuItems(menuData.data || [])
+                setTotalItems(menuData.pagination?.total || 0)
                 setItems(itemsData.data || [])
             } catch (error) {
                 console.error('Error loading data:', error)
@@ -60,7 +65,7 @@ export default function MenuPage() {
         }
 
         loadData()
-    }, [])
+    }, [currentPage])
 
     async function handleSubmit(e: React.FormEvent) {
         e.preventDefault()
@@ -74,7 +79,7 @@ export default function MenuPage() {
 
         try {
             setSubmitLoading(true)
-            const url = editingId ? `${API_URL}/api/menu-items/${editingId}` : `${API_URL}/api/menu-items`
+            const url = editingId ? `${API_URL}/api/alacena/menu-items/${editingId}` : `${API_URL}/api/alacena/menu-items`
             const method = editingId ? 'PUT' : 'POST'
 
             const res = await fetch(url, {
@@ -90,7 +95,7 @@ export default function MenuPage() {
             }
 
             // Reload with reduced limit
-            const menuRes = await fetch(`${API_URL}/api/menu-items?limit=50`)
+            const menuRes = await fetch(`${API_URL}/api/alacena/menu-items?limit=50`)
             const menuData = await menuRes.json()
             setMenuItems(menuData.data || [])
 
@@ -118,12 +123,12 @@ export default function MenuPage() {
             try {
                 setSubmitLoading(true)
                 setError('')
-                const res = await fetch(`${API_URL}/api/menu-items/${id}`, { method: 'DELETE' })
+                const res = await fetch(`${API_URL}/api/alacena/menu-items/${id}`, { method: 'DELETE' })
                 const responseData = await res.json()
 
                 if (!res.ok) throw new Error(responseData.error || 'Error al eliminar')
 
-                const menuRes = await fetch(`${API_URL}/api/menu-items?limit=50`)
+                const menuRes = await fetch(`${API_URL}/api/alacena/menu-items?limit=50`)
                 const menuData = await menuRes.json()
                 setMenuItems(menuData.data || [])
             } catch (error) {
@@ -283,6 +288,29 @@ export default function MenuPage() {
                         </tbody>
                     </table>
                 </div>
+                
+                {/* Paginación */}
+            <div className="mt-6 flex items-center justify-between px-6">
+                <div className="text-sm text-gray-600">
+                    Mostrando {menuItems.length > 0 ? (currentPage * ITEMS_PER_PAGE) + 1 : 0} - {Math.min((currentPage + 1) * ITEMS_PER_PAGE, totalItems)} de {totalItems} items de menú
+                </div>
+                <div className="flex gap-2">
+                    <button
+                        onClick={() => setCurrentPage(p => Math.max(0, p - 1))}
+                        disabled={currentPage === 0}
+                        className="px-4 py-2 text-sm bg-white border border-gray-300 rounded hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                        ← Anterior
+                    </button>
+                    <button
+                        onClick={() => setCurrentPage(p => p + 1)}
+                        disabled={(currentPage + 1) * ITEMS_PER_PAGE >= totalItems}
+                        className="px-4 py-2 text-sm bg-white border border-gray-300 rounded hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                        Siguiente →
+                    </button>
+                </div>
+            </div>
             )}
         </div>
     )

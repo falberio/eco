@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { useSession } from 'next-auth/react'
 import Image from 'next/image'
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://alacena-backend.fly.dev'
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000'
 
 interface Container {
     id: string
@@ -37,7 +37,7 @@ export default function QRCodesPage() {
             const headers: HeadersInit = { 'Content-Type': 'application/json' }
             if (token) headers['Authorization'] = `Bearer ${token}`
 
-            const res = await fetch(`${API_URL}/api/containers?limit=100`, { headers })
+            const res = await fetch(`${API_URL}/api/alacena/containers?limit=100`, { headers })
             const data = await res.json()
             setContainers(data.data || [])
         } catch (error) {
@@ -49,7 +49,7 @@ export default function QRCodesPage() {
 
     async function generateQR(containerCode: string) {
         try {
-            const res = await fetch(`${API_URL}/api/qr/container-by-code/${containerCode}`)
+            const res = await fetch(`${API_URL}/api/shared/qr/container-by-code/${containerCode}`)
             const data = await res.json()
 
             if (data.qrCode) {
@@ -62,7 +62,7 @@ export default function QRCodesPage() {
 
     async function generateMenuQR() {
         try {
-            const res = await fetch(`${API_URL}/api/qr/menu`)
+            const res = await fetch(`${API_URL}/api/shared/qr/menu`)
             const data = await res.json()
 
             if (data.qrCode) {

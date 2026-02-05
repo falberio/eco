@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://alacena-backend.fly.dev'
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000'
 
 interface MenuItem {
   id: string
@@ -100,7 +100,7 @@ export default function GuestMenu() {
   async function fetchMenu() {
     try {
       setLoading(true)
-      const res = await fetch(`${API_URL}/api/menu-items?limit=100`)
+      const res = await fetch(`${API_URL}/api/alacena/menu-items?limit=100`)
       const data = await res.json()
       const active = (data.data || []).filter((item: MenuItem) => item.isActive)
       setMenuItems(active)

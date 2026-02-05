@@ -1,23 +1,44 @@
-# 🧺 ALACENA - README Principal
+# 🌍 ECO - Ecosistema de Aplicaciones
+
+## 📋 Módulos del Ecosistema
+
+- 🥘 **ALACENA** - Sistema de gestión alimentaria ✅ EN PRODUCCIÓN
+- 💰 **FINANCIA** - Economía personal (gastos/ingresos/presupuestos) ✅ LOCAL
+- 🏠 **MANTIA** - Inventario del hogar + mantenimiento 📝 PLANEADO
+- 📖 **HUESHA** - Registro vital/personal 📝 PLANEADO  
+- 🏥 **SALUD** - Bienestar y hábitos corporales 📝 PLANEADO
+
+👉 **Ver detalles:** [ECO-MODULOS.md](ECO-MODULOS.md)
+
+---
 
 ## ⚡ EMPEZÁ AQUÍ
 
 ### 📌 Primero que nada
 Abre esto en **CADA nueva sesión**:
 ```
+ECO-MODULOS.md          ← Arquitectura completa de ECO
 docs/sesiones/INDEX.md  ← Qué se hizo antes
 GETTING_STARTED.md      ← Cómo usar el sistema
 QUICK_REFERENCE.md      ← Acceso rápido
 ```
 
-### 🔗 URLs Importante (Copy-Paste)
+### 🔗 URLs Importantes
+
+#### ALACENA (Producción)
 ```
 Frontend:  https://alacena-frontend.vercel.app
 Login:     https://alacena-frontend.vercel.app/login
 Backend:   https://alacena-backend.fly.dev
 ```
 
-### 🔑 Login de Prueba
+#### FINANCIA (Local)
+```
+Backend:   http://localhost:4000
+Frontend:  http://localhost:3001
+```
+
+### 🔑 Login de Prueba (ALACENA)
 ```
 Email:     admin@alacena.com
 Password:  admin123
@@ -25,15 +46,15 @@ Password:  admin123
 
 ### ✅ Checklist para Nueva Sesión
 
+- [ ] Abrí [ECO-MODULOS.md](./ECO-MODULOS.md) - Entender estructura
 - [ ] Abrí [GETTING_STARTED.md](./GETTING_STARTED.md)
-- [ ] Verifiqué que backend responde: `curl https://alacena-backend.fly.dev/health`
-- [ ] Testeé login en https://alacena-frontend.vercel.app/login
+- [ ] Verificá ALACENA: `curl https://alacena-backend.fly.dev/health`
 - [ ] Ahora estoy listo para trabajar
 
 ### 🚀 Hacer Deploy Rápido
 
 ```bash
-cd c:\Users\Usuario\alacena
+cd c:\Users\Usuario\eco
 
 # Hice cambios, ahora debo guardar:
 git add -A
@@ -45,9 +66,11 @@ git push
 
 ### 📊 Status Actual
 
-| Componente | Status | Última actualización |
-|------------|--------|---------------------|
-| Frontend | ✅ Online | 24-01-2026 |
+| Módulo | Status | Backend | Frontend | Última actualización |
+|--------|--------|---------|----------|---------------------|
+| ALACENA | ✅ Producción | Fly.io | Vercel | 24-01-2026 |
+| FINANCIA | ✅ Local | localhost:4000 | localhost:3001 | 25-01-2026 |
+| MANTIA | 📝 Planeado | - | - | - |
 | Backend | ✅ Online | 24-01-2026 |
 | Base de datos | ✅ Conectada | 24-01-2026 |
 | Autenticación | ✅ Funcional | 24-01-2026 |

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://alacena-backend.fly.dev'
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000'
 
 interface Reserve {
     id: string
@@ -38,9 +38,9 @@ export default function ReservesPage() {
             try {
                 setLoading(true)
                 const [reservesRes, itemsRes, locationsRes] = await Promise.all([
-                    fetch(`${API_URL}/api/reserves?limit=50`),
-                    fetch(`${API_URL}/api/items?limit=50`),
-                    fetch(`${API_URL}/api/locations?limit=50`),
+                    fetch(`${API_URL}/api/alacena/reserves?limit=50`),
+                    fetch(`${API_URL}/api/alacena/items?limit=50`),
+                    fetch(`${API_URL}/api/alacena/locations?limit=50`),
                 ])
 
                 const reservesData = await reservesRes.json()
@@ -63,7 +63,7 @@ export default function ReservesPage() {
     async function handleSubmit(e: React.FormEvent) {
         e.preventDefault()
         try {
-            const url = editingId ? `${API_URL}/api/reserves/${editingId}` : `${API_URL}/api/reserves`
+            const url = editingId ? `${API_URL}/api/alacena/reserves/${editingId}` : `${API_URL}/api/alacena/reserves`
             const method = editingId ? 'PUT' : 'POST'
 
             const res = await fetch(url, {
@@ -75,7 +75,7 @@ export default function ReservesPage() {
             if (!res.ok) throw new Error('Error al guardar')
 
             // Reload
-            const reservesRes = await fetch(`${API_URL}/api/reserves?limit=100`)
+            const reservesRes = await fetch(`${API_URL}/api/alacena/reserves?limit=100`)
             const reservesData = await reservesRes.json()
             setReserves(reservesData.data || [])
 
@@ -97,10 +97,10 @@ export default function ReservesPage() {
     async function handleDelete(id: string) {
         if (confirm('¿Estás seguro?')) {
             try {
-                const res = await fetch(`${API_URL}/api/reserves/${id}`, { method: 'DELETE' })
+                const res = await fetch(`${API_URL}/api/alacena/reserves/${id}`, { method: 'DELETE' })
                 if (!res.ok) throw new Error('Error al eliminar')
 
-                const reservesRes = await fetch(`${API_URL}/api/reserves?limit=100`)
+                const reservesRes = await fetch(`${API_URL}/api/alacena/reserves?limit=100`)
                 const reservesData = await reservesRes.json()
                 setReserves(reservesData.data || [])
             } catch (error) {

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://alacena-backend.fly.dev'
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000'
 
 export default function StockControlPage() {
     const [containers, setContainers] = useState<any[]>([])
@@ -21,8 +21,8 @@ export default function StockControlPage() {
         try {
             setLoading(true)
             const [containersRes, reservesRes] = await Promise.all([
-                fetch(`${API_URL}/api/containers?limit=1000`),
-                fetch(`${API_URL}/api/reserves?limit=1000`)
+                fetch(`${API_URL}/api/alacena/containers?limit=1000`),
+                fetch(`${API_URL}/api/alacena/reserves?limit=1000`)
             ])
 
             const containersData = await containersRes.json()
@@ -73,7 +73,7 @@ export default function StockControlPage() {
                 if (!isNaN(total) && total >= 0) {
                     const net = Math.max(0, total - tare)
 
-                    await fetch(`${API_URL}/api/reserves/${currentContainer.reserveId}`, {
+                    await fetch(`${API_URL}/api/alacena/reserves/${currentContainer.reserveId}`, {
                         method: 'PUT',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({ netWeight_g: net })

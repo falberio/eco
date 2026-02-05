@@ -1,0 +1,19 @@
+{
+    "name": "eco-frontend",
+    "version": "0.1.0",
+    "private": true,
+    "workspaces": [
+        "alacena-app",
+        "alacena-web",
+        "shared"
+    ],
+    "scripts": {
+        "dev:alacena": "npm run dev --workspace=alacena-app",
+        "dev:all": "npm run dev --workspaces",
+        "build:all": "npm run build --workspaces",
+        "clean": "rm -rf node_modules */node_modules */.next */dist"
+    },
+    "dependencies": {
+        "zod": "^4.3.6"
+    }
+}

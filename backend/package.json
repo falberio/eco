@@ -11,7 +11,8 @@
     "prisma:generate": "prisma generate",
     "prisma:migrate": "prisma migrate dev --name init",
     "prisma:studio": "prisma studio",
-    "prisma:seed": "node prisma/seed.js"
+    "prisma:seed": "node prisma/seed.js",
+    "generate:types": "node prisma/generate-types.js"
   },
   "prisma": {
     "seed": "node prisma/seed.js"
@@ -31,9 +32,11 @@
     "pg": "^8.17.0",
     "prisma": "^5.21.0",
     "qrcode": "^1.5.4",
-    "zod": "^4.3.5"
+    "zod": "^4.3.6"
   },
   "devDependencies": {
-    "nodemon": "^3.1.11"
+    "@types/node": "^25.0.10",
+    "nodemon": "^3.1.11",
+    "typescript": "^5.9.3"
   }
 }

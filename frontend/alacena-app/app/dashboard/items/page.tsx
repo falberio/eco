@@ -1,11 +1,13 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { useSession } from 'next-auth/react'
 import { ItemSchema } from '@/lib/validations'
 import { ZodError } from 'zod'
+import { usePagination } from '@eco/shared/hooks'
+import { PaginationControls } from '@eco/shared/components/data'
+import { useAuth } from '@eco/shared/auth'
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://alacena-backend.fly.dev'
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000'
 
 interface Item {
     id: string
@@ -19,7 +21,7 @@ interface Item {
 }
 
 export default function ItemsPage() {
-    const { data: session } = useSession()
+    const { backendToken } = useAuth()
     const [items, setItems] = useState<Item[]>([])
     const [loading, setLoading] = useState(true)
     const [showForm, setShowForm] = useState(false)
@@ -35,21 +37,25 @@ export default function ItemsPage() {
         notes: '',
     })
 
+    // Paginación con hook compartido
+    const pagination = usePagination({ itemsPerPage: 100 })
+
     // Cargar items
     useEffect(() => {
         fetchItems()
-    }, [])
+    }, [pagination.currentPage])
 
     async function fetchItems() {
         try {
             setLoading(true)
-            const token = (session as any)?.backendToken
             const headers: HeadersInit = { 'Content-Type': 'application/json' }
-            if (token) headers['Authorization'] = `Bearer ${token}`
+            if (backendToken) headers['Authorization'] = `Bearer ${backendToken}`
 
-            const res = await fetch(`${API_URL}/api/items?limit=50&skip=0`, { headers })
+            const { limit, skip } = pagination.getPaginationParams()
+            const res = await fetch(`${API_URL}/api/alacena/items?limit=${limit}&skip=${skip}`, { headers })
             const data = await res.json()
             setItems(data.data || [])
+            pagination.setTotalItems(data.pagination?.total || 0)
         } catch (error) {
             console.error('Error fetching items:', error)
         } finally {
@@ -72,7 +78,7 @@ export default function ItemsPage() {
                 Object.entries(validatedData).filter(([_, value]) => value !== '')
             )
 
-            const url = editingId ? `${API_URL}/api/items/${editingId}` : `${API_URL}/api/items`
+            const url = editingId ? `${API_URL}/api/alacena/items/${editingId}` : `${API_URL}/api/alacena/items`
             const method = editingId ? 'PUT' : 'POST'
 
             const token = (session as any)?.backendToken
@@ -128,7 +134,7 @@ export default function ItemsPage() {
                 const headers: HeadersInit = { 'Content-Type': 'application/json' }
                 if (token) headers['Authorization'] = `Bearer ${token}`
 
-                const res = await fetch(`${API_URL}/api/items/${id}`, {
+                const res = await fetch(`${API_URL}/api/alacena/items/${id}`, {
                     method: 'DELETE',
                     headers
                 })
@@ -247,47 +253,61 @@ export default function ItemsPage() {
                     No hay items. Crea uno para comenzar.
                 </div>
             ) : (
-                <div className="bg-white rounded-lg shadow overflow-x-auto">
-                    <table className="w-full">
-                        <thead className="bg-gray-100 border-b">
-                            <tr>
-                                <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Nombre</th>
-                                <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Código</th>
-                                <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Tipo</th>
-                                <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Categoría</th>
-                                <th className="px-6 py-3 text-right text-sm font-semibold text-gray-700">Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {items.map((item) => (
-                                <tr key={item.id} className="border-b hover:bg-gray-50">
-                                    <td className="px-6 py-3 text-gray-800">{item.name}</td>
-                                    <td className="px-6 py-3 text-gray-600">{item.code || '-'}</td>
-                                    <td className="px-6 py-3">
-                                        <span className="px-2 py-1 text-xs rounded bg-blue-100 text-blue-800">
-                                            {item.kind}
-                                        </span>
-                                    </td>
-                                    <td className="px-6 py-3 text-gray-600">{item.category || '-'}</td>
-                                    <td className="px-6 py-3 text-right space-x-2">
-                                        <button
-                                            onClick={() => handleEdit(item)}
-                                            className="text-blue-600 hover:text-blue-800 text-sm"
-                                        >
-                                            Editar
-                                        </button>
-                                        <button
-                                            onClick={() => handleDelete(item.id)}
-                                            className="text-red-600 hover:text-red-800 text-sm"
-                                        >
-                                            Eliminar
-                                        </button>
-                                    </td>
+                <>
+                    <div className="bg-white rounded-lg shadow overflow-x-auto">
+                        <table className="w-full">
+                            <thead className="bg-gray-100 border-b">
+                                <tr>
+                                    <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Nombre</th>
+                                    <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Código</th>
+                                    <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Tipo</th>
+                                    <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Categoría</th>
+                                    <th className="px-6 py-3 text-right text-sm font-semibold text-gray-700">Acciones</th>
                                 </tr>
-                            ))}
-                        </tbody>
-                    </table>
-                </div>
+                            </thead>
+                            <tbody>
+                                {items.map((item) => (
+                                    <tr key={item.id} className="border-b hover:bg-gray-50">
+                                        <td className="px-6 py-3 text-gray-800">{item.name}</td>
+                                        <td className="px-6 py-3 text-gray-600">{item.code || '-'}</td>
+                                        <td className="px-6 py-3">
+                                            <span className="px-2 py-1 text-xs rounded bg-blue-100 text-blue-800">
+                                                {item.kind}
+                                            </span>
+                                        </td>
+                                        <td className="px-6 py-3 text-gray-600">{item.category || '-'}</td>
+                                        <td className="px-6 py-3 text-right space-x-2">
+                                            <button
+                                                onClick={() => handleEdit(item)}
+                                                className="text-blue-600 hover:text-blue-800 text-sm"
+                                            >
+                                                Editar
+                                            </button>
+                                            <button
+                                                onClick={() => handleDelete(item.id)}
+                                                className="text-red-600 hover:text-red-800 text-sm"
+                                            >
+                                                Eliminar
+                                            </button>
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <PaginationControls
+                        currentPage={pagination.currentPage}
+                        totalItems={pagination.totalItems}
+                        itemsPerPage={pagination.itemsPerPage}
+                        itemsCount={items.length}
+                        onPreviousPage={pagination.previousPage}
+                        onNextPage={pagination.nextPage}
+                        hasNextPage={pagination.hasNextPage}
+                        hasPreviousPage={pagination.hasPreviousPage}
+                        itemLabel="items"
+                    />
+                </>
             )}
         </div>
     )
