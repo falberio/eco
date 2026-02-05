@@ -1,0 +1,402 @@
+# 🏠 Bienvenido a ECO
+
+<div class="hero-section" markdown>
+
+# Sistema de Gestión Doméstica Modular
+
+**Descarga tu mente · Registra tu historial · Simplifica tu día a día**
+
+<span class="sprint-badge">🚀 Sprint 0 - Documentación | Cierre: 09 Feb 2026</span>
+
+</div>
+
+---
+
+## 🎯 ¿Qué es ECO?
+
+ECO es un **sistema personal/modular** para gestionar la vida doméstica con foco en **registro, historial y simplicidad operativa**. Diseñado para descargar tu mente y mantener un historial completo de todo lo que sucede en tu hogar.
+
+!!! success "Filosofía: Registro > Automatización"
+    Primero capturamos información, luego asistimos. No competimos con apps sofisticadas, sino con **notas dispersas y memoria volátil**.
+
+---
+
+## ⚡ Comienza Aquí
+
+<div class="grid cards" markdown>
+
+-   :material-rocket-launch:{ .lg .middle } **Getting Started**
+
+    ---
+
+    Guía paso a paso según tu rol (PM, Dev, UX, QA).  
+    **Tu primera sesión: 5 minutos.**
+
+    [:octicons-arrow-right-24: Empezar](getting-started.md)
+
+-   :material-help-circle:{ .lg .middle } **FAQ**
+
+    ---
+
+    ¿Qué es ECO? ¿Cuándo estará listo?  
+    Respuestas a preguntas frecuentes.
+
+    [:octicons-arrow-right-24: Ver FAQ](faq.md)
+
+-   :material-book-open-variant:{ .lg .middle } **Glosario**
+
+    ---
+
+    Términos técnicos: ADR, tara, periodicidad, multi-tenancy, etc.
+
+    [:octicons-arrow-right-24: Ver Glosario](glosario.md)
+
+-   :material-map:{ .lg .middle } **Roadmap**
+
+    ---
+
+    Sprints 0-3, Q1-Q2 2026.  
+    ¿Qué viene después del MVP?
+
+    [:octicons-arrow-right-24: Ver Planificación](04-planificacion/roadmap.md)
+
+</div>
+
+---
+
+## 🧭 Navegación Rápida por Rol
+
+=== "🏢 Product Manager"
+
+    **Tu ruta en 30 minutos:**
+    
+    1. [📋 Contexto General](01-contexto-general.md) → Visión y límites
+    2. [🎯 Backlog Maestro](04-planificacion/backlog.md) → 5 épicas, 23 stories
+    3. [🗓️ Roadmap](04-planificacion/roadmap.md) → Sprints 0-3
+    4. [🏛️ ADRs](05-arquitectura/adrs.md) → 8 decisiones arquitecturales clave
+    
+    [:octicons-arrow-right-24: Guía completa PM](getting-started.md#-product-manager-stakeholder)
+
+=== "💻 Developer"
+
+    **Tu ruta en 45 minutos:**
+    
+    1. [🏗️ Arquitectura](02-documento-funcional.md#arquitectura-general) → Stack y diagramas
+    2. [📊 Modelo de Datos](05-arquitectura/modelo-datos.md) → Prisma schema + ER
+    3. [🔧 Inventario AS-IS](05-arquitectura/inventario-as-is.md) → URLs, secretos
+    4. [⚙️ Procedimientos](05-arquitectura/procedimientos.md) → Setup local + deploy
+    
+    [:octicons-arrow-right-24: Guía completa Dev](getting-started.md#-developer-ingeniero)
+
+=== "🎨 UX/UI Designer"
+
+    **Tu ruta en 30 minutos:**
+    
+    1. [📖 Contexto General](01-contexto-general.md) → Entender la visión
+    2. [🎨 UX & Navegación](06-ux-navegacion.md) → Flujos y patrones
+    3. [🧩 Módulos](02-documento-funcional.md#modulos-funcionales) → ALACENA, MANTIA
+    4. [:material-web: Frontend Demo](https://alacena-blush.vercel.app) → Ver en producción
+    
+    [:octicons-arrow-right-24: Guía completa UX](getting-started.md#-uxui-designer)
+
+=== "🧪 QA / Tester"
+
+    **Tu ruta en 35 minutos:**
+    
+    1. [📋 Backlog](04-planificacion/backlog.md) → User stories con criterios de aceptación
+    2. [📘 Documento Funcional](02-documento-funcional.md) → Casos de uso detallados
+    3. [✅ DoD/DoR](04-planificacion/sprints.md) → Definition of Done/Ready
+    4. [🔧 Setup Testing](getting-started.md#-qa-tester) → Credenciales y ambiente
+    
+    [:octicons-arrow-right-24: Guía completa QA](getting-started.md#-qa-tester)
+
+---
+
+## 🧩 Módulos Funcionales
+
+ECO está compuesto por módulos independientes que trabajan juntos:
+
+<div class="grid cards" markdown>
+
+-   :material-food-apple:{ .lg .middle } **ALACENA**
+
+    ---
+
+    Gestión de inventario doméstico con control de stock, movimientos y categorización.
+
+    [:octicons-arrow-right-24: Ver más](02-documento-funcional.md#alacena)
+
+-   :material-clipboard-check:{ .lg .middle } **MANTIA**
+
+    ---
+
+    Tareas y mantenimiento del hogar con historial de ejecuciones y periodicidad.
+
+    [:octicons-arrow-right-24: Ver más](02-documento-funcional.md#mantia)
+
+-   :material-heart-pulse:{ .lg .middle } **ECOSALUD**
+
+    ---
+
+    Registro de salud y bienestar personal con historial cronológico.
+
+    [:octicons-arrow-right-24: Ver más](02-documento-funcional.md#ecosalud)
+
+-   :material-home:{ .lg .middle } **HUESHA**
+
+    ---
+
+    Gestión de espacios físicos y organización del hogar _(futuro)_.
+
+    [:octicons-arrow-right-24: Roadmap](04-planificacion/roadmap.md)
+
+-   :material-cash:{ .lg .middle } **FINANCIA**
+
+    ---
+
+    Gestión financiera doméstica y presupuestos _(futuro)_.
+
+    [:octicons-arrow-right-24: Roadmap](04-planificacion/roadmap.md)
+
+-   :material-cart:{ .lg .middle } **Lista de Compras**
+
+    ---
+
+    Transversal: alimentada por todos los módulos para centralizar necesidades.
+
+    [:octicons-arrow-right-24: Ver más](02-documento-funcional.md#lista-de-compras)
+
+</div>
+
+---
+
+## 🏗️ Arquitectura
+
+### Stack Tecnológico
+
+```mermaid
+graph TB
+    A[Usuario] -->|Web/Mobile| B[Frontend - Next.js]
+    B -->|API REST| C[Backend - Node/Express]
+    C -->|Prisma ORM| D[PostgreSQL - Supabase]
+    C -->|Auth| E[Supabase Auth]
+    C -->|Media| F[Cloudinary]
+    
+    style B fill:#f9a825,stroke:#f57c00
+    style C fill:#42a5f5,stroke:#1976d2
+    style D fill:#66bb6a,stroke:#388e3c
+```
+
+### Decisiones Clave (ADRs)
+
+- ✅ **ADR-001:** Monolito modular (no microservicios)
+- ✅ **ADR-002:** Aislamiento por hogar (multi-tenancy básico)
+- ✅ **ADR-003:** Autenticación básica (email/password)
+- ✅ **ADR-004:** Periodicidad declarativa en MANTIA
+- ✅ **ADR-005:** Lista de Compras transversal
+
+[:octicons-arrow-right-24: Ver todas las ADRs](05-arquitectura/adrs.md)
+
+---
+
+## 📊 Estado del Proyecto
+
+!!! quote "Metodología"
+    **Sprints de 2 semanas** · DoR/DoD claros · Commits semánticos · Documentación first
+
+### Progreso Actual
+
+| Sprint | Fechas | Objetivo | Estado |
+|--------|--------|----------|--------|
+| **Sprint 0** | 01-09 Feb | Documentación y planificación | <span class="status-badge progress">En Progreso</span> |
+| **Sprint 1** | 10-23 Feb | MVP Operable (ALACENA + Auth) | <span class="status-badge planned">Planificado</span> |
+| **Sprint 2** | 24 Feb - 09 Mar | MANTIA Básico | <span class="status-badge planned">Planificado</span> |
+
+??? success "Sprint 0: Completado ✅"
+    - ✅ Estructura documental con MkDocs Material
+    - ✅ Migración de ECO.htm a Markdown (17 archivos)
+    - ✅ Getting Started por rol (PM/Dev/UX/QA)
+    - ✅ FAQ + Glosario + ADRs completos
+    - ✅ Backlog Sprint 1 (18 stories)
+    - ✅ Deploy docs a GitHub Pages
+
+??? warning "Sprint 0: Pendiente ⏳"
+    - ⏳ Backlog detallado Sprint 2-3
+    - ⏳ Documentación API (OpenAPI/Swagger)
+    - ⏳ Reconstrucción Sesiones 1-4 en Libro
+
+[:octicons-arrow-right-24: Ver Roadmap completo](04-planificacion/roadmap.md)
+
+---
+
+## 🌐 Entornos y URLs
+
+| Servicio | URL | Estado | Detalles |
+|----------|-----|--------|----------|
+| **📄 Documentación** | [docs.eco](https://falberio.github.io/eco/) | <span class="status-badge active">●</span> Activo | GitHub Pages |
+| **🎨 Frontend** | [alacena-blush.vercel.app](https://alacena-blush.vercel.app) | <span class="status-badge active">●</span> Activo | Vercel |
+| **⚙️ Backend API** | [alacena-backend.fly.dev](https://alacena-backend.fly.dev) | <span class="status-badge active">●</span> Activo | Fly.io |
+| **🗄️ Database** | Supabase PostgreSQL | <span class="status-badge active">●</span> Activo | Free tier |
+
+!!! example "Credenciales de Prueba"
+    **Admin:** `admin@alacena.com` / `admin123`  
+    **Usuario:** `user@alacena.com` / `user123`
+    
+    [:octicons-arrow-right-24: Más en Procedimientos](05-arquitectura/procedimientos.md#acceso-a-entornos)
+
+## 📚 Mapa de Documentación
+
+!!! tip "Primera vez aquí? → [Getting Started](getting-started.md) (5 minutos)"
+
+### Por Necesidad
+
+| Si quieres... | Lee esto | Tiempo |
+|---------------|----------|--------|
+| 🚀 **Empezar rápido** | [Getting Started](getting-started.md) | 5-45 min según rol |
+| ❓ **Resolver dudas comunes** | [FAQ](faq.md) | 2-10 min |
+| 📖 **Entender términos** | [Glosario](glosario.md) | Referencia |
+| 🎯 **Ver la visión** | [Contexto General](01-contexto-general.md) | 8 min |
+| 🏗️ **Entender arquitectura** | [ADRs](05-arquitectura/adrs.md) + [Modelo de Datos](05-arquitectura/modelo-datos.md) | 20 min |
+| 📋 **Ver qué se va a hacer** | [Backlog](04-planificacion/backlog.md) + [Roadmap](04-planificacion/roadmap.md) | 15 min |
+| ⚙️ **Configurar/deployar** | [Procedimientos](05-arquitectura/procedimientos.md) | 30 min |
+| ⚡ **Comandos rápidos** | [Cheatsheet](07-cheatsheet.md) | Referencia |
+
+### Por Área
+
+=== "Planificación"
+    
+    | Documento | Propósito |
+    |-----------|-----------|
+    | [Backlog Maestro](04-planificacion/backlog.md) | Épicas + User Stories Sprint 1-3 |
+    | [Roadmap](04-planificacion/roadmap.md) | Visión Q1-Q2 2026 |
+    | [Sprints](04-planificacion/sprints.md) | Estructura, DoR/DoD, ceremonias |
+    
+    **Actualización:** Alta (cada sprint)
+
+=== "Arquitectura"
+    
+    | Documento | Propósito |
+    |-----------|-----------|
+    | [ADRs](05-arquitectura/adrs.md) | 8 decisiones clave (monolito, auth, DB) |
+    | [Inventario AS-IS](05-arquitectura/inventario-as-is.md) | URLs, secrets, configuraciones |
+    | [Modelo de Datos](05-arquitectura/modelo-datos.md) | Schema Prisma + Mermaid ER |
+    | [Procedimientos](05-arquitectura/procedimientos.md) | Setup, deploy, workflow, troubleshooting |
+    
+    **Actualización:** Media (cuando cambia infraestructura)
+
+=== "Core/Fundacional"
+    
+    | Documento | Propósito |
+    |-----------|-----------|
+    | [Contexto General](01-contexto-general.md) | Visión, principios, límites del proyecto |
+    | [Documento Funcional](02-documento-funcional.md) | **Fuente de verdad** - funcional + técnico |
+    | [Libro de Sesiones](03-libro-sesiones.md) | Minutas, decisiones, acuerdos |
+    
+    **Actualización:** Baja (contexto) / Alta (libro sesiones)
+
+=== "UX/Referencia"
+    
+    | Documento | Propósito |
+    |-----------|-----------|
+    | [UX & Navegación](06-ux-navegacion.md) | Flujos, patrones, estados vacíos |
+    | [Cheatsheet](07-cheatsheet.md) | Comandos y shortcuts para Copilot |
+    | [FAQ](faq.md) | Preguntas frecuentes |
+    | [Glosario](glosario.md) | Términos técnicos |
+    
+    **Actualización:** Media a baja
+
+---
+
+## 🎯 Principios del Proyecto
+
+!!! quote ""
+    **1. Descargar la mente** → Nada crítico solo en memoria  
+    **2. Registro > Automatización** → Capturar primero, asistir después  
+    **3. Historial primero** → Todo evento trazable en el tiempo  
+    **4. Asistencia progresiva** → El sistema aprende de tu uso  
+    **5. Modularidad clara** → Separación de responsabilidades
+
+[:octicons-arrow-right-24: Ver principios detallados](01-contexto-general.md#principios-rectores)
+
+## 🔗 Enlaces Útiles
+
+<div class="grid cards" markdown>
+
+-   :fontawesome-brands-github:{ .lg .middle } **Repositorio**
+
+    ---
+
+    Código fuente, issues, PRs
+
+    [:octicons-arrow-right-24: github.com/falberio/eco](https://github.com/falberio/eco)
+
+-   :material-web:{ .lg .middle } **Frontend**
+
+    ---
+
+    App en producción (Vercel)
+
+    [:octicons-arrow-right-24: alacena-blush.vercel.app](https://alacena-blush.vercel.app)
+
+-   :material-api:{ .lg .middle } **Backend API**
+
+    ---
+
+    API REST (Fly.io)
+
+    [:octicons-arrow-right-24: alacena-backend.fly.dev](https://alacena-backend.fly.dev)
+
+-   :material-database:{ .lg .middle } **Database**
+
+    ---
+
+    PostgreSQL (Supabase)
+
+    [:octicons-arrow-right-24: Supabase Dashboard](https://supabase.com/dashboard)
+
+</div>
+
+---
+
+## 🤝 Contribuciones y Contacto
+
+!!! info "Proyecto Personal Documentado Profesionalmente"
+    Este es un proyecto personal, pero está documentado como si fuera colaborativo para permitir:
+    
+    - ✅ **Continuidad:** Pausas largas sin perder contexto
+    - ✅ **Onboarding:** Colaboradores futuros pueden unirse rápidamente
+    - ✅ **Referencia:** Aprendizaje para proyectos similares
+
+### ¿Cómo puedes ayudar?
+
+- 🐛 **Reportar bugs** → [GitHub Issues](https://github.com/falberio/eco/issues)
+- 💡 **Sugerir features** → [GitHub Discussions](https://github.com/falberio/eco/discussions)
+- 📝 **Mejorar docs** → PRs bienvenidos
+- 🧪 **Testing** → Usa la app y comparte feedback
+
+### Próximas Revisiones
+
+| Documento | Próxima Actualización | Trigger |
+|-----------|----------------------|---------|
+| **Roadmap** | Post Sprint 0 (09 Feb) | Cierre sprint |
+| **Backlog** | Pre Sprint 1 (08 Feb) | Refinamiento |
+| **Libro de Sesiones** | Continuo | Cada sesión |
+| **ADRs** | Cuando se tomen nuevas decisiones | Event-driven |
+
+---
+
+<div style="text-align: center; padding: 2rem 0; border-top: 2px solid rgba(255, 167, 38, 0.2);">
+
+**🎯 ¿Listo para empezar?**
+
+[Comenzar con Getting Started :material-arrow-right:](getting-started.md){ .md-button .md-button--primary }
+[Ver FAQ :material-help-circle:](faq.md){ .md-button }
+[Explorar Roadmap :material-map:](04-planificacion/roadmap.md){ .md-button }
+
+---
+
+**Última actualización:** 04 Febrero 2026  
+**Versión:** Sprint 0 (Documentación)  
+**Maintainer:** Fran Alberio
+
+</div>
