@@ -55,7 +55,7 @@ Imagina poder preguntarle a tu casa:
 ## 🎯 ¿Qué voy a poder hacer con ECO?
 
 ### 📋 MANTIA - Gestión de Tareas
-> **"No vuelvas a olvidar sacar la basura"**
+> **"Hace 213 días que no limpias los filtros del aire"**
 
 - Tareas recurrentes (cada 3 días, semanal, mensual)
 - Recordatorios automáticos
@@ -65,7 +65,7 @@ Imagina poder preguntarle a tu casa:
 **Ejemplo real:** Configurás "Regar plantas cada 3 días" y ECO te recuerda, calcula la próxima fecha, y registra cada vez que lo hacés.
 
 ### 🏺 ALACENA - Inventario
-> **"Siempre sabé qué tenés en casa"**
+> **"Qué puedo comer hoy? (ECO lo resuelve analizando stock de viandas e ingredientes."**
 
 - Inventario de alacena/heladera
 - Alertas de vencimiento
