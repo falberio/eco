@@ -46,24 +46,38 @@ function addLastUpdatedInfo() {
 
 /**
  * Enhance external links with icon and target blank
+ * Internal links open in same tab, external links (including GitHub) open in new tab
  */
 function enhanceExternalLinks() {
-    const links = document.querySelectorAll('a[href^="http"]');
+    const links = document.querySelectorAll('a');
     links.forEach(link => {
-        // Skip if already has target
-        if (!link.getAttribute('target')) {
-            link.setAttribute('target', '_blank');
-            link.setAttribute('rel', 'noopener noreferrer');
-        }
+        const href = link.getAttribute('href');
 
-        // Add external icon if not present
-        if (!link.querySelector('.external-icon') && !link.closest('.md-social')) {
-            const icon = document.createElement('span');
-            icon.className = 'external-icon';
-            icon.innerHTML = ' ↗';
-            icon.style.fontSize = '0.8em';
-            icon.style.opacity = '0.6';
-            link.appendChild(icon);
+        if (!href) return;
+
+        // Enlaces externos (http/https)
+        if (href.startsWith('http://') || href.startsWith('https://')) {
+            // GitHub y otros externos: nueva pestaña
+            if (href.includes('github.com') || !href.includes(window.location.hostname)) {
+                link.setAttribute('target', '_blank');
+                link.setAttribute('rel', 'noopener noreferrer');
+
+                // Add external icon if not present
+                if (!link.querySelector('.external-icon') && !link.closest('.md-social')) {
+                    const icon = document.createElement('span');
+                    icon.className = 'external-icon';
+                    icon.innerHTML = ' ↗';
+                    icon.style.fontSize = '0.8em';
+                    icon.style.opacity = '0.6';
+                    link.appendChild(icon);
+                }
+            } else {
+                // Enlaces internos con http/https: misma pestaña
+                link.setAttribute('target', '_self');
+            }
+        } else {
+            // Enlaces relativos o anclas: siempre misma pestaña
+            link.setAttribute('target', '_self');
         }
     });
 }
@@ -181,3 +195,52 @@ if (window.location.pathname !== '/' && !window.location.pathname.endsWith('/ind
 }
 
 console.log('🏠 ECO Documentation - Custom enhancements loaded');
+
+// Filtros para página de gestión de historias
+function setupHistoriaFilters() {
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  
+  if (filterButtons.length > 0) {
+    filterButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        // Remover clase active de todos los botones
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        
+        // Agregar clase active al botón clickeado
+        this.classList.add('active');
+        
+        const filter = this.getAttribute('data-filter');
+        const historiaItems = document.querySelectorAll('.historia-item');
+        
+        // Aplicar filtro
+        historiaItems.forEach(item => {
+          if (filter === 'all') {
+            item.style.display = 'block';
+          } else if (filter.startsWith('p')) {
+            // Filtro por prioridad (p1, p2, p3)
+            if (item.classList.contains(filter)) {
+              item.style.display = 'block';
+            } else {
+              item.style.display = 'none';
+            }
+          } else {
+            // Filtro por módulo
+            const module = item.getAttribute('data-module');
+            if (module === filter) {
+              item.style.display = 'block';
+            } else {
+              item.style.display = 'none';
+            }
+          }
+        });
+      });
+    });
+  }
+}
+
+// Ejecutar setupHistoriaFilters cuando el DOM esté listo
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', setupHistoriaFilters);
+} else {
+  setupHistoriaFilters();
+}

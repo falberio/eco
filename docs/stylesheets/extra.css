@@ -194,3 +194,445 @@ html {
 
 /* HERO MINIMALISTA */
 .hero-minimal{text-align:center;padding:4rem 2rem 3rem;max-width:800px;margin:0 auto}.hero-minimal h1{font-size:4rem;font-weight:700;margin-bottom:0.5rem;background:linear-gradient(135deg,var(--md-primary-fg-color) 0%,var(--md-accent-fg-color) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}.hero-minimal .subtitle{font-size:1.5rem;color:var(--md-default-fg-color--light);margin-bottom:1rem;font-weight:300}.hero-minimal .description{font-size:1.1rem;line-height:1.7;color:var(--md-default-fg-color--lighter);margin-bottom:2rem;max-width:600px;margin-left:auto;margin-right:auto}.hero-buttons{display:flex;gap:1rem;justify-content:center;margin-bottom:3rem;flex-wrap:wrap}.btn{padding:0.75rem 2rem;border-radius:8px;text-decoration:none;font-weight:500;transition:all 0.2s ease;display:inline-block}.btn-primary{background:var(--md-primary-fg-color);color:white}.btn-primary:hover{background:var(--md-primary-fg-color--dark);transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,0.15)}.btn-secondary{background:transparent;color:var(--md-primary-fg-color);border:2px solid var(--md-primary-fg-color)}.btn-secondary:hover{background:var(--md-primary-fg-color);color:white;transform:translateY(-2px)}.tech-stack{margin-top:2rem;padding-top:2rem;border-top:1px solid var(--md-default-fg-color--lightest)}.tech-label{font-size:0.9rem;text-transform:uppercase;letter-spacing:1px;color:var(--md-default-fg-color--light);margin-bottom:0.75rem;font-weight:600}.tech-badges{display:flex;gap:0.5rem;justify-content:center;flex-wrap:wrap}.tech-badges img{height:24px;transition:transform 0.2s ease}.tech-badges img:hover{transform:scale(1.1)}.roles-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;margin:2rem 0}.role-card{padding:1.5rem;border:1px solid var(--md-default-fg-color--lightest);border-radius:8px;text-align:center;transition:all 0.3s ease;text-decoration:none;color:inherit}.role-card:hover{border-color:var(--md-primary-fg-color);transform:translateY(-4px);box-shadow:0 8px 16px rgba(0,0,0,0.1)}.role-card h3{margin:0 0 0.5rem 0;font-size:1.3rem}.role-card p{margin:0;color:var(--md-default-fg-color--light);font-size:0.95rem}
+
+/* --- ECO Homepage Estilos (5 Feb 2026) --- */
+.hero-eco {
+    text-align: center;
+    padding: 4rem 2rem 3rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 16px;
+    margin-bottom: 3rem;
+    box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3);
+}
+
+.eco-title {
+    font-size: 4rem !important;
+    font-weight: 800 !important;
+    background: linear-gradient(to right, #fff, #f0f0f0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0 !important;
+    letter-spacing: -2px;
+}
+
+.eco-subtitle {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-top: 0.5rem;
+    font-weight: 300;
+}
+
+.status-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.status-card {
+    background: white;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.status-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.status-card.sprint0 {
+    border-color: #FFA726;
+}
+
+.status-card.roadmap {
+    border-color: #42A5F5;
+}
+
+.status-card h3 {
+    margin-top: 0 !important;
+    color: #333;
+}
+
+.status-card ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.status-card ul li {
+    padding: 0.25rem 0;
+    font-size: 0.9rem;
+}
+
+.status-label {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: #FFA726;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.tech-stack-eco {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.tech-category h4 {
+    color: #666;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+.tech-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tech-badge {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    display: inline-block;
+    transition: transform 0.2s;
+}
+
+.tech-badge:hover {
+    transform: scale(1.05);
+}
+
+.quick-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.link-card {
+    background: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-decoration: none !important;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.link-card:hover {
+    background: white;
+    border-color: #667eea;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(102, 126, 234, 0.2);
+}
+
+.link-card h3 {
+    margin-top: 0 !important;
+    color: #333 !important;
+    font-size: 1.2rem !important;
+}
+
+.link-card p {
+    color: #666;
+    margin-bottom: 0;
+    font-size: 0.9rem;
+}
+
+.footer-eco {
+    text-align: center;
+    padding: 2rem 0 1rem;
+    margin-top: 3rem;
+    border-top: 1px solid #e0e0e0;
+}
+
+.footer-eco p {
+    color: #666;
+    margin: 0.5rem 0;
+}
+
+.footer-links a {
+    color: #667eea;
+    text-decoration: none;
+    margin: 0 0.5rem;
+    transition: color 0.2s;
+}
+
+.footer-links a:hover {
+    color: #764ba2;
+}
+
+/* Gestión de Historias - Visual Story Management */
+.historia-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.stat-number {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 2rem 0;
+}
+
+.filter-btn {
+  background: #f3f4f6;
+  border: 2px solid #e5e7eb;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.filter-btn:hover {
+  background: #e5e7eb;
+  border-color: #667eea;
+}
+
+.filter-btn.active {
+  background: #667eea;
+  color: white;
+  border-color: #667eea;
+}
+
+.historia-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.historia-item {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s;
+}
+
+.historia-item:hover {
+  border-color: #667eea;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+  transform: translateY(-2px);
+}
+
+.historia-item.p1 {
+  border-left: 4px solid #ef4444;
+}
+
+.historia-item.p2 {
+  border-left: 4px solid #f59e0b;
+}
+
+.historia-item.p3 {
+  border-left: 4px solid #3b82f6;
+}
+
+.historia-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.historia-code {
+  font-family: 'Courier New', monospace;
+  background: #f3f4f6;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.historia-issue {
+  background: #667eea;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.historia-issue:hover {
+  background: #764ba2;
+}
+
+.historia-priority {
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.historia-priority.p1 {
+  background: #fecaca;
+  color: #991b1b;
+}
+
+.historia-priority.p2 {
+  background: #fed7aa;
+  color: #9a3412;
+}
+
+.historia-priority.p3 {
+  background: #bfdbfe;
+  color: #1e40af;
+}
+
+.historia-size {
+  background: #e5e7eb;
+  color: #374151;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.historia-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0.5rem 0;
+  color: #1f2937;
+}
+
+.historia-description {
+  color: #6b7280;
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.historia-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-action {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-action:hover {
+  background: #667eea;
+  color: white;
+  border-color: #667eea;
+}
+
+.btn-action.move-sprint:hover {
+  background: #10b981;
+  border-color: #10b981;
+}
+
+.btn-action.archive:hover {
+  background: #ef4444;
+  border-color: #ef4444;
+}
+
+.module-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+  padding: 1rem;
+  background: #f9fafb;
+  border-radius: 8px;
+}
+
+.module-stat {
+  text-align: center;
+  padding: 0.75rem;
+}
+
+.module-stat strong {
+  display: block;
+  font-size: 1.75rem;
+  color: #667eea;
+  margin-bottom: 0.25rem;
+}
+
+.quick-actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.action-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-decoration: none;
+  transition: all 0.3s;
+  text-align: center;
+}
+
+.action-card:hover {
+  border-color: #667eea;
+  box-shadow: 0 6px 16px rgba(102, 126, 234, 0.2);
+  transform: translateY(-4px);
+}
+
+.action-card h3 {
+  margin: 0 0 0.5rem 0;
+  color: #1f2937;
+  font-size: 1.1rem;
+}
+
+.action-card p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+

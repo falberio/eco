@@ -1,74 +1,223 @@
----
-title: ECO
+# ECO
+
+<div class="hero-eco">
+  <h1 class="eco-title">Todo tiene su eco</h1>
+  <p class="eco-subtitle">Tu vida doméstica, organizada</p>
+</div>
+
 ---
 
-<div class="hero-minimal">
-  <h1>ECO</h1>
-  <p class="subtitle">Gestión doméstica integral</p>
-  <p class="description">Proyecto personal para organizar tareas del hogar, inventario, lista de compras y seguimiento de salud. Aprendiendo Next.js, Prisma y PostgreSQL mientras resuelvo necesidades reales del día a día.</p>
-  
-  <div class="hero-buttons">
-    <a href="getting-started/" class="btn btn-primary">📖 Sobre el proyecto</a>
-    <a href="#colaborar" class="btn btn-secondary">🤝 Colaborar</a>
+## 🤔 ¿Qué es ECO?
+
+**ECO es tu asistente digital para la casa.** Gestiona tareas recurrentes, controla el inventario de alacena, organiza tu lista de compras y registra tu salud. Todo en un solo lugar.
+
+Imagina poder preguntarle a tu casa:
+
+- *"¿Qué pastas podemos comer hoy si somos 5?"*
+- *"¿Cuándo tengo turno con el peluquero?"*
+- *"¿Cómo dio mi último estudio de colesterol?"*
+- *"¿Cuánta leche queda?"*
+
+**Eso es ECO.** Y en el futuro, podrás hacerlo por voz desde cualquier habitación.
+
+---
+
+## 📍 ¿En qué estamos?
+
+<div class="status-cards">
+  <div class="status-card sprint0">
+    <h3>🏗️ Sprint 0</h3>
+    <p><strong>Cimientos del proyecto</strong></p>
+    <ul>
+      <li>✅ Base de datos diseñada</li>
+      <li>✅ Autenticación funcionando</li>
+      <li>✅ 95 historias de usuario creadas</li>
+      <li>⏳ Primeros módulos en desarrollo</li>
+    </ul>
+    <span class="status-label">En progreso</span>
+  </div>
+
+  <div class="status-card roadmap">
+    <h3>🗺️ Roadmap</h3>
+    <p><strong>¿Qué viene?</strong></p>
+    <ul>
+      <li><strong>v0.1 MVP:</strong> CRUD completo de 4 módulos</li>
+      <li><strong>v0.2:</strong> APIs para agente IA</li>
+      <li><strong>v0.3:</strong> Multi-usuario familiar</li>
+      <li><strong>v1.0:</strong> Comandos de voz</li>
+    </ul>
+    <span class="status-label">Planificado</span>
+  </div>
+</div>
+
+---
+
+## 🎯 ¿Qué voy a poder hacer con ECO?
+
+### 📋 MANTIA - Gestión de Tareas
+> **"No vuelvas a olvidar sacar la basura"**
+
+- Tareas recurrentes (cada 3 días, semanal, mensual)
+- Recordatorios automáticos
+- Calendario visual
+- Historial de quién hizo qué
+
+**Ejemplo real:** Configurás "Regar plantas cada 3 días" y ECO te recuerda, calcula la próxima fecha, y registra cada vez que lo hacés.
+
+### 🏺 ALACENA - Inventario
+> **"Siempre sabé qué tenés en casa"**
+
+- Inventario de alacena/heladera
+- Alertas de vencimiento
+- Sugerencias de recetas según stock
+- Predicción de cuándo se acaba cada item
+
+**Ejemplo real:** Escaneás el código de barras del aceite, ECO lo agrega al inventario. Cuando quede poco, lo suma automáticamente a la lista de compras.
+
+### 🛒 Lista de Compras
+> **"Optimizá tus compras"**
+
+- Lista compartida con tu familia
+- Ordenada por supermercado
+- Historial de precios
+- Sugerencias inteligentes
+
+**Ejemplo real:** Tu pareja agrega "Pan" desde su celular, te llega notificación push. Cuando vas al super, la lista está ordenada por pasillo.
+
+### 💚 ECOSALUD - Salud y Bienestar
+> **"Tu historial médico siempre a mano"**
+
+- Registro de peso, presión, glucosa
+- Gráficos de evolución
+- Alertas de valores anormales
+- Exportar PDF para el médico
+
+**Ejemplo real:** Registrás tu peso cada mañana en 5 segundos. A fin de mes, ves gráfico de tu progreso. Si tu presión sube mucho, recibís alerta.
+
+---
+
+## 🤖 ¿Y lo del agente de voz?
+
+**Eso es el objetivo final.** Imaginate esto:
+
+1. **Hoy:** Abrís la app en tu celular, hacés click, completás formularios
+2. **Mañana (v0.2):** Le escribís al agente "Agregar 2 litros de leche al inventario"
+3. **Pasado (v1.0):** Le decís en voz alta desde la cocina "¿Qué pastas podemos comer?" y te responde
+
+Integrando con **Home Assistant**, cada habitación podría tener un parlante que entiende comandos sobre tu casa.
+
+---
+
+## 💡 ¿Por qué ECO?
+
+### El problema
+Tu vida doméstica tiene datos distribuidos en:
+- 📱 Notas en el celular
+- 📝 Post-its en la heladera
+- 🧠 Tu memoria (olvidadiza)
+- 📧 Emails con turnos médicos
+- 💬 Chats con tu pareja
+
+**Resultado:** Caos. Tareas olvidadas. Comida vencida. Compras duplicadas.
+
+### La solución: ECO
+Un solo lugar donde todo "hace eco". Registrás una vez, el sistema recuerda por vos.
+
+- **Sistema:** Recurrencia inteligente, no repetir "sacar basura" 100 veces
+- **Memoria:** Historial de todo (qué compraste, cuándo, a qué precio)
+- **Proactividad:** Te avisa antes que se venza, que falte stock, que tengas un turno
+
+### ¿Por qué construirlo yo mismo?
+1. **Aprender:** Next.js, Prisma, PostgreSQL, IA conversacional
+2. **Control:** Mis datos son míos, no de Google/Amazon
+3. **Personalización:** Exactamente lo que necesito, sin bloatware
+4. **Diversión:** Es mi hobby :)
+
+---
+
+## 🛠️ ¿Con qué está hecho?
+
+<div class="tech-stack-eco">
+  <div class="tech-category">
+    <h4>Frontend</h4>
+    <div class="tech-badges">
+      <span class="tech-badge">Next.js 15</span>
+      <span class="tech-badge">TypeScript</span>
+      <span class="tech-badge">Tailwind CSS</span>
+    </div>
   </div>
   
-  <div class="tech-stack">
-    <p class="tech-label">Stack</p>
+  <div class="tech-category">
+    <h4>Backend</h4>
     <div class="tech-badges">
-      <img src="https://img.shields.io/badge/Next.js-black?style=flat-square&logo=next.js" alt="Next.js">
-      <img src="https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript">
-      <img src="https://img.shields.io/badge/Prisma-2D3748?style=flat-square&logo=prisma&logoColor=white" alt="Prisma">
-      <img src="https://img.shields.io/badge/PostgreSQL-316192?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL">
-      <img src="https://img.shields.io/badge/Tailwind-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white" alt="Tailwind">
-      <img src="https://img.shields.io/badge/Vercel-black?style=flat-square&logo=vercel" alt="Vercel">
+      <span class="tech-badge">Prisma ORM</span>
+      <span class="tech-badge">PostgreSQL</span>
+      <span class="tech-badge">GraphQL</span>
+    </div>
+  </div>
+  
+  <div class="tech-category">
+    <h4>Deploy</h4>
+    <div class="tech-badges">
+      <span class="tech-badge">Vercel</span>
+      <span class="tech-badge">GitHub Actions</span>
+    </div>
+  </div>
+  
+  <div class="tech-category">
+    <h4>Futuro</h4>
+    <div class="tech-badges">
+      <span class="tech-badge">OpenAI API</span>
+      <span class="tech-badge">Home Assistant</span>
+      <span class="tech-badge">Whisper (voz)</span>
     </div>
   </div>
 </div>
 
 ---
 
-## <span id="colaborar">🤝 Colaborar</span>
+## 📖 ¿Querés saber más?
 
-Elige tu rol:
-
-<div class="roles-grid">
-  <a href="getting-started/#desarrollador" class="role-card">
-    <h3>💻 Dev</h3>
-    <p>Setup, arquitectura, código</p>
+<div class="quick-links">
+  <a href="ESTADO-ACTUAL-17-01-2026" class="link-card">
+    <h3>📊 Estado del Proyecto</h3>
+    <p>Qué funciona hoy, qué está en desarrollo</p>
   </a>
   
-  <a href="getting-started/#pm-product-manager" class="role-card">
-    <h3>📋 PM</h3>
-    <p>Backlog, roadmap, sprints</p>
+  <a href="ROADMAP" class="link-card">
+    <h3>🗺️ Roadmap Completo</h3>
+    <p>Plan a 12 meses con todas las features</p>
   </a>
   
-  <a href="getting-started/#analista-funcional-ux" class="role-card">
-    <h3>🎨 UX</h3>
-    <p>Flujos, wireframes</p>
+  <a href="arquitectura" class="link-card">
+    <h3>🏗️ Arquitectura Técnica</h3>
+    <p>Para desarrolladores: cómo está construido</p>
   </a>
   
-  <a href="getting-started/#qa-testing" class="role-card">
-    <h3>✅ QA</h3>
-    <p>Testing, casos de prueba</p>
+  <a href="04-planificacion/historias" class="link-card">
+    <h3>🎯 Gestión de Historias</h3>
+    <p>Panel visual para revisar y priorizar todas las historias</p>
   </a>
 </div>
 
 ---
 
-## 📚 Docs
+## 🤝 ¿Colaborar?
 
-[Documento Funcional](02-documento-funcional/) · 
-[Arquitectura](01-arquitectura/) · 
-[Backlog](04-planificacion/backlog/) · 
-[Sesiones](03-libro-sesiones/) · 
-[Procedimientos](procedimientos/) · 
-[Glosario](glosario/) · 
-[FAQ](faq/)
+Este es un proyecto personal de aprendizaje, **pero todo el código es abierto.**
+
+Si querés:
+- 🐛 Reportar un bug → [GitHub Issues](https://github.com/falberio/eco/issues)
+- 💡 Sugerir una feature → [Crear discussion](https://github.com/falberio/eco/discussions)
+- 👨‍💻 Contribuir código → [Ver guía de contribución](https://github.com/falberio/eco/blob/main/CONTRIBUTING.md)
 
 ---
 
-## 🔗 Links
-
-- [GitHub](https://github.com/falberio/eco)
-- [Issues](https://github.com/falberio/eco/issues)
-- [App](https://eco-app.vercel.app) *(próximamente)*
+<div class="footer-eco">
+  <p>Hecho con ☕ y ❤️ por <strong>falberio</strong></p>
+  <p class="footer-links">
+    <a href="https://github.com/falberio/eco">GitHub</a> ·
+    <a href="https://github.com/falberio/eco/issues">Issues</a> ·
+    <a href="RETOMADA-RAPIDA">Retomar desarrollo</a>
+  </p>
+</div>
