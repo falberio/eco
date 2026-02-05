@@ -25,7 +25,7 @@
     
     
       
-        <title>🤖 INSTRUCCIONES PARA TRABAJAR CON GITHUB COPILOT — ALACENA - ECO - Documentación</title>
+        <title>🤖 INSTRUCCIONES PARA TRABAJAR CON GITHUB COPILOT — ECO - ECO - Documentación</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#instrucciones-para-trabajar-con-github-copilot-alacena" class="md-skip">
+        <a href="#instrucciones-para-trabajar-con-github-copilot-eco" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              🤖 INSTRUCCIONES PARA TRABAJAR CON GITHUB COPILOT — ALACENA
+              🤖 INSTRUCCIONES PARA TRABAJAR CON GITHUB COPILOT — ECO
             
           </span>
         </div>
@@ -945,6 +945,34 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#comandos-especiales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚡ COMANDOS ESPECIALES
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚡ COMANDOS ESPECIALES">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cierre-de-sesion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚪 Cierre de Sesión
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#indice" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1396,13 +1424,47 @@
   
 
 
-<h1 id="instrucciones-para-trabajar-con-github-copilot-alacena">🤖 INSTRUCCIONES PARA TRABAJAR CON GITHUB COPILOT — ALACENA<a class="headerlink" href="#instrucciones-para-trabajar-con-github-copilot-alacena" title="Permanent link">&para;</a></h1>
-<p><strong>Última actualización:</strong> 2026-01-12<br />
-<strong>Proyecto:</strong> ALACENA (Sistema gastronómico integral)<br />
+<h1 id="instrucciones-para-trabajar-con-github-copilot-eco">🤖 INSTRUCCIONES PARA TRABAJAR CON GITHUB COPILOT — ECO<a class="headerlink" href="#instrucciones-para-trabajar-con-github-copilot-eco" title="Permanent link">&para;</a></h1>
+<p><strong>Última actualización:</strong> 5 de febrero de 2026<br />
+<strong>Proyecto:</strong> ECO (Sistema de Gestión Doméstica Modular)<br />
 <strong>Público:</strong> Fran + GitHub Copilot</p>
+<hr />
+<h2 id="comandos-especiales">⚡ COMANDOS ESPECIALES<a class="headerlink" href="#comandos-especiales" title="Permanent link">&para;</a></h2>
+<h3 id="cierre-de-sesion">🚪 Cierre de Sesión<a class="headerlink" href="#cierre-de-sesion" title="Permanent link">&para;</a></h3>
+<p><strong>Comando:</strong> <code>"Vamos cerrando el orto"</code></p>
+<p>Cuando el usuario dice esta frase, ejecutar automáticamente:
+1. ✅ Documentar TODO lo trabajado en la sesión actual
+2. ✅ Crear/actualizar archivo en <code>docs/sesiones/YYYY-MM-DD--nombre-sesion.md</code>
+3. ✅ Incluir métricas: duración, commits, issues creados, archivos modificados
+4. ✅ Hacer commit con mensaje descriptivo del resumen de sesión
+5. ✅ Push a GitHub
+6. ✅ Desplegar documentación si hubo cambios (mkdocs gh-deploy o esperar workflow)
+7. ✅ Mensaje final con resumen y links a documentación/issues</p>
+<p><strong>Formato de documentación de sesión:</strong>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="gh"># Sesión N - Título Descriptivo</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="gs">**Fecha:**</span> DD de mes YYYY
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="gs">**Duración:**</span> XXX minutos
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="gs">**Objetivo:**</span> Breve descripción
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="gu">## Logros</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="k">-</span><span class="w"> </span>Lista de completados
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="k">-</span><span class="w"> </span>Issues creados/cerrados
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="k">-</span><span class="w"> </span>Cambios principales
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="gu">## Métricas</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>| Métrica | Valor |
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>|---------|-------|
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>| Duración | XX min |
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>| Commits | N |
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>| Issues | N |
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="gu">## Próxima Sesión</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="k">-</span><span class="w"> </span>Objetivos para mañana
+</span></code></pre></div></p>
 <hr />
 <h2 id="indice">📋 ÍNDICE<a class="headerlink" href="#indice" title="Permanent link">&para;</a></h2>
 <ol>
+<li><a href="#comandos-especiales">Comandos Especiales</a></li>
 <li><a href="#reglas-de-comunicación">Reglas de Comunicación</a></li>
 <li><a href="#ejecución-de-comandos">Ejecución de Comandos</a></li>
 <li><a href="#commits-y-versionado">Commits y Versionado</a></li>
@@ -1443,11 +1505,11 @@
 <li>✅ <strong>Esperar salida y reportar</strong> antes de siguiente paso.</li>
 </ul>
 <h3 id="ejemplos-validos">Ejemplos válidos<a class="headerlink" href="#ejemplos-validos" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Opción 1: Ruta completa (explícito)</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">cd</span><span class="w"> </span>C:<span class="se">\U</span>sers<span class="se">\U</span>suario<span class="se">\a</span>lacena<span class="se">\b</span>ackend<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>npm.cmd<span class="w"> </span>run<span class="w"> </span>prisma:generate
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># Opción 2: Ruta sintética (si es clara)</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># &quot;anda a backend y ejecuta:&quot; npm.cmd run prisma:seed</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Opción 1: Ruta completa (explícito)</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">cd</span><span class="w"> </span>C:<span class="se">\U</span>sers<span class="se">\U</span>suario<span class="se">\a</span>lacena<span class="se">\b</span>ackend<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>npm.cmd<span class="w"> </span>run<span class="w"> </span>prisma:generate
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># Opción 2: Ruta sintética (si es clara)</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c1"># &quot;anda a backend y ejecuta:&quot; npm.cmd run prisma:seed</span>
 </span></code></pre></div>
 <h3 id="terminales-permitidas">Terminales permitidas<a class="headerlink" href="#terminales-permitidas" title="Permanent link">&para;</a></h3>
 <ul>
@@ -1459,14 +1521,14 @@
 <hr />
 <h2 id="3-commits-y-versionado">3️⃣ COMMITS Y VERSIONADO<a class="headerlink" href="#3-commits-y-versionado" title="Permanent link">&para;</a></h2>
 <h3 id="formato-de-mensaje">Formato de mensaje<a class="headerlink" href="#formato-de-mensaje" title="Permanent link">&para;</a></h3>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>type: descripción breve (en español o inglés)
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>Ejemplos válidos:
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>- feat: endpoint POST /api/spaces (crear ubicaciones)
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>- fix: validación de cantidad en reservas
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>- docs: actualizar README con guía de setup
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>- refactor: reorganizar controllers en carpeta routes
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>- seed: agregar datos iniciales de test
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>type: descripción breve (en español o inglés)
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>Ejemplos válidos:
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>- feat: endpoint POST /api/spaces (crear ubicaciones)
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>- fix: validación de cantidad en reservas
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>- docs: actualizar README con guía de setup
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>- refactor: reorganizar controllers en carpeta routes
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>- seed: agregar datos iniciales de test
 </span></code></pre></div>
 <h3 id="frequency">Frequency<a class="headerlink" href="#frequency" title="Permanent link">&para;</a></h3>
 <ul>
@@ -1509,12 +1571,12 @@
 <li>✅ <strong>Brevemente</strong> (1-2 líneas máximo por comment).</li>
 </ul>
 <p>Ejemplo:
-<div class="language-javascript highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">// ❌ MAL</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">users</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">prisma</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">findMany</span><span class="p">();</span><span class="w"> </span><span class="c1">// obtener usuarios</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1">// ✅ BIEN</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="c1">// Obtenemos usuarios activos para evitar mostrar cuentas deshabilitadas</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="kd">const</span><span class="w"> </span><span class="nx">users</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">prisma</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">findMany</span><span class="p">({</span><span class="w"> </span><span class="nx">where</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">active</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">});</span>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1">// ❌ MAL</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">users</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">prisma</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">findMany</span><span class="p">();</span><span class="w"> </span><span class="c1">// obtener usuarios</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1">// ✅ BIEN</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="c1">// Obtenemos usuarios activos para evitar mostrar cuentas deshabilitadas</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="kd">const</span><span class="w"> </span><span class="nx">users</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">prisma</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">findMany</span><span class="p">({</span><span class="w"> </span><span class="nx">where</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">active</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">});</span>
 </span></code></pre></div></p>
 <hr />
 <h2 id="5-documentacion-y-diagramas">5️⃣ DOCUMENTACIÓN Y DIAGRAMAS<a class="headerlink" href="#5-documentacion-y-diagramas" title="Permanent link">&para;</a></h2>
@@ -1544,14 +1606,14 @@
 - <strong>Mermaid/PlantUML:</strong> en archivos <code>.md</code> dentro de <code>docs/</code>.
 - <strong>Excalidraw/Figma:</strong> exportar PNG/PDF a <code>docs/diagrams/</code>.</p>
 <p>Ejemplo Mermaid (ER diagram):
-<div class="language-markdown highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="sb">```mermaid</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="s">erDiagram</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="s">    LOCATION ||--o{ RESERVE : has</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="s">    CONTAINER ||--o{ RESERVE : stored-in</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="s">    ITEM ||--o{ RESERVE : contains</span>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="s">    RECIPE ||--o{ RECIPE-INGREDIENT : uses</span>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="s">    ITEM ||--o{ RECIPE-INGREDIENT : ingredient-of</span>
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="sb">```</span>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="sb">```mermaid</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="s">erDiagram</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="s">    LOCATION ||--o{ RESERVE : has</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="s">    CONTAINER ||--o{ RESERVE : stored-in</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="s">    ITEM ||--o{ RESERVE : contains</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="s">    RECIPE ||--o{ RECIPE-INGREDIENT : uses</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="s">    ITEM ||--o{ RECIPE-INGREDIENT : ingredient-of</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="sb">```</span>
 </span></code></pre></div></p>
 <h3 id="actualizar-documentacion">Actualizar documentación<a class="headerlink" href="#actualizar-documentacion" title="Permanent link">&para;</a></h3>
 <ul>
@@ -1568,12 +1630,12 @@
 <li>✅ <strong>Si hay trade-offs</strong> (seguridad vs velocidad, ej) → explicarlos.</li>
 </ul>
 <h3 id="formato-de-pregunta">Formato de pregunta<a class="headerlink" href="#formato-de-pregunta" title="Permanent link">&para;</a></h3>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Veo que necesitas crear endpoint para [X]. Hay 2 formas:
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>A) Opción rápida: [descripción, ventajas, desventajas]
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>B) Opción robusta: [descripción, ventajas, desventajas]
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>¿Cuál prefieres? O te sugiero la A porque [razón].
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Veo que necesitas crear endpoint para [X]. Hay 2 formas:
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>A) Opción rápida: [descripción, ventajas, desventajas]
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>B) Opción robusta: [descripción, ventajas, desventajas]
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>¿Cuál prefieres? O te sugiero la A porque [razón].
 </span></code></pre></div>
 <h3 id="decisiones-tomadas-guardar">Decisiones tomadas = guardar<a class="headerlink" href="#decisiones-tomadas-guardar" title="Permanent link">&para;</a></h3>
 <ul>
@@ -1598,22 +1660,22 @@
 <h2 id="8-como-usar-este-documento">8️⃣ CÓMO USAR ESTE DOCUMENTO<a class="headerlink" href="#8-como-usar-este-documento" title="Permanent link">&para;</a></h2>
 <h3 id="para-nuevas-sesiones-importante">Para nuevas sesiones (IMPORTANTE)<a class="headerlink" href="#para-nuevas-sesiones-importante" title="Permanent link">&para;</a></h3>
 <p><strong>Copia y pega esto al inicio de un nuevo chat con Copilot:</strong></p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>---
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>LEE el archivo docs/COPILOT-INSTRUCCIONES.md y úsalo como guía para toda nuestra comunicación.
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>Resumen rápido:
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>- Paso único por mensaje (confirmaciones antes de actuar)
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>- Incluir ruta en comandos (pero sintética está bien)
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>- Un commit por feature
-</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>- Documentar todo (README, SETUP, ARQUITECTURA, API, diagramas)
-</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>- Preguntar antes si hay opciones
-</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>- Testing manual básico
-</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>- Comentarios en código en español (WHY, no WHAT)
-</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
-</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>Estamos en etapa: [Migraciones completadas | Endpoints CRUD | Página pública] ← actualizar según estés
-</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>
-</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>Próximo objetivo: [qué hacemos ahora] ← actualizar según sea
-</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>---
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>---
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>LEE el archivo docs/COPILOT-INSTRUCCIONES.md y úsalo como guía para toda nuestra comunicación.
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>Resumen rápido:
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>- Paso único por mensaje (confirmaciones antes de actuar)
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>- Incluir ruta en comandos (pero sintética está bien)
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>- Un commit por feature
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>- Documentar todo (README, SETUP, ARQUITECTURA, API, diagramas)
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>- Preguntar antes si hay opciones
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>- Testing manual básico
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>- Comentarios en código en español (WHY, no WHAT)
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>Estamos en etapa: [Migraciones completadas | Endpoints CRUD | Página pública] ← actualizar según estés
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>Próximo objetivo: [qué hacemos ahora] ← actualizar según sea
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>---
 </span></code></pre></div>
 <h3 id="actualizaciones-al-documento">Actualizaciones al documento<a class="headerlink" href="#actualizaciones-al-documento" title="Permanent link">&para;</a></h3>
 <ul>
