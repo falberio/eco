@@ -34,20 +34,15 @@ theme:
         name: Cambiar a modo claro
   
   features:
-    - navigation.instant      # Instant loading (SPA-like)
-    - navigation.instant.progress  # Show progress bar
-    - navigation.tracking     # URL tracking
-    - navigation.tabs         # Top-level navigation tabs
-    - navigation.tabs.sticky  # Sticky tabs
-    - navigation.sections     # Navigation sections in sidebar
-    - navigation.expand       # Expand sections by default
-    - navigation.path         # Breadcrumb path
-    - navigation.indexes      # Section index pages
-    - navigation.top          # Back to top button
-    - navigation.footer       # Previous/Next footer navigation
-    - toc.follow              # TOC follows scroll
-    - toc.integrate           # Integrate TOC in sidebar
-    - search.suggest          # Search suggestions
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.tracking
+    - navigation.sections
+    - navigation.path
+    - navigation.top
+    - navigation.footer
+    - toc.follow
+    - search.suggest
     - search.highlight        # Highlight search terms
     - search.share            # Share search results
     - content.code.copy       # Copy code button
@@ -128,44 +123,22 @@ extra:
   
   version:
     provider: mike
-  
-  # Announcement bar
-  announce:
-    text: |
-      🚀 <strong>Sprint 0 en curso</strong> · Documentación y planificación · Cierre: 09 Feb 2026
-    dismiss: tru
-    provider: mike
 
 # Navigation
 nav:
-  - 🏠 Inicio: index.md
-  
-  - 🚀 Comenzar:
-    - Getting Started: getting-started.md
-    - FAQ: faq.md
-    - Glosario: glosario.md
-  
-  - 📘 Core:
-    - Contexto General: 01-contexto-general.md
+  - Inicio: index.md
+  - Sobre ECO: getting-started.md
+  - Colaborar:
     - Documento Funcional: 02-documento-funcional.md
-    - Libro de Sesiones: 03-libro-sesiones.md
-  
-  - 📋 Planificación:
-    - Backlog Maestro: 04-planificacion/backlog.md
-    - Roadmap: 04-planificacion/roadmap.md
-    - Sprints: 04-planificacion/sprints.md
-  
-  - 🏗️ Arquitectura:
-    - ADRs: 05-arquitectura/adrs.md
-    - Inventario AS-IS: 05-arquitectura/inventario-as-is.md
-    - Modelo de Datos: 05-arquitectura/modelo-datos.md
-    - Procedimientos: 05-arquitectura/procedimientos.md
-  
-  - 🎨 UX & Diseño:
-    - UX & Navegación: 06-ux-navegacion.md
-  
-  - ⚡ Referencia:
-    - Cheatsheet: 07-cheatsheet.md
+    - Backlog: 04-planificacion/backlog.md
+    - Sesiones: 03-libro-sesiones.md
+    - Procedimientos: procedimientos.md
+  - Arquitectura:
+    - Modelo de Datos: 01-arquitectura/modelo-datos.md
+    - ADRs: 01-arquitectura/adrs/
+  - Referencia:
+    - Glosario: glosario.md
+    - FAQ: faq.md
 
 # Custom CSS
 extra_css:
