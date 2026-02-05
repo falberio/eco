@@ -46,8 +46,12 @@
 **Archivo:** `docs/04-planificacion/historias-completas-150.md`
 
 ### 5. Creación Masiva de Issues GitHub ✅
-- [x] **77 issues creados** (#36-#112)
-- [x] Script PowerShell automatizado
+- [x] **Primera ronda: 77 issues** (#36-#112)
+- [x] **Segunda ronda: 70 issues** (#113-#182)
+- [x] **Total: 147 issues nuevos** en esta sesión
+- [x] **Gran total en repositorio: 182 issues**
+- [x] Scripts PowerShell automatizados con UTF-8 encoding
+- [x] Todas las 161+ historias planificadas ahora son issues
 - [x] Labels: prioridad, estimación, módulo
 - [x] Encoding UTF-8 corregido con `[System.Text.Encoding]::UTF8.GetBytes()`
 - [x] Links bidireccionales docs ↔ GitHub
@@ -267,17 +271,51 @@ $est = "Estimaci" + [char]243 + "n"  # Unicode 243 = ó
 
 ## 🎯 Estado al Final de Sesión
 
-- ✅ 161 historias documentadas
-- ✅ 77 issues en GitHub con labels
+### Backlog e Issues
+- ✅ **161+ historias** documentadas en detalle
+- ✅ **182 issues totales** en GitHub (147 creados hoy)
 - ✅ Workflow completo documentado
 - ✅ Scripts automatizados funcionando
-- ✅ Docs rediseñadas (minimal)
-- ✅ Todo commiteado y pusheado
+- ✅ Todas las historias tienen issue en GitHub
 
-**Siguiente sesión:** Priorización, Milestones, Sprint 2 Planning
+### Documentación Rediseñada
+- ✅ Homepage no técnica ("Todo tiene su eco")
+- ✅ Página de gestión visual de historias con filtros
+- ✅ URLs corregidas (alacena → eco)
+- ✅ Workflow automático GitHub Actions
+- ✅ Desplegada en https://falberio.github.io/eco/
+
+### Scripts PowerShell
+- ✅ `create-bulk-issues-final.ps1` - Primera ronda (77 issues)
+- ✅ `create-quick.ps1` - Segunda ronda (70 issues)
+- ✅ `fix-issue-titles.ps1` - Fix encoding UTF-8
+- ✅ `update-docs-with-issues.ps1` - Actualizar links
+
+### Commits y Deploy
+- ✅ Todo commiteado y pusheado a GitHub
+- ✅ Documentación desplegada automáticamente
+- ✅ Navegación actualizada con historias
+- ✅ Remote actualizado a repo correcto
+
+**Siguiente sesión:** [Sesión 7 - Priorización + Milestones + Sprint 2](2026-02-06--sesion7-plan.md)
 
 ---
 
-**Duración total Sprint 0:** ~550 minutos (9+ horas) en 2 días  
-**Commits totales Sprint 0:** 19  
-**Issues creados Sprint 0:** 95 (18 iniciales + 77 hoy)
+## 📊 Métricas Finales Sesión 6
+
+| Métrica | Valor |
+|---------|-------|
+| **Duración total** | ~300 minutos (5 horas) |
+| **Historias creadas** | 161 |
+| **Issues GitHub creados** | 147 (#36-#182) |
+| **Issues totales repositorio** | 182 |
+| **Scripts PowerShell** | 4 |
+| **Commits** | 12+ |
+| **Archivos docs nuevos** | 5 |
+| **Líneas código/docs** | ~3000 |
+
+---
+
+**Duración total Sprint 0:** ~600 minutos (10 horas) en 2 días  
+**Commits totales Sprint 0:** 25+  
+**Issues creados Sprint 0:** 182 (18 iniciales + 8 corregidos + 147 hoy + 9 otros)
