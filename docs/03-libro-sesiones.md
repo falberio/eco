@@ -133,44 +133,65 @@ Cada sesión se documenta con la siguiente estructura estándar:
 
 ---
 
-### Sesión 6 – 2026-02-04 – Consolidación documental (Sprint 0)
+### Sesión 6 – 2026-02-04 – Consolidación documental y mejoras UX (Sprint 0 Día 1)
 
-- **Objetivo de la sesión:** Crear estructura documental definitiva en Markdown, migrar contenido de ECO.htm, configurar MkDocs para documentación web.
+**Sprint:** Sprint 0  
+**Duración:** ~180 min (de 200 planificados)
+
+- **Objetivo de la sesión:** Crear estructura documental definitiva en Markdown, migrar contenido de ECO.htm, configurar MkDocs Material, implementar mejoras UX/diseño, y preparar workflow de gestión de historias.
 
 - **Decisiones tomadas (D-006):**
   - **D-006-1:** Adoptar Markdown como formato estándar para toda la documentación.
-  - **D-006-2:** Estructura mixta: algunos documentos separados (01-03), otros agrupados por carpetas (04-planificacion, 05-arquitectura).
-  - **D-006-3:** Renombrar repo de 'alacena' a 'eco' para reflejar el alcance completo del proyecto.
-  - **D-006-4:** Implementar MkDocs Material para documentación web interactiva.
+  - **D-006-2:** Estructura mixta: documentos core (01-03), carpetas organizadas (04-planificacion, 05-arquitectura).
+  - **D-006-3:** Renombrar repo de 'alacena' a 'eco' (ya renombrado en GitHub remote).
+  - **D-006-4:** Implementar MkDocs Material con 24 features avanzadas (navigation.path, toc.integrate, announce.dismiss, etc.).
+  - **D-006-5:** Usar documentación como source of truth, GitHub Issues como tracking operativo.
+  - **D-006-6:** Nomenclatura de sesiones: numeración absoluta (Sesión 1, 2, 3...) + contexto Sprint cuando aplique.
 
 - **Acuerdos (A-006):**
-  - **A-006-1:** Sprint 0 extiende hasta 09/Feb/2026 con foco en documentación sólida.
-  - **A-006-2:** Sesiones de 200 min (04, 05, 06 Feb) para completar Sprint 0.
-  - **A-006-3:** Archivar documentación antigua en `docs/archive/`.
+  - **A-006-1:** Sprint 0 hasta 09/Feb/2026 con 3 sesiones de trabajo (04, 05, 06 Feb).
+  - **A-006-2:** Sesión 7 (05/Feb): Backlog Sprint 1 completo + Docs técnicas (200 min).
+  - **A-006-3:** Sesión 8 (06/Feb): ADRs backfill + Flujos UX + Cierre Sprint 0 (200 min).
+  - **A-006-4:** Sesiones 1-4 quedan como placeholders hasta tener información para reconstruirlas.
 
 - **Temas abiertos (TO-006):**
-  - **TO-006-1:** Completar migración de ECO-04, ECO-05, ECO-06, ECO-07 (Sesión 2).
-  - **TO-006-2:** Crear backlog detallado con épicas e historias para Sprint 1.
-  - **TO-006-3:** Documentar modelo de datos completo alineado con Prisma schema.
+  - **TO-006-1:** Backlog Sprint 1 sin DoR (15 historias sin criterios de aceptación detallados) - Bloquea arranque Sprint 1.
+  - **TO-006-2:** Setup local sin documentar paso a paso - Dificulta onboarding.
+  - **TO-006-3:** Modelo de datos desincronizado con Prisma schema actual.
+  - **TO-006-4:** ADRs 009-012 faltantes (decisiones recientes sin formalizar).
+  - **TO-006-5:** Flujos UX de MANTIA, Lista, ECOSALUD sin documentar.
 
-- **Impacto en DF:** Migración completa de ECO.htm a formato Markdown estructurado.
+- **Impacto en DF:** Sin cambios directos (el DF ya estaba migrado).
 
-- **Impacto en Arquitectura:** Creación de carpeta `05-arquitectura/` con ADRs, modelo de datos, inventario AS-IS.
+- **Impacto en Arquitectura:** 
+  - Estructura `docs/05-arquitectura/` creada con ADRs, modelo de datos, inventario AS-IS, procedimientos.
+  - Logo ECO placeholder creado (SVG casa + hojas).
 
-- **Impacto en Backlog / Project:** Pendiente para Sesión 2 (05/Feb).
+- **Impacto en Backlog / Project:** 
+  - Análisis de gaps identificó 9 items críticos/importantes.
+  - Plan Sesión 7-8 definido con tareas específicas.
+
+- **Logros completados:**
+  - ✅ Estructura documental completa (22 archivos .md)
+  - ✅ MkDocs Material configurado y desplegado en GitHub Pages (https://falberio.github.io/eco/)
+  - ✅ Getting Started por rol (PM/Dev/UX/QA) - 3,200 palabras
+  - ✅ FAQ completo (40+ preguntas) - 2,800 palabras
+  - ✅ Glosario A-Z (60+ términos) - 2,400 palabras
+  - ✅ Mejoras UX: CSS custom (220 líneas), JS custom (150 líneas), announcement bar, navegación con emojis
+  - ✅ Templates GitHub Issues (feature, bug, tech, docs) + config.yml
+  - ✅ Index.md rediseñado con hero section, tabs por rol, status badges
+  - ✅ 4 commits: estructura documental, mejoras UX, templates GitHub, fix typo
 
 - **Acciones y responsables:**
-  - **Copilot (en curso):**
-    - ✅ Crear estructura de carpetas
-    - ✅ Migrar ECO-01, ECO-02, ECO-03
-    - ⏳ Crear README.md maestro
-    - ⏳ Configurar MkDocs
-    - ⏳ Archivar docs antiguos
+  - **Sesión 7 (05/Feb):**
+    - Completar 15 historias Sprint 1 con criterios de aceptación (110 min)
+    - Crear 15 issues en GitHub con links bidireccionales
+    - Documentar setup local paso a paso (30 min)
+    - Sincronizar modelo datos con Prisma (30 min)
+    - Troubleshooting básico (10 min)
+    - Revisión y pulido (20 min)
 
-- **Próxima sesión / Próximos pasos:** 
-  - Completar migración restante
-  - Configurar MkDocs Material
-  - Revisar y ajustar navegación web
+- **Próxima sesión:** Sesión 7 – 05/Feb – Backlog Sprint 1 + Docs técnicas
 
 ---
 
