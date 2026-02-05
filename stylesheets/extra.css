@@ -1,0 +1,193 @@
+/* ============================================
+   ECO - Custom Styles
+   ============================================ */
+
+/* --- Brand Colors --- */
+:root {
+    --eco-primary: #FFA726;
+    --eco-primary-dark: #F57C00;
+    --eco-secondary: #66BB6A;
+    --eco-accent: #42A5F5;
+    --eco-warning: #FFEB3B;
+    --eco-surface: #FAFAFA;
+}
+
+/* --- Enhanced Cards --- */
+.md-typeset .grid.cards>ul>li {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.md-typeset .grid.cards>ul>li:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    border-color: var(--eco-primary);
+}
+
+/* --- Status Badges --- */
+.status-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status-badge.active {
+    background: #E8F5E9;
+    color: #2E7D32;
+}
+
+.status-badge.progress {
+    background: #FFF3E0;
+    color: #E65100;
+}
+
+.status-badge.planned {
+    background: #E3F2FD;
+    color: #1565C0;
+}
+
+/* --- Improved Admonitions --- */
+.md-typeset .admonition {
+    border-left: 4px solid;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.md-typeset .admonition.info {
+    border-left-color: var(--eco-accent);
+}
+
+.md-typeset .admonition.success {
+    border-left-color: var(--eco-secondary);
+}
+
+.md-typeset .admonition.warning {
+    border-left-color: var(--eco-warning);
+}
+
+/* --- Code Blocks Enhancement --- */
+.md-typeset pre>code {
+    border-radius: 6px;
+}
+
+.md-typeset .highlight {
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+/* --- Tables --- */
+.md-typeset table:not([class]) {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.md-typeset table:not([class]) thead {
+    background: linear-gradient(135deg, var(--eco-primary) 0%, var(--eco-primary-dark) 100%);
+}
+
+.md-typeset table:not([class]) thead th {
+    color: white;
+    font-weight: 600;
+}
+
+.md-typeset table:not([class]) tbody tr:hover {
+    background: rgba(255, 167, 38, 0.08);
+}
+
+/* --- Hero Section (index.md) --- */
+.hero-section {
+    text-align: center;
+    padding: 3rem 1rem;
+    background: linear-gradient(135deg, rgba(255, 167, 38, 0.1) 0%, rgba(102, 187, 106, 0.1) 100%);
+    border-radius: 12px;
+    margin-bottom: 2rem;
+}
+
+.hero-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, var(--eco-primary-dark), var(--eco-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-top: 0;
+}
+
+/* --- Sprint Badge in Header --- */
+.sprint-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: rgba(255, 167, 38, 0.15);
+    border: 2px solid var(--eco-primary);
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--eco-primary-dark);
+}
+
+/* --- Navigation Icons Enhancement --- */
+.md-nav__link--active {
+    font-weight: 600;
+    color: var(--eco-primary-dark) !important;
+}
+
+/* --- Dark Mode Adjustments --- */
+[data-md-color-scheme="slate"] {
+    --eco-surface: #1E1E1E;
+}
+
+[data-md-color-scheme="slate"] .hero-section {
+    background: linear-gradient(135deg, rgba(255, 167, 38, 0.15) 0%, rgba(102, 187, 106, 0.15) 100%);
+}
+
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) tbody tr:hover {
+    background: rgba(255, 167, 38, 0.15);
+}
+
+/* --- Mermaid Diagrams Enhancement --- */
+.mermaid {
+    background: transparent;
+    text-align: center;
+}
+
+/* --- Footer Enhancement --- */
+.md-footer-meta {
+    background: linear-gradient(135deg, rgba(255, 167, 38, 0.05) 0%, rgba(102, 187, 106, 0.05) 100%);
+}
+
+/* --- Smooth Scrolling --- */
+html {
+    scroll-behavior: smooth;
+}
+
+/* --- Responsive Typography --- */
+@media screen and (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+
+    .hero-section p {
+        font-size: 1rem;
+    }
+}
+
+/* --- Print Styles --- */
+@media print {
+
+    .md-header,
+    .md-sidebar,
+    .md-footer {
+        display: none;
+    }
+}
