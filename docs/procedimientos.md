@@ -1,5 +1,47 @@
 # Procedimientos de Trabajo
 
+## ⚡ Comandos Especiales
+
+### 🚪 Cierre de Sesión - "Vamos cerrando el orto"
+
+Cuando uses esta frase, Copilot ejecutará automáticamente:
+
+1. **Documentar sesión completa:**
+   - Crear/actualizar `docs/sesiones/YYYY-MM-DD--nombre-sesion.md`
+   - Incluir: objetivos, logros, métricas, próxima sesión
+   - Métricas: duración, commits, issues, archivos modificados
+
+2. **Actualizar repositorio:**
+   - `git add` de archivos modificados
+   - `git commit` con mensaje descriptivo
+   - `git push origin main`
+
+3. **Desplegar documentación:**
+   - Si hay cambios en `docs/`: ejecutar `mkdocs gh-deploy`
+   - O esperar que GitHub Actions despliegue automáticamente
+
+4. **Resumen final:**
+   - Mensaje con logros principales
+   - Links a documentación actualizada
+   - Links a issues creados/modificados
+   - Recordatorio de próxima sesión
+
+**Ejemplo de salida:**
+```
+✅ Sesión 6 cerrada exitosamente!
+
+Logros:
+- 147 issues creados (#36-#182)
+- 161 historias documentadas
+- Homepage rediseñada
+
+Documentación: https://falberio.github.io/eco/
+Issues: https://github.com/falberio/eco/issues
+Próxima sesión: Sprint 2 Planning
+```
+
+---
+
 ## 🔄 Gestión de Issues y Historias de Usuario
 
 ### Workflow completo: Docs → GitHub → Desarrollo

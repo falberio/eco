@@ -1,20 +1,60 @@
-# 🤖 INSTRUCCIONES PARA TRABAJAR CON GITHUB COPILOT — ALACENA
+# 🤖 INSTRUCCIONES PARA TRABAJAR CON GITHUB COPILOT — ECO
 
-**Última actualización:** 2026-01-12  
-**Proyecto:** ALACENA (Sistema gastronómico integral)  
+**Última actualización:** 5 de febrero de 2026  
+**Proyecto:** ECO (Sistema de Gestión Doméstica Modular)  
 **Público:** Fran + GitHub Copilot
 
 ---
 
+## ⚡ COMANDOS ESPECIALES
+
+### 🚪 Cierre de Sesión
+**Comando:** `"Vamos cerrando el orto"`
+
+Cuando el usuario dice esta frase, ejecutar automáticamente:
+1. ✅ Documentar TODO lo trabajado en la sesión actual
+2. ✅ Crear/actualizar archivo en `docs/sesiones/YYYY-MM-DD--nombre-sesion.md`
+3. ✅ Incluir métricas: duración, commits, issues creados, archivos modificados
+4. ✅ Hacer commit con mensaje descriptivo del resumen de sesión
+5. ✅ Push a GitHub
+6. ✅ Desplegar documentación si hubo cambios (mkdocs gh-deploy o esperar workflow)
+7. ✅ Mensaje final con resumen y links a documentación/issues
+
+**Formato de documentación de sesión:**
+```markdown
+# Sesión N - Título Descriptivo
+**Fecha:** DD de mes YYYY
+**Duración:** XXX minutos
+**Objetivo:** Breve descripción
+
+## Logros
+- Lista de completados
+- Issues creados/cerrados
+- Cambios principales
+
+## Métricas
+| Métrica | Valor |
+|---------|-------|
+| Duración | XX min |
+| Commits | N |
+| Issues | N |
+
+## Próxima Sesión
+- Objetivos para mañana
+```
+
+---
+
 ## 📋 ÍNDICE
-1. [Reglas de Comunicación](#reglas-de-comunicación)
-2. [Ejecución de Comandos](#ejecución-de-comandos)
-3. [Commits y Versionado](#commits-y-versionado)
-4. [Código y Desarrollo](#código-y-desarrollo)
-5. [Documentación y Diagramas](#documentación-y-diagramas)
-6. [Decisiones y Preguntas](#decisiones-y-preguntas)
-7. [Testing y Verificación](#testing-y-verificación)
-8. [Cómo Usar Este Documento](#cómo-usar-este-documento)
+1. [Comandos Especiales](#comandos-especiales)
+2. [Reglas de Comunicación](#reglas-de-comunicación)
+3. [Ejecución de Comandos](#ejecución-de-comandos)
+4. [Commits y Versionado](#commits-y-versionado)
+5. [Código y Desarrollo](#código-y-desarrollo)
+6. [Documentación y Diagramas](#documentación-y-diagramas)
+7. [Decisiones y Preguntas](#decisiones-y-preguntas)
+8. [Testing y Verificación](#testing-y-verificación)
+9. [Cómo Usar Este Documento](#cómo-usar-este-documento)
 
 ---
 
