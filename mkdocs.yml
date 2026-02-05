@@ -34,23 +34,37 @@ theme:
         name: Cambiar a modo claro
   
   features:
-    - navigation.instant      # Instant loading
+    - navigation.instant      # Instant loading (SPA-like)
+    - navigation.instant.progress  # Show progress bar
     - navigation.tracking     # URL tracking
-    - navigation.tabs         # Navigation tabs
-    - navigation.sections     # Navigation sections
+    - navigation.tabs         # Top-level navigation tabs
+    - navigation.tabs.sticky  # Sticky tabs
+    - navigation.sections     # Navigation sections in sidebar
     - navigation.expand       # Expand sections by default
+    - navigation.path         # Breadcrumb path
+    - navigation.indexes      # Section index pages
     - navigation.top          # Back to top button
+    - navigation.footer       # Previous/Next footer navigation
+    - toc.follow              # TOC follows scroll
+    - toc.integrate           # Integrate TOC in sidebar
     - search.suggest          # Search suggestions
     - search.highlight        # Highlight search terms
+    - search.share            # Share search results
     - content.code.copy       # Copy code button
+    - content.code.annotate   # Code annotations
     - content.action.edit     # Edit button on pages
+    - content.action.view     # View source button
+    - content.tabs.link       # Link content tabs
+    - content.tooltips        # Hover tooltips
+    - announce.dismiss        # Dismissible announcements
     
   icon:
     repo: fontawesome/brands/github
     edit: material/pencil
+    view: material/eye
     
-  logo: assets/logo.png
-  favicon: assets/favicon.ico
+  logo: assets/logo.svg
+  favicon: assets/logo.svg
 
 # Extensions
 markdown_extensions:
@@ -103,7 +117,10 @@ plugins:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/falberio/eco
+      name: GitHub Repository
+    - icon: fontawesome/solid/globe
+      link: https://alacena-blush.vercel.app
+      name: Frontend en Producción
   
   status:
     sprint_actual: Sprint 0
@@ -111,30 +128,43 @@ extra:
   
   version:
     provider: mike
+  
+  # Announcement bar
+  announce:
+    text: |
+      🚀 <strong>Sprint 0 en curso</strong> · Documentación y planificación · Cierre: 09 Feb 2026
+    dismiss: tru
+    provider: mike
 
 # Navigation
 nav:
-  - Inicio: index.md
-  - Core:
+  - 🏠 Inicio: index.md
+  
+  - 🚀 Comenzar:
+    - Getting Started: getting-started.md
+    - FAQ: faq.md
+    - Glosario: glosario.md
+  
+  - 📘 Core:
     - Contexto General: 01-contexto-general.md
     - Documento Funcional: 02-documento-funcional.md
     - Libro de Sesiones: 03-libro-sesiones.md
   
-  - Planificación:
+  - 📋 Planificación:
     - Backlog Maestro: 04-planificacion/backlog.md
     - Roadmap: 04-planificacion/roadmap.md
     - Sprints: 04-planificacion/sprints.md
   
-  - Arquitectura:
+  - 🏗️ Arquitectura:
     - ADRs: 05-arquitectura/adrs.md
     - Inventario AS-IS: 05-arquitectura/inventario-as-is.md
     - Modelo de Datos: 05-arquitectura/modelo-datos.md
     - Procedimientos: 05-arquitectura/procedimientos.md
   
-  - UX & Diseño:
+  - 🎨 UX & Diseño:
     - UX & Navegación: 06-ux-navegacion.md
   
-  - Referencia:
+  - ⚡ Referencia:
     - Cheatsheet: 07-cheatsheet.md
 
 # Custom CSS
