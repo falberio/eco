@@ -225,7 +225,7 @@ graph TB
     - ⏳ Documentación API (OpenAPI/Swagger)
     - ⏳ Reconstrucción Sesiones 1-4 en Libro
 
-[:octicons-arrow-right-24: Ver Roadmap completo](04-planification/roadmap.md)
+[:octicons-arrow-right-24: Ver Roadmap completo](04-planificacion/roadmap.md)
 
 ---
 
