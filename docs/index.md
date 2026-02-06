@@ -1,15 +1,15 @@
 # ECO
 
 <div class="hero-eco">
-  <h1 class="eco-title">Todo tiene su eco</h1>
-  <p class="eco-subtitle">Tu vida doméstica, organizada</p>
+  <h1 class="eco-title">Entender tu vida para mejorarla</h1>
+  <p class="eco-subtitle">Tu hogar, tu salud, tu historia — todo conectado</p>
 </div>
 
 ---
 
 ## 🤔 ¿Qué es ECO?
 
-**ECO es tu asistente digital para la casa.** Gestiona tareas recurrentes, controla el inventario de alacena, organiza tu lista de compras y registra tu salud. Todo en un solo lugar.
+**ECO es tu asistente digital para la vida doméstica.** Gestiona tareas del hogar, controla tu inventario, organiza compras, registra tu salud, lleva tus finanzas y documenta tu historia personal. 6 módulos integrados + un agente conversacional, todo en un solo lugar. **738 historias de usuario** planificadas.
 
 Imagina poder preguntarle a tu casa:
 
@@ -31,8 +31,8 @@ Imagina poder preguntarle a tu casa:
     <ul>
       <li>✅ Base de datos diseñada</li>
       <li>✅ Autenticación funcionando</li>
-      <li>✅ 95 historias de usuario creadas</li>
-      <li>⏳ Primeros módulos en desarrollo</li>
+      <li>✅ 738 historias de usuario definidas</li>
+      <li>✅ 7 módulos + 11 áreas transversales</li>
     </ul>
     <span class="status-label">En progreso</span>
   </div>
@@ -93,6 +93,26 @@ Imagina poder preguntarle a tu casa:
 - Exportar PDF para el médico
 
 **Ejemplo real:** Registrás tu peso cada mañana en 5 segundos. A fin de mes, ves gráfico de tu progreso. Si tu presión sube mucho, recibís alerta.
+
+### 📔 HUESHA - Diario de Vida
+> **"Tu historia, documentada para siempre"**
+
+- Diario personal con audio, texto y fotos
+- Importar chats de WhatsApp, emails, Spotify
+- Timeline biográfico: viviendas, trabajos, relaciones
+- Resúmenes automáticos y recuerdos ("Un día como hoy")
+
+**Ejemplo real:** Importás 10 años de WhatsApp, y podés buscar "¿qué me dijo mamá el día de mi cumple del 2019?". HUESHA lo encuentra.
+
+### 💰 FINANCIA - Gestión Financiera
+> **"Entendé tu plata sin ser contador"**
+
+- Cuentas en ARS y USD con tipo de cambio automático
+- Importar CSV bancarios, gastos en cuotas
+- Presupuestos, promociones y deudas entre personas
+- Dashboard financiero con proyección a 12 meses
+
+**Ejemplo real:** Importás el CSV del banco, FINANCIA categoriza automáticamente, te muestra que gastás 40% en delivery, y te avisa que hoy hay 3x2 con tu tarjeta.
 
 ---
 
@@ -195,8 +215,8 @@ Un solo lugar donde todo "hace eco". Registrás una vez, el sistema recuerda por
   </a>
   
   <a href="04-planificacion/historias" class="link-card">
-    <h3>🎯 Gestión de Historias</h3>
-    <p>Panel visual para revisar y priorizar todas las historias</p>
+    <h3>🎯 738 Historias de Usuario</h3>
+    <p>Panel interactivo con filtros por módulo, prioridad y estimación</p>
   </a>
 </div>
 

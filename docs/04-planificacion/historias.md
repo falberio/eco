@@ -1,309 +1,136 @@
-# 🎯 Gestión de Historias
+# 🎯 Historias de Usuario — ECO
 
-**Panel de control para revisar, priorizar y gestionar las 161 historias de usuario del proyecto ECO.**
+**738 funcionalidades planificadas** para construir el sistema de gestión doméstica más completo.  
+Usá los filtros para explorar por módulo, prioridad o estimación.
 
 <div class="historia-stats">
   <div class="stat-card">
-    <div class="stat-number">161</div>
+    <div class="stat-number">738</div>
     <div class="stat-label">Historias Totales</div>
   </div>
   <div class="stat-card">
-    <div class="stat-number">95</div>
-    <div class="stat-label">En GitHub</div>
+    <div class="stat-number">93</div>
+    <div class="stat-label">🔴 Críticas (P1)</div>
   </div>
   <div class="stat-card">
-    <div class="stat-number">18</div>
-    <div class="stat-label">Sprint 1</div>
+    <div class="stat-number">344</div>
+    <div class="stat-label">🟡 Importantes (P2)</div>
   </div>
   <div class="stat-card">
-    <div class="stat-number">143</div>
-    <div class="stat-label">Pendientes</div>
+    <div class="stat-number">~4,565h</div>
+    <div class="stat-label">Estimación Total</div>
   </div>
 </div>
 
 ---
 
-## 🔍 Filtros Rápidos
+## 🔍 Filtros
 
-<div class="filter-buttons">
-  <button class="filter-btn active" data-filter="all">📋 Todas</button>
-  <button class="filter-btn" data-filter="p1">🔥 P1 - Alta</button>
-  <button class="filter-btn" data-filter="p2">⚡ P2 - Media</button>
-  <button class="filter-btn" data-filter="p3">⭐ P3 - Baja</button>
-  <button class="filter-btn" data-filter="mantia">📋 MANTIA</button>
-  <button class="filter-btn" data-filter="alacena">🏺 ALACENA</button>
-  <button class="filter-btn" data-filter="lista">🛒 Lista</button>
-  <button class="filter-btn" data-filter="ecosalud">💚 ECOSALUD</button>
-  <button class="filter-btn" data-filter="api">🤖 API/IA</button>
-</div>
-
----
-
-## 📊 Vista por Prioridad
-
-### 🔥 Prioridad 1 - Críticas (1 historia)
-
-<div class="historia-list">
-  <div class="historia-item p1" data-module="alacena">
-    <div class="historia-header">
-      <span class="historia-code">ALA-11</span>
-      <a href="https://github.com/falberio/eco/issues/42" target="_blank" class="historia-issue">#42</a>
-      <span class="historia-priority p1">P1</span>
-      <span class="historia-size">S</span>
-    </div>
-    <h4 class="historia-title">Ordenar por fecha de vencimiento</h4>
-    <p class="historia-description">Como usuario quiero ver items ordenados por vencimiento para consumir primero lo que vence antes.</p>
-    <div class="historia-actions">
-      <button class="btn-action move-sprint">➡️ Mover a Sprint</button>
-      <button class="btn-action change-priority">🔄 Cambiar Prioridad</button>
-      <button class="btn-action archive">🗑️ Archivar</button>
+<div id="eco-filters">
+  <div class="filter-group">
+    <label><strong>Módulo:</strong></label>
+    <div class="filter-buttons" id="filter-module">
+      <button class="filter-btn active" data-filter="all">📋 Todos (738)</button>
+      <button class="filter-btn" data-filter="mantia">📋 MANTIA (100)</button>
+      <button class="filter-btn" data-filter="alacena">🏺 ALACENA (100)</button>
+      <button class="filter-btn" data-filter="ecosalud">💚 ECOSALUD (100)</button>
+      <button class="filter-btn" data-filter="lista">🛒 Lista (36)</button>
+      <button class="filter-btn" data-filter="huesha">📔 HUESHA (100)</button>
+      <button class="filter-btn" data-filter="financia">💰 FINANCIA (100)</button>
+      <button class="filter-btn" data-filter="transversal">🔧 Transversales (202)</button>
     </div>
   </div>
-</div>
-
-### ⚡ Prioridad 2 - Importantes (26 historias)
-
-!!! tip "Historias P2"
-    Funcionalidades importantes para UX y valor del producto. Deberían ir en v0.1 o v0.2.
-
-<details>
-<summary><strong>Ver 26 historias P2</strong> (click para expandir)</summary>
-
-<div class="historia-list">
-  <!-- MAN-08 -->
-  <div class="historia-item p2" data-module="mantia">
-    <div class="historia-header">
-      <span class="historia-code">MAN-08</span>
-      <a href="https://github.com/falberio/eco/issues/66" target="_blank" class="historia-issue">#66</a>
-      <span class="historia-priority p2">P2</span>
-      <span class="historia-size">M</span>
-    </div>
-    <h4 class="historia-title">Recordatorios por email</h4>
-    <p class="historia-description">Como usuario quiero recibir email 1 día antes de tarea vencida para no olvidar tareas importantes.</p>
-    <div class="historia-actions">
-      <button class="btn-action move-sprint">➡️ Mover a Sprint</button>
-      <button class="btn-action change-priority">🔄 Cambiar Prioridad</button>
+  <div class="filter-group">
+    <label><strong>Prioridad:</strong></label>
+    <div class="filter-buttons" id="filter-priority">
+      <button class="filter-btn active" data-filter="all">Todas</button>
+      <button class="filter-btn" data-filter="P1">🔴 P1 Crítica</button>
+      <button class="filter-btn" data-filter="P2">🟡 P2 Importante</button>
+      <button class="filter-btn" data-filter="P3">🔵 P3 Deseable</button>
+      <button class="filter-btn" data-filter="P4">⚪ P4 Futuro</button>
     </div>
   </div>
-
-  <!-- MAN-09 -->
-  <div class="historia-item p2" data-module="mantia">
-    <div class="historia-header">
-      <span class="historia-code">MAN-09</span>
-      <a href="https://github.com/falberio/eco/issues/36" target="_blank" class="historia-issue">#36</a>
-      <span class="historia-priority p2">P2</span>
-      <span class="historia-size">L</span>
-    </div>
-    <h4 class="historia-title">Vista calendario mensual</h4>
-    <p class="historia-description">Como usuario quiero ver tareas en calendario visual para planificar mejor mi mes.</p>
-    <div class="historia-actions">
-      <button class="btn-action move-sprint">➡️ Mover a Sprint</button>
-      <button class="btn-action change-priority">🔄 Cambiar Prioridad</button>
+  <div class="filter-group">
+    <label><strong>Estimación:</strong></label>
+    <div class="filter-buttons" id="filter-size">
+      <button class="filter-btn active" data-filter="all">Todas</button>
+      <button class="filter-btn" data-filter="S">S (~3h)</button>
+      <button class="filter-btn" data-filter="M">M (~6h)</button>
+      <button class="filter-btn" data-filter="L">L (~10h)</button>
+      <button class="filter-btn" data-filter="XL">XL (~20h)</button>
+      <button class="filter-btn" data-filter="XXL">XXL (~40h)</button>
     </div>
   </div>
-
-  <!-- Ver documento completo para todas las P2 -->
-  <p><em>...y 24 historias P2 más. <a href="04-planificacion/historias-completas-150">Ver backlog completo</a></em></p>
-</div>
-
-</details>
-
-### ⭐ Prioridad 3 - Nice-to-have (23 historias)
-
-!!! info "Historias P3"
-    Features opcionales, optimizaciones, integraciones avanzadas. Para v0.3 en adelante.
-
-<details>
-<summary><strong>Ver 23 historias P3</strong> (click para expandir)</summary>
-
-<div class="historia-list">
-  <p><em>Integraciones (Google Cal, Todoist, Notion), Gamificación, Webhooks, etc.</em></p>
-  <p><a href="04-planificacion/historias-completas-150">Ver backlog completo con todas las P3</a></p>
-</div>
-
-</details>
-
----
-
-## 📦 Vista por Módulo
-
-### 📋 MANTIA - Gestión de Tareas (20 historias)
-
-<div class="module-summary">
-  <div class="module-stat">
-    <strong>7</strong> en Sprint 1
+  <div class="filter-group">
+    <input type="text" id="filter-search" placeholder="🔎 Buscar por nombre, ID o descripción..." class="search-input">
   </div>
-  <div class="module-stat">
-    <strong>13</strong> pendientes
-  </div>
-  <div class="module-stat">
-    <strong>2</strong> P2
-  </div>
-  <div class="module-stat">
-    <strong>11</strong> P3
-  </div>
-</div>
-
-<details>
-<summary><strong>Ver detalles</strong></summary>
-
-**Sprint 1 (Completadas):** MAN-01 a MAN-07  
-**Pendientes P2:** MAN-08 (Email), MAN-09 (Calendario), MAN-11 (Push), MAN-15 (Stats), MAN-18 (Asignar)  
-**Pendientes P3:** MAN-10, MAN-12, MAN-13, MAN-14, MAN-16, MAN-17, MAN-19, MAN-20
-
-[Ver historias completas →](04-planificacion/historias-completas-150#mantia)
-
-</details>
-
-### 🏺 ALACENA - Inventario (22 historias)
-
-<div class="module-summary">
-  <div class="module-stat">
-    <strong>3</strong> en Sprint 1
-  </div>
-  <div class="module-stat">
-    <strong>19</strong> pendientes
-  </div>
-  <div class="module-stat">
-    <strong>1</strong> P1
-  </div>
-  <div class="module-stat">
-    <strong>9</strong> P2
-  </div>
-</div>
-
-<details>
-<summary><strong>Ver detalles</strong></summary>
-
-**Sprint 1:** ALA-05, ALA-06, ALA-07  
-**P1:** ALA-11 (Ordenar por vencimiento)  
-**Pendientes P2:** ALA-08 (Barcode), ALA-10 (Fotos), ALA-12 (Foto item), ALA-13 (Ubicaciones), ALA-14 (Asignar ubicación), ALA-15 (Buscar ubicación), ALA-17 (Recetas), ALA-18 (Ingredientes), ALA-23 (Alertas), ALA-24 (Stock bajo)
-
-[Ver historias completas →](04-planificacion/historias-completas-150#alacena)
-
-</details>
-
-### 🛒 Lista de Compras (18 historias)
-
-<div class="module-summary">
-  <div class="module-stat">
-    <strong>5</strong> en Sprint 1
-  </div>
-  <div class="module-stat">
-    <strong>13</strong> pendientes
-  </div>
-  <div class="module-stat">
-    <strong>6</strong> P2
-  </div>
-  <div class="module-stat">
-    <strong>7</strong> P3
-  </div>
-</div>
-
-<details>
-<summary><strong>Ver detalles</strong></summary>
-
-**Sprint 1:** LST-01 a LST-05  
-**Pendientes P2:** LST-06 (Por super), LST-07 (Costo), LST-08 (Precio real), LST-11 (Compartir), LST-14 (Reservar), LST-18 (Desde receta)  
-**Pendientes P3:** LST-09, LST-10, LST-12, LST-13, LST-15, LST-16, LST-17
-
-[Ver historias completas →](04-planificacion/historias-completas-150#lista)
-
-</details>
-
-### 💚 ECOSALUD - Salud y Bienestar (20 historias)
-
-<div class="module-summary">
-  <div class="module-stat">
-    <strong>3</strong> en Sprint 1
-  </div>
-  <div class="module-stat">
-    <strong>17</strong> pendientes
-  </div>
-  <div class="module-stat">
-    <strong>8</strong> P2
-  </div>
-  <div class="module-stat">
-    <strong>9</strong> P3
-  </div>
-</div>
-
-<details>
-<summary><strong>Ver detalles</strong></summary>
-
-**Sprint 1:** ECO-01, ECO-02, ECO-03  
-**Pendientes P2:** ECO-04 (Gráficos), ECO-05 (Alertas), ECO-06 (PDF), ECO-07 (Comparar metas), ECO-09 (Recordatorio), ECO-16 (Medicamentos), ECO-17 (Alerta medicamento), ECO-20 (Foto estudio)  
-**Pendientes P3:** Resto
-
-[Ver historias completas →](04-planificacion/historias-completas-150#ecosalud)
-
-</details>
-
----
-
-## 🤖 APIs y Agente IA (27 historias)
-
-!!! success "Módulos Clave para v0.2+"
-    Estas historias habilitan la funcionalidad de comandos de voz e interacción con IA.
-
-### API para IA (15 historias)
-- **11 Issues creados** (#52-#60, #101-#103)
-- GraphQL schemas, autenticación, queries conversacionales
-- [Ver detalles →](04-planificacion/historias-completas-150#api-para-ia)
-
-### Agente Conversacional (12 historias)
-- **3 Issues creados** (#104, #105, #106)
-- Comandos voz, integración Whisper, Home Assistant
-- [Ver detalles →](04-planificacion/historias-completas-150#agente-conversacional)
-
----
-
-## 🎯 Acciones Rápidas
-
-<div class="quick-actions">
-  <a href="https://github.com/falberio/eco/issues" target="_blank" class="action-card">
-    <h3>🐛 Ver Issues en GitHub</h3>
-    <p>95 issues actualmente</p>
-  </a>
-  
-  <a href="https://github.com/falberio/eco/milestones" target="_blank" class="action-card">
-    <h3>🎯 Milestones</h3>
-    <p>Configurar sprints</p>
-  </a>
-  
-  <a href="04-planificacion/historias-completas-150" class="action-card">
-    <h3>📋 Backlog Completo</h3>
-    <p>161 historias detalladas</p>
-  </a>
-  
-  <a href="04-planificacion/flujo-gestion-historias" class="action-card">
-    <h3>⚙️ Workflow</h3>
-    <p>Cómo gestionar historias</p>
-  </a>
+  <div id="filter-count" class="filter-count">Mostrando <strong>738</strong> de 738 historias</div>
 </div>
 
 ---
 
-## 📝 Notas para Priorización
-
-!!! tip "Criterios"
-    - **P1:** Bloqueante, sin esto no funciona nada
-    - **P2:** Alto valor, mejora experiencia significativamente
-    - **P3:** Nice-to-have, puede esperar
-
-!!! warning "Dependencias"
-    - APIs GraphQL (API-01 a API-04) deben ir antes del Agente
-    - Multi-usuario requiere ajustes en CRUD básicos
-    - Integraciones externas (Google Cal, Fit) son P3
-
-!!! info "Estimaciones"
-    - **S** (Small): 2-4 horas
-    - **M** (Medium): 4-8 horas
-    - **L** (Large): 8-16 horas
-    - **XL** (Extra Large): 16+ horas
+<div id="historia-table-container">
+  <table id="historia-table" class="historia-table">
+    <thead>
+      <tr>
+        <th class="col-id">ID</th>
+        <th class="col-title">Funcionalidad</th>
+        <th class="col-module">Módulo</th>
+        <th class="col-prio">Prio</th>
+        <th class="col-est">Est.</th>
+        <th class="col-date">Fecha aprox.</th>
+      </tr>
+    </thead>
+    <tbody id="historia-tbody">
+      <!-- Las filas se generan dinámicamente desde historias-data.js -->
+    </tbody>
+  </table>
+  <div id="no-results" class="no-results" style="display:none;">
+    <p>😕 No se encontraron historias con esos filtros.</p>
+    <button class="filter-btn" onclick="resetFilters()">Limpiar filtros</button>
+  </div>
+</div>
 
 ---
 
-**Última actualización:** 5 de febrero de 2026  
-**Total historias:** 161  
-**Issues GitHub:** 95 creados
+## 📊 Resumen por Módulo
+
+| Módulo | Historias | P1 | P2 | P3 | P4 | Horas aprox | Detalle |
+|--------|-----------|----|----|----|----|-------------|---------|
+| [📋 MANTIA](historias/mantia.md) | 100 | 9 | 38 | 53 | 0 | ~598h | Tareas y mantenimiento del hogar |
+| [🏺 ALACENA](historias/alacena.md) | 100 | 10 | 52 | 38 | 0 | ~548h | Inventario inteligente |
+| [💚 ECOSALUD](historias/ecosalud.md) | 100 | 7 | 50 | 43 | 0 | ~621h | Salud y bienestar |
+| [🛒 Lista](historias/lista-compras.md) | 36 | 5 | 14 | 13 | 4 | ~294h | Compras compartidas |
+| [📔 HUESHA](historias/huesha.md) | 100 | 15 | 46 | 39 | 0 | ~542h | Diario de vida y registro vital |
+| [💰 FINANCIA](historias/financia.md) | 100 | 19 | 49 | 32 | 0 | ~503h | Gestión financiera personal |
+| [🔧 Transversales](historias/transversales.md) | 202 | 28 | 95 | 72 | 7 | ~1,459h | Plataforma, API, seguridad, UX |
+| **TOTAL** | **738** | **93** | **344** | **290** | **11** | **~4,565h** | |
+
+---
+
+## 📖 Convenciones
+
+### Prioridades
+
+- 🔴 **P1 — Crítica:** Sin esto el producto no funciona. MVP obligatorio.
+- 🟡 **P2 — Importante:** Aporta valor significativo. Incluir cuanto antes después del MVP.
+- 🔵 **P3 — Deseable:** Mejora la experiencia. Se puede vivir sin ella por ahora.
+- ⚪ **P4 — Futuro:** Ideas a largo plazo, baja urgencia.
+
+### Estimaciones (tallas de camiseta)
+
+| Talla | Horas | Ejemplo |
+|-------|-------|---------|
+| **S** | ~3h | Un filtro, un campo nuevo, un botón |
+| **M** | ~6h | Un CRUD simple, una vista básica |
+| **L** | ~10h | Una integración, un dashboard |
+| **XL** | ~20h | Un módulo complejo, IA, IoT |
+| **XXL** | ~40h | Sistema end-to-end, IA avanzada |
+
+!!! info "Nota sobre fechas"
+    Las fechas son **estimaciones aproximadas** basadas en prioridad y dependencias. Se ajustarán en el Plan de Proyecto (Sesión 8). P1 → Q1-Q2 2026 · P2 → Q2-Q3 · P3 → Q3-Q4 · P4/IA avanzada → 2027.
+
+---
+
+*Última actualización: 6 de febrero de 2026 — Sprint 0, Sesión 7*  
+*Total: 738 historias · ~4,565 horas estimadas · 7 módulos + 11 áreas transversales*

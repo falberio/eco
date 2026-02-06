@@ -296,8 +296,26 @@ $est = "Estimaci" + [char]243 + "n"  # Unicode 243 = ó
 - ✅ Documentación desplegada automáticamente
 - ✅ Navegación actualizada con historias
 - ✅ Remote actualizado a repo correcto
+- ✅ **Comando especial de cierre** documentado ("Vamos cerrando el orto")
 
 **Siguiente sesión:** [Sesión 7 - Priorización + Milestones + Sprint 2](2026-02-06--sesion7-plan.md)
+
+---
+
+## 🎓 Logros Extra al Cierre
+
+### ⚡ Comando Especial Implementado
+- ✅ **"Vamos cerrando el orto"** - Cierre automático de sesión
+- ✅ Documentado en `COPILOT-INSTRUCCIONES.md`
+- ✅ Procedimiento completo en `procedimientos.md`
+- ✅ Automatiza: documentación, commit, push, deploy, resumen
+
+Este comando ahora ejecuta automáticamente todo el proceso de cierre de sesión:
+1. Documentar sesión completa con métricas
+2. Commit descriptivo de todos los cambios
+3. Push a GitHub
+4. Deploy de documentación
+5. Resumen final con links
 
 ---
 

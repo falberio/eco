@@ -130,8 +130,15 @@ nav:
   - Inicio: index.md
   - Sobre ECO: getting-started.md
   - Planificación:
-    - Gestión de Historias: 04-planificacion/historias.md
-    - Backlog Completo (161): 04-planificacion/historias-completas-150.md
+    - "🎯 Historias de Usuario (738)": 04-planificacion/historias.md
+    - "Historias por Módulo":
+      - "📋 MANTIA (100)": 04-planificacion/historias/mantia.md
+      - "🏾 ALACENA (100)": 04-planificacion/historias/alacena.md
+      - "💚 ECOSALUD (100)": 04-planificacion/historias/ecosalud.md
+      - "🛒 Lista de Compras (36)": 04-planificacion/historias/lista-compras.md
+      - "📔 HUESHA (100)": 04-planificacion/historias/huesha.md
+      - "💰 FINANCIA (100)": 04-planificacion/historias/financia.md
+      - "🔧 Transversales (202)": 04-planificacion/historias/transversales.md
     - Workflow: 04-planificacion/flujo-gestion-historias.md
     - Sprints: 04-planificacion/sprints.md
   - Colaborar:
@@ -154,3 +161,4 @@ extra_css:
 # Custom JS
 extra_javascript:
   - javascripts/extra.js
+  - javascripts/historias-data.js

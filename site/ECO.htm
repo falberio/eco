@@ -1,0 +1,1571 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Aptos;}
+@font-face
+	{font-family:"Aptos Display";}
+@font-face
+	{font-family:"Segoe UI Emoji";
+	panose-1:2 11 5 2 4 2 4 2 2 3;}
+@font-face
+	{font-family:"Segoe UI Symbol";
+	panose-1:2 11 5 2 4 2 4 2 2 3;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:8.0pt;
+	margin-left:0cm;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Aptos",sans-serif;}
+h1
+	{mso-style-link:"Título 1 Car";
+	margin-top:18.0pt;
+	margin-right:0cm;
+	margin-bottom:4.0pt;
+	margin-left:0cm;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:20.0pt;
+	font-family:"Aptos Display",sans-serif;
+	color:#0F4761;
+	font-weight:normal;}
+h2
+	{mso-style-link:"Título 2 Car";
+	margin-top:8.0pt;
+	margin-right:0cm;
+	margin-bottom:4.0pt;
+	margin-left:0cm;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:"Aptos Display",sans-serif;
+	color:#0F4761;
+	font-weight:normal;}
+h3
+	{mso-style-link:"Título 3 Car";
+	margin-top:8.0pt;
+	margin-right:0cm;
+	margin-bottom:4.0pt;
+	margin-left:0cm;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Aptos",sans-serif;
+	color:#0F4761;
+	font-weight:normal;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-link:"Encabezado Car";
+	margin:0cm;
+	font-size:11.0pt;
+	font-family:"Aptos",sans-serif;}
+span.Ttulo1Car
+	{mso-style-name:"Título 1 Car";
+	mso-style-link:"Título 1";
+	font-family:"Aptos Display",sans-serif;
+	color:#0F4761;}
+span.Ttulo2Car
+	{mso-style-name:"Título 2 Car";
+	mso-style-link:"Título 2";
+	font-family:"Aptos Display",sans-serif;
+	color:#0F4761;}
+span.Ttulo3Car
+	{mso-style-name:"Título 3 Car";
+	mso-style-link:"Título 3";
+	font-family:"Times New Roman",serif;
+	color:#0F4761;}
+span.EncabezadoCar
+	{mso-style-name:"Encabezado Car";
+	mso-style-link:Encabezado;}
+.MsoChpDefault
+	{font-family:"Aptos",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:107%;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:70.85pt 3.0cm 70.85pt 3.0cm;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+</head>
+
+<body lang=ES-AR link="#467886" vlink="#96607D" style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<h1><a name="_Toc220937262"><b>ECO – 01 Contexto General</b></a></h1>
+
+<p class=MsoNormal><b><span lang=ES>Propósito de esta Page: orientar
+rápidamente sobre qué es ECO, cómo está organizado y cuáles son sus límites.
+Esta Page NO duplica detalle funcional ni técnico — eso vive en la ECO – 02
+Documentación Funcional y de Arquitectura (v1.0).</span></b></p>
+
+<h3><b>1) Visión y Objetivo</b></h3>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal><b>Visión: construir un sistema personal/modular para
+     gestionar vida doméstica con foco en registro, historial y simplicidad
+     operativa.</b></li>
+ <li class=MsoNormal><b>Principios: Descargar la mente; Registro antes que
+     automatización; Historial primero; Asistencia progresiva; Modularidad
+     clara.</b></li>
+</ul>
+
+<h3><b>2) Alcance y No&#8209;Objetivos (v1)</b></h3>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal><b>Alcance v1: operación con un solo backend/API, modelo
+     de datos único y foco mobile&#8209;first.</b></li>
+ <li class=MsoNormal><b>No&#8209;Objetivos (extracto): </b></li>
+ <ul style='margin-top:0cm' type=circle>
+  <li class=MsoNormal><b>ALACENA: sin escaneo de códigos, sin recetas/menú, sin
+      sincronización con comercios.</b></li>
+  <li class=MsoNormal><b>MANTIA: sin recordatorios push, sin integraciones de
+      calendario, sin dependencias entre tareas.</b></li>
+  <li class=MsoNormal><b>ECOSALUD: sin correlaciones avanzadas, sin dashboards
+      complejos.</b></li>
+  <li class=MsoNormal><b>Lista: sin múltiples listas por hogar, sin compartir
+      listas fuera del sistema.</b></li>
+  <li class=MsoNormal><b>Plataforma: sin multilenguaje, sin multi&#8209;hogar
+      colaborativo avanzado.</b></li>
+ </ul>
+</ul>
+
+<h3><b>3) Módulos y Transversales</b></h3>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal><b>Módulos funcionales: ALACENA, MANTIA, ECOSALUD, HUESHA,
+     FINANCIA.</b></li>
+ <li class=MsoNormal><b>Transversales: Lista de Compras, Historial global.</b></li>
+ <li class=MsoNormal><b>Capa de soporte: usuarios, hogares, permisos
+     (aislamiento por hogar).</b></li>
+</ul>
+
+<h3><b>4) Arquitectura (resumen ejecutivo)</b></h3>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal><b>Monolito modular con una sola API y repositorio
+     unificado. ADR&#8209;001 aceptado.</b></li>
+ <li class=MsoNormal><b>Aislamiento por hogar. ADR&#8209;002.</b></li>
+ <li class=MsoNormal><b>Autenticación básica. ADR&#8209;003.</b></li>
+ <li class=MsoNormal><b>Periodicidad declarativa en MANTIA. ADR&#8209;004.</b></li>
+ <li class=MsoNormal><b>Lista de Compras como entidad transversal. ADR&#8209;005.</b></li>
+</ul>
+
+<h3><b>5) Estado del Proyecto</b></h3>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal><b>Sprint 0: extendido hasta 09/Feb/2026 con objetivos de
+     marco del producto.</b></li>
+ <li class=MsoNormal><b>Sprint 1 (10–23 Feb/2026): MVP operable centrado en
+     ALACENA, MANTIA, ECOSALUD (registro mínimo) y Lista.</b></li>
+</ul>
+
+<h3><b>6) Dónde profundizar</b></h3>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal><b>ECO – 02 Documentación Funcional y de Arquitectura
+     (v1.0) &#8594; verdad funcional/técnica, modelo, ADRs, backlog.</b></li>
+ <li class=MsoNormal><b>ECO – 03 Libro de Sesiones &#8594; decisiones,
+     acuerdos, pendientes. (Mantener actualizado tras cada sesión).</b></li>
+</ul>
+
+<div class=MsoNormal align=center style='text-align:center'><b>
+
+<hr size=2 width="100%" align=center>
+
+</b></div>
+
+<p class=MsoNormal><b>Notas de uso</b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal><b>Esta Page cambia muy poco; si cambia la visión o
+     límites, actualizar y referenciar el DF.</b></li>
+ <li class=MsoNormal><b>Toda definición concreta (entidades, historias, reglas)
+     vive en la Page 02.</b></li>
+</ul>
+
+<p class=MsoNormal><b>&nbsp;</b></p>
+
+<h1><a name="_Toc220937263"><b>ECO – 02 Documento Funcional y de Arquitectura
+(v1.0)</b></a></h1>
+
+<p class=MsoNormal>Fuente de verdad del proyecto ECO. Alineado con el estado
+actual del proyecto ya <b>deployado</b>, con repo activo en GitHub y base de
+datos existente. Este documento guía su evolución, priorizando claridad,
+trazabilidad, ritmo sostenido y decisiones conscientes.</p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h2><b>1. Propósito del Documento</b></h2>
+
+<p class=MsoNormal>Este Documento Funcional y de Arquitectura (DF) define:</p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal>Qué es ECO y qué no es (No&#8209;Objetivos)</li>
+ <li class=MsoNormal>Cómo se estructura funcionalmente</li>
+ <li class=MsoNormal>Cómo se organiza su arquitectura</li>
+ <li class=MsoNormal>Qué decisiones ya fueron tomadas (ADRs)</li>
+ <li class=MsoNormal>Cómo se planifica el trabajo (ceremonias, sesiones, ritmo)</li>
+ <li class=MsoNormal>Cómo se traduce el MVP operativo al backlog y la ejecución</li>
+</ul>
+
+<p class=MsoNormal>El DF acompaña al repositorio existente, no lo reemplaza. <b>Cualquier
+diferencia entre código y documento debe resolverse actualizando el DF.</b></p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h2><b>2. Principios rectores</b></h2>
+
+<h3><b>2.1 Principios funcionales</b></h3>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal><b>Descargar la mente</b>: nada crítico reside solo en
+     memoria.</li>
+ <li class=MsoNormal><b>Registro antes que automatización</b>.</li>
+ <li class=MsoNormal><b>Historial primero</b>.</li>
+ <li class=MsoNormal><b>Asistencia progresiva</b>.</li>
+ <li class=MsoNormal><b>Modularidad clara</b>.</li>
+</ul>
+
+<h3><b>2.2 Principios técnicos</b></h3>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal><b>Un solo backend</b> (confirmado por repo actual).</li>
+ <li class=MsoNormal><b>Modelo de datos único, extensible</b>.</li>
+ <li class=MsoNormal><b>Mobile-first real</b>.</li>
+ <li class=MsoNormal><b>Decisiones reversibles</b>.</li>
+ <li class=MsoNormal><b>Infraestructura simple, controlada</b>.</li>
+</ul>
+
+<h3><b>2.3 No&#8209;Objetivos (límites de diseño v1)</b></h3>
+
+<p class=MsoNormal>Los No&#8209;Objetivos evitan que ECO se expanda sin
+control. No son descartes permanentes: solo límites conscientes para ahora.</p>
+
+<p class=MsoNormal><b>ALACENA</b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal><span lang=PT-BR>No escaneo de códigos de barras.</span></li>
+ <li class=MsoNormal>No recetas, no menú semanal.</li>
+ <li class=MsoNormal>No sincronización con comercios.</li>
+</ul>
+
+<p class=MsoNormal><b>MANTIA</b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal>No recordatorios push.</li>
+ <li class=MsoNormal>No integración con calendarios externos.</li>
+ <li class=MsoNormal>No tareas dependientes ni automatizadas.</li>
+</ul>
+
+<p class=MsoNormal><b>ECOSALUD</b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal>No correlaciones avanzadas.</li>
+ <li class=MsoNormal>No dashboards complejos.</li>
+</ul>
+
+<p class=MsoNormal><b>Lista de Compras</b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal>No múltiples listas por hogar.</li>
+ <li class=MsoNormal>No compartir listas fuera del sistema.</li>
+</ul>
+
+<p class=MsoNormal><b>Plataforma</b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal>No multilenguaje.</li>
+ <li class=MsoNormal>No modelo multi-hogar colaborativo avanzado.</li>
+</ul>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h2><b>3. Arquitectura general de ECO</b></h2>
+
+<p class=MsoNormal>ECO está construido alrededor de:</p>
+
+<ol style='margin-top:0cm' start=1 type=1>
+ <li class=MsoNormal><b>Módulos funcionales</b>: ALACENA, MANTIA, ECOSALUD,
+     HUESHA, FINANCIA.</li>
+ <li class=MsoNormal><b>Elementos transversales</b>: Lista de Compras,
+     Historial global.</li>
+ <li class=MsoNormal><b>Capa de soporte</b>: usuarios, hogares, permisos.</li>
+</ol>
+
+<p class=MsoNormal><b>Confirmado:</b> una sola API, un repositorio unificado.</p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h2><b>4. Modelo de Datos (alineado al repo actual)</b></h2>
+
+<p class=MsoNormal><b>IMPORTANTE:</b> Este modelo se actualiza en base a la DB
+existente (mapeo realizado revisando el repo). Las entidades aquí listadas
+reflejan lo que ECO ya implementa y las extensiones necesarias para Sprint 1.</p>
+
+<h3><b>4.1 Usuario</b></h3>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal>id</li>
+ <li class=MsoNormal>email</li>
+ <li class=MsoNormal>password_hash</li>
+ <li class=MsoNormal>created_at</li>
+ <li class=MsoNormal>updated_at</li>
+</ul>
+
+<h3><b>4.2 Hogar</b></h3>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal>id</li>
+ <li class=MsoNormal>nombre</li>
+ <li class=MsoNormal>created_at</li>
+</ul>
+
+<h3><b>4.3 UsuarioHogar</b></h3>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal>usuario_id</li>
+ <li class=MsoNormal>hogar_id</li>
+ <li class=MsoNormal>rol</li>
+</ul>
+
+<h3><b>4.4 ALACENA</b></h3>
+
+<p class=MsoNormal><b>ItemAlacena</b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal>id</li>
+ <li class=MsoNormal>hogar_id</li>
+ <li class=MsoNormal>nombre</li>
+ <li class=MsoNormal>categoria</li>
+ <li class=MsoNormal>stock_actual</li>
+ <li class=MsoNormal>unidad</li>
+ <li class=MsoNormal>notas</li>
+</ul>
+
+<p class=MsoNormal><b>MovimientoAlacena</b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal>id</li>
+ <li class=MsoNormal>item_id</li>
+ <li class=MsoNormal>tipo (ingreso|consumo|ajuste)</li>
+ <li class=MsoNormal>cantidad</li>
+ <li class=MsoNormal>fecha</li>
+ <li class=MsoNormal>usuario_id</li>
+ <li class=MsoNormal>notas</li>
+</ul>
+
+<h3><b>4.5 MANTIA</b></h3>
+
+<p class=MsoNormal><b>Tarea</b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal>id</li>
+ <li class=MsoNormal>hogar_id</li>
+ <li class=MsoNormal>titulo</li>
+ <li class=MsoNormal>descripcion</li>
+ <li class=MsoNormal>categoria</li>
+ <li class=MsoNormal>periodicidad (nullable)</li>
+ <li class=MsoNormal>estado</li>
+ <li class=MsoNormal>proxima_sugerida (nullable)</li>
+</ul>
+
+<p class=MsoNormal><b>Ejecución</b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal>id</li>
+ <li class=MsoNormal>tarea_id</li>
+ <li class=MsoNormal>fecha</li>
+ <li class=MsoNormal>usuario_id</li>
+ <li class=MsoNormal>notas</li>
+</ul>
+
+<h3><b>4.6 Lista de Compras</b></h3>
+
+<p class=MsoNormal><b>ListaItem</b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal>id</li>
+ <li class=MsoNormal>hogar_id</li>
+ <li class=MsoNormal>nombre</li>
+ <li class=MsoNormal>cantidad</li>
+ <li class=MsoNormal>unidad</li>
+ <li class=MsoNormal>origen (manual|alacena)</li>
+ <li class=MsoNormal>origen_ref_id</li>
+ <li class=MsoNormal>estado (pendiente|comprado)</li>
+</ul>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h2><b>5. ADRs — Decisiones de arquitectura (v1)</b></h2>
+
+<p class=MsoNormal>Registros livianos de decisiones estructurales.</p>
+
+<p class=MsoNormal><b>ADR&#8209;001 — Un solo backend monolítico modular</b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal><b>Estado:</b> aceptada</li>
+</ul>
+
+<p class=MsoNormal><b>ADR&#8209;002 — Aislamiento por hogar</b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal><b>Estado:</b> aceptada</li>
+</ul>
+
+<p class=MsoNormal><b>ADR&#8209;003 — Autenticación básica</b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal><b>Estado:</b> aceptada</li>
+</ul>
+
+<p class=MsoNormal><b>ADR&#8209;004 — Periodicidad declarativa en MANTIA</b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal><b>Estado:</b> aceptada</li>
+</ul>
+
+<p class=MsoNormal><b>ADR&#8209;005 — Lista de Compras como entidad transversal</b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal><b>Estado:</b> aceptada</li>
+</ul>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h2><b>6. Módulos funcionales</b></h2>
+
+<p class=MsoNormal><i>(Se mantienen descripciones previas pero alineadas con
+fechas y definiciones actuales. Se omite re-explicar, ya validado.)</i></p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h2><b>7. Estrategia Ágil y Pautas de Trabajo</b></h2>
+
+<p class=MsoNormal>ECO es un proyecto personal <b>pero tratado como un producto
+profesional</b>. Las ceremonias se adaptan a un &quot;equipo de uno&quot;,
+manteniendo disciplina.</p>
+
+<h3><b>7.1 Ritmo de trabajo</b></h3>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal><b>Sesión semanal fija</b> (review + planificación de 30
+     min).</li>
+ <li class=MsoNormal><b>Sesión técnica opcional</b> dos veces por semana.</li>
+ <li class=MsoNormal><b>Registro continuo</b> de avances en GitHub.</li>
+ <li class=MsoNormal><b>Retro quincenal</b>: qué funcionó / qué ajustar.</li>
+</ul>
+
+<h3><b>7.2 Ceremonias</b></h3>
+
+<h3><b>7.3 Rutina semanal de trabajo (detallada)</b></h3>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal><b>Lunes</b>: Revisión del DF + planificación de issues de
+     la semana.</li>
+ <li class=MsoNormal><b>Miércoles</b>: Sesión técnica breve (30 min) enfocada
+     en bloqueos o definiciones.</li>
+ <li class=MsoNormal><b>Viernes</b>: Mini&#8209;review + registro de
+     aprendizajes.</li>
+</ul>
+
+<h3><b>7.4 Sesiones periódicas</b></h3>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal><b>Sesiones de arquitectura (cada 2 semanas)</b>: revisión
+     de ADRs, modelo de datos, dependencias.</li>
+ <li class=MsoNormal><b>Sesiones de UX/UI (mensual)</b>: ajustes de navegación,
+     estados vacíos y coherencia visual.</li>
+ <li class=MsoNormal><b>Sesiones de limpieza (cada 2 semanas)</b>: refactor,
+     cierres de issues, backlog grooming.</li>
+</ul>
+
+<p class=MsoNormal><b>Review semanal</b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal>Repasar lo que se hizo.</li>
+ <li class=MsoNormal>Confirmar si el DF cambia.</li>
+</ul>
+
+<p class=MsoNormal><b>Planificación semanal</b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal>Elegir 2–5 issues para avanzar.</li>
+ <li class=MsoNormal>Verificar capacidad real.</li>
+</ul>
+
+<p class=MsoNormal><b>Retro quincenal</b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal>Ajustar hábitos, flujo y decisiones.</li>
+</ul>
+
+<p class=MsoNormal><b>Sesiones temáticas (a demanda)</b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal>Modelo de datos</li>
+ <li class=MsoNormal>UI/UX</li>
+ <li class=MsoNormal>Arquitectura</li>
+ <li class=MsoNormal>Limpieza de issues</li>
+</ul>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h2><b>8. Sprint 0 — Estado final (29 Ene &#8594; 09 Feb 2026)</b></h2>
+
+<p class=MsoNormal>Sprint 0 quedó extendido y tiene como fecha de cierre <b>09/Feb/2026</b>.</p>
+
+<p class=MsoNormal><b>Objetivo:</b> dejar el marco del producto sólido para
+Sprint 1.</p>
+
+<p class=MsoNormal><b>Entregables confirmados:</b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal>Definición funcional de módulos.</li>
+ <li class=MsoNormal>Modelo de datos revisado según repo.</li>
+ <li class=MsoNormal>ADRs v1.</li>
+ <li class=MsoNormal>Backlog maestro preparado.</li>
+ <li class=MsoNormal>Repositorio deployado y operativo.</li>
+</ul>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h2><b><span lang=EN-US>9. Sprint 1 — MVP Operable (10 Feb &#8594; 23 Feb 2026)</span></b></h2>
+
+<p class=MsoNormal>Fechas ajustadas según tu instrucción y el estado del
+proyecto.</p>
+
+<h3><b>9.1 Objetivo</b></h3>
+
+<p class=MsoNormal>Que ECO pueda ser usado <b>por vos mismo</b> de forma real y
+diaria.</p>
+
+<h3><b>9.2 Alcance funcional</b></h3>
+
+<p class=MsoNormal><b>ALACENA</b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal>Alta</li>
+ <li class=MsoNormal>Edición</li>
+</ul>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal>Consumo manual</li>
+ <li class=MsoNormal>Vista de stock</li>
+</ul>
+
+<p class=MsoNormal><b>MANTIA</b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal>Alta</li>
+ <li class=MsoNormal>Marcar hecha</li>
+ <li class=MsoNormal>Registrar ejecución</li>
+ <li class=MsoNormal>Vista pendientes y vencidas</li>
+</ul>
+
+<p class=MsoNormal><b>ECOSALUD</b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal>Registro manual mínimo</li>
+</ul>
+
+<p class=MsoNormal><b>Lista</b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal>Alta manual</li>
+ <li class=MsoNormal>Alta desde ALACENA</li>
+ <li class=MsoNormal>Marcar comprado</li>
+</ul>
+
+<h3><b>9.3 Alcance técnico</b></h3>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal>API unificada</li>
+ <li class=MsoNormal>DB actual extendida según tareas</li>
+ <li class=MsoNormal>Logs estructurados simples</li>
+ <li class=MsoNormal>Estados vacíos, validaciones básicas</li>
+</ul>
+
+<h3><b>9.4 Criterio de éxito del Sprint</b></h3>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal>&#8805; 20 registros reales en la semana</li>
+ <li class=MsoNormal>No romper flujo</li>
+ <li class=MsoNormal>Usarlo 7 días consecutivos</li>
+</ul>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h2><b>10. Backlog de Sprint 1 (versión revisada)</b></h2>
+
+<p class=MsoNormal><i>(Historias mantienen contenido original pero ordenadas y
+revisadas con el repo real.)</i></p>
+
+<p class=MsoNormal><b>Nota:</b> Las historias se incluyen en el DF porque ECO
+es un proyecto personal y el DF funciona como &quot;fuente única de
+verdad&quot;. En un proyecto corporativo irían fuera.</p>
+
+<p class=MsoNormal>Incluye:</p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal>EP&#8209;01 Base ECO</li>
+ <li class=MsoNormal>EP&#8209;02 ALACENA MVP</li>
+ <li class=MsoNormal>EP&#8209;03 MANTIA MVP</li>
+ <li class=MsoNormal>EP&#8209;04 Lista de Compras</li>
+</ul>
+
+<p class=MsoNormal><i>(Se mantiene el listado original con ajustes menores.)</i></p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h2><b>11. Issues del Sprint 1</b></h2>
+
+<p class=MsoNormal>Repos actualizados, listas alineadas con labels estándar.</p>
+
+<p class=MsoNormal><i>(Se conserva estructura original, pero vinculada al
+modelo de datos del repo y ADRs.)</i></p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h2><b><span lang=EN-US>12. Definition of Ready &amp; Definition of Done</span></b></h2>
+
+<h3><b>12.1 Definition of Ready (DoR)</b></h3>
+
+<p class=MsoNormal>Una historia está lista si:</p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal>Tiene objetivo claro</li>
+ <li class=MsoNormal>Criterios de aceptación testables</li>
+ <li class=MsoNormal>Impacto en datos definido</li>
+ <li class=MsoNormal>Flujo feliz escrito</li>
+</ul>
+
+<h3><b>12.2 Definition of Done (DoD)</b></h3>
+
+<p class=MsoNormal>Está hecha si:</p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal>Mergeado a main</li>
+ <li class=MsoNormal>Migraciones aplicadas</li>
+ <li class=MsoNormal>Log básico funcionando</li>
+ <li class=MsoNormal>Probado desde móvil</li>
+ <li class=MsoNormal>Deployado</li>
+</ul>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h3><b>13. Apéndice — Glosario</b></h3>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal><b>Hogar</b>: ámbito aislado de datos</li>
+ <li class=MsoNormal><b>Tarea</b>: unidad persistente</li>
+ <li class=MsoNormal><b>Ejecución</b>: evento histórico</li>
+ <li class=MsoNormal><b>Item de Alacena</b>: recurso del hogar</li>
+ <li class=MsoNormal><b>Lista Item</b>: elemento comprable</li>
+</ul>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<span style='font-size:11.0pt;line-height:107%;font-family:"Aptos",sans-serif'>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal>Este documento evoluciona con cada sprint y <b>refleja
+     siempre la verdad del código</b>.</li>
+</ul>
+
+</span>
+
+<h1><a name="_Toc220937264"><b>ECO – 03 Libro de Sesiones</b></a></h1>
+
+<p class=MsoNormal style='margin-left:36.0pt'>Registro oficial y evolutivo de
+todas las sesiones del proyecto ECO.Este documento consolida decisiones,
+acuerdos, temas abiertos y acciones de cada encuentro.</p>
+
+<div class=MsoNormal align=center style='margin-left:36.0pt;text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h2><b><span style='font-family:"Segoe UI Emoji",sans-serif'>&#128216;</span>
+Estructura General</b></h2>
+
+<p class=MsoNormal style='margin-left:36.0pt'>Cada sesión se documenta con la
+siguiente estructura estándar:</p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><b>Sesión N — AAAA&#8209;MM&#8209;DD</b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal><b>Objetivo de la sesión</b></li>
+ <li class=MsoNormal><b>Decisiones tomadas (D&#8209;###)</b></li>
+ <li class=MsoNormal><b>Acuerdos (A&#8209;###)</b></li>
+ <li class=MsoNormal><b>Temas abiertos (TO&#8209;###)</b></li>
+ <li class=MsoNormal><b>Impacto en DF</b></li>
+ <li class=MsoNormal><b>Impacto en Arquitectura</b></li>
+ <li class=MsoNormal><b>Impacto en Backlog / Project</b></li>
+ <li class=MsoNormal><b>Acciones y responsables</b></li>
+ <li class=MsoNormal><b>Próxima sesión / Próximos pasos</b></li>
+</ul>
+
+<div class=MsoNormal align=center style='margin-left:36.0pt;text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h2><b><span style='font-family:"Segoe UI Emoji",sans-serif'>&#128218;</span>
+Historial de Sesiones</b></h2>
+
+<h3><b>Sesión 1 — 2026&#8209;01&#8209;26 — Definición de metodología</b></h3>
+
+<p class=MsoNormal style='margin-left:36.0pt'><i>(Pendiente de completar con
+información detallada; borrador creado para reconstrucción posterior)</i></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal><b>Objetivo de la sesión:</b> Por completar</li>
+ <li class=MsoNormal><b>Decisiones tomadas (D&#8209;001):</b> Por completar</li>
+ <li class=MsoNormal><b>Acuerdos (A&#8209;001):</b> Por completar</li>
+ <li class=MsoNormal><b>Temas abiertos (TO&#8209;001):</b> Por completar</li>
+ <li class=MsoNormal><b>Impacto en DF:</b> Por completar</li>
+ <li class=MsoNormal><b>Impacto en Arquitectura:</b> Por completar</li>
+ <li class=MsoNormal><b>Impacto en Backlog / Project:</b> Por completar</li>
+ <li class=MsoNormal><b>Acciones y responsables:</b> Por completar</li>
+ <li class=MsoNormal><b>Próxima sesión / Próximos pasos:</b> Por completar</li>
+</ul>
+
+<h3><b>Sesión 2 — 2026&#8209;01&#8209;27 — Backlog Maestro (parcial)</b></h3>
+
+<p class=MsoNormal style='margin-left:36.0pt'><i>(Pendiente de completar con
+información detallada; borrador creado para reconstrucción posterior)</i></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal><b>Objetivo de la sesión:</b> Por completar</li>
+ <li class=MsoNormal><b>Decisiones tomadas (D&#8209;002):</b> Por completar</li>
+ <li class=MsoNormal><b>Acuerdos (A&#8209;002):</b> Por completar</li>
+ <li class=MsoNormal><b>Temas abiertos (TO&#8209;002):</b> Por completar</li>
+ <li class=MsoNormal><b>Impacto en DF:</b> Por completar</li>
+ <li class=MsoNormal><b>Impacto en Arquitectura:</b> Por completar</li>
+ <li class=MsoNormal><b>Impacto en Backlog / Project:</b> Por completar</li>
+ <li class=MsoNormal><b>Acciones y responsables:</b> Por completar</li>
+ <li class=MsoNormal><b>Próxima sesión / Próximos pasos:</b> Por completar</li>
+</ul>
+
+<h3><b>Sesión 3 — 2026&#8209;01&#8209;28 — Project &amp; Setup Sprint 0</b></h3>
+
+<p class=MsoNormal style='margin-left:36.0pt'><i>(Pendiente de completar con
+información detallada; borrador creado para reconstrucción posterior)</i></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal><b>Objetivo de la sesión:</b> Por completar</li>
+ <li class=MsoNormal><b>Decisiones tomadas (D&#8209;003):</b> Por completar</li>
+ <li class=MsoNormal><b>Acuerdos (A&#8209;003):</b> Por completar</li>
+ <li class=MsoNormal><b>Temas abiertos (TO&#8209;003):</b> Por completar</li>
+ <li class=MsoNormal><b>Impacto en DF:</b> Por completar</li>
+ <li class=MsoNormal><b>Impacto en Arquitectura:</b> Por completar</li>
+ <li class=MsoNormal><b>Impacto en Backlog / Project:</b> Por completar</li>
+ <li class=MsoNormal><b>Acciones y responsables:</b> Por completar</li>
+ <li class=MsoNormal><b>Próxima sesión / Próximos pasos:</b> Por completar</li>
+</ul>
+
+<h3><b>Sesión 4 — 2026&#8209;01&#8209;29 — (tema a completar)</b></h3>
+
+<p class=MsoNormal style='margin-left:36.0pt'><i>(Pendiente de completar con
+información detallada; borrador creado para reconstrucción posterior)</i></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal><b>Objetivo de la sesión:</b> Por completar</li>
+ <li class=MsoNormal><b>Decisiones tomadas (D&#8209;004):</b> Por completar</li>
+ <li class=MsoNormal><b>Acuerdos (A&#8209;004):</b> Por completar</li>
+ <li class=MsoNormal><b>Temas abiertos (TO&#8209;004):</b> Por completar</li>
+ <li class=MsoNormal><b>Impacto en DF:</b> Por completar</li>
+ <li class=MsoNormal><b>Impacto en Arquitectura:</b> Por completar</li>
+ <li class=MsoNormal><b>Impacto en Backlog / Project:</b> Por completar</li>
+ <li class=MsoNormal><b>Acciones y responsables:</b> Por completar</li>
+ <li class=MsoNormal><b>Próxima sesión / Próximos pasos:</b> Por completar</li>
+</ul>
+
+<h3><b>Sesión 5 — 2026&#8209;01&#8209;29</b></h3>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal><b>Objetivo de la sesión:</b> Formalizar la estructura
+     documental del proyecto ECO y establecer el mecanismo para retomar
+     contexto en futuras conversaciones.</li>
+ <li class=MsoNormal><b>Decisiones tomadas (D&#8209;005):</b></li>
+ <ul style='margin-top:0cm' type=circle>
+  <li class=MsoNormal>D&#8209;005&#8209;1: Se confirma la estructura de <i>tres
+      documentos maestros</i> (DF, Operación &amp; Gobierno, Contexto Vivo)
+      como base permanente.</li>
+  <li class=MsoNormal>D&#8209;005&#8209;2: Se crea y adopta el <i>Libro de
+      Sesiones</i> como registro oficial de minutas.</li>
+  <li class=MsoNormal>D&#8209;005&#8209;3: Se define el comando operativo “<b>Retomemos
+      donde quedamos</b>” como disparador para que Copilot vuelva a leer y
+      sincronizar información desde el <i>Contexto Vivo del Proyecto</i>.</li>
+ </ul>
+ <li class=MsoNormal><b>Acuerdos (A&#8209;005):</b></li>
+ <ul style='margin-top:0cm' type=circle>
+  <li class=MsoNormal>A&#8209;005&#8209;1: Las sesiones previas (26/01 &#8594;
+      29/01) serán reconstruidas retrospectivamente en próximas iteraciones.</li>
+  <li class=MsoNormal>A&#8209;005&#8209;2: Fran proveerá fragmentos de
+      conversaciones pasadas si falta información para completarlas.</li>
+ </ul>
+ <li class=MsoNormal><b>Temas abiertos (TO&#8209;005):</b></li>
+ <ul style='margin-top:0cm' type=circle>
+  <li class=MsoNormal>TO&#8209;005&#8209;1: Completar minutas de sesiones 1 a 4
+      con reconstrucción basada en conversaciones de la semana.</li>
+  <li class=MsoNormal>TO&#8209;005&#8209;2: Consolidar backlog y DF en base al
+      material previo.</li>
+ </ul>
+ <li class=MsoNormal><b>Impacto en DF:</b> Ninguno directo todavía; pendiente
+     de reconstrucción de sesiones previas.</li>
+ <li class=MsoNormal><b>Impacto en Arquitectura:</b> Ninguno directo; se
+     documentará cuando revisemos decisiones técnicas pasadas.</li>
+ <li class=MsoNormal><b>Impacto en Backlog / Project:</b> Pendiente de
+     reconstrucción de sesiones previas.</li>
+ <li class=MsoNormal><b>Acciones y responsables:</b></li>
+ <ul style='margin-top:0cm' type=circle>
+  <li class=MsoNormal>Fran: traer fragmentos relevantes de conversaciones
+      pasadas para reconstruir sesiones 1&#8209;4.</li>
+  <li class=MsoNormal>Copilot: generar minutas y actualizarlas en el Libro +
+      sincronizar en Contexto Vivo.</li>
+ </ul>
+ <li class=MsoNormal><b>Próxima sesión / Próximos pasos:</b> Reconstruir Sesión
+     1 (Kickoff) en la próxima iteración.</li>
+</ul>
+
+<p class=MsoNormal style='margin-left:36.0pt'><i>(Se irán agregando
+cronológicamente aquí)</i></p>
+
+<div class=MsoNormal align=center style='margin-left:36.0pt;text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h2><b><span style='font-family:"Segoe UI Emoji",sans-serif'>&#129517;</span>
+Cómo se mantiene este Libro</b></h2>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal>Después de cada sesión (o conversación relevante), Copilot
+     genera una minuta.</li>
+ <li class=MsoNormal>La minuta se agrega aquí con su numeración
+     correspondiente.</li>
+ <li class=MsoNormal>Los IDs se generan así: </li>
+ <ul style='margin-top:0cm' type=circle>
+  <li class=MsoNormal><b>D&#8209;###</b> &#8594; Decisión</li>
+  <li class=MsoNormal><b>A&#8209;###</b> &#8594; Acuerdo</li>
+  <li class=MsoNormal><b>TO&#8209;###</b> &#8594; Tema abierto</li>
+ </ul>
+ <li class=MsoNormal>Los cambios relevantes se reflejan también en: </li>
+ <ul style='margin-top:0cm' type=circle>
+  <li class=MsoNormal><b>Contexto Vivo del Proyecto</b> (resumen)</li>
+  <li class=MsoNormal><b>DF</b> (cambios funcionales)</li>
+  <li class=MsoNormal><b>Operación &amp; Gobierno</b> (ADRs, cambios técnicos)</li>
+  <li class=MsoNormal><b>Backlog / Project</b> (issues, historias)</li>
+ </ul>
+</ul>
+
+<div class=MsoNormal align=center style='margin-left:36.0pt;text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h2><b><span style='font-family:"Segoe UI Symbol",sans-serif'>&#128450;</span>
+Estado inicial</b></h2>
+
+<p class=MsoNormal style='margin-left:36.0pt'>Este documento fue creado el <b>2026&#8209;01&#8209;29</b>
+como parte de la formalización de los artefactos centrales del proyecto ECO.</p>
+
+<div class=MsoNormal align=center style='margin-left:36.0pt;text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h2><b><span style='font-family:"Segoe UI Emoji",sans-serif'>&#128279;</span>
+Integración con GitHub (sincronización de minutas)</b></h2>
+
+<p class=MsoNormal style='margin-left:36.0pt'>Para mantener trazabilidad fuera
+de Copilot, las sesiones también se versionan en el repo en
+Libro_de_Sesiones.md (raíz del repo).</p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><b>Flujo acordado (desde el issue
+que encontraste):</b> 1) Abrir la conversación con Copilot. 2) Buscar el
+mensaje donde Copilot entregó las sesiones completas. 3) Copiar:</p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal><i>Sesión 1 (definición de metodología)</i></li>
+ <li class=MsoNormal><i>Sesión 2 (Backlog Maestro – parcial)</i></li>
+ <li class=MsoNormal><i>Sesión 3 (Project &amp; Setup Sprint 0)</i></li>
+</ul>
+
+<p class=MsoNormal style='margin-left:36.0pt'>4) Pegar cada sesión al final del
+archivo Libro_de_Sesiones.md en la <b>raíz</b> del repo. 5) Guardar. 6) Commit
++ push.</p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal><b>Política de sincronización:</b></li>
+ <li class=MsoNormal>La <b>fuente operativa</b> para continuar conversaciones
+     es esta Página.</li>
+ <li class=MsoNormal>El archivo Libro_de_Sesiones.md en GitHub es el <b>respaldo
+     versionado</b>.</li>
+ <li class=MsoNormal>Ante discrepancias, esta Página prevalece y se sincroniza
+     al repo en el siguiente commit.</li>
+</ul>
+
+<p class=MsoNormal style='margin-left:36.0pt'>&nbsp;</p>
+
+<h1><a name="_Toc220937265"><b>ECO – 04 Backlog Maestro</b></a></h1>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>Klk</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h1><a name="_Toc220937266"><b>ECO – 05 Roadmap</b></a></h1>
+
+<p class=MsoNormal><b><span lang=ES>Propósito</span></b><span lang=ES>:
+visualizar evolución por trimestres/releases y alinear capacidad con objetivos.
+Referencia: backlog (Page 04) y DF (Page 02).</span></p>
+
+<h2><b>1) Principios de planificación</b></h2>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal>Ritmo sostenible (sesión semanal + retro quincenal).</li>
+ <li class=MsoNormal>Priorizar MVP operable y aprendizaje (historial primero).</li>
+ <li class=MsoNormal>ADRs revisados cada 2 semanas.</li>
+</ul>
+
+<h2><b>2) Hitos y Fechas (plantilla)</b></h2>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal>Sprint 0 (cierre 09/Feb/2026): marco del producto.</li>
+ <li class=MsoNormal>Sprint 1 (10–23 Feb/2026): MVP operable (ALACENA, MANTIA,
+     ECOSALUD mínimo, Lista).</li>
+ <li class=MsoNormal>Próximos sprints: (enlace a Page 04)</li>
+</ul>
+
+<h2><b>3) Roadmap por trimestre</b></h2>
+
+<p class=MsoNormal><b>Q1 2026 (plantilla)</b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal>Objetivos: </li>
+ <ul style='margin-top:0cm' type=circle>
+  <li class=MsoNormal>Consolidar MVP Sprint 1</li>
+  <li class=MsoNormal>Medir uso real (&#8805; 20 registros/semana, 7 días
+      consecutivos).</li>
+ </ul>
+ <li class=MsoNormal>Entregables: </li>
+ <ul style='margin-top:0cm' type=circle>
+  <li class=MsoNormal>EP&#8209;02, EP&#8209;03, EP&#8209;04 en estado usable</li>
+ </ul>
+ <li class=MsoNormal>Riesgos/Mitigaciones: </li>
+ <ul style='margin-top:0cm' type=circle>
+  <li class=MsoNormal>Capacidad realista; mantener simplicidad técnica</li>
+ </ul>
+</ul>
+
+<p class=MsoNormal><b>Q2 2026 (plantilla)</b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal>Objetivos: </li>
+ <li class=MsoNormal>Entregables: </li>
+ <li class=MsoNormal>Riesgos/Mitigaciones: </li>
+</ul>
+
+<h2><b>4) Capacidad estimada</b></h2>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal>Issues por sprint: 2–5 (depende de complejidad real).</li>
+</ul>
+
+<h2><b>5) Enlaces de referencia</b></h2>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal>DF &amp; Arquitectura (Page 02).</li>
+ <li class=MsoNormal>Backlog Maestro (Page 04).</li>
+ <li class=MsoNormal>Libro de Sesiones (Page 03).</li>
+</ul>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h1><b>ECO – 06 UX &amp; Navegación</b></h1>
+
+<p class=MsoNormal><b><span lang=ES>Propósito</span></b><span lang=ES>: diseñar
+navegación clara y estados vacíos útiles, priorizando mobile-first. ADRs y
+alcance funcional en DF (Page 02).</span></p>
+
+<h2><b>1) Principios UX</b></h2>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal>Mobile-first real; estados vacíos que enseñan el uso.</li>
+ <li class=MsoNormal>Consistencia entre módulos; simplicidad de captura.</li>
+</ul>
+
+<h2><b>2) Mapa de navegación (plantilla)</b></h2>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal>Inicio </li>
+ <ul style='margin-top:0cm' type=circle>
+  <li class=MsoNormal>Atajos a: Alacena, Mantia, Lista</li>
+ </ul>
+ <li class=MsoNormal>Alacena </li>
+ <ul style='margin-top:0cm' type=circle>
+  <li class=MsoNormal>Lista de items &#8594; Detalle &#8594; Movimientos
+      (ingreso/consumo)</li>
+ </ul>
+ <li class=MsoNormal>Mantia </li>
+ <ul style='margin-top:0cm' type=circle>
+  <li class=MsoNormal>Lista de tareas &#8594; Detalle &#8594; Ejecutar/Marcar
+      hecha</li>
+ </ul>
+ <li class=MsoNormal>Lista de Compras </li>
+ <ul style='margin-top:0cm' type=circle>
+  <li class=MsoNormal>Items &#8594; Marcar comprado</li>
+ </ul>
+ <li class=MsoNormal>Ecosalud (mínimo v1) </li>
+ <ul style='margin-top:0cm' type=circle>
+  <li class=MsoNormal>Registrar entrada &#8594; Historial</li>
+ </ul>
+ <li class=MsoNormal>Perfil/Configuración</li>
+</ul>
+
+<h2><b>3) Estados vacíos (plantilla)</b></h2>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal>Alacena sin items &#8594; CTA “Crear primer item” (enlaza
+     a alta)</li>
+ <li class=MsoNormal>Mantia sin tareas &#8594; CTA “Crear tu primera tarea”</li>
+ <li class=MsoNormal>Lista sin items &#8594; CTA “Agregar item” + “Agregar
+     desde Alacena”</li>
+ <li class=MsoNormal>Ecosalud vacío &#8594; CTA “Registrar primera entrada”</li>
+</ul>
+
+<h2><b>4) Componentes/UI patterns (plantilla)</b></h2>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal>Filtros por categorías/estados</li>
+ <li class=MsoNormal>Buscador local simple (texto)</li>
+ <li class=MsoNormal>Formularios con validaciones básicas (DF)</li>
+</ul>
+
+<h2><b>5) Enlaces</b></h2>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal>DF (Page 02) — modelo de datos, ADRs, alcance.</li>
+ <li class=MsoNormal>Backlog Maestro (Page 04) — historias que afectan UX.</li>
+</ul>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h1><a name="_Toc220937269"><b>ECO – 07 Sesiones Técnicas / Arquitectura </b></a></h1>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;</p>
+
+<p class=MsoNormal>## 7.y+2 Cheatsheet Operativo — Atajos visuales para ECO</p>
+
+<p class=MsoNormal>&#129517; Hoja rápida con comandos listos para usar con
+Copilot. Acelera el trabajo, estandariza pedidos y evita ambigüedades.</p>
+
+<p class=MsoNormal>&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;</p>
+
+<p class=MsoNormal>### &#128998; Backlog — Épicas &amp; Historias</p>
+
+<p class=MsoNormal>&#128216; Crear ÉPICA</p>
+
+<p class=MsoNormal>“Creá la épica EPxx: &lt;Nombre&gt; con objetivo, alcance y
+criterios de éxito (plantilla 7.z.1)”.</p>
+
+<p class=MsoNormal>&#128216; Crear HISTORIA</p>
+
+<p class=MsoNormal>“Agregá la historia &lt;MODULO-##&gt;: &lt;Título&gt; con
+criterios de aceptación: &lt;...&gt; (plantilla 7.z.2)”.</p>
+
+<p class=MsoNormal>&#128221; Editar HISTORIA</p>
+
+<p class=MsoNormal>“Actualizá MANTIA-03 cambiando criterios por: &lt;...&gt;”.</p>
+
+<p class=MsoNormal>&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;</p>
+
+<p class=MsoNormal>### &#128999; Sprints</p>
+
+<p class=MsoNormal>&#128640; Crear Sprint</p>
+
+<p class=MsoNormal>“Creá Sprint N — AAAA-MM-DD &#8594; AAAA-MM-DD con estas
+historias: &lt;...&gt; (plantilla 7.z.3)”.</p>
+
+<p class=MsoNormal>&#128257; Actualizar Sprint</p>
+
+<p class=MsoNormal>“Ajustá Sprint N moviendo estas historias y actualizá
+Roadmap”.</p>
+
+<p class=MsoNormal>&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;</p>
+
+<p class=MsoNormal>### &#129000; Roadmap</p>
+
+<p class=MsoNormal>&#127937; Mover hito</p>
+
+<p class=MsoNormal>“Mové el hito &lt;Nombre&gt; a Qx 2026 y revisá
+riesgos/dependencias (plantilla 7.z.6)”.</p>
+
+<p class=MsoNormal>&#10133; Agregar hito</p>
+
+<p class=MsoNormal>“Agregá el hito &lt;Nombre&gt; con objetivos/entregables
+&lt;...&gt;”.</p>
+
+<p class=MsoNormal>&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;</p>
+
+<p class=MsoNormal>### &#129001; Libro de Sesiones</p>
+
+<p class=MsoNormal>&#128450;&#65039; Crear sesión</p>
+
+<p class=MsoNormal>“Agregá Sesión N — AAAAMMDD — &lt;Tema&gt; con D###, A###,
+TO### y próximos pasos (plantilla 7.z.4)”.</p>
+
+<p class=MsoNormal>&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;</p>
+
+<p class=MsoNormal>### &#129003; ADRs</p>
+
+<p class=MsoNormal>&#9881;&#65039; Crear ADR</p>
+
+<p class=MsoNormal>“Creá ADR00x — &lt;Título&gt; con contexto, decisión y
+consecuencias (plantilla 7.z.5)”.</p>
+
+<p class=MsoNormal>&#129517; Dónde vive un ADR</p>
+
+<p class=MsoNormal>Funcional/arquitectónico &#8594; ECO–02; Técnico operativo
+&#8594; ECO–07.</p>
+
+<p class=MsoNormal>&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;</p>
+
+<p class=MsoNormal>### &#129002; UX &amp; Navegación</p>
+
+<p class=MsoNormal>&#128241; Actualizar navegación</p>
+
+<p class=MsoNormal>“Actualizá navegación para MANTIA agregando búsqueda local
+(plantilla 7.z.7)”.</p>
+
+<p class=MsoNormal>&#129695; Estados vacíos</p>
+
+<p class=MsoNormal>“Proponé estado vacío para ALACENA cuando no existan items”.</p>
+
+<p class=MsoNormal>&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;</p>
+
+<p class=MsoNormal>### &#128997; Deploys &amp; Backfill</p>
+
+<p class=MsoNormal>&#128640; Registrar Deploy</p>
+
+<p class=MsoNormal>“Registrá deploy Backend — AAAA-MM-DD: descripción
+&lt;...&gt; (plantilla 7.z.8)”.</p>
+
+<p class=MsoNormal>&#128218; Backfill</p>
+
+<p class=MsoNormal>“Añadí Backfill: &lt;hecho pasado&gt; y registralo según
+plantilla 7.z.9”.</p>
+
+<p class=MsoNormal>&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;</p>
+
+<p class=MsoNormal>### &#128204; Última actualización &amp; coherencia</p>
+
+<p class=MsoNormal>&#128338; Actualizar fecha</p>
+
+<p class=MsoNormal>“Actualizá última actualización de esta sección”.</p>
+
+<p class=MsoNormal>&#128279; Mantener coherencia</p>
+
+<p class=MsoNormal>“Registrá impactos cruzados en DF, Backlog, Roadmap y
+Sesiones”.</p>
+
+<p class=MsoNormal>&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;</p>
+
+<p class=MsoNormal><b><span lang=ES>Propósito</span></b><span lang=ES>:
+Registrar decisiones técnicas, inventario real del sistema, deploys, ADRs
+operativos, procedimientos y convenciones de trabajo. Esta Page concentra todo
+el material técnico proveniente de la Page <i>“ECO — DF (Secciones de Gobierno
+y Orden)”</i>.</span></p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h2><b>1) Agenda recurrente</b></h2>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal>Revisión de ADRs (cada 2 semanas).</li>
+ <li class=MsoNormal>Revisión del inventario AS&#8209;IS (infraestructura
+     real).</li>
+ <li class=MsoNormal>Revisión de modelo de datos (impacto en entidades).</li>
+ <li class=MsoNormal>Limpieza de issues y refactors (quincenal).</li>
+</ul>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h2><b>2) Inventario AS&#8209;IS (Enero 2026)</b></h2>
+
+<p class=MsoNormal><span lang=ES>Estado real del ecosistema ECO según el
+sistema actual. No es plano ideal. Actualizar cuando cambie algo relevante.</span></p>
+
+<h3><b>2.1 Frontend</b></h3>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal><b>Hosting:</b> Vercel</li>
+ <li class=MsoNormal><b>URL Prod:</b></li>
+ <li class=MsoNormal><b>Branch principal:</b> main</li>
+ <li class=MsoNormal><b>Tecnologías:</b> Next.js / React</li>
+ <li class=MsoNormal><b>Estado:</b> Operativo (ALACENA)</li>
+</ul>
+
+<h3><b>2.2 Backend / API</b></h3>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal><b>Hosting:</b> Fly.io</li>
+ <li class=MsoNormal><b>URL Prod:</b></li>
+ <li class=MsoNormal><b>Branch principal:</b> main</li>
+ <li class=MsoNormal><b>Tecnologías:</b> Node/TypeScript</li>
+ <li class=MsoNormal><b>Estado:</b> Operativo (ALACENA)</li>
+</ul>
+
+<h3><b>2.3 Base de Datos</b></h3>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal><b>Proveedor:</b> Supabase (Postgres)</li>
+ <li class=MsoNormal><b>Entornos:</b> prod (activo), dev/test (opcional)</li>
+ <li class=MsoNormal><b>Conectado a:</b> Backend</li>
+</ul>
+
+<h3><b>2.4 Autenticación</b></h3>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal><b>Proveedor:</b> Supabase Auth</li>
+ <li class=MsoNormal><b>Métodos:</b> email/password</li>
+</ul>
+
+<h3><b>2.5 Media / Archivos</b></h3>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal><b>Proveedor:</b> Cloudinary</li>
+ <li class=MsoNormal><b>Uso actual:</b> imágenes de ALACENA</li>
+</ul>
+
+<h3><b>2.6 Infraestructura transversal</b></h3>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal><b>Repositorio:</b> falberio/eco</li>
+ <li class=MsoNormal><b>Issue tracking:</b> GitHub Issues</li>
+ <li class=MsoNormal><b>Project:</b> pendiente de creación</li>
+ <li class=MsoNormal><b>DF:</b> mantenido en Copilot Pages</li>
+</ul>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h2><b>3) Libro de Instalaciones &amp; Deploys (Log)</b></h2>
+
+<p class=MsoNormal><span lang=ES>Bitácora ligera de instalaciones,
+configuraciones y deploys. Fechas aproximadas (~) permitidas.</span></p>
+
+<p class=MsoNormal><b>Formato sugerido</b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal><b>Fecha:</b> YYYY-MM-DD o ~YYYY-MM</li>
+ <li class=MsoNormal><b>Componente:</b> Frontend / Backend / DB / Infra</li>
+ <li class=MsoNormal><b>Tipo:</b> instalación | deploy | hotfix | migración</li>
+ <li class=MsoNormal><b>Descripción:</b> qué se hizo</li>
+ <li class=MsoNormal><b>Resultado:</b> OK | con issues</li>
+ <li class=MsoNormal><b>Evidencia:</b> commit / tag / issue</li>
+</ul>
+
+<p class=MsoNormal><b>Entradas iniciales</b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal><b>~2025&#8209;11</b> — <i>Frontend ALACENA (Vercel)</i> —
+     primer deploy — Resultado: OK</li>
+ <li class=MsoNormal><b>~2025&#8209;11</b> — <i>Backend ALACENA (Fly.io)</i> —
+     primer deploy — Resultado: OK</li>
+</ul>
+
+<p class=MsoNormal><i>(Continuar completando retroactivamente según
+corresponda.)</i></p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h2><b>4) ADR — Registros de Decisiones de Arquitectura</b></h2>
+
+<p class=MsoNormal><span lang=ES>ADRs técnicos consolidados. Los ADRs
+funcionales del producto viven en el DF (Page 02). Mantener consistencia.</span></p>
+
+<p class=MsoNormal><b>ADR&#8209;001 — Un solo backend</b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal><b>Fecha:</b> 2025&#8209;11</li>
+ <li class=MsoNormal><b>Decisión:</b> Una única API para todos los módulos.</li>
+ <li class=MsoNormal><b>Estado:</b> vigente</li>
+</ul>
+
+<p class=MsoNormal><b>ADR&#8209;002 — Supabase para DB + Auth</b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal><b>Fecha:</b> 2025&#8209;11</li>
+ <li class=MsoNormal><b>Decisión:</b> Centralizar persistencia y autenticación.</li>
+ <li class=MsoNormal><b>Estado:</b> vigente</li>
+</ul>
+
+<p class=MsoNormal><b>ADR&#8209;003 — Cloudinary para media</b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal><b>Fecha:</b> 2025&#8209;11</li>
+ <li class=MsoNormal><b>Decisión:</b> Usar Cloudinary para imágenes.</li>
+ <li class=MsoNormal><b>Estado:</b> vigente</li>
+</ul>
+
+<p class=MsoNormal><b>ADR&#8209;004 — Web antes que mobile</b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal><b>Fecha:</b> 2025&#8209;12</li>
+ <li class=MsoNormal><b>Decisión:</b> Priorizar PWA web; mobile nativo fuera de
+     alcance.</li>
+ <li class=MsoNormal><b>Estado:</b> vigente</li>
+</ul>
+
+<p class=MsoNormal><span lang=ES>Nota: Los ADR arquitectónicos del DF (monolito
+modular, aislamiento por hogar, periodicidad declarativa, etc.) siguen viviendo
+en Page 02. Este listado refleja las decisiones técnicas operativas.</span></p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h2><b>5) Procedimientos</b></h2>
+
+<h3><b>5.1 Procedimiento de Backfill (Regularización)</b></h3>
+
+<p class=MsoNormal><span lang=ES>Para registrar decisiones o trabajos pasados
+sin frenar el avance.</span></p>
+
+<ol style='margin-top:0cm' start=1 type=1>
+ <li class=MsoNormal>Detectar un hecho pasado (deploy, instalación, decisión,
+     configuración).</li>
+ <li class=MsoNormal>Decidir dónde vive: </li>
+ <ul style='margin-top:0cm' type=circle>
+  <li class=MsoNormal>Deploy/instalación &#8594; <i>Log de Instalaciones
+      (sección 3)</i></li>
+  <li class=MsoNormal>Decisión &#8594; <i>ADR (sección 4)</i></li>
+  <li class=MsoNormal>Trabajo futuro &#8594; <i>Issue en GitHub</i></li>
+ </ul>
+ <li class=MsoNormal>Registrar con fecha aproximada.</li>
+ <li class=MsoNormal>Si requiere acción, crear issue y linkearla.</li>
+ <li class=MsoNormal>Si no requiere acción, queda como histórico.</li>
+</ol>
+
+<p class=MsoNormal><span lang=ES>Regla: <i>Todo lo importante debe quedar
+registrado, aunque sea aproximado.</i></span></p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h2><b>6) Convenciones de trabajo (GitHub)</b></h2>
+
+<h3><b>6.1 Tipos de issues</b></h3>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal>type:idea — ideas espontáneas</li>
+ <li class=MsoNormal>type:feature — funcionalidad planificada</li>
+ <li class=MsoNormal>type:tech — tareas técnicas</li>
+</ul>
+
+<h3><b>6.2 Módulos (labels)</b></h3>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal>module:alacena, module:mantia, module:lista, module:core,
+     module:ecosalud, module:huesha, module:financia</li>
+</ul>
+
+<h3><b>6.3 Prioridades</b></h3>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal>priority:P1 — importante</li>
+ <li class=MsoNormal>priority:P2 — deseable/no urgente</li>
+</ul>
+
+<h3><b>6.4 Sprint</b></h3>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal>sprint:1, sprint:2, etc.</li>
+</ul>
+
+<h3><b>6.5 Cierre de issues</b></h3>
+
+<p class=MsoNormal>Una issue se considera <b>cerrada</b> solo si:</p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal>La funcionalidad está <b>desplegada</b>, o</li>
+ <li class=MsoNormal>La idea fue <b>descartada explícitamente</b>, y</li>
+ <li class=MsoNormal>Se agrega evidencia (commit, deploy, comentario).</li>
+</ul>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h2><b>7) Enlaces</b></h2>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal><b><span lang=PT-BR>DF (Page 02)</span></b><span
+     lang=PT-BR> — verdad funcional/arquitectónica. </span>Actualizar cuando un
+     ADR cambie.</li>
+ <li class=MsoNormal><b>Libro de Sesiones (Page 03)</b> — registrar acuerdos
+     humanos y decisiones tratadas en sesiones.</li>
+</ul>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>

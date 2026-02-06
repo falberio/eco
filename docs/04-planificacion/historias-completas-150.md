@@ -1,6 +1,7 @@
-﻿# 🚀 ECO - Backlog Completo (150+ Historias)
+﻿# 🚀 ECO - Backlog Completo (295 Historias)
 
 **Fecha generación:** 5 de febrero de 2026  
+**Última actualización:** 5 de febrero de 2026  
 **Objetivo:** Visión completa del producto con horizonte libre
 
 ---
@@ -21,7 +22,9 @@
 | **Seguridad/Admin** | 8 | - |
 | **UX/Onboarding** | 10 | - |
 | **Infraestructura** | 8 | - |
-| **TOTAL** | **161** | **18** |
+| **HUESHA** | 68 | 0 |
+| **FINANCIA** | 66 | 0 |
+| **TOTAL** | **295** | **18** |
 
 ---
 
@@ -732,6 +735,196 @@ Como usuario quiero que imágenes carguen rápido desde CDN.
 
 ---
 
+# 🏠 HUESHA - Registro Vital y Diario de Vida (68 historias)
+
+> Detalle completo en [historias-huesha-66.md](historias-huesha-66.md)
+
+### Épica 1: Editor WYSIWYG + Referencias @ (9)
+- **HUE-01:** Editor WYSIWYG para entradas de diario | L | P1
+- **HUE-67:** Modo escritura rápida (captura minimal) | S | P1
+- **HUE-02:** Referencias @ a personas | M | P1
+- **HUE-03:** Referencias @ a lugares | M | P1
+- **HUE-04:** Referencias @ a empresas/trabajos | S | P2
+- **HUE-05:** Referencias @ a eventos | S | P2
+- **HUE-06:** Referencias a entidades transversales de ECO (Entity Registry) | M | P3
+- **HUE-07:** Autocompletado inteligente de @referencias | M | P2
+- **HUE-08:** Vista "backlinks" — todo lo que referencia a una entidad | M | P2
+
+### Épica 2: Captura de Voz / Transcripción (4)
+- **HUE-09:** Grabar audio desde la app y transcribir a texto | L | P1
+- **HUE-10:** Subir archivo de audio y transcribir (con timestamps opcionales) | L | P2
+- **HUE-11:** Editar transcripción generada | S | P1
+- **HUE-12:** Conservar audio original vinculado a la entrada | S | P3
+
+### Épica 3: Media y Cultura — como contexto vital, no catálogo (9)
+- **HUE-13:** Registrar película o serie vista | M | P1
+- **HUE-14:** Registrar libro leído | M | P1
+- **HUE-15:** Registrar álbum o canción escuchada | M | P2
+- **HUE-16:** Registrar podcast o charla escuchada | S | P2
+- **HUE-17:** Rating y valoración personal (opcional, 1-5) | S | P2
+- **HUE-18:** Wishlist "Quiero ver / leer / escuchar" | M | P2
+- **HUE-19:** Búsqueda y filtro en historial cultural | M | P2
+- **HUE-20:** Estadísticas culturales | M | P3
+- **HUE-68:** Registrar media sin identificar (sin título exacto) | S | P2
+
+### Épica 4: Eventos y Experiencias — unificado (2)
+- **HUE-21:** CRUD de eventos/experiencias unificado (viaje/recital/hito/deporte/relación) | L | P1
+- **HUE-26:** Etiquetar evento con personas, lugares y emociones | M | P2
+
+### Épica 5: Historia Vital / Periodos / Parámetros (7)
+- **HUE-27:** Definir periodos de vivienda | M | P1
+- **HUE-28:** Definir periodos laborales | M | P1
+- **HUE-29:** Definir periodos de estudio | S | P1
+- **HUE-30:** Definir periodos de relación sentimental | S | P2
+- **HUE-31:** Registrar mascotas | S | P2
+- **HUE-32:** Registrar vehículos | S | P3
+- **HUE-33:** Parámetros personalizados por periodo | L | P3
+
+### Épica 6: Archivo de Comunicaciones (6)
+- **HUE-34:** Importar conversaciones de WhatsApp | L | P2
+- **HUE-35:** Importar conversaciones de Instagram DMs | L | P3
+- **HUE-36:** Importar conversaciones de Facebook Messenger | L | P3
+- **HUE-37:** Vista unificada de chats por fecha | L | P1
+- **HUE-38:** Búsqueda full-text en comunicaciones archivadas | M | P1
+- **HUE-39:** Vincular comunicación a entrada de diario o evento | S | P3
+
+### Épica 7: Integraciones Externas — metadata, no copia (7)
+- **HUE-40:** Integración con Google Photos (lectura, metadata) | L | P2
+- **HUE-41:** Integración con Spotify / historial de escuchas | L | P2
+- **HUE-42:** Integración con Letterboxd | M | P2
+- **HUE-43:** Integración con Gmail | L | P3
+- **HUE-44:** Integración con Instagram Stories | M | P3
+- **HUE-45:** Clima del día automático | M | P2
+- **HUE-46:** Geolocalización automática al crear entrada | S | P3
+
+### Épica 8: Vista Día + Visualización + Timeline (7)
+- **HUE-47:** Vista unificada de día (mega-dashboard) | XL | P1
+- **HUE-48:** Línea de tiempo visual (motor compartido con HUE-49) | L | P2
+- **HUE-49:** Vista "Mi vida en el año X" (motor compartido con HUE-48) | L | P2
+- **HUE-50:** Mapa de lugares visitados / vividos | L | P3
+- **HUE-51:** Vista calendario mensual con indicadores | M | P2
+- **HUE-52:** Búsqueda global full-text en todo HUESHA | M | P1
+- **HUE-69:** Entrada implícita (día sin texto pero con datos) | M | P1
+
+### Épica 9: IA, Resúmenes y Análisis (6)
+- **HUE-53:** Resumen semanal automático con IA | L | P2
+- **HUE-54:** Resumen anual automático (Year in Review) | L | P2
+- **HUE-55:** Grafo de personas/relaciones | L | P3
+- **HUE-56:** "Un día como hoy" — Recuerdos automáticos | M | P2
+- **HUE-57:** Comparar "hace 1 año" / "hace 5 años" | M | P3
+- **HUE-72:** Capas de lectura (original / resumida / solo hechos) | M | P3
+
+### Épica 10: Journaling, Legado y Utilidades (7)
+- **HUE-58:** Journaling guiado con prompts (neutros + contextuales) | M | P2
+- **HUE-59:** Registrar estado de ánimo en cada entrada | S | P2
+- **HUE-60:** OCR para documentos físicos | L | P3
+- **HUE-61:** Entradas privadas con protección PIN | M | P3
+- **HUE-62:** Historial de versiones de entradas | M | P3
+- **HUE-70:** Silencio prolongado (notificación suave) | S | P2
+- **HUE-71:** Modo legado (entradas para el futuro) | S | P3
+
+### Épica 11: Carga Masiva + Import/Export (4)
+- **HUE-63:** Import masivo desde Excel/CSV para periodos | M | P1
+- **HUE-64:** Templates de carga guiada por tipo de periodo | S | P1
+- **HUE-65:** Import masivo de media/cultura desde CSV | M | P2
+- **HUE-66:** Exportar todo HUESHA a PDF / JSON | M | P2
+
+---
+
+# 💰 FINANCIA - Gestión Financiera Personal (66 historias)
+
+> Detalle completo en [historias-financia-63.md](historias-financia-63.md)
+
+### Épica 1: Cuentas y Configuración (6)
+- **FIN-01:** CRUD de cuentas/billeteras | M | P1
+- **FIN-02:** Definir moneda por cuenta | S | P1
+- **FIN-03:** Dashboard financiero general | M | P1
+- **FIN-04:** Configurar categorías de gastos/ingresos | M | P1
+- **FIN-05:** Categorías predeterminadas sugeridas | S | P2
+- **FIN-06:** Configurar fecha de cierre de tarjeta | S | P1
+
+### Épica 2: Transacciones (9)
+- **FIN-07:** Registrar gasto manual | M | P1
+- **FIN-08:** Registrar ingreso manual | S | P1
+- **FIN-09:** Registrar transferencia entre cuentas (origen/destino explícito) | M | P1
+- **FIN-10:** Gastos recurrentes | M | P1
+- **FIN-11:** Ingresos recurrentes | S | P2
+- **FIN-12:** Gastos en cuotas (con estado por cuota) | M | P1
+- **FIN-13:** Búsqueda y filtro de transacciones | M | P1
+- **FIN-14:** Adjuntar comprobante/foto a transacción | M | P2
+- **FIN-65:** Etiqueta emocional / tags libres | S | P2
+
+### Épica 3: Importación de Datos (6)
+- **FIN-15:** Importar desde CSV del banco | L | P1
+- **FIN-16:** Templates de parseo por banco | L | P2
+- **FIN-17:** Importar resumen tarjeta crédito | L | P2
+- **FIN-18:** Lectura de emails de notificación | XL | P3
+- **FIN-19:** Detección de duplicados al importar | M | P2
+- **FIN-20:** Categorización automática al importar | M | P2
+
+### Épica 4: Presupuestos (5)
+- **FIN-21:** Crear presupuesto mensual por categoría | M | P1
+- **FIN-22:** Barra de progreso presupuesto vs real | M | P1
+- **FIN-23:** Alerta al 80% del presupuesto | S | P2
+- **FIN-24:** Copiar presupuesto del mes anterior | S | P2
+- **FIN-25:** Presupuesto anual con distribución mensual | M | P3
+
+### Épica 5: Deudas, Préstamos y Cuentas Compartidas (7)
+- **FIN-26:** Registrar deuda | M | P1
+- **FIN-27:** Registrar préstamo | S | P1
+- **FIN-28:** Pago parcial de deuda/préstamo | S | P2
+- **FIN-29:** Split de gasto entre personas | M | P2
+- **FIN-30:** Cuentas compartidas del hogar | L | P1
+- **FIN-31:** Balance entre usuarios del hogar | M | P2
+- **FIN-32:** Liquidación / saldar cuentas | M | P2
+
+### Épica 6: Multi-moneda y Tipo de Cambio (5)
+- **FIN-33:** Tipo de cambio oficial automático | M | P1
+- **FIN-34:** Tipo de cambio MEP / CCL / Blue | M | P1
+- **FIN-35:** Registrar compra/venta de dólares | M | P2
+- **FIN-36:** Patrimonio total unificado en una moneda | M | P2
+- **FIN-37:** Historial de tipo de cambio | M | P3
+
+### Épica 7: Reportes y Visualización (9)
+- **FIN-38:** Gráfico gastos por categoría | M | P1
+- **FIN-39:** Balance mensual | M | P1
+- **FIN-40:** Tendencia de gastos mes a mes | M | P2
+- **FIN-41:** Presupuesto vs real (comparación) | M | P2
+- **FIN-42:** Estado de deudas consolidado | M | P2
+- **FIN-43:** Proyección a futuro | L | P2
+- **FIN-44:** Comparación interanual | M | P3
+- **FIN-64:** Estado financiero del mes (semáforo) | M | P2
+- **FIN-66:** Simulación financiera (¿qué pasa si...?) | L | P3
+
+### Épica 8: Promociones y Descuentos (6)
+- **FIN-45:** CRUD de promociones activas | M | P2
+- **FIN-46:** Campos detallados de promoción | M | P2
+- **FIN-47:** Recordatorio de promoción por día | S | P2
+- **FIN-48:** Sugerir mejor medio de pago | M | P3
+- **FIN-49:** Calcular ahorro por promociones | M | P3
+- **FIN-50:** Importar promociones desde fuentes públicas | XL | P3
+
+### Épica 9: Integraciones ECO (5)
+- **FIN-51:** Vincular gasto con Lista de Compras | M | P2
+- **FIN-52:** Vincular gasto con ALACENA | L | P2
+- **FIN-53:** Vincular gasto con tarea MANTIA | S | P3
+- **FIN-54:** Registrar gastos de salud en ECOSALUD | S | P3
+- **FIN-55:** Vincular gastos con periodos HUESHA | M | P3
+
+### Épica 10: Alertas y Automatización (4)
+- **FIN-56:** Alerta de gasto inusual | M | P2
+- **FIN-57:** Alerta de vencimiento tarjeta/servicio | S | P2
+- **FIN-58:** Resumen financiero periódico | M | P3
+- **FIN-59:** Reglas de categorización automática | M | P2
+
+### Épica 11: Carga Masiva + Export (4)
+- **FIN-60:** Import masivo desde Excel/CSV | M | P1
+- **FIN-61:** Template de carga guiada | S | P1
+- **FIN-62:** Exportar movimientos a Excel/CSV | S | P2
+- **FIN-63:** Exportar reporte financiero a PDF | M | P2
+
+---
+
 ## 📊 Resumen Final
 
 | Categoría | Historias | Estimación Total (horas) |
@@ -748,16 +941,18 @@ Como usuario quiero que imágenes carguen rápido desde CDN.
 | Seguridad/Admin | 8 | ~45h |
 | UX/Onboarding | 10 | ~70h |
 | Infraestructura | 8 | ~55h |
-| **TOTAL** | **161** | **~1045h** |
+| HUESHA | 68 | ~378h |
+| FINANCIA | 66 | ~359h |
+| **TOTAL** | **295** | **~1783h** |
 
 ---
 
 ## 🎯 Próximos Pasos
 
-1. **Revisar y aprobar** estas 161 historias
+1. **Revisar y aprobar** estas 295 historias
 2. **Crear issues en GitHub** para todas (usar script automatizado)
 3. **Priorizar** cuáles van a cada Sprint
-4. **Definir milestones** (v0.1 MVP, v0.2 IA Básica, v0.3 Multi-usuario, v1.0 Completo)
+4. **Definir milestones** (v0.1 MVP, v0.2 IA Básica, v0.3 Multi-usuario, v0.4 HUESHA, v0.5 FINANCIA, v1.0 Completo)
 5. **Empezar con Sprint 2** (siguiente sesión)
 
 ---
