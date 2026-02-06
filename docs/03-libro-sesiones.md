@@ -1,7 +1,7 @@
 # ECO – 03 Libro de Sesiones
 
-**Última actualización:** 04 Febrero 2026  
-**Sesiones totales:** 5 registradas
+**Última actualización:** 06 Febrero 2026  
+**Sesiones totales:** 7 registradas
 
 ---
 
@@ -195,6 +195,64 @@ Cada sesión se documenta con la siguiente estructura estándar:
 
 ---
 
+### Sesión 7 – 2026-02-05/06 – 738 Historias de Usuario Completas (Sprint 0)
+
+**Sprint:** Sprint 0  
+**Duración:** ~6 horas (2 jornadas)
+
+- **Objetivo de la sesión:** Completar las 738 historias de usuario del proyecto ECO: expandir los 6 módulos funcionales a 100 historias cada uno (excepto Lista=36), crear 202 historias transversales en 11 áreas, y construir una página interactiva con filtros para explorarlas.
+
+- **Decisiones tomadas (D-007):**
+  - **D-007-1:** Formato de historia extendido: "Como [rol] quiero [qué] Para [valor]" + Est (S/M/L/XL/XXL) + Prio (P1-P4).
+  - **D-007-2:** Prefijos de ID por módulo: MAN-, ALA-, ECO-, LST-, HUE-, FIN- + 11 prefijos transversales (API-, AGT-, USR-, NOT-, BKP-, SEC-, UXO-, INF-, DAT-, INT-, GOV-).
+  - **D-007-3:** Estimación por tallas de camiseta (S=3h, M=6h, L=10h, XL=20h, XXL=40h).
+  - **D-007-4:** Lista de Compras limitada a 36 historias (módulo más pequeño por diseño, acoplado a ALACENA).
+  - **D-007-5:** Transversales organizadas en 11 áreas: API, Agente IA, Usuarios, Notificaciones, Backup, Seguridad, UX, Infra, Datos, Integraciones, Gobierno.
+  - **D-007-6:** Página interactiva con filtros client-side (vanilla JS, sin dependencias).
+  - **D-007-7:** Tagline oficial del proyecto: "Entender tu vida para mejorarla".
+
+- **Acuerdos (A-007):**
+  - **A-007-1:** Las 738 historias son el backlog completo del producto.
+  - **A-007-2:** Las horas son estimaciones gruesas (tallas de camiseta) — se refinarán al entrar a cada sprint.
+  - **A-007-3:** El MVP (P1) tiene ~93 historias (~700h estimadas). No todo el backlog se implementa.
+
+- **Temas abiertos (TO-007):**
+  - **TO-007-1:** Plan de proyecto con fechas y versiones (→ Sesión 8).
+  - **TO-007-2:** Codependencias entre historias de distintos módulos sin mapear.
+  - **TO-007-3:** Componentes reutilizables entre módulos sin identificar.
+
+- **Impacto en DF:** Cobertura completa — cada módulo del DF tiene ahora 36-100 historias con estimaciones.
+
+- **Impacto en Arquitectura:** Las 202 historias transversales definen la plataforma técnica completa (API, seguridad, infra, datos).
+
+- **Impacto en Backlog / Project:**
+  - 738 historias definidas (antes ~161)
+  - 7 archivos de historias por módulo
+  - Página interactiva con filtros desplegada en GitHub Pages
+  - Desglose: MANTIA 100, ALACENA 100, ECOSALUD 100, Lista 36, HUESHA 100, FINANCIA 100, Transversales 202
+  - Total estimado: ~4,707h | P1: 93 | P2: 344 | P3: 290 | P4: 11
+
+- **Logros completados:**
+  - ✅ 738 historias de usuario en 7 archivos por módulo
+  - ✅ Página interactiva con filtros (módulo, prioridad, estimación, búsqueda)
+  - ✅ JS con datos y lógica de filtrado (historias-data.js)
+  - ✅ CSS para tabla interactiva, badges de prioridad, dark mode
+  - ✅ Index.md actualizado: tagline, 6 módulos con ejemplos, stats
+  - ✅ mkdocs.yml: nav con 7 módulos individuales
+  - ✅ Desplegado en GitHub Pages y verificado online
+  - ✅ Limpieza: site/ en .gitignore, backups eliminados
+
+- **Acciones y responsables:**
+  - **Sesión 8 (07/Feb):**
+    - Análisis de componentes reutilizables entre módulos
+    - Mapeo de codependencias entre historias
+    - Plan de proyecto con fechas y versiones (MVP → v1.0)
+    - Fechas aproximadas de producción por funcionalidad
+
+- **Próxima sesión:** Sesión 8 – 07/Feb – Plan de Proyecto y Estrategia de Versiones
+
+---
+
 ## 🔄 Cómo Se Mantiene Este Libro
 
 ### Flujo de Trabajo
@@ -226,5 +284,5 @@ Cada sesión se documenta con la siguiente estructura estándar:
 
 ---
 
-**Última actualización:** 04 Febrero 2026  
-**Próxima sesión planeada:** 05 Febrero 2026 (200 min)
+**Última actualización:** 06 Febrero 2026  
+**Próxima sesión planeada:** 07 Febrero 2026

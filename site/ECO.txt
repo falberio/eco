@@ -1,633 +1,0 @@
-ECO – 01 Contexto General
-Propósito de esta Page: orientar rápidamente sobre qué es ECO, cómo está organizado y cuáles son sus límites. Esta Page NO duplica detalle funcional ni técnico — eso vive en la ECO – 02 Documentación Funcional y de Arquitectura (v1.0).
-1) Visión y Objetivo
-* Visión: construir un sistema personal/modular para gestionar vida doméstica con foco en registro, historial y simplicidad operativa.
-* Principios: Descargar la mente; Registro antes que automatización; Historial primero; Asistencia progresiva; Modularidad clara.
-2) Alcance y NoObjetivos (v1)
-* Alcance v1: operación con un solo backend/API, modelo de datos único y foco mobilefirst.
-* NoObjetivos (extracto): 
-o ALACENA: sin escaneo de códigos, sin recetas/menú, sin sincronización con comercios.
-o MANTIA: sin recordatorios push, sin integraciones de calendario, sin dependencias entre tareas.
-o ECOSALUD: sin correlaciones avanzadas, sin dashboards complejos.
-o Lista: sin múltiples listas por hogar, sin compartir listas fuera del sistema.
-o Plataforma: sin multilenguaje, sin multihogar colaborativo avanzado.
-3) Módulos y Transversales
-* Módulos funcionales: ALACENA, MANTIA, ECOSALUD, HUESHA, FINANCIA.
-* Transversales: Lista de Compras, Historial global.
-* Capa de soporte: usuarios, hogares, permisos (aislamiento por hogar).
-4) Arquitectura (resumen ejecutivo)
-* Monolito modular con una sola API y repositorio unificado. ADR001 aceptado.
-* Aislamiento por hogar. ADR002.
-* Autenticación básica. ADR003.
-* Periodicidad declarativa en MANTIA. ADR004.
-* Lista de Compras como entidad transversal. ADR005.
-5) Estado del Proyecto
-* Sprint 0: extendido hasta 09/Feb/2026 con objetivos de marco del producto.
-* Sprint 1 (10–23 Feb/2026): MVP operable centrado en ALACENA, MANTIA, ECOSALUD (registro mínimo) y Lista.
-6) Dónde profundizar
-* ECO – 02 Documentación Funcional y de Arquitectura (v1.0) ? verdad funcional/técnica, modelo, ADRs, backlog.
-* ECO – 03 Libro de Sesiones ? decisiones, acuerdos, pendientes. (Mantener actualizado tras cada sesión).
-
-Notas de uso
-* Esta Page cambia muy poco; si cambia la visión o límites, actualizar y referenciar el DF.
-* Toda definición concreta (entidades, historias, reglas) vive en la Page 02.
-
-ECO – 02 Documento Funcional y de Arquitectura (v1.0)
-Fuente de verdad del proyecto ECO. Alineado con el estado actual del proyecto ya deployado, con repo activo en GitHub y base de datos existente. Este documento guía su evolución, priorizando claridad, trazabilidad, ritmo sostenido y decisiones conscientes.
-
-1. Propósito del Documento
-Este Documento Funcional y de Arquitectura (DF) define:
-* Qué es ECO y qué no es (NoObjetivos)
-* Cómo se estructura funcionalmente
-* Cómo se organiza su arquitectura
-* Qué decisiones ya fueron tomadas (ADRs)
-* Cómo se planifica el trabajo (ceremonias, sesiones, ritmo)
-* Cómo se traduce el MVP operativo al backlog y la ejecución
-El DF acompaña al repositorio existente, no lo reemplaza. Cualquier diferencia entre código y documento debe resolverse actualizando el DF.
-
-2. Principios rectores
-2.1 Principios funcionales
-* Descargar la mente: nada crítico reside solo en memoria.
-* Registro antes que automatización.
-* Historial primero.
-* Asistencia progresiva.
-* Modularidad clara.
-2.2 Principios técnicos
-* Un solo backend (confirmado por repo actual).
-* Modelo de datos único, extensible.
-* Mobile-first real.
-* Decisiones reversibles.
-* Infraestructura simple, controlada.
-2.3 NoObjetivos (límites de diseño v1)
-Los NoObjetivos evitan que ECO se expanda sin control. No son descartes permanentes: solo límites conscientes para ahora.
-ALACENA
-* No escaneo de códigos de barras.
-* No recetas, no menú semanal.
-* No sincronización con comercios.
-MANTIA
-* No recordatorios push.
-* No integración con calendarios externos.
-* No tareas dependientes ni automatizadas.
-ECOSALUD
-* No correlaciones avanzadas.
-* No dashboards complejos.
-Lista de Compras
-* No múltiples listas por hogar.
-* No compartir listas fuera del sistema.
-Plataforma
-* No multilenguaje.
-* No modelo multi-hogar colaborativo avanzado.
-
-3. Arquitectura general de ECO
-ECO está construido alrededor de:
-1. Módulos funcionales: ALACENA, MANTIA, ECOSALUD, HUESHA, FINANCIA.
-2. Elementos transversales: Lista de Compras, Historial global.
-3. Capa de soporte: usuarios, hogares, permisos.
-Confirmado: una sola API, un repositorio unificado.
-
-4. Modelo de Datos (alineado al repo actual)
-IMPORTANTE: Este modelo se actualiza en base a la DB existente (mapeo realizado revisando el repo). Las entidades aquí listadas reflejan lo que ECO ya implementa y las extensiones necesarias para Sprint 1.
-4.1 Usuario
-* id
-* email
-* password_hash
-* created_at
-* updated_at
-4.2 Hogar
-* id
-* nombre
-* created_at
-4.3 UsuarioHogar
-* usuario_id
-* hogar_id
-* rol
-4.4 ALACENA
-ItemAlacena
-* id
-* hogar_id
-* nombre
-* categoria
-* stock_actual
-* unidad
-* notas
-MovimientoAlacena
-* id
-* item_id
-* tipo (ingreso|consumo|ajuste)
-* cantidad
-* fecha
-* usuario_id
-* notas
-4.5 MANTIA
-Tarea
-* id
-* hogar_id
-* titulo
-* descripcion
-* categoria
-* periodicidad (nullable)
-* estado
-* proxima_sugerida (nullable)
-Ejecución
-* id
-* tarea_id
-* fecha
-* usuario_id
-* notas
-4.6 Lista de Compras
-ListaItem
-* id
-* hogar_id
-* nombre
-* cantidad
-* unidad
-* origen (manual|alacena)
-* origen_ref_id
-* estado (pendiente|comprado)
-
-5. ADRs — Decisiones de arquitectura (v1)
-Registros livianos de decisiones estructurales.
-ADR001 — Un solo backend monolítico modular
-* Estado: aceptada
-ADR002 — Aislamiento por hogar
-* Estado: aceptada
-ADR003 — Autenticación básica
-* Estado: aceptada
-ADR004 — Periodicidad declarativa en MANTIA
-* Estado: aceptada
-ADR005 — Lista de Compras como entidad transversal
-* Estado: aceptada
-
-6. Módulos funcionales
-(Se mantienen descripciones previas pero alineadas con fechas y definiciones actuales. Se omite re-explicar, ya validado.)
-
-7. Estrategia Ágil y Pautas de Trabajo
-ECO es un proyecto personal pero tratado como un producto profesional. Las ceremonias se adaptan a un "equipo de uno", manteniendo disciplina.
-7.1 Ritmo de trabajo
-* Sesión semanal fija (review + planificación de 30 min).
-* Sesión técnica opcional dos veces por semana.
-* Registro continuo de avances en GitHub.
-* Retro quincenal: qué funcionó / qué ajustar.
-7.2 Ceremonias
-7.3 Rutina semanal de trabajo (detallada)
-* Lunes: Revisión del DF + planificación de issues de la semana.
-* Miércoles: Sesión técnica breve (30 min) enfocada en bloqueos o definiciones.
-* Viernes: Minireview + registro de aprendizajes.
-7.4 Sesiones periódicas
-* Sesiones de arquitectura (cada 2 semanas): revisión de ADRs, modelo de datos, dependencias.
-* Sesiones de UX/UI (mensual): ajustes de navegación, estados vacíos y coherencia visual.
-* Sesiones de limpieza (cada 2 semanas): refactor, cierres de issues, backlog grooming.
-Review semanal
-* Repasar lo que se hizo.
-* Confirmar si el DF cambia.
-Planificación semanal
-* Elegir 2–5 issues para avanzar.
-* Verificar capacidad real.
-Retro quincenal
-* Ajustar hábitos, flujo y decisiones.
-Sesiones temáticas (a demanda)
-* Modelo de datos
-* UI/UX
-* Arquitectura
-* Limpieza de issues
-
-8. Sprint 0 — Estado final (29 Ene ? 09 Feb 2026)
-Sprint 0 quedó extendido y tiene como fecha de cierre 09/Feb/2026.
-Objetivo: dejar el marco del producto sólido para Sprint 1.
-Entregables confirmados:
-* Definición funcional de módulos.
-* Modelo de datos revisado según repo.
-* ADRs v1.
-* Backlog maestro preparado.
-* Repositorio deployado y operativo.
-
-9. Sprint 1 — MVP Operable (10 Feb ? 23 Feb 2026)
-Fechas ajustadas según tu instrucción y el estado del proyecto.
-9.1 Objetivo
-Que ECO pueda ser usado por vos mismo de forma real y diaria.
-9.2 Alcance funcional
-ALACENA
-* Alta
-* Edición
-* Consumo manual
-* Vista de stock
-MANTIA
-* Alta
-* Marcar hecha
-* Registrar ejecución
-* Vista pendientes y vencidas
-ECOSALUD
-* Registro manual mínimo
-Lista
-* Alta manual
-* Alta desde ALACENA
-* Marcar comprado
-9.3 Alcance técnico
-* API unificada
-* DB actual extendida según tareas
-* Logs estructurados simples
-* Estados vacíos, validaciones básicas
-9.4 Criterio de éxito del Sprint
-* ? 20 registros reales en la semana
-* No romper flujo
-* Usarlo 7 días consecutivos
-
-10. Backlog de Sprint 1 (versión revisada)
-(Historias mantienen contenido original pero ordenadas y revisadas con el repo real.)
-Nota: Las historias se incluyen en el DF porque ECO es un proyecto personal y el DF funciona como "fuente única de verdad". En un proyecto corporativo irían fuera.
-Incluye:
-* EP01 Base ECO
-* EP02 ALACENA MVP
-* EP03 MANTIA MVP
-* EP04 Lista de Compras
-(Se mantiene el listado original con ajustes menores.)
-
-11. Issues del Sprint 1
-Repos actualizados, listas alineadas con labels estándar.
-(Se conserva estructura original, pero vinculada al modelo de datos del repo y ADRs.)
-
-12. Definition of Ready & Definition of Done
-12.1 Definition of Ready (DoR)
-Una historia está lista si:
-* Tiene objetivo claro
-* Criterios de aceptación testables
-* Impacto en datos definido
-* Flujo feliz escrito
-12.2 Definition of Done (DoD)
-Está hecha si:
-* Mergeado a main
-* Migraciones aplicadas
-* Log básico funcionando
-* Probado desde móvil
-* Deployado
-
-13. Apéndice — Glosario
-* Hogar: ámbito aislado de datos
-* Tarea: unidad persistente
-* Ejecución: evento histórico
-* Item de Alacena: recurso del hogar
-* Lista Item: elemento comprable
-
-* Este documento evoluciona con cada sprint y refleja siempre la verdad del código.
-ECO – 03 Libro de Sesiones
-Registro oficial y evolutivo de todas las sesiones del proyecto ECO.Este documento consolida decisiones, acuerdos, temas abiertos y acciones de cada encuentro.
-
-?? Estructura General
-Cada sesión se documenta con la siguiente estructura estándar:
-Sesión N — AAAAMMDD
-* Objetivo de la sesión
-* Decisiones tomadas (D###)
-* Acuerdos (A###)
-* Temas abiertos (TO###)
-* Impacto en DF
-* Impacto en Arquitectura
-* Impacto en Backlog / Project
-* Acciones y responsables
-* Próxima sesión / Próximos pasos
-
-?? Historial de Sesiones
-Sesión 1 — 20260126 — Definición de metodología
-(Pendiente de completar con información detallada; borrador creado para reconstrucción posterior)
-* Objetivo de la sesión: Por completar
-* Decisiones tomadas (D001): Por completar
-* Acuerdos (A001): Por completar
-* Temas abiertos (TO001): Por completar
-* Impacto en DF: Por completar
-* Impacto en Arquitectura: Por completar
-* Impacto en Backlog / Project: Por completar
-* Acciones y responsables: Por completar
-* Próxima sesión / Próximos pasos: Por completar
-Sesión 2 — 20260127 — Backlog Maestro (parcial)
-(Pendiente de completar con información detallada; borrador creado para reconstrucción posterior)
-* Objetivo de la sesión: Por completar
-* Decisiones tomadas (D002): Por completar
-* Acuerdos (A002): Por completar
-* Temas abiertos (TO002): Por completar
-* Impacto en DF: Por completar
-* Impacto en Arquitectura: Por completar
-* Impacto en Backlog / Project: Por completar
-* Acciones y responsables: Por completar
-* Próxima sesión / Próximos pasos: Por completar
-Sesión 3 — 20260128 — Project & Setup Sprint 0
-(Pendiente de completar con información detallada; borrador creado para reconstrucción posterior)
-* Objetivo de la sesión: Por completar
-* Decisiones tomadas (D003): Por completar
-* Acuerdos (A003): Por completar
-* Temas abiertos (TO003): Por completar
-* Impacto en DF: Por completar
-* Impacto en Arquitectura: Por completar
-* Impacto en Backlog / Project: Por completar
-* Acciones y responsables: Por completar
-* Próxima sesión / Próximos pasos: Por completar
-Sesión 4 — 20260129 — (tema a completar)
-(Pendiente de completar con información detallada; borrador creado para reconstrucción posterior)
-* Objetivo de la sesión: Por completar
-* Decisiones tomadas (D004): Por completar
-* Acuerdos (A004): Por completar
-* Temas abiertos (TO004): Por completar
-* Impacto en DF: Por completar
-* Impacto en Arquitectura: Por completar
-* Impacto en Backlog / Project: Por completar
-* Acciones y responsables: Por completar
-* Próxima sesión / Próximos pasos: Por completar
-Sesión 5 — 20260129
-* Objetivo de la sesión: Formalizar la estructura documental del proyecto ECO y establecer el mecanismo para retomar contexto en futuras conversaciones.
-* Decisiones tomadas (D005):
-o D0051: Se confirma la estructura de tres documentos maestros (DF, Operación & Gobierno, Contexto Vivo) como base permanente.
-o D0052: Se crea y adopta el Libro de Sesiones como registro oficial de minutas.
-o D0053: Se define el comando operativo “Retomemos donde quedamos” como disparador para que Copilot vuelva a leer y sincronizar información desde el Contexto Vivo del Proyecto.
-* Acuerdos (A005):
-o A0051: Las sesiones previas (26/01 ? 29/01) serán reconstruidas retrospectivamente en próximas iteraciones.
-o A0052: Fran proveerá fragmentos de conversaciones pasadas si falta información para completarlas.
-* Temas abiertos (TO005):
-o TO0051: Completar minutas de sesiones 1 a 4 con reconstrucción basada en conversaciones de la semana.
-o TO0052: Consolidar backlog y DF en base al material previo.
-* Impacto en DF: Ninguno directo todavía; pendiente de reconstrucción de sesiones previas.
-* Impacto en Arquitectura: Ninguno directo; se documentará cuando revisemos decisiones técnicas pasadas.
-* Impacto en Backlog / Project: Pendiente de reconstrucción de sesiones previas.
-* Acciones y responsables:
-o Fran: traer fragmentos relevantes de conversaciones pasadas para reconstruir sesiones 14.
-o Copilot: generar minutas y actualizarlas en el Libro + sincronizar en Contexto Vivo.
-* Próxima sesión / Próximos pasos: Reconstruir Sesión 1 (Kickoff) en la próxima iteración.
-(Se irán agregando cronológicamente aquí)
-
-?? Cómo se mantiene este Libro
-* Después de cada sesión (o conversación relevante), Copilot genera una minuta.
-* La minuta se agrega aquí con su numeración correspondiente.
-* Los IDs se generan así: 
-o D### ? Decisión
-o A### ? Acuerdo
-o TO### ? Tema abierto
-* Los cambios relevantes se reflejan también en: 
-o Contexto Vivo del Proyecto (resumen)
-o DF (cambios funcionales)
-o Operación & Gobierno (ADRs, cambios técnicos)
-o Backlog / Project (issues, historias)
-
-?? Estado inicial
-Este documento fue creado el 20260129 como parte de la formalización de los artefactos centrales del proyecto ECO.
-
-?? Integración con GitHub (sincronización de minutas)
-Para mantener trazabilidad fuera de Copilot, las sesiones también se versionan en el repo en Libro_de_Sesiones.md (raíz del repo).
-Flujo acordado (desde el issue que encontraste): 1) Abrir la conversación con Copilot. 2) Buscar el mensaje donde Copilot entregó las sesiones completas. 3) Copiar:
-* Sesión 1 (definición de metodología)
-* Sesión 2 (Backlog Maestro – parcial)
-* Sesión 3 (Project & Setup Sprint 0)
-4) Pegar cada sesión al final del archivo Libro_de_Sesiones.md en la raíz del repo. 5) Guardar. 6) Commit + push.
-* Política de sincronización:
-* La fuente operativa para continuar conversaciones es esta Página.
-* El archivo Libro_de_Sesiones.md en GitHub es el respaldo versionado.
-* Ante discrepancias, esta Página prevalece y se sincroniza al repo en el siguiente commit.
-
-ECO – 04 Backlog Maestro
-
-Klk
-
-
-
-ECO – 05 Roadmap
-Propósito: visualizar evolución por trimestres/releases y alinear capacidad con objetivos. Referencia: backlog (Page 04) y DF (Page 02).
-1) Principios de planificación
-* Ritmo sostenible (sesión semanal + retro quincenal).
-* Priorizar MVP operable y aprendizaje (historial primero).
-* ADRs revisados cada 2 semanas.
-2) Hitos y Fechas (plantilla)
-* Sprint 0 (cierre 09/Feb/2026): marco del producto.
-* Sprint 1 (10–23 Feb/2026): MVP operable (ALACENA, MANTIA, ECOSALUD mínimo, Lista).
-* Próximos sprints: (enlace a Page 04)
-3) Roadmap por trimestre
-Q1 2026 (plantilla)
-* Objetivos: 
-o Consolidar MVP Sprint 1
-o Medir uso real (? 20 registros/semana, 7 días consecutivos).
-* Entregables: 
-o EP02, EP03, EP04 en estado usable
-* Riesgos/Mitigaciones: 
-o Capacidad realista; mantener simplicidad técnica
-Q2 2026 (plantilla)
-* Objetivos: 
-* Entregables: 
-* Riesgos/Mitigaciones: 
-4) Capacidad estimada
-* Issues por sprint: 2–5 (depende de complejidad real).
-5) Enlaces de referencia
-* DF & Arquitectura (Page 02).
-* Backlog Maestro (Page 04).
-* Libro de Sesiones (Page 03).
-
-
-
-
-ECO – 06 UX & Navegación
-Propósito: diseñar navegación clara y estados vacíos útiles, priorizando mobile-first. ADRs y alcance funcional en DF (Page 02).
-1) Principios UX
-* Mobile-first real; estados vacíos que enseñan el uso.
-* Consistencia entre módulos; simplicidad de captura.
-2) Mapa de navegación (plantilla)
-* Inicio 
-o Atajos a: Alacena, Mantia, Lista
-* Alacena 
-o Lista de items ? Detalle ? Movimientos (ingreso/consumo)
-* Mantia 
-o Lista de tareas ? Detalle ? Ejecutar/Marcar hecha
-* Lista de Compras 
-o Items ? Marcar comprado
-* Ecosalud (mínimo v1) 
-o Registrar entrada ? Historial
-* Perfil/Configuración
-3) Estados vacíos (plantilla)
-* Alacena sin items ? CTA “Crear primer item” (enlaza a alta)
-* Mantia sin tareas ? CTA “Crear tu primera tarea”
-* Lista sin items ? CTA “Agregar item” + “Agregar desde Alacena”
-* Ecosalud vacío ? CTA “Registrar primera entrada”
-4) Componentes/UI patterns (plantilla)
-* Filtros por categorías/estados
-* Buscador local simple (texto)
-* Formularios con validaciones básicas (DF)
-5) Enlaces
-* DF (Page 02) — modelo de datos, ADRs, alcance.
-* Backlog Maestro (Page 04) — historias que afectan UX.
-
-ECO – 07 Sesiones Técnicas / Arquitectura 
-
-????????????????????????????????????
-## 7.y+2 Cheatsheet Operativo — Atajos visuales para ECO
-?? Hoja rápida con comandos listos para usar con Copilot. Acelera el trabajo, estandariza pedidos y evita ambigüedades.
-????????????????????????????????????
-
-????????????????????????????????????
-### ?? Backlog — Épicas & Historias
-?? Crear ÉPICA
-“Creá la épica EPxx: <Nombre> con objetivo, alcance y criterios de éxito (plantilla 7.z.1)”.
-?? Crear HISTORIA
-“Agregá la historia <MODULO-##>: <Título> con criterios de aceptación: <...> (plantilla 7.z.2)”.
-?? Editar HISTORIA
-“Actualizá MANTIA-03 cambiando criterios por: <...>”.
-????????????????????????????????????
-
-????????????????????????????????????
-### ?? Sprints
-?? Crear Sprint
-“Creá Sprint N — AAAA-MM-DD ? AAAA-MM-DD con estas historias: <...> (plantilla 7.z.3)”.
-?? Actualizar Sprint
-“Ajustá Sprint N moviendo estas historias y actualizá Roadmap”.
-????????????????????????????????????
-
-????????????????????????????????????
-### ?? Roadmap
-?? Mover hito
-“Mové el hito <Nombre> a Qx 2026 y revisá riesgos/dependencias (plantilla 7.z.6)”.
-? Agregar hito
-“Agregá el hito <Nombre> con objetivos/entregables <...>”.
-????????????????????????????????????
-
-????????????????????????????????????
-### ?? Libro de Sesiones
-??? Crear sesión
-“Agregá Sesión N — AAAAMMDD — <Tema> con D###, A###, TO### y próximos pasos (plantilla 7.z.4)”.
-????????????????????????????????????
-
-????????????????????????????????????
-### ?? ADRs
-?? Crear ADR
-“Creá ADR00x — <Título> con contexto, decisión y consecuencias (plantilla 7.z.5)”.
-?? Dónde vive un ADR
-Funcional/arquitectónico ? ECO–02; Técnico operativo ? ECO–07.
-????????????????????????????????????
-
-????????????????????????????????????
-### ?? UX & Navegación
-?? Actualizar navegación
-“Actualizá navegación para MANTIA agregando búsqueda local (plantilla 7.z.7)”.
-?? Estados vacíos
-“Proponé estado vacío para ALACENA cuando no existan items”.
-????????????????????????????????????
-
-????????????????????????????????????
-### ?? Deploys & Backfill
-?? Registrar Deploy
-“Registrá deploy Backend — AAAA-MM-DD: descripción <...> (plantilla 7.z.8)”.
-?? Backfill
-“Añadí Backfill: <hecho pasado> y registralo según plantilla 7.z.9”.
-????????????????????????????????????
-
-????????????????????????????????????
-### ?? Última actualización & coherencia
-?? Actualizar fecha
-“Actualizá última actualización de esta sección”.
-?? Mantener coherencia
-“Registrá impactos cruzados en DF, Backlog, Roadmap y Sesiones”.
-????????????????????????????????????
-Propósito: Registrar decisiones técnicas, inventario real del sistema, deploys, ADRs operativos, procedimientos y convenciones de trabajo. Esta Page concentra todo el material técnico proveniente de la Page “ECO — DF (Secciones de Gobierno y Orden)”.
-
-1) Agenda recurrente
-* Revisión de ADRs (cada 2 semanas).
-* Revisión del inventario ASIS (infraestructura real).
-* Revisión de modelo de datos (impacto en entidades).
-* Limpieza de issues y refactors (quincenal).
-
-2) Inventario ASIS (Enero 2026)
-Estado real del ecosistema ECO según el sistema actual. No es plano ideal. Actualizar cuando cambie algo relevante.
-2.1 Frontend
-* Hosting: Vercel
-* URL Prod:
-* Branch principal: main
-* Tecnologías: Next.js / React
-* Estado: Operativo (ALACENA)
-2.2 Backend / API
-* Hosting: Fly.io
-* URL Prod:
-* Branch principal: main
-* Tecnologías: Node/TypeScript
-* Estado: Operativo (ALACENA)
-2.3 Base de Datos
-* Proveedor: Supabase (Postgres)
-* Entornos: prod (activo), dev/test (opcional)
-* Conectado a: Backend
-2.4 Autenticación
-* Proveedor: Supabase Auth
-* Métodos: email/password
-2.5 Media / Archivos
-* Proveedor: Cloudinary
-* Uso actual: imágenes de ALACENA
-2.6 Infraestructura transversal
-* Repositorio: falberio/eco
-* Issue tracking: GitHub Issues
-* Project: pendiente de creación
-* DF: mantenido en Copilot Pages
-
-3) Libro de Instalaciones & Deploys (Log)
-Bitácora ligera de instalaciones, configuraciones y deploys. Fechas aproximadas (~) permitidas.
-Formato sugerido
-* Fecha: YYYY-MM-DD o ~YYYY-MM
-* Componente: Frontend / Backend / DB / Infra
-* Tipo: instalación | deploy | hotfix | migración
-* Descripción: qué se hizo
-* Resultado: OK | con issues
-* Evidencia: commit / tag / issue
-Entradas iniciales
-* ~202511 — Frontend ALACENA (Vercel) — primer deploy — Resultado: OK
-* ~202511 — Backend ALACENA (Fly.io) — primer deploy — Resultado: OK
-(Continuar completando retroactivamente según corresponda.)
-
-4) ADR — Registros de Decisiones de Arquitectura
-ADRs técnicos consolidados. Los ADRs funcionales del producto viven en el DF (Page 02). Mantener consistencia.
-ADR001 — Un solo backend
-* Fecha: 202511
-* Decisión: Una única API para todos los módulos.
-* Estado: vigente
-ADR002 — Supabase para DB + Auth
-* Fecha: 202511
-* Decisión: Centralizar persistencia y autenticación.
-* Estado: vigente
-ADR003 — Cloudinary para media
-* Fecha: 202511
-* Decisión: Usar Cloudinary para imágenes.
-* Estado: vigente
-ADR004 — Web antes que mobile
-* Fecha: 202512
-* Decisión: Priorizar PWA web; mobile nativo fuera de alcance.
-* Estado: vigente
-Nota: Los ADR arquitectónicos del DF (monolito modular, aislamiento por hogar, periodicidad declarativa, etc.) siguen viviendo en Page 02. Este listado refleja las decisiones técnicas operativas.
-
-5) Procedimientos
-5.1 Procedimiento de Backfill (Regularización)
-Para registrar decisiones o trabajos pasados sin frenar el avance.
-1. Detectar un hecho pasado (deploy, instalación, decisión, configuración).
-2. Decidir dónde vive: 
-o Deploy/instalación ? Log de Instalaciones (sección 3)
-o Decisión ? ADR (sección 4)
-o Trabajo futuro ? Issue en GitHub
-3. Registrar con fecha aproximada.
-4. Si requiere acción, crear issue y linkearla.
-5. Si no requiere acción, queda como histórico.
-Regla: Todo lo importante debe quedar registrado, aunque sea aproximado.
-
-6) Convenciones de trabajo (GitHub)
-6.1 Tipos de issues
-* type:idea — ideas espontáneas
-* type:feature — funcionalidad planificada
-* type:tech — tareas técnicas
-6.2 Módulos (labels)
-* module:alacena, module:mantia, module:lista, module:core, module:ecosalud, module:huesha, module:financia
-6.3 Prioridades
-* priority:P1 — importante
-* priority:P2 — deseable/no urgente
-6.4 Sprint
-* sprint:1, sprint:2, etc.
-6.5 Cierre de issues
-Una issue se considera cerrada solo si:
-* La funcionalidad está desplegada, o
-* La idea fue descartada explícitamente, y
-* Se agrega evidencia (commit, deploy, comentario).
-
-7) Enlaces
-* DF (Page 02) — verdad funcional/arquitectónica. Actualizar cuando un ADR cambie.
-* Libro de Sesiones (Page 03) — registrar acuerdos humanos y decisiones tratadas en sesiones.
-
-
-
-
-
-
-

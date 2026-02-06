@@ -9,7 +9,9 @@
 | [2026-01-24](./2026-01-24--deploy-completo-v1.md) | Mañana | Deploy v1.0 Completo | Primera versión 100% online, migración a PostgreSQL, fixes críticos | ✅ Completado |
 | [2026-01-24](./2026-01-24--sistema-taras-control-stock.md) | Tarde | Sistema de Taras y Control Masivo | Cálculo automático de tara, control secuencial de stock, códigos QR | ✅ Completado |
 | [2026-01-24](./2026-01-24--reestructuracion-eco.md) | Tarde | Reestructuración ECO Platform | Migración modular, shared code, theme system, type generation | ✅ Completado |
-| 2026-01-25 | 10:00+ | Sistema de Documentación y Metodología Ágil | Gestión de proyecto, backlog, sprints, templates | 🏃 En progreso |
+| 2026-01-25 | 10:00+ | Sistema de Documentación y Metodología Ágil | Gestión de proyecto, backlog, sprints, templates | ✅ Completado |
+| [2026-02-04](../03-libro-sesiones.md#sesion-6-2026-02-04-consolidacion-documental-y-mejoras-ux-sprint-0-dia-1) | ~180 min | Consolidación documental y mejoras UX | MkDocs Material, index rediseñado, templates, CSS/JS custom | ✅ Completado |
+| [2026-02-05](./2026-02-05--sesion7-historias-completas.md) | ~6h (2 días) | 738 Historias de Usuario Completas | 7 módulos + transversales, página interactiva con filtros, tagline | ✅ Completado |
 
 ---
 

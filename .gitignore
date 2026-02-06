@@ -34,3 +34,6 @@ prisma/migrations/**/migration.sql.backup
 
 # Archivos temporales de issues
 .temp-issues/
+
+# MkDocs build output (GitHub Actions builds from source)
+site/
