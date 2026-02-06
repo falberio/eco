@@ -1,0 +1,2726 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Sistema de Gestión Doméstica Modular">
+      
+      
+        <meta name="author" content="Fran Alberio">
+      
+      
+        <link rel="canonical" href="https://falberio.github.io/eco/04-planificacion/historias/transversales/">
+      
+      
+        <link rel="prev" href="../financia/">
+      
+      
+        <link rel="next" href="../../flujo-gestion-historias/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>🔧 Transversales (202) - ECO - Documentación</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="deep-orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#transversales-capacidades-de-plataforma-202-historias" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../../.." title="ECO - Documentación" class="md-header__button md-logo" aria-label="ECO - Documentación" data-md-component="logo">
+      
+  <img src="../../../assets/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ECO - Documentación
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              🔧 Transversales (202)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="deep-orange"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="amber" data-md-color-accent="deep-orange"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Compartir" aria-label="Compartir" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/falberio/eco" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    falberio/eco
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="ECO - Documentación" class="md-nav__button md-logo" aria-label="ECO - Documentación" data-md-component="logo">
+      
+  <img src="../../../assets/logo.svg" alt="logo">
+
+    </a>
+    ECO - Documentación
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/falberio/eco" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    falberio/eco
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sobre ECO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Planificación
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Planificación
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🎯 Historias de Usuario (738)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Historias por Módulo
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Historias por Módulo
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mantia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📋 MANTIA (100)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../alacena/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏾 ALACENA (100)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ecosalud/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    💚 ECOSALUD (100)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lista-compras/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🛒 Lista de Compras (36)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../huesha/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📔 HUESHA (100)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../financia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    💰 FINANCIA (100)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔧 Transversales (202)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flujo-gestion-historias/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sprints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprints
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Colaborar
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Colaborar
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../02-documento-funcional/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documento Funcional
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backlog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backlog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../03-libro-sesiones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sesiones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../procedimientos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Procedimientos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arquitectura
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Arquitectura
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../05-arquitectura/modelo-datos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modelo de Datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../05-arquitectura/adrs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADRs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../05-arquitectura/procedimientos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Procedimientos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Referencia
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Referencia
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../glosario/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glosario
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="En esta página">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navegación" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Inicio
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Planificación
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../mantia/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Historias por Módulo
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/falberio/eco/edit/main/docs/04-planificacion/historias/transversales.md" title="Editar esta página" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/falberio/eco/raw/main/docs/04-planificacion/historias/transversales.md" title="Ver código fuente de esta página" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5"/></svg>
+    </a>
+  
+
+
+<h1 id="transversales-capacidades-de-plataforma-202-historias">🔧 TRANSVERSALES — Capacidades de Plataforma (202 historias)<a class="headerlink" href="#transversales-capacidades-de-plataforma-202-historias" title="Permanent link">&para;</a></h1>
+<p><strong>Fecha:</strong> 6 de febrero de 2026<br />
+<strong>Alcance:</strong> Transversal a todos los módulos funcionales<br />
+<strong>Propósito:</strong> Todo lo que NO es un módulo funcional pero sin lo cual el producto no funciona en producción real: API, agente, usuarios, notificaciones, backups, seguridad, UX base, infra, datos, integraciones y gobernanza.</p>
+<blockquote>
+<p><em>"Los módulos son lo que el usuario ve. Las transversales son lo que hace que todo funcione, escale y sea confiable."</em></p>
+</blockquote>
+<p><strong>Nota técnica:</strong> Se corrigió el conteo original — Agente Conversacional tenía 14 historias listadas (no 12), con lo cual las existentes reales eran 83. Con las 119 nuevas, el total es <strong>202 historias</strong> (no 200 exactas).</p>
+<p><strong>Distribución por Área (11 áreas):</strong></p>
+<table>
+<thead>
+<tr>
+<th>Área</th>
+<th>Prefijo</th>
+<th>Existentes</th>
+<th>Nuevas</th>
+<th>Total</th>
+<th>Est. aprox</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>API para IA (Plataforma API)</td>
+<td>API-</td>
+<td>15</td>
+<td>15</td>
+<td><strong>30</strong></td>
+<td>~200h</td>
+</tr>
+<tr>
+<td>Agente Conversacional</td>
+<td>AGT-</td>
+<td>14</td>
+<td>16</td>
+<td><strong>30</strong></td>
+<td>~233h</td>
+</tr>
+<tr>
+<td>Multi-usuario y Roles</td>
+<td>USR-</td>
+<td>10</td>
+<td>10</td>
+<td><strong>20</strong></td>
+<td>~135h</td>
+</tr>
+<tr>
+<td>Notificaciones</td>
+<td>NOT-</td>
+<td>10</td>
+<td>10</td>
+<td><strong>20</strong></td>
+<td>~121h</td>
+</tr>
+<tr>
+<td>Backups y Exportación</td>
+<td>BKP-</td>
+<td>8</td>
+<td>10</td>
+<td><strong>18</strong></td>
+<td>~118h</td>
+</tr>
+<tr>
+<td>Seguridad y Admin</td>
+<td>SEC-</td>
+<td>8</td>
+<td>12</td>
+<td><strong>20</strong></td>
+<td>~143h</td>
+</tr>
+<tr>
+<td>UX y Onboarding</td>
+<td>UXO-</td>
+<td>10</td>
+<td>10</td>
+<td><strong>20</strong></td>
+<td>~143h</td>
+</tr>
+<tr>
+<td>Infraestructura y DevOps</td>
+<td>INF-</td>
+<td>8</td>
+<td>10</td>
+<td><strong>18</strong></td>
+<td>~122h</td>
+</tr>
+<tr>
+<td>Datos, Búsqueda y Conocimiento</td>
+<td>DAT-</td>
+<td>—</td>
+<td>10</td>
+<td><strong>10</strong></td>
+<td>~88h</td>
+</tr>
+<tr>
+<td>Integraciones Externas</td>
+<td>INT-</td>
+<td>—</td>
+<td>10</td>
+<td><strong>10</strong></td>
+<td>~116h</td>
+</tr>
+<tr>
+<td>Gobernanza y Cumplimiento</td>
+<td>GOV-</td>
+<td>—</td>
+<td>6</td>
+<td><strong>6</strong></td>
+<td>~40h</td>
+</tr>
+<tr>
+<td><strong>TOTAL</strong></td>
+<td></td>
+<td><strong>83</strong></td>
+<td><strong>119</strong></td>
+<td><strong>202</strong></td>
+<td><strong>~1,459h</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Prioridades:</strong> 28 P1 · 95 P2 · 72 P3 · 7 P4</p>
+<p><strong>Convenciones de estimación:</strong>
+- S = ~3h | M = ~6h | L = ~10h | XL = ~20h | XXL = ~40h</p>
+<hr />
+<h1 id="api-para-ia-plataforma-api-30-historias">🤖 API PARA IA — PLATAFORMA API (30 historias)<a class="headerlink" href="#api-para-ia-plataforma-api-30-historias" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>La API no es "solo para IA": es la superficie programática completa de ECO. La consume el agente conversacional, integraciones externas, webhooks, mobile y cualquier cliente futuro.</p>
+</blockquote>
+<hr />
+<h3 id="epica-1-schema-y-queries-core-api-01-api-05">Épica 1: Schema y Queries Core (API-01 → API-05)<a class="headerlink" href="#epica-1-schema-y-queries-core-api-01-api-05" title="Permanent link">&para;</a></h3>
+<p><strong>API-01: Schema GraphQL para MANTIA</strong>
+- Como desarrollador quiero queries y mutations GraphQL para tareas (getTasks, createTask, updateTask, completeTask, deleteTask)
+- Para que cualquier cliente (agente IA, mobile, web) pueda operar sobre MANTIA de forma programática
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P1</p>
+<p><strong>API-02: Schema GraphQL para ALACENA</strong>
+- Como desarrollador quiero queries y mutations GraphQL para inventario (getItems, updateStock, getLocations, etc.)
+- Para exponer el inventario del hogar a clientes externos y al agente conversacional
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P1</p>
+<p><strong>API-03: Schema GraphQL para Lista de Compras</strong>
+- Como desarrollador quiero queries y mutations GraphQL para listas de compra (getShoppingList, addItem, markBought, etc.)
+- Para que el agente pueda agregar items por voz y que apps externas sincronicen
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P1</p>
+<p><strong>API-04: Schema GraphQL para ECOSALUD</strong>
+- Como desarrollador quiero queries y mutations GraphQL para registros de salud (getHealthRecords, addWeight, getHistory, etc.)
+- Para centralizar el acceso a datos de salud desde cualquier interfaz
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P1</p>
+<p><strong>API-05: Subscriptions GraphQL para cambios en tiempo real</strong>
+- Como desarrollador quiero subscriptions GraphQL para recibir notificación cuando cambia inventario, se completa tarea o se agrega item a lista
+- Para construir interfaces reactivas y notificaciones sin polling
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P2</p>
+<hr />
+<h3 id="epica-2-autenticacion-y-seguridad-api-api-06-api-08">Épica 2: Autenticación y Seguridad API (API-06 → API-08)<a class="headerlink" href="#epica-2-autenticacion-y-seguridad-api-api-06-api-08" title="Permanent link">&para;</a></h3>
+<p><strong>API-06: Generar API Key por usuario</strong>
+- Como usuario quiero generar una API Key personal desde mi perfil
+- Para usar con el agente IA, scripts personales o integraciones externas
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P1</p>
+<p><strong>API-07: Rotar/Revocar API Keys</strong>
+- Como usuario quiero desactivar o regenerar mi API Key si se compromete o envejece
+- Para mantener la seguridad de mi cuenta sin depender de soporte
+- <strong>Estimación:</strong> S | <strong>Prioridad:</strong> P2</p>
+<p><strong>API-08: Rate limiting por API Key</strong>
+- Como admin quiero limitar la cantidad de requests por minuto por API Key
+- Para evitar abuso, proteger la infraestructura y garantizar equidad entre usuarios
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P2</p>
+<hr />
+<h3 id="epica-3-queries-conversacionales-api-09-api-12">Épica 3: Queries Conversacionales (API-09 → API-12)<a class="headerlink" href="#epica-3-queries-conversacionales-api-09-api-12" title="Permanent link">&para;</a></h3>
+<p><strong>API-09: Query "getNextTasks" optimizado para voz</strong>
+- Como agente IA quiero obtener las próximas 3 tareas pendientes de forma simple y directa
+- Para responder preguntas de voz tipo "¿qué tengo pendiente?" sin latencia ni datos innecesarios
+- <strong>Estimación:</strong> S | <strong>Prioridad:</strong> P1</p>
+<p><strong>API-10: Query "whatCanICookToday" para recetas</strong>
+- Como agente IA quiero consultar qué recetas se pueden preparar con el stock actual para N personas
+- Para responder "¿qué puedo cocinar hoy si somos 5?" cruzando inventario con recetas
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P2</p>
+<p><strong>API-11: Query "getHealthSummary" con parámetros flexibles</strong>
+- Como agente IA quiero obtener resumen de salud (último peso, colesterol, presión) con rango temporal configurable
+- Para responder "¿cómo vengo de salud?" con datos concretos y tendencia
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P2</p>
+<p><strong>API-12: Mutation "addItemByVoice" con parsing de lenguaje natural</strong>
+- Como agente IA quiero interpretar "agregar leche y pan a la lista" y crear 2 items automáticamente
+- Para que el usuario agregue items por voz sin necesidad de interfaz gráfica
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P2</p>
+<hr />
+<h3 id="epica-4-webhooks-salientes-api-13-api-14">Épica 4: Webhooks Salientes (API-13 → API-14)<a class="headerlink" href="#epica-4-webhooks-salientes-api-13-api-14" title="Permanent link">&para;</a></h3>
+<p><strong>API-13: Configurar webhook al completar tarea</strong>
+- Como usuario quiero ejecutar un webhook cuando se completa una tarea
+- Para integrar con Zapier, IFTTT, Notion u otras automatizaciones externas
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P3</p>
+<p><strong>API-14: Webhook al stock bajo</strong>
+- Como usuario quiero ejecutar webhook cuando un item baja de su umbral de stock
+- Para notificar a sistemas externos o disparar compra automática
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P3</p>
+<hr />
+<h3 id="epica-5-developer-experience-api-15">Épica 5: Developer Experience (API-15)<a class="headerlink" href="#epica-5-developer-experience-api-15" title="Permanent link">&para;</a></h3>
+<p><strong>API-15: Playground GraphQL público con autenticación</strong>
+- Como desarrollador quiero probar queries en un playground web autenticado con mi API Key
+- Para debuggear integraciones y explorar el schema sin escribir código
+- <strong>Estimación:</strong> S | <strong>Prioridad:</strong> P2</p>
+<hr />
+<h3 id="epica-6-estandares-y-calidad-api-api-16-api-23-nuevo">Épica 6: Estándares y Calidad API (API-16 → API-23) ✨ NUEVO<a class="headerlink" href="#epica-6-estandares-y-calidad-api-api-16-api-23-nuevo" title="Permanent link">&para;</a></h3>
+<p><strong>API-16: Versionado de API (v1/v2) + política de deprecación</strong>
+- Como desarrollador quiero que la API tenga versionado explícito (v1, v2) con política clara de deprecación y sunset
+- Para actualizar mi integración sin que se rompa de un día para el otro
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P1</p>
+<p><strong>API-17: Convención de errores (codes, messages, field paths)</strong>
+- Como desarrollador quiero errores estructurados con código, mensaje legible y path del campo que falló
+- Para construir manejo de errores consistente en cualquier cliente sin adivinar qué pasó
+- <strong>Estimación:</strong> S | <strong>Prioridad:</strong> P1</p>
+<p><strong>API-18: Paginación estándar (cursor-based) en listas grandes</strong>
+- Como desarrollador quiero paginación cursor-based en todas las listas (no offset-based) con hasNextPage/endCursor
+- Para paginar de forma eficiente y consistente en datasets grandes sin saltos ni duplicados
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P1</p>
+<p><strong>API-19: Filtros/sort estándar (DSL común)</strong>
+- Como desarrollador quiero un DSL de filtros y ordenamiento consistente en todos los endpoints (where/orderBy)
+- Para no aprender un patrón distinto en cada query
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P2</p>
+<p><strong>API-20: Idempotencia en mutations críticas (Idempotency-Key)</strong>
+- Como desarrollador quiero enviar un header Idempotency-Key en mutations que crean/modifican datos
+- Para que reintentos por timeout o error de red no creen duplicados
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P2</p>
+<p><strong>API-21: Observabilidad por request (request-id + trace-id)</strong>
+- Como desarrollador quiero que cada response incluya request-id y trace-id
+- Para rastrear problemas en logs y soporte sin ambigüedad
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P2</p>
+<p><strong>API-22: Bulk mutations (alta masiva / update masivo)</strong>
+- Como desarrollador quiero mutations batch para crear/actualizar múltiples entidades en una sola llamada
+- Para imports masivos y operaciones bulk sin hacer N llamadas individuales
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P2</p>
+<p><strong>API-23: Export de schema + SDK types (TS) autogenerados</strong>
+- Como desarrollador quiero que se generen automáticamente tipos TypeScript desde el schema GraphQL
+- Para tener tipado fuerte en clientes sin mantener tipos manualmente
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P2</p>
+<hr />
+<h3 id="epica-7-seguridad-y-gobernanza-api-api-24-api-30-nuevo">Épica 7: Seguridad y Gobernanza API (API-24 → API-30) ✨ NUEVO<a class="headerlink" href="#epica-7-seguridad-y-gobernanza-api-api-24-api-30-nuevo" title="Permanent link">&para;</a></h3>
+<p><strong>API-24: Entitlements/scopes por API Key (qué puede llamar)</strong>
+- Como admin quiero definir qué módulos y operaciones puede usar cada API Key (read-only, solo MANTIA, etc.)
+- Para aplicar principio de menor privilegio y evitar que un token comprometido acceda a todo
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P1</p>
+<p><strong>API-25: Service tokens para integraciones server-to-server</strong>
+- Como admin quiero crear tokens de servicio (sin usuario humano asociado) para integraciones backend
+- Para que cron jobs e integraciones server-side se autentiquen sin usar credenciales de usuario
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P2</p>
+<p><strong>API-26: Sandbox environment (API de testing con data fake)</strong>
+- Como desarrollador quiero un entorno sandbox con datos ficticios y límites relajados
+- Para desarrollar y testear integraciones sin afectar datos reales
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P3</p>
+<p><strong>API-27: Rate limit por usuario + por IP + por token (granular)</strong>
+- Como admin quiero rate limiting granular por usuario, IP y token con ventanas configurables
+- Para proteger la API de abuso diferenciando entre un usuario legítimo y un bot
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P2</p>
+<p><strong>API-28: Persisted queries (seguridad + performance)</strong>
+- Como admin quiero soportar persisted queries para producción
+- Para bloquear queries arbitrarias, mejorar performance y reducir superficie de ataque
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P3</p>
+<p><strong>API-29: Auditoría de llamadas API (quién, qué, cuándo)</strong>
+- Como admin quiero log de auditoría de todas las llamadas API con actor, operación, timestamp y resultado
+- Para detectar uso indebido, investigar incidentes y cumplir requisitos de compliance
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P2</p>
+<p><strong>API-30: Documentación viva (GraphQL docs + ejemplos)</strong>
+- Como desarrollador quiero documentación auto-generada desde el schema con ejemplos reales y guías
+- Para integrarme sin leer código fuente ni depender de documentación desactualizada
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P2</p>
+<hr />
+<h1 id="agente-conversacional-30-historias">🗣️ AGENTE CONVERSACIONAL (30 historias)<a class="headerlink" href="#agente-conversacional-30-historias" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>El agente es la interfaz de "manos libres" de ECO. Recibe texto o voz, interpreta la intención, ejecuta acciones y responde. Separamos infraestructura del agente, skills por módulo e inteligencia conversacional.</p>
+</blockquote>
+<hr />
+<h3 id="epica-1-infraestructura-del-agente-agt-01-agt-04">Épica 1: Infraestructura del Agente (AGT-01 → AGT-04)<a class="headerlink" href="#epica-1-infraestructura-del-agente-agt-01-agt-04" title="Permanent link">&para;</a></h3>
+<p><strong>AGT-01: Endpoint para recibir texto/voz y devolver respuesta</strong>
+- Como usuario quiero enviar una pregunta por texto y recibir respuesta del agente en formato estructurado
+- Para interactuar con ECO de forma conversacional sin usar la UI gráfica
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P1</p>
+<p><strong>AGT-02: Integración con Whisper API para transcribir voz</strong>
+- Como usuario quiero enviar un audio y que se transcriba automáticamente a texto
+- Para hablarle a ECO desde el celular sin escribir
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P2</p>
+<p><strong>AGT-03: Integración con TTS (Text-to-Speech) para respuestas habladas</strong>
+- Como usuario quiero recibir la respuesta del agente en audio además de texto
+- Para escuchar la respuesta mientras cocino o manejo sin leer la pantalla
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P3</p>
+<p><strong>AGT-04: Context awareness (recordar conversación previa)</strong>
+- Como usuario quiero que el agente recuerde el contexto de la conversación anterior ("¿y el de hoy?" refiriéndose al peso)
+- Para tener conversaciones naturales sin repetir contexto en cada mensaje
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P2</p>
+<hr />
+<h3 id="epica-2-skills-mantia-agt-05-agt-07">Épica 2: Skills MANTIA (AGT-05 → AGT-07)<a class="headerlink" href="#epica-2-skills-mantia-agt-05-agt-07" title="Permanent link">&para;</a></h3>
+<p><strong>AGT-05: "¿Qué tareas tengo hoy?"</strong>
+- Como usuario quiero preguntar al agente qué tareas vencen hoy y recibir la lista
+- Para revisar mis pendientes por voz mientras desayuno
+- <strong>Estimación:</strong> S | <strong>Prioridad:</strong> P1</p>
+<p><strong>AGT-06: "Marca tarea X como completada"</strong>
+- Como usuario quiero completar una tarea por comando de voz diciendo su nombre o número
+- Para marcar tareas hechas sin abrir la app
+- <strong>Estimación:</strong> S | <strong>Prioridad:</strong> P1</p>
+<p><strong>AGT-07: "Cuándo tengo turno con peluquero"</strong>
+- Como usuario quiero consultar la fecha de la próxima tarea de tipo "Turno" por voz
+- Para saber cuándo es mi próximo turno sin buscar manualmente
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P2</p>
+<hr />
+<h3 id="epica-3-skills-alacena-agt-08-agt-10">Épica 3: Skills ALACENA (AGT-08 → AGT-10)<a class="headerlink" href="#epica-3-skills-alacena-agt-08-agt-10" title="Permanent link">&para;</a></h3>
+<p><strong>AGT-08: "¿Qué pastas podemos comer hoy si somos 5?"</strong>
+- Como usuario quiero que el agente sugiera recetas de pasta para 5 personas según stock actual
+- Para decidir qué cocinar por voz cruzando inventario con recetas
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P2</p>
+<p><strong>AGT-09: "¿Cuánta leche queda?"</strong>
+- Como usuario quiero consultar el stock actual de un item por voz
+- Para verificar si necesito comprar algo antes de salir
+- <strong>Estimación:</strong> S | <strong>Prioridad:</strong> P1</p>
+<p><strong>AGT-10: "Agregar 2 litros de leche al inventario"</strong>
+- Como usuario quiero sumar stock por voz especificando cantidad y item
+- Para actualizar el inventario con las manos ocupadas (guardando compras)
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P2</p>
+<hr />
+<h3 id="epica-4-skills-ecosalud-agt-11-agt-12">Épica 4: Skills ECOSALUD (AGT-11 → AGT-12)<a class="headerlink" href="#epica-4-skills-ecosalud-agt-11-agt-12" title="Permanent link">&para;</a></h3>
+<p><strong>AGT-11: "¿Cómo dio mi último estudio de colesterol?"</strong>
+- Como usuario quiero preguntarle al agente el resultado de mi último registro de colesterol
+- Para consultar datos de salud rápidamente sin buscar en el historial
+- <strong>Estimación:</strong> S | <strong>Prioridad:</strong> P1</p>
+<p><strong>AGT-12: "Registra que hoy peso 78kg"</strong>
+- Como usuario quiero crear un registro de peso por voz con un solo comando
+- Para registrar datos de salud en 5 segundos mientras me bajo de la balanza
+- <strong>Estimación:</strong> S | <strong>Prioridad:</strong> P2</p>
+<hr />
+<h3 id="epica-5-integraciones-externas-del-agente-agt-13-agt-14">Épica 5: Integraciones Externas del Agente (AGT-13 → AGT-14)<a class="headerlink" href="#epica-5-integraciones-externas-del-agente-agt-13-agt-14" title="Permanent link">&para;</a></h3>
+<p><strong>AGT-13: Integración con Home Assistant via MQTT</strong>
+- Como usuario quiero conectar ECO con Home Assistant para hablarle al sistema desde parlantes inteligentes del hogar
+- Para usar ECO desde cualquier habitación sin celular (ej: "Hey, ¿qué tengo pendiente?")
+- <strong>Estimación:</strong> XL | <strong>Prioridad:</strong> P3</p>
+<p><strong>AGT-14: Custom skill para Google Assistant/Alexa</strong>
+- Como usuario quiero decir "Ok Google, pregúntale a ECO qué tareas tengo" desde mi celular o parlante
+- Para integrarme con asistentes de voz que ya uso diariamente
+- <strong>Estimación:</strong> XL | <strong>Prioridad:</strong> P3</p>
+<hr />
+<h3 id="epica-6-inteligencia-conversacional-agt-15-agt-22-nuevo">Épica 6: Inteligencia Conversacional (AGT-15 → AGT-22) ✨ NUEVO<a class="headerlink" href="#epica-6-inteligencia-conversacional-agt-15-agt-22-nuevo" title="Permanent link">&para;</a></h3>
+<p><strong>AGT-15: Detección de intención + entidades (NLU) con fallback</strong>
+- Como usuario quiero que el agente entienda la intención de mi mensaje ("quiero saber", "agregá", "mostrá") incluso con errores de tipeo o voz
+- Para que la experiencia sea robusta y no dependa de comandos exactos
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P1</p>
+<p><strong>AGT-16: Confirmaciones seguras ("¿Confirmás marcar X?")</strong>
+- Como usuario quiero que el agente me pida confirmación antes de ejecutar acciones destructivas o ambiguas
+- Para evitar que un malentendido borre datos o complete la tarea equivocada
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P1</p>
+<p><strong>AGT-17: Deshacer última acción por voz ("undo")</strong>
+- Como usuario quiero decir "deshacé eso" o "undo" y que el agente revierta la última acción
+- Para corregir errores de interpretación sin tener que ir a la UI
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P2</p>
+<p><strong>AGT-18: Modo dictado para captura rápida a HUESHA</strong>
+- Como usuario quiero activar "modo dictado" para que todo lo que diga se capture como entrada de diario en HUESHA
+- Para grabar pensamientos, reflexiones o eventos del día mientras camino o antes de dormir
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P2</p>
+<p><strong>AGT-19: "Daily Brief" por voz (tareas + clima + agenda)</strong>
+- Como usuario quiero pedir un resumen matutino que combine tareas del día, clima, eventos y alertas pendientes
+- Para arrancar el día con panorama completo en 30 segundos sin abrir la app
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P2</p>
+<p><strong>AGT-20: Multi-turn: aclaraciones ("¿cuál leche? descremada/entera")</strong>
+- Como usuario quiero que el agente me pregunte aclaraciones cuando mi comando es ambiguo
+- Para resolver ambigüedades naturalmente en vez de recibir un error genérico
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P2</p>
+<p><strong>AGT-21: Memoria por sesión + resumen compacto persistible</strong>
+- Como usuario quiero que el agente mantenga contexto durante la sesión y pueda guardar un resumen al terminar
+- Para tener conversaciones largas sin que pierda el hilo después de 3 mensajes
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P2</p>
+<p><strong>AGT-22: Comandos peligrosos requieren 2 pasos (seguridad)</strong>
+- Como usuario quiero que acciones destructivas (borrar cuenta, eliminar datos masivos) requieran doble confirmación explícita
+- Para protegerme de errores irreversibles ejecutados por voz en un descuido
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P1</p>
+<hr />
+<h3 id="epica-7-routing-personalizacion-y-testing-agt-23-agt-30-nuevo">Épica 7: Routing, Personalización y Testing (AGT-23 → AGT-30) ✨ NUEVO<a class="headerlink" href="#epica-7-routing-personalizacion-y-testing-agt-23-agt-30-nuevo" title="Permanent link">&para;</a></h3>
+<p><strong>AGT-23: Skill routing por módulo (MANTIA/ALACENA/etc.)</strong>
+- Como sistema quiero un router que dirija cada intención al módulo correcto automáticamente
+- Para que el agente sepa que "¿cuánta leche queda?" va a ALACENA y "¿qué tareas tengo?" va a MANTIA
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P1</p>
+<p><strong>AGT-24: Soporte bilingüe ES/EN (input mixto)</strong>
+- Como usuario quiero que el agente entienda mensajes en español y en inglés (o mezclados)
+- Para usar el sistema como me sale natural sin pensar en qué idioma escribo
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P3</p>
+<p><strong>AGT-25: Perfil de voz (preferencias, apodos, nombres)</strong>
+- Como usuario quiero que el agente recuerde mis preferencias ("a mí me dicen Fal", "la leche que compro es La Serenísima")
+- Para personalizar la experiencia sin repetir contexto cada vez
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P3</p>
+<p><strong>AGT-26: Respuestas con formato (cards/resúmenes)</strong>
+- Como usuario quiero que el agente me responda con formato enriquecido (listas, cards, tablas) cuando corresponda
+- Para ver respuestas claras y no un bloque de texto plano sin estructura
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P2</p>
+<p><strong>AGT-27: Modo manos libres en mobile (wake + timeout)</strong>
+- Como usuario quiero activar "modo manos libres" donde el micrófono queda abierto con timeout
+- Para operar ECO cocinando o manejando sin tocar el teléfono cada vez
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P3</p>
+<p><strong>AGT-28: Integración con calendario: "bloqueá 30 min para X"</strong>
+- Como usuario quiero que el agente cree eventos en mi calendario desde ECO
+- Para convertir una tarea MANTIA en un bloque horario sin salir de ECO
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P3</p>
+<p><strong>AGT-29: "Explicame por qué" (trazabilidad de respuesta)</strong>
+- Como usuario quiero preguntar "¿por qué decís eso?" y que el agente explique su razonamiento
+- Para confiar en las recomendaciones del agente y entender de dónde salen los datos
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P2</p>
+<p><strong>AGT-30: Testing de skills con suites (frases → asserts)</strong>
+- Como desarrollador quiero un framework de testing donde defino frases de entrada y valido la respuesta esperada
+- Para garantizar que cambios en el NLU no rompan skills que ya funcionaban (regression testing)
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P2</p>
+<hr />
+<h1 id="multi-usuario-y-roles-20-historias">👥 MULTI-USUARIO Y ROLES (20 historias)<a class="headerlink" href="#multi-usuario-y-roles-20-historias" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>El sistema de usuarios, hogares, roles y permisos. ECO es hogareño por naturaleza — todo se piensa para familias y convivientes.</p>
+</blockquote>
+<hr />
+<h3 id="epica-1-sistema-base-de-roles-usr-01-usr-04">Épica 1: Sistema Base de Roles (USR-01 → USR-04)<a class="headerlink" href="#epica-1-sistema-base-de-roles-usr-01-usr-04" title="Permanent link">&para;</a></h3>
+<p><strong>USR-01: CRUD de usuarios (admin)</strong>
+- Como admin quiero crear, editar y eliminar usuarios del hogar
+- Para gestionar quién tiene acceso al sistema
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P1</p>
+<p><strong>USR-02: Roles: Admin, Familia, Invitado</strong>
+- Como admin quiero asignar roles predefinidos con permisos diferentes a cada usuario
+- Para que mi pareja tenga acceso completo pero mi suegra solo vea lo que corresponda
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P1</p>
+<p><strong>USR-03: Permisos por rol (Admin: todo, Familia: CRUD propio, Invitado: solo lectura)</strong>
+- Como admin quiero definir qué puede hacer cada rol (crear, editar, eliminar, solo leer)
+- Para proteger datos sensibles y evitar que invitados modifiquen cosas
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P1</p>
+<p><strong>USR-04: Invitar usuario por email</strong>
+- Como admin quiero enviar invitación por email para que otra persona se una al hogar
+- Para agregar miembros sin necesidad de compartir contraseñas o links manuales
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P2</p>
+<hr />
+<h3 id="epica-2-colaboracion-multi-usuario-usr-05-usr-08">Épica 2: Colaboración Multi-usuario (USR-05 → USR-08)<a class="headerlink" href="#epica-2-colaboracion-multi-usuario-usr-05-usr-08" title="Permanent link">&para;</a></h3>
+<p><strong>USR-05: Ver actividad de otros usuarios (feed)</strong>
+- Como usuario quiero ver qué hicieron otros en el hogar hoy ("Juan completó Regar plantas", "María agregó leche a la lista")
+- Para estar al tanto de la actividad del hogar sin preguntar
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P3</p>
+<p><strong>USR-06: Asignar tareas/items a usuarios específicos</strong>
+- Como admin quiero asignar "Sacar basura" a un usuario específico del hogar
+- Para distribuir responsabilidades de forma explícita
+- <strong>Estimación:</strong> S | <strong>Prioridad:</strong> P2</p>
+<p><strong>USR-07: Notificar a usuario cuando se le asigna algo</strong>
+- Como usuario quiero recibir notificación cuando me asignan una tarea o responsabilidad
+- Para enterarme sin que me lo digan personalmente
+- <strong>Estimación:</strong> S | <strong>Prioridad:</strong> P2</p>
+<p><strong>USR-08: Filtrar por usuario (ver solo mis tareas/items)</strong>
+- Como usuario quiero ver solo lo que me corresponde a mí filtrando por mi usuario
+- Para concentrarme en mis responsabilidades sin ruido
+- <strong>Estimación:</strong> S | <strong>Prioridad:</strong> P2</p>
+<hr />
+<h3 id="epica-3-hogarhousehold-usr-09-usr-10">Épica 3: Hogar/Household (USR-09 → USR-10)<a class="headerlink" href="#epica-3-hogarhousehold-usr-09-usr-10" title="Permanent link">&para;</a></h3>
+<p><strong>USR-09: CRUD de "Household" (múltiples hogares por usuario)</strong>
+- Como usuario quiero tener acceso a 2 o más hogares (mi casa + casa de mis padres)
+- Para gestionar ambos hogares desde la misma cuenta sin datos mezclados
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P3</p>
+<p><strong>USR-10: Cambiar entre hogares con selector</strong>
+- Como usuario quiero switchear entre mis hogares con un selector rápido
+- Para cambiar de contexto sin logout/login ni navegar por menús profundos
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P3</p>
+<hr />
+<h3 id="epica-4-permisos-avanzados-y-gobernanza-usr-11-usr-20-nuevo">Épica 4: Permisos Avanzados y Gobernanza (USR-11 → USR-20) ✨ NUEVO<a class="headerlink" href="#epica-4-permisos-avanzados-y-gobernanza-usr-11-usr-20-nuevo" title="Permanent link">&para;</a></h3>
+<p><strong>USR-11: Invitación por link (expirable) además de email</strong>
+- Como admin quiero generar un link de invitación con fecha de expiración
+- Para compartir acceso al hogar rápidamente (ej: por WhatsApp) sin depender del email
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P2</p>
+<p><strong>USR-12: Transferir ownership del household</strong>
+- Como admin quiero transferir la propiedad del hogar a otro usuario
+- Para que si yo dejo de administrarlo, otra persona pueda hacerlo sin perder datos
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P2</p>
+<p><strong>USR-13: Roles custom por household (no solo 3 fijos)</strong>
+- Como admin quiero crear roles personalizados ("Adolescente", "Empleada", "Abuelo") con permisos a medida
+- Para adaptar los permisos a la realidad de mi hogar sin forzarlos en 3 categorías genéricas
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P3</p>
+<p><strong>USR-14: Permisos por entidad/objeto (ACL granular)</strong>
+- Como admin quiero definir permisos a nivel de entidad (ej: "este presupuesto es privado", "esta receta es pública")
+- Para compartir selectivamente sin exponer todo el módulo
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P1</p>
+<p><strong>USR-15: Compartir selectivo entre hogares (cross-household share)</strong>
+- Como usuario quiero compartir una receta o lista con otro hogar sin mover datos
+- Para colaborar entre hogares (ej: compartir lista del asado del domingo con la familia extendida)
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P3</p>
+<p><strong>USR-16: "Guest mode" real: acceso temporal con expiración</strong>
+- Como admin quiero dar acceso temporal a un invitado que expire automáticamente después de N días
+- Para que un huésped use ECO mientras se queda en casa sin acceso permanente
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P2</p>
+<p><strong>USR-17: Revocar acceso + limpiar tokens/dispositivos asociados</strong>
+- Como admin quiero revocar el acceso de un usuario y limpiar todos sus tokens y sesiones activas
+- Para que al sacar a alguien del hogar, pierda acceso inmediatamente en todos sus dispositivos
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P2</p>
+<p><strong>USR-18: Registro de actividad por household (auditable)</strong>
+- Como admin quiero ver un log completo de actividad del hogar: quién hizo qué y cuándo
+- Para auditar cambios importantes y resolver dudas ("¿quién borró la receta de torta?")
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P2</p>
+<p><strong>USR-19: Asignaciones con estados (pendiente/aceptada/rechazada)</strong>
+- Como usuario quiero que cuando me asignan una tarea pueda aceptarla o rechazarla con motivo
+- Para que las asignaciones sean colaborativas y no imposiciones unilaterales
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P3</p>
+<p><strong>USR-20: Configurar privacidad: qué módulos ve cada rol</strong>
+- Como admin quiero elegir qué módulos puede ver cada rol (ej: invitados no ven FINANCIA ni ECOSALUD)
+- Para proteger datos sensibles (finanzas, salud) de roles con menos confianza
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P2</p>
+<hr />
+<h1 id="notificaciones-20-historias">🔔 NOTIFICACIONES (20 historias)<a class="headerlink" href="#notificaciones-20-historias" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>El motor de notificaciones transversal: multi-canal (email, push, SMS, in-app), con reintentos, priorización, dedup y configuración granular por usuario.</p>
+</blockquote>
+<hr />
+<h3 id="epica-1-canales-base-email-not-01-not-03">Épica 1: Canales Base — Email (NOT-01 → NOT-03)<a class="headerlink" href="#epica-1-canales-base-email-not-01-not-03" title="Permanent link">&para;</a></h3>
+<p><strong>NOT-01: Email de tarea vencida (MANTIA)</strong>
+- Como usuario quiero recibir email cuando una tarea vence hoy
+- Para enterarme incluso si no abrí la app
+- <strong>Estimación:</strong> S | <strong>Prioridad:</strong> P2</p>
+<p><strong>NOT-02: Email de stock bajo (ALACENA)</strong>
+- Como usuario quiero email cuando un item baja de su umbral de stock
+- Para saber que tengo que comprar algo antes de que se acabe
+- <strong>Estimación:</strong> S | <strong>Prioridad:</strong> P2</p>
+<p><strong>NOT-03: Email de resumen semanal (ECOSALUD)</strong>
+- Como usuario quiero email dominical con resumen de mi semana de salud
+- Para ver mi progreso sin tener que abrir la app cada día
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P3</p>
+<hr />
+<h3 id="epica-2-canales-base-push-movil-not-04-not-06">Épica 2: Canales Base — Push Móvil (NOT-04 → NOT-06)<a class="headerlink" href="#epica-2-canales-base-push-movil-not-04-not-06" title="Permanent link">&para;</a></h3>
+<p><strong>NOT-04: Push de tarea vencida</strong>
+- Como usuario quiero push en celular cuando una tarea vence hoy
+- Para recibir recordatorio en tiempo real aunque no tenga la app abierta
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P2</p>
+<p><strong>NOT-05: Push de item agregado a lista compartida</strong>
+- Como usuario quiero push cuando alguien agrega un item urgente a la lista compartida
+- Para enterarme al instante si alguien necesita que compre algo
+- <strong>Estimación:</strong> S | <strong>Prioridad:</strong> P2</p>
+<p><strong>NOT-06: Push de valor anormal en ECOSALUD</strong>
+- Como usuario quiero push si registro un valor de salud fuera de rango (ej: presión &gt;140/90)
+- Para actuar rápido ante un indicador de salud preocupante
+- <strong>Estimación:</strong> S | <strong>Prioridad:</strong> P2</p>
+<hr />
+<h3 id="epica-3-canal-sms-not-07">Épica 3: Canal SMS (NOT-07)<a class="headerlink" href="#epica-3-canal-sms-not-07" title="Permanent link">&para;</a></h3>
+<p><strong>NOT-07: SMS de alerta crítica (ej: presión muy alta)</strong>
+- Como usuario quiero SMS si un valor de salud es peligroso
+- Para que la alerta me llegue aunque no tenga datos o push desactivado
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P3</p>
+<hr />
+<h3 id="epica-4-configuracion-de-notificaciones-not-08-not-10">Épica 4: Configuración de Notificaciones (NOT-08 → NOT-10)<a class="headerlink" href="#epica-4-configuracion-de-notificaciones-not-08-not-10" title="Permanent link">&para;</a></h3>
+<p><strong>NOT-08: Preferencias de notificación por usuario</strong>
+- Como usuario quiero elegir qué notificaciones recibir y por qué canal (push sí, email no)
+- Para controlar el volumen y canal de las alertas según mi preferencia
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P2</p>
+<p><strong>NOT-09: Horario de no molestar</strong>
+- Como usuario quiero silenciar notificaciones de 22h a 8h
+- Para dormir tranquilo sin alertas de stock bajo a las 3am
+- <strong>Estimación:</strong> S | <strong>Prioridad:</strong> P3</p>
+<p><strong>NOT-10: Consolidar notificaciones (digest)</strong>
+- Como usuario quiero recibir 1 email diario con todas las alertas agrupadas
+- Para evitar recibir 15 emails individuales y tener un resumen condensado
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P3</p>
+<hr />
+<h3 id="epica-5-motor-de-notificaciones-robusto-not-11-not-16-nuevo">Épica 5: Motor de Notificaciones Robusto (NOT-11 → NOT-16) ✨ NUEVO<a class="headerlink" href="#epica-5-motor-de-notificaciones-robusto-not-11-not-16-nuevo" title="Permanent link">&para;</a></h3>
+<p><strong>NOT-11: Motor de reintentos + backoff por canal</strong>
+- Como sistema quiero reintentar automáticamente notificaciones fallidas con backoff exponencial
+- Para que un error temporal del proveedor no pierda una notificación importante
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P1</p>
+<p><strong>NOT-12: Dedup (evitar spam por eventos repetidos)</strong>
+- Como usuario quiero que el sistema no me envíe la misma notificación 5 veces si el evento se repite
+- Para no recibir spam cuando un proceso reintenta o un cron corre seguido
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P1</p>
+<p><strong>NOT-13: Priorización (crítica/alta/media/baja)</strong>
+- Como sistema quiero clasificar notificaciones por prioridad para decidir canal y urgencia
+- Para que una alerta de presión alta use SMS+push pero un digest semanal solo use email
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P2</p>
+<p><strong>NOT-14: Plantillas con variables + vista previa</strong>
+- Como admin quiero plantillas de notificación con variables dinámicas ({{userName}}, {{taskName}}) y preview
+- Para personalizar los mensajes y ver cómo quedan antes de activarlas
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P2</p>
+<p><strong>NOT-15: Tracking de entregabilidad (sent/delivered/open/fail)</strong>
+- Como admin quiero ver el estado de cada notificación enviada (enviada/entregada/abierta/fallida)
+- Para monitorear la salud del sistema de notificaciones y detectar problemas de entrega
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P2</p>
+<p><strong>NOT-16: Fallback de canal (push→email→sms según urgencia)</strong>
+- Como sistema quiero escalar automáticamente a otro canal si el primario falla o no se confirma lectura
+- Para que notificaciones críticas lleguen aunque el push falle (fallback a email, luego SMS)
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P2</p>
+<hr />
+<h3 id="epica-6-notificaciones-avanzadas-not-17-not-20-nuevo">Épica 6: Notificaciones Avanzadas (NOT-17 → NOT-20) ✨ NUEVO<a class="headerlink" href="#epica-6-notificaciones-avanzadas-not-17-not-20-nuevo" title="Permanent link">&para;</a></h3>
+<p><strong>NOT-17: Centro de notificaciones in-app (historial)</strong>
+- Como usuario quiero ver un historial de todas mis notificaciones dentro de la app
+- Para revisar alertas pasadas que no leí en su momento o buscar algo que recibí hace días
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P2</p>
+<p><strong>NOT-18: "Acciones" desde notificación (marcar hecho/agregar)</strong>
+- Como usuario quiero ejecutar acciones directamente desde la notificación ("Marcar hecho", "Agregar a lista")
+- Para resolver pendientes en 1 tap sin abrir la app completa
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P2</p>
+<p><strong>NOT-19: Quiet hours avanzadas por día (ej: finde distinto)</strong>
+- Como usuario quiero configurar horarios de silencio diferentes para días de semana y fines de semana
+- Para no recibir alertas de tareas del hogar los domingos a las 7am pero sí los lunes
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P3</p>
+<p><strong>NOT-20: Modo "viaje" (cambia reglas de alertas temporalmente)</strong>
+- Como usuario quiero activar modo viaje que suspende notificaciones rutinarias y solo deja pasar críticas
+- Para que durante vacaciones ECO me deje en paz con el stock de leche
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P3</p>
+<hr />
+<h1 id="backups-y-exportacion-18-historias">💾 BACKUPS Y EXPORTACIÓN (18 historias)<a class="headerlink" href="#backups-y-exportacion-18-historias" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>Proteger los datos del usuario, permitir portabilidad y garantizar que una restauración realmente funcione.</p>
+</blockquote>
+<hr />
+<h3 id="epica-1-backups-automaticos-bkp-01-bkp-03">Épica 1: Backups Automáticos (BKP-01 → BKP-03)<a class="headerlink" href="#epica-1-backups-automaticos-bkp-01-bkp-03" title="Permanent link">&para;</a></h3>
+<p><strong>BKP-01: Backup diario automático de base de datos</strong>
+- Como admin quiero que se ejecute un backup diario automático de la base de datos
+- Para no perder datos ante un fallo — la pregunta no es "si va a pasar" sino "cuándo"
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P1</p>
+<p><strong>BKP-02: Retención de backups (30 días)</strong>
+- Como admin quiero mantener backups de los últimos 30 días con rotación automática
+- Para poder restaurar a un punto específico sin acumular backups infinitamente
+- <strong>Estimación:</strong> S | <strong>Prioridad:</strong> P2</p>
+<p><strong>BKP-03: Restaurar desde backup específico</strong>
+- Como admin quiero restaurar el sistema desde un backup de hace N días
+- Para recuperarme de un error grave (ej: borrado masivo accidental)
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P2</p>
+<hr />
+<h3 id="epica-2-exportacion-de-datos-bkp-04-bkp-06">Épica 2: Exportación de Datos (BKP-04 → BKP-06)<a class="headerlink" href="#epica-2-exportacion-de-datos-bkp-04-bkp-06" title="Permanent link">&para;</a></h3>
+<p><strong>BKP-04: Exportar todos mis datos a JSON</strong>
+- Como usuario quiero descargar un JSON con todos mis datos personales
+- Para tener copia local y cumplir con mi derecho a la portabilidad de datos
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P2</p>
+<p><strong>BKP-05: Exportar ALACENA a Excel</strong>
+- Como usuario quiero exportar mi inventario a Excel
+- Para hacer análisis offline o compartir con alguien que no usa ECO
+- <strong>Estimación:</strong> S | <strong>Prioridad:</strong> P3</p>
+<p><strong>BKP-06: Exportar ECOSALUD a PDF</strong>
+- Como usuario quiero un PDF con mi histórico médico formateado profesionalmente
+- Para llevar al médico un resumen impreso de mi evolución de salud
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P2</p>
+<hr />
+<h3 id="epica-3-importacion-de-datos-bkp-07-bkp-08">Épica 3: Importación de Datos (BKP-07 → BKP-08)<a class="headerlink" href="#epica-3-importacion-de-datos-bkp-07-bkp-08" title="Permanent link">&para;</a></h3>
+<p><strong>BKP-07: Importar tareas desde CSV</strong>
+- Como usuario quiero importar 100 tareas desde un archivo CSV/Excel
+- Para migrar desde otra herramienta sin cargar una por una manualmente
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P3</p>
+<p><strong>BKP-08: Importar inventario desde plantilla Excel</strong>
+- Como usuario quiero cargar mi inventario actual masivamente desde una plantilla Excel
+- Para arrancar con ECO sin tipear 200 items uno por uno
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P3</p>
+<hr />
+<h3 id="epica-4-backups-robustos-e-integridad-bkp-09-bkp-14-nuevo">Épica 4: Backups Robustos e Integridad (BKP-09 → BKP-14) ✨ NUEVO<a class="headerlink" href="#epica-4-backups-robustos-e-integridad-bkp-09-bkp-14-nuevo" title="Permanent link">&para;</a></h3>
+<p><strong>BKP-09: Backups cifrados (KMS)</strong>
+- Como admin quiero que los backups estén cifrados con gestión de claves (KMS)
+- Para que si alguien accede al storage de backups, no pueda leer datos de usuarios
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P1</p>
+<p><strong>BKP-10: Prueba automática de restore (fire drill mensual)</strong>
+- Como admin quiero que mensualmente se ejecute un restore de prueba de forma automática con reporte
+- Para verificar que los backups realmente funcionan y no descubrirlo en la emergencia
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P1</p>
+<p><strong>BKP-11: Backup por tenant/household (export aislado)</strong>
+- Como admin quiero poder exportar/restaurar datos de un household específico sin afectar otros
+- Para operar sobre un hogar sin riesgo colateral sobre los demás
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P2</p>
+<p><strong>BKP-12: Export incremental (desde fecha X)</strong>
+- Como usuario quiero exportar solo los datos nuevos o modificados desde una fecha
+- Para no bajar 500MB cada vez, solo lo que cambió desde mi último export
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P2</p>
+<p><strong>BKP-13: Import con validación + reporte de errores</strong>
+- Como usuario quiero que al importar CSV/Excel, el sistema valide cada fila y me muestre errores antes de confirmar
+- Para corregir problemas en el archivo antes de cargar datos incorrectos
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P2</p>
+<p><strong>BKP-14: Compatibilidad de versiones de plantilla (migrations)</strong>
+- Como sistema quiero que las plantillas de import sean versionadas y migrables
+- Para que un Excel generado hace 6 meses se pueda importar aunque el schema cambió
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P2</p>
+<hr />
+<h3 id="epica-5-portabilidad-y-borrado-bkp-15-bkp-18-nuevo">Épica 5: Portabilidad y Borrado (BKP-15 → BKP-18) ✨ NUEVO<a class="headerlink" href="#epica-5-portabilidad-y-borrado-bkp-15-bkp-18-nuevo" title="Permanent link">&para;</a></h3>
+<p><strong>BKP-15: Snapshot de medios (fotos/audio) separado de BD</strong>
+- Como admin quiero que el backup de archivos media (fotos, audios) se maneje separado de la BD
+- Para poder restaurar datos sin descargar 50GB de media o viceversa
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P3</p>
+<p><strong>BKP-16: "Takeout" full (zip) con estructura estándar</strong>
+- Como usuario quiero descargar un ZIP con todos mis datos en estructura legible (carpetas por módulo, JSON + media)
+- Para tener un export humano, no solo un dump técnico
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P2</p>
+<p><strong>BKP-17: Política de retención configurable por usuario</strong>
+- Como usuario quiero configurar cuánto tiempo se retienen mis datos eliminados (30/60/90 días)
+- Para elegir entre "borrado inmediato" y "papelera con recuperación"
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P3</p>
+<p><strong>BKP-18: Borrado seguro (crypto-shred) al eliminar cuenta</strong>
+- Como usuario quiero que al eliminar mi cuenta, los datos se destruyan criptográficamente (no solo se marquen)
+- Para tener certeza de que mis datos no persisten en backups ni storage residual
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P2</p>
+<hr />
+<h1 id="seguridad-y-admin-20-historias">🔒 SEGURIDAD Y ADMIN (20 historias)<a class="headerlink" href="#seguridad-y-admin-20-historias" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>Proteger al usuario, proteger el sistema y cumplir con buenas prácticas de seguridad sin convertir la app en un bunker inutilizable.</p>
+</blockquote>
+<hr />
+<h3 id="epica-1-autenticacion-basica-sec-01-sec-04">Épica 1: Autenticación Básica (SEC-01 → SEC-04)<a class="headerlink" href="#epica-1-autenticacion-basica-sec-01-sec-04" title="Permanent link">&para;</a></h3>
+<p><strong>SEC-01: 2FA (autenticación de dos factores)</strong>
+- Como usuario quiero activar autenticación de dos factores (TOTP o SMS)
+- Para agregar una capa extra de seguridad a mi cuenta
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P3</p>
+<p><strong>SEC-02: Historial de sesiones</strong>
+- Como usuario quiero ver dónde estoy logueado (dispositivos, IPs, navegadores, última actividad)
+- Para detectar accesos no autorizados y saber cuántos dispositivos tengo activos
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P3</p>
+<p><strong>SEC-03: Cerrar sesión remota</strong>
+- Como usuario quiero cerrar sesión en un dispositivo que ya no uso o perdí
+- Para revocar acceso sin cambiar la contraseña
+- <strong>Estimación:</strong> S | <strong>Prioridad:</strong> P3</p>
+<p><strong>SEC-04: Cambio de contraseña</strong>
+- Como usuario quiero cambiar mi contraseña fácilmente desde mi perfil
+- Para actualizar mi credencial periódicamente o si sospecho compromiso
+- <strong>Estimación:</strong> S | <strong>Prioridad:</strong> P2</p>
+<hr />
+<h3 id="epica-2-logging-y-auditoria-sec-05-sec-06">Épica 2: Logging y Auditoría (SEC-05 → SEC-06)<a class="headerlink" href="#epica-2-logging-y-auditoria-sec-05-sec-06" title="Permanent link">&para;</a></h3>
+<p><strong>SEC-05: Log de acciones críticas (admin)</strong>
+- Como admin quiero ver quién eliminó qué y cuándo (log de acciones destructivas)
+- Para investigar incidentes y tener trazabilidad en cambios sensibles
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P2</p>
+<p><strong>SEC-06: Alerta de login sospechoso</strong>
+- Como usuario quiero recibir email si alguien intenta loguearse desde una IP o dispositivo nuevo
+- Para detectar intentos de acceso no autorizado en tiempo real
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P3</p>
+<hr />
+<h3 id="epica-3-privacidad-y-gdpr-sec-07-sec-08">Épica 3: Privacidad y GDPR (SEC-07 → SEC-08)<a class="headerlink" href="#epica-3-privacidad-y-gdpr-sec-07-sec-08" title="Permanent link">&para;</a></h3>
+<p><strong>SEC-07: Eliminar cuenta y todos los datos</strong>
+- Como usuario quiero borrar mi cuenta permanentemente con todos mis datos asociados
+- Para ejercer mi derecho al olvido (GDPR compliance)
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P2</p>
+<p><strong>SEC-08: Descargar todos mis datos (GDPR)</strong>
+- Como usuario quiero descargar copia completa de mis datos personales en formato estándar
+- Para ejercer mi derecho a la portabilidad de datos
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P2</p>
+<hr />
+<h3 id="epica-4-autenticacion-avanzada-sec-09-sec-12-nuevo">Épica 4: Autenticación Avanzada (SEC-09 → SEC-12) ✨ NUEVO<a class="headerlink" href="#epica-4-autenticacion-avanzada-sec-09-sec-12-nuevo" title="Permanent link">&para;</a></h3>
+<p><strong>SEC-09: Passkeys (WebAuthn)</strong>
+- Como usuario quiero loguedarme con passkeys/biometría (huella, Face ID) en vez de contraseña
+- Para tener acceso más seguro y más rápido sin recordar contraseñas
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P3</p>
+<p><strong>SEC-10: OAuth/SSO (Google)</strong>
+- Como usuario quiero iniciar sesión con mi cuenta de Google en un click
+- Para no crear otra contraseña y aprovechar la seguridad de mi cuenta Google
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P2</p>
+<p><strong>SEC-11: Password policy + fuerza + blacklist</strong>
+- Como admin quiero que el sistema exija contraseñas fuertes y rechace contraseñas comunes (blacklist)
+- Para evitar contraseñas débiles como "123456" o "password"
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P2</p>
+<p><strong>SEC-12: Bloqueo por intentos fallidos + captcha adaptativo</strong>
+- Como sistema quiero bloquear temporalmente tras N intentos fallidos y mostrar captcha adaptativo
+- Para proteger contra ataques de fuerza bruta sin bloquear permanentemente al usuario legítimo
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P2</p>
+<hr />
+<h3 id="epica-5-cifrado-y-secretos-sec-13-sec-15-nuevo">Épica 5: Cifrado y Secretos (SEC-13 → SEC-15) ✨ NUEVO<a class="headerlink" href="#epica-5-cifrado-y-secretos-sec-13-sec-15-nuevo" title="Permanent link">&para;</a></h3>
+<p><strong>SEC-13: Cifrado en reposo (BD) + secretos en vault</strong>
+- Como admin quiero que datos sensibles estén cifrados en BD y las claves manejadas por un vault externo
+- Para que un acceso al storage no exponga datos de usuario en texto plano
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P1</p>
+<p><strong>SEC-14: Security headers (CSP, HSTS, etc.)</strong>
+- Como desarrollador quiero que la app configure todos los headers de seguridad estándar (CSP, HSTS, X-Frame, etc.)
+- Para proteger contra XSS, clickjacking y ataques de downgrade de protocolo
+- <strong>Estimación:</strong> S | <strong>Prioridad:</strong> P2</p>
+<p><strong>SEC-15: Permisos por scope para tokens (API/agent/mobile)</strong>
+- Como admin quiero que cada token tenga scopes explícitos (read:mantia, write:alacena, etc.)
+- Para que un token robado no dé acceso a todo el sistema
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P1</p>
+<hr />
+<h3 id="epica-6-monitoreo-de-seguridad-sec-16-sec-20-nuevo">Épica 6: Monitoreo de Seguridad (SEC-16 → SEC-20) ✨ NUEVO<a class="headerlink" href="#epica-6-monitoreo-de-seguridad-sec-16-sec-20-nuevo" title="Permanent link">&para;</a></h3>
+<p><strong>SEC-16: Alertas de cambios sensibles (email/2FA/keys)</strong>
+- Como usuario quiero recibir notificación inmediata si alguien cambia mi email, 2FA o API Keys
+- Para detectar al instante si me hackearon la cuenta
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P2</p>
+<p><strong>SEC-17: "Data access log" por usuario (quién accedió qué)</strong>
+- Como usuario quiero ver un log de quién accedió a mis datos y cuándo
+- Para tener transparencia sobre el acceso a mi información personal
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P2</p>
+<p><strong>SEC-18: Gestión de dispositivos confiables</strong>
+- Como usuario quiero marcar dispositivos como "confiables" para que no pidan 2FA cada vez
+- Para equilibrar seguridad y comodidad en mis dispositivos habituales
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P3</p>
+<p><strong>SEC-19: WAF/rules básicas anti abuso</strong>
+- Como admin quiero reglas básicas de WAF que bloqueen patrones de ataque conocidos
+- Para proteger la app de bots, scrapers y ataques automatizados sin infraestructura dedicada
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P3</p>
+<p><strong>SEC-20: Clasificación de datos (PII) y controles por tipo</strong>
+- Como admin quiero que el sistema clasifique datos por sensibilidad (PII, salud, finanzas) y aplique controles diferenciados
+- Para cumplir regulaciones y aplicar cifrado/acceso diferenciado según el tipo de dato
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P2</p>
+<hr />
+<h1 id="ux-y-onboarding-20-historias">🎨 UX Y ONBOARDING (20 historias)<a class="headerlink" href="#ux-y-onboarding-20-historias" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>La experiencia del usuario en sentido amplio: primera vez, personalización, accesibilidad, errores, búsqueda, productividad.</p>
+</blockquote>
+<hr />
+<h3 id="epica-1-onboarding-uxo-01-uxo-03">Épica 1: Onboarding (UXO-01 → UXO-03)<a class="headerlink" href="#epica-1-onboarding-uxo-01-uxo-03" title="Permanent link">&para;</a></h3>
+<p><strong>UXO-01: Tutorial interactivo al primer uso</strong>
+- Como usuario nuevo quiero un tutorial guiado paso a paso cuando entro por primera vez
+- Para aprender el sistema en 2 minutos sin leer documentación
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P2</p>
+<p><strong>UXO-02: Setup wizard (elegir módulos activos)</strong>
+- Como usuario nuevo quiero elegir qué módulos activar y cuáles no (solo MANTIA, o todos)
+- Para simplificar la interfaz desde el inicio y no abrumarme con 6 módulos vacíos
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P2</p>
+<p><strong>UXO-03: Tooltips contextuales</strong>
+- Como usuario nuevo quiero ver tooltips de ayuda al pasar el mouse sobre botones o secciones nuevas
+- Para entender funciones sin buscar en documentación externa
+- <strong>Estimación:</strong> S | <strong>Prioridad:</strong> P3</p>
+<hr />
+<h3 id="epica-2-personalizacion-visual-uxo-04-uxo-06">Épica 2: Personalización Visual (UXO-04 → UXO-06)<a class="headerlink" href="#epica-2-personalizacion-visual-uxo-04-uxo-06" title="Permanent link">&para;</a></h3>
+<p><strong>UXO-04: Temas claro/oscuro</strong>
+- Como usuario quiero cambiar entre modo claro y oscuro
+- Para usar la app cómodamente de noche y adaptarla a mi preferencia visual
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P2</p>
+<p><strong>UXO-05: Elegir color primario del sistema</strong>
+- Como usuario quiero personalizar el color principal de la app
+- Para sentirla "mía" y diferenciarla visualmente de otras apps
+- <strong>Estimación:</strong> S | <strong>Prioridad:</strong> P3</p>
+<p><strong>UXO-06: Densidad de interfaz (compacta/normal/espaciosa)</strong>
+- Como usuario quiero ajustar el espaciado de la interfaz entre compacta, normal y espaciosa
+- Para optimizar la pantalla según si uso desktop grande o celular chico
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P3</p>
+<hr />
+<h3 id="epica-3-accesibilidad-uxo-07-uxo-10">Épica 3: Accesibilidad (UXO-07 → UXO-10)<a class="headerlink" href="#epica-3-accesibilidad-uxo-07-uxo-10" title="Permanent link">&para;</a></h3>
+<p><strong>UXO-07: Soporte de teclado completo (shortcuts)</strong>
+- Como usuario power quiero navegar solo con teclado (Ctrl+N nueva tarea, Esc cerrar modal, etc.)
+- Para ser más productivo sin tocar el mouse
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P3</p>
+<p><strong>UXO-08: Tamaño de fuente ajustable</strong>
+- Como usuario con dificultad visual quiero agrandar el texto de toda la interfaz
+- Para leer cómodamente sin depender del zoom del navegador
+- <strong>Estimación:</strong> S | <strong>Prioridad:</strong> P3</p>
+<p><strong>UXO-09: Alto contraste para accesibilidad</strong>
+- Como usuario con baja visión quiero un modo de alto contraste
+- Para distinguir elementos de la interfaz sin esforzar la vista
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P3</p>
+<p><strong>UXO-10: Soporte screen readers (ARIA labels)</strong>
+- Como usuario ciego quiero que la app tenga labels ARIA correctos en todos los elementos interactivos
+- Para poder navegar completamente con screen reader (VoiceOver, NVDA)
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P3</p>
+<hr />
+<h3 id="epica-4-ux-de-producto-uxo-11-uxo-20-nuevo">Épica 4: UX de Producto (UXO-11 → UXO-20) ✨ NUEVO<a class="headerlink" href="#epica-4-ux-de-producto-uxo-11-uxo-20-nuevo" title="Permanent link">&para;</a></h3>
+<p><strong>UXO-11: Estados vacíos por módulo (con CTA útil)</strong>
+- Como usuario quiero que cuando un módulo está vacío muestre un estado especial con acción clara
+- Para saber qué hacer en vez de ver una pantalla en blanco que parece rota
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P2</p>
+<p><strong>UXO-12: Manejo consistente de errores (toasts/codes)</strong>
+- Como usuario quiero que los errores se muestren de forma consistente (toast con mensaje y código) en toda la app
+- Para entender qué pasó y reportarlo si necesito ayuda
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P1</p>
+<p><strong>UXO-13: Deshacer/rehacer (acciones críticas)</strong>
+- Como usuario quiero un "Deshacer" (Ctrl+Z o toast con botón) después de borrar o mover algo
+- Para corregir errores sin entrar en pánico por haber borrado sin querer
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P2</p>
+<p><strong>UXO-14: Bulk actions (seleccionar 20 items y operar)</strong>
+- Como usuario quiero seleccionar múltiples items/tareas y aplicar una acción en lote (borrar, categorizar, mover)
+- Para gestionar datos masivamente sin hacer click 20 veces
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P2</p>
+<p><strong>UXO-15: Import wizard UX (CSV/Excel → mapping)</strong>
+- Como usuario quiero un wizard visual que me guíe para importar datos, mapeando columnas Excel a campos de ECO
+- Para importar sin conocimientos técnicos ni plantillas rígidas
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P2</p>
+<p><strong>UXO-16: Centro de ayuda/FAQ interno + "report issue"</strong>
+- Como usuario quiero acceder a un FAQ/ayuda dentro de la app y reportar problemas directamente
+- Para resolver dudas sin salir de ECO y reportar bugs con contexto automático
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P3</p>
+<p><strong>UXO-17: Búsqueda omnibox (tipo Spotlight/Command-K)</strong>
+- Como usuario quiero un buscador global (Ctrl+K) que encuentre tareas, items, recetas, registros y comandos
+- Para encontrar cualquier cosa en ECO en 2 segundos sin navegar por menús
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P2</p>
+<p><strong>UXO-18: Atajos configurables por usuario</strong>
+- Como usuario quiero personalizar los atajos de teclado según mi preferencia
+- Para adaptar la productividad a mi flujo personal (ej: vim-like, emacs-like)
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P3</p>
+<p><strong>UXO-19: "Focus mode" (solo hoy / solo urgentes)</strong>
+- Como usuario quiero activar un modo enfocado que oculte todo menos lo urgente o lo de hoy
+- Para concentrarme sin distraerme con tareas futuras o módulos que no necesito ahora
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P3</p>
+<p><strong>UXO-20: Layout responsive pro (mobile-first real)</strong>
+- Como usuario quiero que toda la app funcione perfectamente en mobile con gestos y layout adaptado
+- Para usar ECO como app principal en el celular, no solo una versión "achicada" del desktop
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P2</p>
+<hr />
+<h1 id="infraestructura-y-devops-18-historias">🏗️ INFRAESTRUCTURA Y DEVOPS (18 historias)<a class="headerlink" href="#infraestructura-y-devops-18-historias" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>Lo que el usuario no ve pero lo salva en producción: monitoreo, CI/CD, cache, feature flags, jobs, observabilidad y costos.</p>
+</blockquote>
+<hr />
+<h3 id="epica-1-monitoreo-inf-01-inf-03">Épica 1: Monitoreo (INF-01 → INF-03)<a class="headerlink" href="#epica-1-monitoreo-inf-01-inf-03" title="Permanent link">&para;</a></h3>
+<p><strong>INF-01: Logs centralizados (Sentry/LogRocket)</strong>
+- Como desarrollador quiero ver errores de producción centralizados en Sentry con contexto (usuario, request, stack)
+- Para diagnosticar bugs sin pedirle al usuario que reproduzca el problema
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P2</p>
+<p><strong>INF-02: Monitoreo de performance (Lighthouse CI)</strong>
+- Como desarrollador quiero medir performance en cada deploy con Lighthouse CI
+- Para detectar regresiones de velocidad antes de que el usuario las note
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P3</p>
+<p><strong>INF-03: Alertas de uptime (cuando cae el servicio)</strong>
+- Como admin quiero recibir alerta instantánea si la app cae o responde lento
+- Para enterarme del downtime antes que los usuarios
+- <strong>Estimación:</strong> S | <strong>Prioridad:</strong> P2</p>
+<hr />
+<h3 id="epica-2-cicd-inf-04-inf-06">Épica 2: CI/CD (INF-04 → INF-06)<a class="headerlink" href="#epica-2-cicd-inf-04-inf-06" title="Permanent link">&para;</a></h3>
+<p><strong>INF-04: Tests E2E automatizados (Playwright)</strong>
+- Como desarrollador quiero tests E2E automatizados que validen flujos completos (login → crear tarea → completar)
+- Para detectar bugs de integración que los unit tests no cubren
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P2</p>
+<p><strong>INF-05: Preview deployments por PR</strong>
+- Como desarrollador quiero un preview automático por cada PR abierto
+- Para que reviewers prueben cambios en un entorno real sin mergear a main
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P3</p>
+<p><strong>INF-06: Rollback automático si tests fallan</strong>
+- Como desarrollador quiero que se revierta el deploy automáticamente si tests post-deploy fallan
+- Para que una regresión no quede en producción más de unos minutos
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P3</p>
+<hr />
+<h3 id="epica-3-escalabilidad-inf-07-inf-08">Épica 3: Escalabilidad (INF-07 → INF-08)<a class="headerlink" href="#epica-3-escalabilidad-inf-07-inf-08" title="Permanent link">&para;</a></h3>
+<p><strong>INF-07: Cache de queries pesadas (Redis)</strong>
+- Como desarrollador quiero cachear queries lentas (dashboard, reportes, stats) en Redis con TTL
+- Para mejorar velocidad de respuesta en las vistas más usadas
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P3</p>
+<p><strong>INF-08: CDN para assets estáticos</strong>
+- Como usuario quiero que imágenes y assets carguen desde CDN geográficamente distribuido
+- Para tener carga rápida independientemente de mi ubicación
+- <strong>Estimación:</strong> S | <strong>Prioridad:</strong> P3</p>
+<hr />
+<h3 id="epica-4-pipeline-y-entorno-inf-09-inf-13-nuevo">Épica 4: Pipeline y Entorno (INF-09 → INF-13) ✨ NUEVO<a class="headerlink" href="#epica-4-pipeline-y-entorno-inf-09-inf-13-nuevo" title="Permanent link">&para;</a></h3>
+<p><strong>INF-09: Gestión de secretos por entorno (Vault/Supabase secrets)</strong>
+- Como desarrollador quiero que los secretos (API keys, DB passwords) estén en un vault por entorno (dev/staging/prod)
+- Para no hardcodear secretos ni compartirlos por Slack
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P1</p>
+<p><strong>INF-10: Migraciones DB en CI/CD con rollback seguro</strong>
+- Como desarrollador quiero que las migraciones Prisma se ejecuten automáticamente en CI/CD con posibilidad de rollback
+- Para que los deploys no requieran pasos manuales de DB y un error de migración no destruya prod
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P1</p>
+<p><strong>INF-11: Jobs/colas (background worker) con monitoreo</strong>
+- Como desarrollador quiero un sistema de cola de jobs (Bull/BullMQ) con dashboard de monitoreo
+- Para procesar backups, emails, imports y tareas pesadas sin bloquear el request del usuario
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P1</p>
+<p><strong>INF-12: Feature flags (activar/desactivar features)</strong>
+- Como desarrollador quiero activar/desactivar features progresivamente por usuario o porcentaje
+- Para lanzar features experimentales sin riesgo y hacer rollback instantáneo si fallan
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P2</p>
+<p><strong>INF-13: Config central (remote config)</strong>
+- Como admin quiero cambiar configuración de la app sin re-deploy (límites, textos, flags)
+- Para ajustar parámetros operativos en caliente
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P3</p>
+<hr />
+<h3 id="epica-5-observabilidad-y-costos-inf-14-inf-18-nuevo">Épica 5: Observabilidad y Costos (INF-14 → INF-18) ✨ NUEVO<a class="headerlink" href="#epica-5-observabilidad-y-costos-inf-14-inf-18-nuevo" title="Permanent link">&para;</a></h3>
+<p><strong>INF-14: Cost monitoring + alertas (infra + APIs)</strong>
+- Como admin quiero dashboard de costos de infraestructura y APIs externas con alertas por umbral
+- Para detectar si un bug o un abuso está generando costos inesperados
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P2</p>
+<p><strong>INF-15: SLO/SLI (latencia, errores, uptime)</strong>
+- Como equipo quiero definir SLOs (99.5% uptime, p95 &lt;500ms) con métricas automatizadas
+- Para medir objetivamente la salud del servicio y priorizar deuda técnica
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P2</p>
+<p><strong>INF-16: Observabilidad de cron/jobs (éxito/falla/duración)</strong>
+- Como desarrollador quiero ver el estado de cada job/cron (éxito, falla, duración, última ejecución)
+- Para detectar jobs silenciosamente rotos que nadie nota hasta que el backup lleva 3 semanas sin correr
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P2</p>
+<p><strong>INF-17: Load testing (k6) para endpoints críticos</strong>
+- Como desarrollador quiero correr tests de carga automatizados en staging antes de cada release
+- Para verificar que los cambios no rompan performance bajo carga real
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P3</p>
+<p><strong>INF-18: Gestión de logs sensibles (redaction)</strong>
+- Como desarrollador quiero que los logs redacten automáticamente datos sensibles (passwords, tokens, PII)
+- Para que un acceso a logs no exponga datos de usuario
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P2</p>
+<hr />
+<h1 id="datos-busqueda-y-conocimiento-10-historias-nuevo">🧠 DATOS, BÚSQUEDA Y CONOCIMIENTO (10 historias) ✨ NUEVO<a class="headerlink" href="#datos-busqueda-y-conocimiento-10-historias-nuevo" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>La capa de datos transversal: búsqueda global, timeline unificada, relaciones entre entidades, tags compartidos y motor de recomendaciones. Lo que conecta los módulos.</p>
+</blockquote>
+<hr />
+<h3 id="epica-1-busqueda-e-indice-dat-01-dat-03">Épica 1: Búsqueda e Índice (DAT-01 → DAT-03)<a class="headerlink" href="#epica-1-busqueda-e-indice-dat-01-dat-03" title="Permanent link">&para;</a></h3>
+<p><strong>DAT-01: Búsqueda global real (full-text + filtros + ranking)</strong>
+- Como usuario quiero buscar en todo ECO con un solo campo de texto, con resultados rankeados por relevancia
+- Para encontrar "leche" y ver el item de ALACENA, la tarea de MANTIA, la receta de milanesas y el gasto de FINANCIA — todo junto
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P1</p>
+<p><strong>DAT-02: Índice unificado de entidades (items/tareas/recetas/personas)</strong>
+- Como sistema quiero un índice unificado de todas las entidades de todos los módulos
+- Para alimentar búsqueda global, timeline, relaciones y autocompletados de forma consistente
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P2</p>
+<p><strong>DAT-03: Timeline transversal (eventos de todos los módulos)</strong>
+- Como usuario quiero ver una línea de tiempo que muestre eventos de todos los módulos en orden cronológico
+- Para ver "un día como hoy" con las tareas que hice, lo que comí, mis registros de salud, los gastos y lo que escribí en HUESHA
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P1</p>
+<hr />
+<h3 id="epica-2-calidad-de-datos-dat-04-dat-05">Épica 2: Calidad de Datos (DAT-04 → DAT-05)<a class="headerlink" href="#epica-2-calidad-de-datos-dat-04-dat-05" title="Permanent link">&para;</a></h3>
+<p><strong>DAT-04: Dedupe/merge de entidades (evitar duplicados)</strong>
+- Como usuario quiero que el sistema detecte entidades duplicadas y me ofrezca fusionarlas
+- Para no tener "Leche" y "leche descremada" como items separados cuando son lo mismo
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P2</p>
+<p><strong>DAT-05: Etiquetas globales (tags) reutilizables por módulos</strong>
+- Como usuario quiero crear tags que se puedan usar en cualquier módulo (ej: "urgente", "para el finde", "viaje")
+- Para categorizar transversalmente y filtrar por contexto sin importar el módulo
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P2</p>
+<hr />
+<h3 id="epica-3-relaciones-y-conocimiento-dat-06-dat-10">Épica 3: Relaciones y Conocimiento (DAT-06 → DAT-10)<a class="headerlink" href="#epica-3-relaciones-y-conocimiento-dat-06-dat-10" title="Permanent link">&para;</a></h3>
+<p><strong>DAT-06: Motor de relaciones (item↔receta↔compra↔salud)</strong>
+- Como sistema quiero modelar relaciones explícitas entre entidades de distintos módulos
+- Para conectar "compré leche" (FINANCIA) con "leche en stock" (ALACENA) con "receta de flan" con "gasto en lácteos"
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P2</p>
+<p><strong>DAT-07: Auditoría de cambios por entidad (diff + historial)</strong>
+- Como usuario quiero ver el historial de cambios de cualquier entidad (quién cambió qué, cuándo y valor anterior)
+- Para entender cómo evolucionó un dato y deshacer cambios no deseados
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P2</p>
+<p><strong>DAT-08: "Snapshots" de estado (qué había en el freezer tal día)</strong>
+- Como usuario quiero consultar el estado del inventario en una fecha pasada
+- Para responder "¿qué teníamos en el freezer el 15 de enero?" sin depender de mi memoria
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P3</p>
+<p><strong>DAT-09: Motor de recomendaciones transversal (basado en historial)</strong>
+- Como usuario quiero que ECO me recomiende acciones basándose en mis patrones
+- Para recibir sugerencias tipo "solés comprar café los viernes, ¿agregamos a la lista?"
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P3</p>
+<p><strong>DAT-10: Export de grafo de conocimiento (para análisis personal)</strong>
+- Como usuario quiero exportar las relaciones entre entidades como grafo (JSON-LD o similar)
+- Para visualizar o analizar las conexiones de mi vida doméstica con herramientas externas
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P3</p>
+<hr />
+<h1 id="integraciones-externas-10-historias-nuevo">🔌 INTEGRACIONES EXTERNAS (10 historias) ✨ NUEVO<a class="headerlink" href="#integraciones-externas-10-historias-nuevo" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>Conectores con servicios externos. No reemplazamos el servicio: capturamos metadata relevante para que ECO tenga contexto completo del día/vida.</p>
+</blockquote>
+<hr />
+<h3 id="epica-1-google-workspace-int-01-int-03">Épica 1: Google Workspace (INT-01 → INT-03)<a class="headerlink" href="#epica-1-google-workspace-int-01-int-03" title="Permanent link">&para;</a></h3>
+<p><strong>INT-01: Conectar Google (OAuth) para Gmail/Calendar</strong>
+- Como usuario quiero autorizar mi cuenta Google para que ECO acceda a Calendar y Gmail (lectura)
+- Para centralizar eventos y emails relevantes en la timeline de ECO
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P2</p>
+<p><strong>INT-02: Import de eventos de Calendar a timeline</strong>
+- Como usuario quiero que los eventos de mi Google Calendar aparezcan en la timeline transversal
+- Para ver "tenía reunión de 10 a 11" junto a lo que cociné, registré de salud o gasté: el día completo
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P2</p>
+<p><strong>INT-03: Import de emails "relevantes" a timeline (opt-in)</strong>
+- Como usuario quiero marcar ciertos emails para que se importen como referencia en la timeline
+- Para capturar recibos, confirmaciones de turno o info importante sin copiar manualmente
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P3</p>
+<hr />
+<h3 id="epica-2-entretenimiento-y-cultura-int-04-int-06">Épica 2: Entretenimiento y Cultura (INT-04 → INT-06)<a class="headerlink" href="#epica-2-entretenimiento-y-cultura-int-04-int-06" title="Permanent link">&para;</a></h3>
+<p><strong>INT-04: Spotify: guardar discos escuchados y linkear a día</strong>
+- Como usuario quiero que ECO capture lo que escuché en Spotify y lo vincule al día en HUESHA
+- Para que mi timeline tenga contexto musical: "ese día escuché Spinetta"
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P3</p>
+<p><strong>INT-05: Letterboxd: sync de películas vistas + ratings</strong>
+- Como usuario quiero sincronizar mi historial de Letterboxd con HUESHA
+- Para que las películas que vi aparezcan automáticamente en mi línea de vida sin duplicar carga
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P3</p>
+<p><strong>INT-06: YouTube: registrar videos vistos (historial)</strong>
+- Como usuario quiero importar mi historial de YouTube como metadata
+- Para recordar qué documentales o charlas vi en un período
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P4</p>
+<hr />
+<h3 id="epica-3-mensajeria-y-dispositivos-int-07-int-08">Épica 3: Mensajería y Dispositivos (INT-07 → INT-08)<a class="headerlink" href="#epica-3-mensajeria-y-dispositivos-int-07-int-08" title="Permanent link">&para;</a></h3>
+<p><strong>INT-07: WhatsApp: importar exports y mapear contactos</strong>
+- Como usuario quiero importar conversaciones exportadas de WhatsApp y vincularlas a personas conocidas
+- Para que las comunicaciones archivadas en HUESHA tengan contexto real (quién, cuándo, sobre qué)
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P2</p>
+<p><strong>INT-08: Home Assistant: eventos (sensores) a timeline</strong>
+- Como usuario quiero que eventos de Home Assistant (sensor de puerta, temperatura, presencia) se registren en ECO
+- Para cruzar "la casa estuvo a 35°C" con "ese día me sentí mal" y encontrar correlaciones
+- <strong>Estimación:</strong> XL | <strong>Prioridad:</strong> P3</p>
+<hr />
+<h3 id="epica-4-plataforma-de-integraciones-int-09-int-10">Épica 4: Plataforma de Integraciones (INT-09 → INT-10)<a class="headerlink" href="#epica-4-plataforma-de-integraciones-int-09-int-10" title="Permanent link">&para;</a></h3>
+<p><strong>INT-09: Webhooks genéricos entrantes (IFTTT/Zapier-like)</strong>
+- Como usuario quiero configurar webhooks entrantes que creen entidades en ECO al recibir payload
+- Para conectar cualquier servicio externo sin desarrollo custom (ej: "cuando Mercado Libre confirma compra → crear gasto en FINANCIA")
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P3</p>
+<p><strong>INT-10: Conectores "pluggable" (framework para nuevas integraciones)</strong>
+- Como desarrollador quiero un framework de conectores con interfaz estándar (auth, sync, mapping)
+- Para que agregar una integración nueva (ej: Goodreads, Strava) sea implementar una interfaz, no reescribir todo
+- <strong>Estimación:</strong> XL | <strong>Prioridad:</strong> P3</p>
+<hr />
+<h1 id="gobernanza-cumplimiento-y-politica-de-datos-6-historias-nuevo">🏛️ GOBERNANZA, CUMPLIMIENTO Y POLÍTICA DE DATOS (6 historias) ✨ NUEVO<a class="headerlink" href="#gobernanza-cumplimiento-y-politica-de-datos-6-historias-nuevo" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>Transparencia, consentimiento y control real del usuario sobre sus datos. No es "compliance checkbox": es confianza.</p>
+</blockquote>
+<hr />
+<h3 id="epica-1-transparencia-y-consentimiento-gov-01-gov-02">Épica 1: Transparencia y Consentimiento (GOV-01 → GOV-02)<a class="headerlink" href="#epica-1-transparencia-y-consentimiento-gov-01-gov-02" title="Permanent link">&para;</a></h3>
+<p><strong>GOV-01: Centro de privacidad: qué se guarda y por qué</strong>
+- Como usuario quiero ver un panel claro que explique qué datos guarda ECO, por qué, y por cuánto tiempo
+- Para confiar en el sistema sabiendo exactamente qué se almacena y dónde
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P2</p>
+<p><strong>GOV-02: Consentimiento por integración (scopes y revocación)</strong>
+- Como usuario quiero dar consentimiento explícito por cada integración y poder revocarlo en cualquier momento
+- Para controlar qué servicios externos acceden a mis datos y cortar acceso cuando quiera
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P2</p>
+<hr />
+<h3 id="epica-2-politicas-de-datos-gov-03-gov-04">Épica 2: Políticas de Datos (GOV-03 → GOV-04)<a class="headerlink" href="#epica-2-politicas-de-datos-gov-03-gov-04" title="Permanent link">&para;</a></h3>
+<p><strong>GOV-03: Retención por tipo de dato (logs, audios, etc.)</strong>
+- Como admin quiero definir políticas de retención diferentes por tipo de dato (logs 90 días, audios 1 año, salud indefinido)
+- Para cumplir regulaciones y no acumular datos innecesarios
+- <strong>Estimación:</strong> L | <strong>Prioridad:</strong> P2</p>
+<p><strong>GOV-04: Políticas de compartición (household vs privado)</strong>
+- Como usuario quiero definir qué datos son compartidos con el hogar y cuáles son estrictamente privados
+- Para que mi registro de salud mental o mis finanzas personales no sean visibles para otros del hogar
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P2</p>
+<hr />
+<h3 id="epica-3-export-y-modos-de-privacidad-gov-05-gov-06">Épica 3: Export y Modos de Privacidad (GOV-05 → GOV-06)<a class="headerlink" href="#epica-3-export-y-modos-de-privacidad-gov-05-gov-06" title="Permanent link">&para;</a></h3>
+<p><strong>GOV-05: Export "legible" (human-readable) además de JSON</strong>
+- Como usuario quiero que el export de mis datos incluya una versión legible (PDF/HTML) además del JSON técnico
+- Para poder leer mis datos sin herramientas de desarrollo
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P3</p>
+<p><strong>GOV-06: Modo "máxima privacidad" (desactiva features sensibles)</strong>
+- Como usuario quiero activar un modo de privacidad máxima que desactive tracking, integraciones y features que recolectan datos extra
+- Para usar ECO de forma minimalista sin compartir nada más allá de lo esencial
+- <strong>Estimación:</strong> M | <strong>Prioridad:</strong> P3</p>
+<hr />
+<h1 id="resumen-general">📊 RESUMEN GENERAL<a class="headerlink" href="#resumen-general" title="Permanent link">&para;</a></h1>
+<h2 id="distribucion-por-prioridad">Distribución por Prioridad<a class="headerlink" href="#distribucion-por-prioridad" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Prioridad</th>
+<th>Cantidad</th>
+<th>Porcentaje</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>P1</strong></td>
+<td>28</td>
+<td>14%</td>
+</tr>
+<tr>
+<td><strong>P2</strong></td>
+<td>95</td>
+<td>47%</td>
+</tr>
+<tr>
+<td><strong>P3</strong></td>
+<td>72</td>
+<td>36%</td>
+</tr>
+<tr>
+<td><strong>P4</strong></td>
+<td>7</td>
+<td>3%</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>202</strong></td>
+<td>100%</td>
+</tr>
+</tbody>
+</table>
+<h2 id="estimacion-por-area">Estimación por Área<a class="headerlink" href="#estimacion-por-area" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Área</th>
+<th>Historias</th>
+<th>S</th>
+<th>M</th>
+<th>L</th>
+<th>XL</th>
+<th>Horas aprox</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>API para IA</td>
+<td>30</td>
+<td>3</td>
+<td>16</td>
+<td>10</td>
+<td>1</td>
+<td>~200h</td>
+</tr>
+<tr>
+<td>Agente Conversacional</td>
+<td>30</td>
+<td>7</td>
+<td>11</td>
+<td>8</td>
+<td>4</td>
+<td>~233h</td>
+</tr>
+<tr>
+<td>Multi-usuario y Roles</td>
+<td>20</td>
+<td>3</td>
+<td>10</td>
+<td>7</td>
+<td>0</td>
+<td>~135h</td>
+</tr>
+<tr>
+<td>Notificaciones</td>
+<td>20</td>
+<td>4</td>
+<td>9</td>
+<td>5</td>
+<td>2</td>
+<td>~121h</td>
+</tr>
+<tr>
+<td>Backups y Exportación</td>
+<td>18</td>
+<td>1</td>
+<td>10</td>
+<td>5</td>
+<td>2</td>
+<td>~118h</td>
+</tr>
+<tr>
+<td>Seguridad y Admin</td>
+<td>20</td>
+<td>3</td>
+<td>7</td>
+<td>10</td>
+<td>0</td>
+<td>~143h</td>
+</tr>
+<tr>
+<td>UX y Onboarding</td>
+<td>20</td>
+<td>3</td>
+<td>7</td>
+<td>8</td>
+<td>2</td>
+<td>~143h</td>
+</tr>
+<tr>
+<td>Infraestructura</td>
+<td>18</td>
+<td>1</td>
+<td>9</td>
+<td>6</td>
+<td>2</td>
+<td>~122h</td>
+</tr>
+<tr>
+<td>Datos y Conocimiento</td>
+<td>10</td>
+<td>0</td>
+<td>3</td>
+<td>7</td>
+<td>0</td>
+<td>~88h</td>
+</tr>
+<tr>
+<td>Integraciones Externas</td>
+<td>10</td>
+<td>0</td>
+<td>1</td>
+<td>7</td>
+<td>2</td>
+<td>~116h</td>
+</tr>
+<tr>
+<td>Gobernanza</td>
+<td>6</td>
+<td>0</td>
+<td>5</td>
+<td>1</td>
+<td>0</td>
+<td>~40h</td>
+</tr>
+<tr>
+<td><strong>TOTAL</strong></td>
+<td><strong>202</strong></td>
+<td><strong>25</strong></td>
+<td><strong>88</strong></td>
+<td><strong>74</strong></td>
+<td><strong>15</strong></td>
+<td><strong>~1,459h</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="totales-del-proyecto-eco-todas-las-historias">Totales del Proyecto ECO (todas las historias)<a class="headerlink" href="#totales-del-proyecto-eco-todas-las-historias" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Módulo/Área</th>
+<th>Historias</th>
+<th>Horas aprox</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MANTIA</td>
+<td>100</td>
+<td>~598h</td>
+</tr>
+<tr>
+<td>ALACENA</td>
+<td>100</td>
+<td>~548h</td>
+</tr>
+<tr>
+<td>ECOSALUD</td>
+<td>100</td>
+<td>~621h</td>
+</tr>
+<tr>
+<td>Lista de Compras</td>
+<td>36</td>
+<td>~294h</td>
+</tr>
+<tr>
+<td>HUESHA</td>
+<td>100</td>
+<td>~542h</td>
+</tr>
+<tr>
+<td>FINANCIA</td>
+<td>100</td>
+<td>~503h</td>
+</tr>
+<tr>
+<td><strong>Transversales</strong></td>
+<td><strong>202</strong></td>
+<td><strong>~1,459h</strong></td>
+</tr>
+<tr>
+<td><strong>TOTAL ECO</strong></td>
+<td><strong>738</strong></td>
+<td><strong>~4,565h</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><em>Archivo generado el 6 de febrero de 2026 — Sprint 0, Sesión 7</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Pie" >
+        
+          
+          <a href="../financia/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: 💰 FINANCIA (100)">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                💰 FINANCIA (100)
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../flujo-gestion-historias/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Workflow">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              <div class="md-ellipsis">
+                Workflow
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Fran Alberio
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/falberio/eco" target="_blank" rel="noopener" title="GitHub Repository" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://eco-app.vercel.app" target="_blank" rel="noopener" title="Frontend en Producción" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M351.9 280H161c2.9 64.5 17.2 123.9 37.5 167.4 11.4 24.5 23.7 41.8 35.1 52.4 11.2 10.5 18.9 12.2 22.9 12.2s11.7-1.7 22.9-12.2c11.4-10.6 23.7-28 35.1-52.4 20.3-43.5 34.6-102.9 37.5-167.4zm-191-48h190.9c-2.8-64.5-17.1-123.9-37.4-167.4-11.4-24.4-23.7-41.8-35.1-52.4C268.1 1.7 260.4 0 256.4 0s-11.7 1.7-22.9 12.2c-11.4 10.6-23.7 28-35.1 52.4-20.3 43.5-34.6 102.9-37.5 167.4m-48 0c3.5-85.6 25.6-165.1 57.9-217.3C78.7 47.3 10.9 131.2 1.5 232zM1.5 280c9.4 100.8 77.2 184.7 169.3 217.3-32.3-52.2-54.4-131.7-57.9-217.3zm398.4 0c-3.5 85.6-25.6 165.1-57.9 217.3 92.1-32.7 159.9-116.5 169.3-217.3zm111.4-48C501.9 131.2 434.1 47.3 342 14.7c32.3 52.2 54.4 131.7 57.9 217.3z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.sections", "navigation.path", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.action.edit", "content.action.view", "content.tabs.link", "content.tooltips", "announce.dismiss"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../javascripts/extra.js"></script>
+      
+        <script src="../../../javascripts/historias-data.js"></script>
+      
+    
+  </body>
+</html>
