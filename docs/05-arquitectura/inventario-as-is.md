@@ -15,8 +15,8 @@ Estado real del ecosistema ECO según el sistema actual en producción. **No es 
 
 | Servicio | URL | Estado |
 |----------|-----|--------|
-| **Frontend** | https://alacena-blush.vercel.app | ✅ Activo |
-| **Backend API** | https://alacena-backend.fly.dev | ✅ Activo |
+| **Frontend** | https://eco-app.vercel.app | ✅ Activo |
+| **Backend API** | https://eco-backend.fly.dev | ✅ Activo |
 | **Database** | Supabase PostgreSQL | ✅ Activo |
 | **Media** | Cloudinary | ✅ Activo |
 
@@ -31,7 +31,7 @@ Estado real del ecosistema ECO según el sistema actual en producción. **No es 
 
 ### Hosting & Deploy
 - **Proveedor:** Vercel
-- **URL producción:** https://alacena-blush.vercel.app
+- **URL producción:** https://eco-app.vercel.app
 - **Branch principal:** main
 - **Auto-deploy:** ✅ Habilitado en push a main
 - **Preview deploys:** ✅ Habilitado en PRs
@@ -46,7 +46,7 @@ Estado real del ecosistema ECO según el sistema actual en producción. **No es 
 
 ### Variables de Entorno (Vercel)
 ```bash
-NEXT_PUBLIC_API_URL=https://alacena-backend.fly.dev
+NEXT_PUBLIC_API_URL=https://eco-backend.fly.dev
 NEXT_PUBLIC_AUTH_SECRET=[secret]
 NEXT_PUBLIC_NEXTAUTH_SECRET=[secret]
 ```
@@ -68,7 +68,7 @@ NEXT_PUBLIC_NEXTAUTH_SECRET=[secret]
 
 ### Hosting & Deploy
 - **Proveedor:** Fly.io
-- **URL producción:** https://alacena-backend.fly.dev
+- **URL producción:** https://eco-backend.fly.dev
 - **Branch principal:** main
 - **Deploy:** Manual via `fly deploy`
 - **Región:** Miami (mia)

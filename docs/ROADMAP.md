@@ -290,7 +290,7 @@ git push origin main
 ### Deploy Strategy
 - **Desarrollo:** Local (localhost:3000)
 - **Staging:** Vercel preview deployments (automático en PRs)
-- **Production:** Main branch → auto-deploy a alacena-blush.vercel.app
+- **Production:** Main branch → auto-deploy a eco-app.vercel.app
 
 ---
 

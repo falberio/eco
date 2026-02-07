@@ -6,16 +6,16 @@ Para que el proyecto funcione en producción, debes agregar estas variables en V
 
 ### 1. Abre Vercel Dashboard
 - Ve a https://vercel.com/dashboard
-- Selecciona el proyecto `alacena-frontend`
+- Selecciona el proyecto `eco-app`
 
 ### 2. Settings → Environment Variables
 
 Agrega estas variables:
 
 ```
-NEXTAUTH_URL = https://alacena-frontend.vercel.app
+NEXTAUTH_URL = https://eco-app.vercel.app
 NEXTAUTH_SECRET = tu-secret-key-aqui-cambialo-en-produccion
-NEXT_PUBLIC_API_URL = https://alacena-backend.fly.dev
+NEXT_PUBLIC_API_URL = https://eco-backend.fly.dev
 ```
 
 ### 3. Generar NEXTAUTH_SECRET
@@ -54,7 +54,7 @@ Sin `NEXTAUTH_URL` y `NEXTAUTH_SECRET`:
 ## Verificar que funciona
 
 Después de redeploy (2-3 min):
-1. Ve a https://alacena-frontend.vercel.app
+1. Ve a https://eco-app.vercel.app
 2. Deberías ser redirigido a `/login`
 3. Intenta login con: admin@alacena.com / admin123
 4. Deberías entrar al dashboard

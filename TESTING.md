@@ -19,7 +19,7 @@ Se optimizaron dos problemas críticos reportados:
 ## 🧪 Cómo Probar
 
 ### Opción 1: Probar en Producción
-1. Abre https://alacena-frontend.vercel.app/login
+1. Abre https://eco-app.vercel.app/login
 2. Login con:
    - Email: `admin@alacena.com`
    - Password: `admin123`
@@ -100,7 +100,7 @@ Archivos Agregados:
 ### Problema: Error sigue siendo genérico
 - [ ] Revisa la consola (F12 → Console)
 - [ ] Copia el error completo y búscalo en QUICK_REFERENCE.md
-- [ ] Verifica que el backend está activo: https://alacena-backend.fly.dev/health
+- [ ] Verifica que el backend está activo: https://eco-backend.fly.dev/health
 
 ---
 
@@ -139,8 +139,8 @@ Una vez verificado que funciona:
 
 ---
 
-**Desplegado en**: https://alacena-frontend.vercel.app
-**Backend corriendo en**: https://alacena-backend.fly.dev
+**Desplegado en**: https://eco-app.vercel.app
+**Backend corriendo en**: https://eco-backend.fly.dev
 **Estado**: ✅ En Vivo
 
 Última actualización: 17 Enero 2026 - 05:35 UTC

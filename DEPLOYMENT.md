@@ -10,9 +10,9 @@
 
 | Servicio | Proveedor | URL | Estado |
 |----------|-----------|-----|--------|
-| Frontend - Alacena | Vercel | https://alacena-frontend.vercel.app | ✅ Online |
+| Frontend - Alacena | Vercel | https://eco-app.vercel.app | ✅ Online |
 | Frontend - Mantia | Vercel | - | 🏗️ Pendiente |
-| Backend API | Fly.io | https://alacena-backend.fly.dev | ✅ Online |
+| Backend API | Fly.io | https://eco-backend.fly.dev | ✅ Online |
 | Base de Datos | Fly.io Postgres | (interno) | ✅ Online |
 
 ---
@@ -21,8 +21,8 @@
 
 ### Alacena App
 
-**Proyecto:** alacena-frontend  
-**URL Producción:** https://alacena-frontend.vercel.app  
+**Proyecto:** eco-app  
+**URL Producción:** https://eco-app.vercel.app  
 **Root Directory:** `frontend/alacena-app`
 
 #### Variables de Entorno (Vercel)
@@ -30,9 +30,9 @@
 Configurar en: Project Settings → Environment Variables
 
 ```env
-NEXT_PUBLIC_API_URL=https://alacena-backend.fly.dev
+NEXT_PUBLIC_API_URL=https://eco-backend.fly.dev
 NEXTAUTH_SECRET=<secreto_seguro_generado>
-NEXTAUTH_URL=https://alacena-frontend.vercel.app
+NEXTAUTH_URL=https://eco-app.vercel.app
 ```
 
 #### Deploy Manual
@@ -55,8 +55,8 @@ git push origin main
 #### Ver Logs
 
 ```bash
-vercel logs alacena-frontend
-# O en dashboard: https://vercel.com/usuario/alacena-frontend
+vercel logs eco-app
+# O en dashboard: https://vercel.com/usuario/eco-app
 ```
 
 ---
@@ -70,10 +70,10 @@ vercel logs alacena-frontend
 
 ## 🔧 Backend Deployment (Fly.io)
 
-### Alacena Backend
+### ECO Backend
 
-**App Name:** alacena-backend  
-**URL:** https://alacena-backend.fly.dev  
+**App Name:** eco-backend  
+**URL:** https://eco-backend.fly.dev  
 **Region:** ewr (US East)  
 **Docker:** Yes (ver Dockerfile en raíz de backend/)
 
@@ -88,15 +88,15 @@ vercel logs alacena-frontend
 Ejecuta estos comandos en la terminal:
 
 ```bash
-flyctl secrets set DATABASE_URL="postgresql://postgres:DjDK6YNUopieqRGW@[2600:1f18:2e13:9d1c:faba:208:6f00:de21]:5432/postgres?schema=public&sslmode=disable" -a alacena-backend
+flyctl secrets set DATABASE_URL="postgresql://postgres:DjDK6YNUopieqRGW@[2600:1f18:2e13:9d1c:faba:208:6f00:de21]:5432/postgres?schema=public&sslmode=disable" -a eco-backend
 
-flyctl secrets set JWT_SECRET="your-super-secret-jwt-key-change-in-production" -a alacena-backend
+flyctl secrets set JWT_SECRET="your-super-secret-jwt-key-change-in-production" -a eco-backend
 ```
 
 ### Verificar Secrets
 
 ```bash
-flyctl secrets list -a alacena-backend
+flyctl secrets list -a eco-backend
 ```
 
 Deberías ver:
@@ -112,19 +112,19 @@ git push
 
 O manualmente con:
 ```bash
-flyctl deploy -a alacena-backend
+flyctl deploy -a eco-backend
 ```
 
 ### Ver Logs
 
 ```bash
-flyctl logs -a alacena-backend
+flyctl logs -a eco-backend
 ```
 
 ### Health Check
 
 ```bash
-curl https://alacena-backend.fly.dev/health
+curl https://eco-backend.fly.dev/health
 ```
 
 Debería retornar:
@@ -135,7 +135,7 @@ Debería retornar:
 ### Test de Autenticación
 
 ```bash
-curl -X POST https://alacena-backend.fly.dev/api/auth/login \
+curl -X POST https://eco-backend.fly.dev/api/auth/login \
   -H "Content-Type: application/json" \
   -d '{"email":"admin@alacena.com","password":"admin123"}'
 ```
@@ -168,7 +168,7 @@ cd backend
 DATABASE_URL="postgresql://postgres:PASSWORD@localhost:5432/postgres" npx prisma migrate deploy
 
 # O SSH directo a app de backend
-flyctl ssh console -a alacena-backend
+flyctl ssh console -a eco-backend
 cd /app
 npx prisma migrate deploy
 ```
@@ -211,7 +211,7 @@ psql -h localhost -U postgres -d postgres < backup-20260125.sql
 node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
 
 # Actualizar en Fly.io
-flyctl secrets set JWT_SECRET="nuevo_secret_aqui" -a alacena-backend
+flyctl secrets set JWT_SECRET="nuevo_secret_aqui" -a eco-backend
 
 # Actualizar en código si es necesario
 ```
@@ -230,7 +230,7 @@ openssl rand -base64 32
 
 ### Backend Health
 
-**Endpoint:** `GET https://alacena-backend.fly.dev/health`
+**Endpoint:** `GET https://eco-backend.fly.dev/health`
 
 **Response esperado:**
 ```json
@@ -247,24 +247,24 @@ openssl rand -base64 32
 
 **Backend:**
 ```bash
-flyctl logs -a alacena-backend
-flyctl logs -a alacena-backend --follow  # Tiempo real
+flyctl logs -a eco-backend
+flyctl logs -a eco-backend --follow  # Tiempo real
 ```
 
 **Frontend:**
 ```bash
-vercel logs alacena-frontend
-vercel logs alacena-frontend --follow
+vercel logs eco-app
+vercel logs eco-app --follow
 ```
 
 ### Métricas
 
 **Fly.io:**
-- Dashboard: https://fly.io/dashboard/alacena-backend
+- Dashboard: https://fly.io/dashboard/eco-backend
 - CPU, RAM, Network usage
 
 **Vercel:**
-- Analytics: https://vercel.com/usuario/alacena-frontend/analytics
+- Analytics: https://vercel.com/usuario/eco-app/analytics
 - Bandwidth, función executions
 
 ---
@@ -275,7 +275,7 @@ vercel logs alacena-frontend --follow
 
 ```bash
 # Ver deployments
-vercel ls alacena-frontend
+vercel ls eco-app
 
 # Promover deployment anterior
 vercel promote <deployment-url> --scope=usuario
@@ -287,10 +287,10 @@ vercel promote <deployment-url> --scope=usuario
 
 ```bash
 # Ver releases
-flyctl releases -a alacena-backend
+flyctl releases -a eco-backend
 
 # Rollback a versión anterior
-flyctl releases rollback <version> -a alacena-backend
+flyctl releases rollback <version> -a eco-backend
 ```
 
 ---
@@ -318,7 +318,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: superfly/flyctl-actions/setup-flyctl@master
-      - run: flyctl deploy -a alacena-backend
+      - run: flyctl deploy -a eco-backend
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
 ```
@@ -353,7 +353,7 @@ Antes de hacer deploy a producción:
 3. Deploy backend (incluye todos los módulos):
    ```bash
    cd backend
-   flyctl deploy -a alacena-backend
+   flyctl deploy -a eco-backend
    ```
 
 ### Frontend
@@ -390,7 +390,7 @@ Antes de hacer deploy a producción:
 
 ```bash
 # Ver logs detallados
-flyctl logs -a alacena-backend
+flyctl logs -a eco-backend
 
 # Causas comunes:
 # - Migration falló → Ejecutar manualmente con SSH

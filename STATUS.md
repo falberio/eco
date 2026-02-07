@@ -1,4 +1,4 @@
-# 🧺 ALACENA - v1.1 EN PRODUCCIÓN ✅
+# 🌿 ECO Platform - v1.1 EN PRODUCCIÓN ✅
 
 **Última Actualización**: 24 Enero 2026 (Tarde)  
 **Estado**: 🚀 SISTEMA DE TARAS Y CONTROL MASIVO IMPLEMENTADO  
@@ -9,11 +9,11 @@
 ## 🎉 NUEVO: Sistema de Taras y Control de Stock Masivo
 
 ### URLs de Acceso Rápido
-- **Control de Stock Masivo:** https://alacena-blush.vercel.app/stock-control
-- **Códigos QR:** https://alacena-blush.vercel.app/qr-codes
-- **Menú con botones flotantes:** https://alacena-blush.vercel.app/guest/menu
-- **Frontend (Público):** https://alacena-blush.vercel.app
-- **Backend (API):** https://alacena-backend.fly.dev
+- **Control de Stock Masivo:** https://eco-app.vercel.app/stock-control
+- **Códigos QR:** https://eco-app.vercel.app/qr-codes
+- **Menú con botones flotantes:** https://eco-app.vercel.app/guest/menu
+- **Frontend (Público):** https://eco-app.vercel.app
+- **Backend (API):** https://eco-backend.fly.dev
 - **Database:** Supabase PostgreSQL (db.orqnbchxoqalghcaaajw.supabase.co)
 
 ### Credenciales de Prueba
@@ -65,8 +65,8 @@
 ## ✅ Completado en sesión anterior (24 Enero - Mañana)
 
 ### 🚀 Deploy Completo a Producción
-- ✅ **Backend deployado a Fly.io** (alacena-backend.fly.dev)
-- ✅ **Frontend deployado a Vercel** (alacena-blush.vercel.app)
+- ✅ **Backend deployado a Fly.io** (eco-backend.fly.dev)
+- ✅ **Frontend deployado a Vercel** (eco-app.vercel.app)
 - ✅ **Database migrada a Supabase PostgreSQL**
 - ✅ **Autenticación JWT funcionando end-to-end**
 - ✅ **CRUD de Items completamente funcional**
@@ -152,7 +152,7 @@
 
 ### Paso 1: Configurar secrets en Fly.io
 
-Abre https://fly.io/dashboard, ve a tu app `alacena-backend`, y en la sección "Secrets":
+Abre https://fly.io/dashboard, ve a tu app `eco-backend`, y en la sección "Secrets":
 
 Agrega estos 2 secretos:
 
@@ -172,7 +172,7 @@ El backend ya se deployó automáticamente con el git push.
 
 Verifica que esté corriendo:
 ```bash
-curl https://alacena-backend.fly.dev/health
+curl https://eco-backend.fly.dev/health
 ```
 
 Deberías ver:
@@ -183,7 +183,7 @@ Deberías ver:
 ### Paso 3: Testear Login
 
 ```bash
-curl -X POST https://alacena-backend.fly.dev/api/auth/login \
+curl -X POST https://eco-backend.fly.dev/api/auth/login \
   -H "Content-Type: application/json" \
   -d '{"email":"admin@alacena.com","password":"admin123"}'
 ```
@@ -194,7 +194,7 @@ Deberías recibir un response con JWT token y datos del usuario.
 
 La app frontend ya está en Vercel y se auto-deployó.
 
-Abre: https://alacena-frontend.vercel.app/login
+Abre: https://eco-app.vercel.app/login
 
 Credenciales de prueba:
 - Email: `admin@alacena.com`
@@ -203,11 +203,11 @@ Credenciales de prueba:
 ## 📍 URLs Finales
 
 ### Producción
-- **Frontend Home:** https://alacena-frontend.vercel.app/
-- **Frontend Login:** https://alacena-frontend.vercel.app/login
-- **Frontend Dashboard:** https://alacena-frontend.vercel.app/dashboard
-- **Backend API:** https://alacena-backend.fly.dev/
-- **Backend Health:** https://alacena-backend.fly.dev/health
+- **Frontend Home:** https://eco-app.vercel.app/
+- **Frontend Login:** https://eco-app.vercel.app/login
+- **Frontend Dashboard:** https://eco-app.vercel.app/dashboard
+- **Backend API:** https://eco-backend.fly.dev/
+- **Backend Health:** https://eco-backend.fly.dev/health
 
 ### Rutas de API disponibles
 - `POST /api/auth/register` - Registrar nuevo usuario

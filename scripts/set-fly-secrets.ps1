@@ -1,4 +1,4 @@
-# Script to set Fly.io secrets for Alacena backend
+# Script to set Fly.io secrets for ECO backend
 # Requiere: flyctl CLI instalado
 
 # Nota: Debes estar autenticado en Fly.io primero:
@@ -7,13 +7,13 @@
 # Luego ejecuta estos comandos:
 
 # 1. Set DATABASE_URL
-# flyctl secrets set DATABASE_URL="postgresql://postgres:DjDK6YNUopieqRGW@[2600:1f18:2e13:9d1c:faba:208:6f00:de21]:5432/postgres?schema=public&sslmode=disable" -a alacena-backend
+# flyctl secrets set DATABASE_URL="postgresql://postgres:DjDK6YNUopieqRGW@[2600:1f18:2e13:9d1c:faba:208:6f00:de21]:5432/postgres?schema=public&sslmode=disable" -a eco-backend
 
 # 2. Set JWT_SECRET  
-# flyctl secrets set JWT_SECRET="your-super-secret-jwt-key-change-in-production" -a alacena-backend
+# flyctl secrets set JWT_SECRET="your-super-secret-jwt-key-change-in-production" -a eco-backend
 
 # 3. View all secrets
-# flyctl secrets list -a alacena-backend
+# flyctl secrets list -a eco-backend
 
 # 4. Deploy
 # git push (o si usas Fly.io deploy automático con GitHub)
@@ -23,10 +23,10 @@ Write-Host "============================="
 Write-Host ""
 Write-Host "Execute these commands in PowerShell:"
 Write-Host ""
-Write-Host 'flyctl secrets set DATABASE_URL="postgresql://postgres:DjDK6YNUopieqRGW@[2600:1f18:2e13:9d1c:faba:208:6f00:de21]:5432/postgres?schema=public&sslmode=disable" -a alacena-backend'
+Write-Host 'flyctl secrets set DATABASE_URL="postgresql://postgres:DjDK6YNUopieqRGW@[2600:1f18:2e13:9d1c:faba:208:6f00:de21]:5432/postgres?schema=public&sslmode=disable" -a eco-backend'
 Write-Host ""
-Write-Host 'flyctl secrets set JWT_SECRET="your-super-secret-jwt-key-change-in-production" -a alacena-backend'
+Write-Host 'flyctl secrets set JWT_SECRET="your-super-secret-jwt-key-change-in-production" -a eco-backend'
 Write-Host ""
 Write-Host "Then verify with:"
 Write-Host ""
-Write-Host "flyctl secrets list -a alacena-backend"
+Write-Host "flyctl secrets list -a eco-backend"

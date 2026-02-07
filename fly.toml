@@ -1,5 +1,5 @@
 # fly.toml app configuration
-app = "alacena-backend"
+app = "eco-backend"
 primary_region = "gru"
 
 [build]

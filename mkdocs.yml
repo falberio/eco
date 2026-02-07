@@ -153,6 +153,7 @@ nav:
   - Referencia:
     - Glosario: glosario.md
     - FAQ: faq.md
+    - Setup Nueva PC: SETUP-NUEVA-PC.md
 
 # Custom CSS
 extra_css:

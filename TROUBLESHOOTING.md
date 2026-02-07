@@ -14,8 +14,8 @@
    - ✅ Solución: Ve a `/dashboard/items` y crea al menos un item primero
 
 4. **Errores de Backend**:
-   - ✅ Comprueba que `https://alacena-backend.fly.dev` está activo
-   - ✅ Revisa los logs en Fly.io: `flyctl logs -a alacena-backend`
+   - ✅ Comprueba que `https://eco-backend.fly.dev` está activo
+   - ✅ Revisa los logs en Fly.io: `flyctl logs -a eco-backend`
 
 5. **Base de datos desconectada**:
    - ✅ Verifica en Supabase que la base de datos está en línea
@@ -39,10 +39,10 @@
 
 | Servicio | URL |
 |----------|-----|
-| Frontend | https://alacena-frontend.vercel.app |
-| Backend | https://alacena-backend.fly.dev |
-| Health Check | https://alacena-backend.fly.dev/health |
-| API Docs | https://alacena-backend.fly.dev/api-docs |
+| Frontend | https://eco-app.vercel.app |
+| Backend | https://eco-backend.fly.dev |
+| Health Check | https://eco-backend.fly.dev/health |
+| API Docs | https://eco-backend.fly.dev/api-docs |
 
 ## Test Login:
 
@@ -55,16 +55,16 @@ Password: admin123
 
 ```bash
 # Backend logs
-flyctl logs -a alacena-backend
+flyctl logs -a eco-backend
 
 # Check database connection
-curl https://alacena-backend.fly.dev/health
+curl https://eco-backend.fly.dev/health
 
 # Test API
-curl https://alacena-backend.fly.dev/api/items
+curl https://eco-backend.fly.dev/api/items
 
 # See frontend deployment logs
-vercel logs --project alacena-frontend
+vercel logs --project eco-app
 ```
 
 ## Contacto:

@@ -1,22 +1,22 @@
-# 🚀 ALACENA - Getting Started para Próximas Sesiones
+# 🚀 ECO Platform - Getting Started para Próximas Sesiones
 
 ## ⚡ Quick Start (Primera cosa que revisar)
 
 ### 1. Estado Actual (17 de Enero 2026)
 **Status:** ✅ Full-stack deployado a producción
 
-- ✅ Backend (Express) en **Fly.io**: https://alacena-backend.fly.dev
-- ✅ Frontend (Next.js) en **Vercel**: https://alacena-frontend.vercel.app
+- ✅ Backend (Express) en **Fly.io**: https://eco-backend.fly.dev
+- ✅ Frontend (Next.js) en **Vercel**: https://eco-app.vercel.app
 - ✅ DB (PostgreSQL) en **Supabase**: Conectada y sincronizada
 - ✅ Autenticación (NextAuth v5 + JWT): Funcional
 - ✅ Dashboard admin (4 CRUD): Items, Locations, Reserves, Menu
 
 ### 2. URLs Principales
 ```
-Frontend:     https://alacena-frontend.vercel.app
-Dashboard:    https://alacena-frontend.vercel.app/dashboard
-Backend API:  https://alacena-backend.fly.dev
-API Health:   https://alacena-backend.fly.dev/health
+Frontend:     https://eco-app.vercel.app
+Dashboard:    https://eco-app.vercel.app/dashboard
+Backend API:  https://eco-backend.fly.dev
+API Health:   https://eco-backend.fly.dev/health
 ```
 
 ### 3. Credenciales de Prueba
@@ -47,7 +47,7 @@ Password: admin123
 
 2. **Verifico que esté deployado:**
    ```bash
-   # Abre en navegador: https://alacena-backend.fly.dev/health
+   # Abre en navegador: https://eco-backend.fly.dev/health
    # Debe responder con JSON {"status":"ok",...}
    ```
 
@@ -59,7 +59,7 @@ Password: admin123
 
 4. **Commiteo y pusheo:**
    ```bash
-   cd c:\Users\Usuario\alacena
+   cd c:\Users\Usuario\eco
    git add -A
    git commit -m "feat: Descripción de cambio"
    git push
@@ -73,7 +73,7 @@ Password: admin123
 
 6. **Verifico en producción:**
    ```bash
-   # Abre https://alacena-frontend.vercel.app/dashboard
+   # Abre https://eco-app.vercel.app/dashboard
    # Testea la nueva feature
    ```
 
@@ -82,23 +82,23 @@ Password: admin123
 ### Problema: Backend retorna error
 ```bash
 # Ver logs de Fly.io
-# https://fly.io/dashboard → alacena-backend → Logs
+# https://fly.io/dashboard → eco-backend → Logs
 
 # O desde terminal:
-# flyctl logs -a alacena-backend
+# flyctl logs -a eco-backend
 ```
 
 ### Problema: Frontend da 404
 ```bash
 # Verificar que se deployó en Vercel
-# https://vercel.com → alacena-frontend → Deployments
+# https://vercel.com → eco-app → Deployments
 # Si no aparece, hacer git push de nuevo
 ```
 
 ### Problema: Base de datos con errores
 ```bash
 # Verificar conexión a Supabase
-# https://supabase.com → alacena-db → SQL Editor
+# https://supabase.com → eco-db → SQL Editor
 
 # Ver migrations:
 # cd backend
@@ -108,7 +108,7 @@ Password: admin123
 ### Problema: NextAuth no funciona
 ```bash
 # Verificar secrets en Fly.io:
-# https://fly.io/dashboard → alacena-backend → Secrets
+# https://fly.io/dashboard → eco-backend → Secrets
 # Debe tener: DATABASE_URL, JWT_SECRET
 
 # Verificar .env.local en frontend:
@@ -118,7 +118,7 @@ Password: admin123
 ## 📝 Estructura de Carpetas (Referencia Rápida)
 
 ```
-alacena/
+eco/
 ├── frontend/alacena-app/    ← Cambios aquí = Vercel redeploy
 ├── backend/                 ← Cambios aquí = Fly.io redeploy
 ├── docs/
